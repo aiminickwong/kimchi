@@ -1,7 +1,9 @@
 #
-# Kimchi
+# Project Wok
 #
 # Copyright IBM Corp, 2013-2015
+#
+# Code derived from Project Kimchi
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -17,7 +19,7 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-AC_INIT([kimchi], [m4_esyscmd([./build-aux/pkg-version --version])])
+AC_INIT([wok], [m4_esyscmd([./build-aux/pkg-version --version])])
 
 AC_SUBST([PACKAGE_VERSION],
          [m4_esyscmd([./build-aux/pkg-version --version])])
@@ -36,6 +38,7 @@ AM_INIT_AUTOMAKE([-Wno-portability])
 AM_PATH_PYTHON([2.6])
 AC_PATH_PROG([PEP8], [pep8], [/usr/bin/pep8])
 AC_PYTHON_MODULE([unittest])
+AC_PYTHON_MODULE([cython], [fatal])
 AC_SUBST([HAVE_PYMOD_UNITTEST])
 AC_SUBST([PYTHON_VERSION])
 AM_GNU_GETTEXT([external])
@@ -46,6 +49,12 @@ AC_PATH_PROG([CHEETAH], [cheetah], [/usr/bin/cheetah])
 AC_PATH_PROG([PYFLAKES], [pyflakes])
 if test "x$PYFLAKES" = "x"; then
   AC_MSG_WARN([pyflakes not found])
+fi
+
+# Checking for libsass
+AC_PATH_PROG([LIBSASS], [sassc])
+if test "x$LIBSASS" = "x"; then
+    AC_MSG_ERROR([sassc not found. Please execute "pip install libsass"])
 fi
 
 AC_ARG_ENABLE(
@@ -64,6 +73,15 @@ else
 AC_SUBST([ENABLE_SAMPLE], [False])
 fi
 
+# check for systemd
+PKG_PROG_PKG_CONFIG
+AC_ARG_WITH([systemdsystemunitdir],
+    AS_HELP_STRING([--with-systemdsystemunitdir=DIR], [Directory for systemd service files]),
+    [], [with_systemdsystemunitdir=$($PKG_CONFIG --variable=systemdsystemunitdir systemd)])
+if test "x$with_systemdsystemunitdir" != xno; then
+    AC_SUBST([systemdsystemunitdir], [$with_systemdsystemunitdir])
+fi
+
 AC_ARG_WITH(
     [spice-html5],
     [AS_HELP_STRING([--with-spice-html5],
@@ -78,58 +96,50 @@ AC_CONFIG_FILES([
     po/gen-pot
     Makefile
     docs/Makefile
+    docs/wokd.8
     src/Makefile
-    src/distros.d/Makefile
     src/nginx/Makefile
-    src/kimchi/Makefile
-    src/kimchi/control/Makefile
-    src/kimchi/control/vm/Makefile
-    src/kimchi/model/Makefile
-    src/kimchi/xmlutils/Makefile
-    plugins/Makefile
-    plugins/sample/Makefile
-    plugins/sample/po/Makefile.in
-    plugins/sample/sample.conf
-    plugins/sample/ui/Makefile
-    plugins/sample/ui/config/Makefile
-    plugins/sample/ui/js/Makefile
-    plugins/sample/ui/pages/Makefile
+    src/wok/Makefile
+    src/wok/control/Makefile
+    src/wok/model/Makefile
+    src/wok/xmlutils/Makefile
+    src/wok/plugins/Makefile
+    src/wok/plugins/sample/Makefile
+    src/wok/plugins/sample/po/Makefile.in
+    src/wok/plugins/sample/sample.conf
+    src/wok/plugins/sample/ui/Makefile
+    src/wok/plugins/sample/ui/config/Makefile
+    src/wok/plugins/sample/ui/js/Makefile
+    src/wok/plugins/sample/ui/pages/Makefile
     ui/Makefile
+    ui/base64/Makefile
     ui/css/Makefile
+    ui/css/fontawesome/Makefile
+    ui/css/opensans/Makefile
     ui/images/Makefile
     ui/images/theme-default/Makefile
     ui/js/Makefile
-    ui/spice-html5/Makefile
-    ui/spice-html5/css/Makefile
-    ui/spice-html5/pages/Makefile
-    ui/spice-html5/thirdparty/Makefile
     ui/libs/Makefile
-    ui/libs/themes/Makefile
-    ui/libs/themes/base/Makefile
-    ui/libs/themes/base/images/Makefile
+    ui/libs/bootstrap/Makefile
+    ui/libs/bootstrap-select/Makefile
+    ui/libs/bootstrap-select/dist/Makefile
+    ui/libs/bootstrap-select/dist/js/Makefile
+    ui/libs/bootstrap-select/dist/css/Makefile
+    ui/libs/es5-shim/Makefile
+    ui/libs/jquery/Makefile
+    ui/libs/jquery-i18n/Makefile
+    ui/libs/jquery-ui/Makefile
+    ui/libs/jquery-ui/themes/Makefile
+    ui/libs/jquery-ui/themes/base/Makefile
+    ui/libs/jquery-ui/themes/base/images/Makefile
     ui/pages/Makefile
-    ui/pages/help/Makefile
-    ui/pages/help/en_US/Makefile
-    ui/pages/help/de_DE/Makefile
-    ui/pages/help/es_ES/Makefile
-    ui/pages/help/fr_FR/Makefile
-    ui/pages/help/it_IT/Makefile
-    ui/pages/help/ja_JP/Makefile
-    ui/pages/help/ko_KR/Makefile
-    ui/pages/help/pt_BR/Makefile
-    ui/pages/help/ru_RU/Makefile
-    ui/pages/help/zh_CN/Makefile
-    ui/pages/help/zh_TW/Makefile
-    ui/pages/tabs/Makefile
     ui/pages/websockify/Makefile
     contrib/Makefile
     contrib/DEBIAN/Makefile
     contrib/DEBIAN/control
-    contrib/kimchi.spec.fedora
-    contrib/kimchi.spec.suse
+    contrib/wok.spec.fedora
+    contrib/wok.spec.suse
     tests/Makefile
-    config/Makefile
-    config/ui/Makefile
 ],[
     chmod +x po/gen-pot
 ])

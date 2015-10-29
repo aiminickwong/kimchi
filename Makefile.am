@@ -1,7 +1,9 @@
 #
-# Kimchi
+# Project Wok
 #
-# Copyright IBM Corp, 2013
+# Copyright IBM Corp, 2013-2015
+#
+# Code derived from Project Kimchi
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -17,9 +19,9 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-SUBDIRS = src ui docs contrib tests po config plugins
+SUBDIRS = src ui docs contrib po tests
 
-man_MANS = docs/kimchid.8
+man_MANS = docs/wokd.8
 
 AUTOMAKE_OPTIONS = foreign
 
@@ -36,12 +38,12 @@ EXTRA_DIST = \
 	$(NULL)
 
 
-PEP8_BLACKLIST = *src/kimchi/config.py,*src/kimchi/i18n.py,*tests/test_config.py
+PEP8_BLACKLIST = *src/wok/plugins,*src/wok/config.py,*src/wok/i18n.py,*tests/test_config.py
 
-SKIP_PYFLAKES_ERR = "\./src/kimchi/websocket\.py"
+SKIP_PYFLAKES_ERR = "\./src/wok/websocket\.py"
 
-I18N_FILES = plugins/*/i18n.py \
-	src/kimchi/i18n.py \
+I18N_FILES = src/wok/plugins/*/i18n.py \
+	src/wok/i18n.py \
 	$(NULL)
 
 check-local:
@@ -61,7 +63,7 @@ all-local:
 	while read L && test -n "$$L"; do                  \
 		dir=mo/$$L/LC_MESSAGES ;                       \
 		$(MKDIR_P) $$dir ;                             \
-		ln -sf ../../../po/$$L.gmo $$dir/kimchi.mo ;   \
+		ln -sf ../../../po/$$L.gmo $$dir/wok.mo ;   \
 	done < po/LINGUAS
 
 #
@@ -70,50 +72,88 @@ all-local:
 
 install-deb: install
 	cp -R $(top_srcdir)/contrib/DEBIAN $(DESTDIR)/
-	mkdir -p $(DESTDIR)/var/lib/kimchi/debugreports
-	mkdir -p $(DESTDIR)/var/lib/kimchi/screenshots
-	mkdir -p $(DESTDIR)/var/lib/kimchi/vnc-tokens
-	mkdir -p $(DESTDIR)/var/lib/kimchi/isos
-	touch $(DESTDIR)/var/lib/kimchi/objectstore
-	$(MKDIR_P) $(DESTDIR)/etc/init
+	@if test -d "$(systemdsystemunitdir)" ; then \
+		$(MKDIR_P) $(DESTDIR)/$(systemdsystemunitdir); \
+		cp -R contrib/wokd.service.fedora \
+			$(DESTDIR)/$(systemdsystemunitdir)/wokd.service; \
+	else \
+		$(MKDIR_P) $(DESTDIR)/etc/init; \
+		cp -R $(top_srcdir)/contrib/wokd-upstart.conf.debian \
+			$(DESTDIR)/etc/init/wokd.conf; \
+	fi
+	$(MKDIR_P) $(DESTDIR)/$(localstatedir)/lib/wok/
 	$(MKDIR_P) $(DESTDIR)/usr/lib/firewalld/services
-	cp -R $(top_srcdir)/contrib/kimchid-upstart.conf.debian \
-		$(DESTDIR)/etc/init/kimchid.conf
 	cp -R $(top_srcdir)/src/firewalld.xml \
-		$(DESTDIR)/usr/lib/firewalld/services/kimchid.xml
+		$(DESTDIR)/usr/lib/firewalld/services/wokd.xml
 
 
 deb: contrib/make-deb.sh
 	$(top_srcdir)/contrib/make-deb.sh
 
-kimchi.spec: contrib/kimchi.spec.fedora contrib/kimchi.spec.suse
+wok.spec: contrib/wok.spec.fedora contrib/wok.spec.suse
 	@if test -e /etc/redhat-release; then                   \
-		ln -sf contrib/kimchi.spec.fedora $@ ;              \
+		ln -sf contrib/wok.spec.fedora $@ ;              \
 	elif test -e /etc/SuSE-release; then                    \
-		ln -sf contrib/kimchi.spec.suse $@ ;                \
+		ln -sf contrib/wok.spec.suse $@ ;                \
 	else                                                    \
 		echo "Unable to select a spec file for RPM build" ; \
 		/bin/false ;                                        \
 	fi
 
-rpm: dist kimchi.spec
+rpm: dist wok.spec
 	$(MKDIR_P) rpm/BUILD rpm/RPMS rpm/SOURCES rpm/SPECS rpm/SRPMS
-	cp $(top_srcdir)/kimchi.spec rpm/SPECS/kimchi.spec
+	cp $(top_srcdir)/wok.spec rpm/SPECS/wok.spec
 	cp $(DIST_ARCHIVES) rpm/SOURCES
-	rpmbuild -ba --define "_topdir `pwd`/rpm" rpm/SPECS/kimchi.spec
+	rpmbuild -ba --define "_topdir `pwd`/rpm" rpm/SPECS/wok.spec
 
-fedora-rpm: contrib/kimchi.spec.fedora
-	ln -sf contrib/kimchi.spec.fedora kimchi.spec
+fedora-rpm: contrib/wok.spec.fedora
+	ln -sf contrib/wok.spec.fedora wok.spec
 	$(MAKE) rpm
 
-suse-rpm: contrib/kimchi.spec.suse
-	ln -sf contrib/kimchi.spec.suse kimchi.spec
+suse-rpm: contrib/wok.spec.suse
+	ln -sf contrib/wok.spec.suse wok.spec
 	$(MAKE) rpm
 
 ChangeLog:
 	@if test -d .git; then                                   \
 		$(top_srcdir)/build-aux/genChangelog --release > $@; \
 	fi
+
+install-data-local:
+	@if test -d "$(systemdsystemunitdir)" ; then \
+		mkdir -p $(DESTDIR)/$(systemdsystemunitdir); \
+		$(INSTALL_DATA) contrib/wokd.service.fedora $(DESTDIR)/$(systemdsystemunitdir)/wokd.service; \
+	else \
+		mkdir -p $(DESTDIR)/etc/init.d/; \
+		$(INSTALL_DATA) contrib/wokd.sysvinit $(DESTDIR)/etc/init.d/wokd; \
+		chmod +x $(DESTDIR)/etc/init.d/wokd; \
+	fi; \
+	if test -d /usr/lib/firewalld/services/; then \
+		mkdir -p $(DESTDIR)/usr/lib/firewalld/services/; \
+		$(INSTALL_DATA) src/firewalld.xml $(DESTDIR)/usr/lib/firewalld/services/wokd.xml; \
+	fi; \
+	mkdir -p $(DESTDIR)/$(localstatedir)/lib/wok/
+	mkdir -p $(DESTDIR)/$(localstatedir)/log/wok/
+	touch $(DESTDIR)/$(localstatedir)/log/wok/wok-access.log
+	touch $(DESTDIR)/$(localstatedir)/log/wok/wok-error.log
+	mkdir -p $(DESTDIR)/etc/wok/
+	$(INSTALL_DATA) src/dhparams.pem $(DESTDIR)/etc/wok/dhparams.pem
+	touch $(DESTDIR)/etc/nginx/conf.d/wok.conf
+
+uninstall-local:
+	@if test -f $(systemdsystemunitdir)/wokd.service; then \
+		$(RM) $(DESTDIR)/$(systemdsystemunitdir)/wokd.service; \
+	elif test -f /etc/init.d/wokd; then \
+		$(RM) $(DESTDIR)/etc/init.d/wokd; \
+		$(RM) $(DESTDIR)/etc/init/wok.conf; \
+	fi; \
+	if test -d /usr/lib/firewalld/services/; then \
+		$(RM) $(DESTDIR)/usr/lib/firewalld/services/wokd.xml; \
+	fi; \
+	$(RM) -rf $(DESTDIR)/$(localstatedir)/lib/wok
+	$(RM) -rf $(DESTDIR)/$(localstatedir)/log/wok
+	$(RM) -rf $(DESTDIR)/etc/wok
+	$(RM) $(DESTDIR)/etc/nginx/conf.d/wok.conf
 
 VERSION:
 	@if test -d .git; then                                \
@@ -122,7 +162,8 @@ VERSION:
 
 .PHONY: deb install-deb rpm fedora-rpm suse-rpm ChangeLog VERSION
 
+
 clean-local:
 	rm -rf mo rpm
 
-CLEANFILES = kimchi.spec `find "$(top_srcdir)" -type f -name "*.pyc" -print`
+CLEANFILES = wok.spec `find "$(top_srcdir)" -type f -name "*.pyc" -print`

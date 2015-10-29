@@ -1,7 +1,9 @@
 #
-# Project Kimchi
+# Project Wok
 #
 # Copyright IBM, Corp. 2013-2015
+#
+# Code delivered from Project Kimchi
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -28,22 +30,21 @@ import os
 import socket
 import ssl
 import sys
-import time
 import threading
+import time
 import unittest
-
 from contextlib import closing
 from lxml import etree
 
+import wok.server
+from wok.config import config, PluginPaths
+from wok.auth import User, USER_NAME, USER_GROUPS, USER_ROLES, tabs
+from wok.exception import NotFoundError, OperationFailed
+from wok.utils import wok_log
 
-import kimchi.mockmodel
-import kimchi.server
-from kimchi.config import config, paths
-from kimchi.auth import User, USER_NAME, USER_GROUPS, USER_ROLES, tabs
-from kimchi.exception import NotFoundError, OperationFailed
-from kimchi.utils import kimchi_log
 
 _ports = {}
+fake_user = {'test': 'passw0rd'}
 
 # provide missing unittest decorators and API for python 2.6; these decorators
 # do not actually work, just avoid the syntax failure
@@ -118,7 +119,7 @@ def run_server(host, port, ssl_port, test_mode, cherrypy_port=None,
     if model is not None:
         setattr(args, 'model', model)
 
-    s = kimchi.server.Server(args)
+    s = wok.server.Server(args)
     t = threading.Thread(target=s.start)
     t.setDaemon(True)
     t.start()
@@ -142,7 +143,7 @@ def _request(conn, path, data, method, headers):
         headers = {'Content-Type': 'application/json',
                    'Accept': 'application/json'}
     if 'AUTHORIZATION' not in headers.keys():
-        user, pw = kimchi.mockmodel.fake_user.items()[0]
+        user, pw = fake_user.items()[0]
         hdr = "Basic " + base64.b64encode("%s:%s" % (user, pw))
         headers['AUTHORIZATION'] = hdr
     conn.request(method, path, data, headers)
@@ -167,8 +168,8 @@ def get_remote_iso_path():
     """
     host_arch = os.uname()[4]
     remote_path = ''
-    with open(os.path.join(paths.conf_dir, 'distros.d', 'fedora.json')) \
-            as fedora_isos:
+    with open(os.path.join(PluginPaths('kimchi').conf_dir, 'distros.d',
+              'fedora.json')) as fedora_isos:
         # Get a list of dicts
         json_isos_list = json.load(fedora_isos)
         for iso in json_isos_list:
@@ -203,9 +204,9 @@ class FakeUser(User):
     @staticmethod
     def authenticate(username, password, service="passwd"):
         try:
-            return kimchi.mockmodel.fake_user[username] == password
+            return fake_user[username] == password
         except KeyError, e:
-            raise OperationFailed("KCHAUTH0001E", {'username': 'username',
+            raise OperationFailed("WOKAUTH0001E", {'username': 'username',
                                                    'code': e.message})
 
 
@@ -227,13 +228,13 @@ def wait_task(task_lookup, taskid, timeout=10):
     for i in range(0, timeout):
         task_info = task_lookup(taskid)
         if task_info['status'] == "running":
-            kimchi_log.info("Waiting task %s, message: %s",
-                            taskid, task_info['message'])
+            wok_log.info("Waiting task %s, message: %s",
+                         taskid, task_info['message'])
             time.sleep(1)
         else:
             return
-    kimchi_log.error("Timeout while process long-run task, "
-                     "try to increase timeout value.")
+    wok_log.error("Timeout while process long-run task, "
+                  "try to increase timeout value.")
 
 
 # The action functions in model backend raise NotFoundError exception if the
@@ -254,7 +255,7 @@ def rollback_wrapper(func, resource, *args):
 # requests lib take care of encode part, so use this lib instead
 def fake_auth_header():
     headers = {'Accept': 'application/json'}
-    user, pw = kimchi.mockmodel.fake_user.items()[0]
+    user, pw = fake_user.items()[0]
     hdr = "Basic " + base64.b64encode("%s:%s" % (user, pw))
     headers['AUTHORIZATION'] = hdr
     return headers

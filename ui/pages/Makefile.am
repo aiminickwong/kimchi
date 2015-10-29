@@ -1,7 +1,9 @@
 #
-# Kimchi
+# Project Wok
 #
-# Copyright IBM, Corp. 2013
+# Copyright IBM, Corp. 2013-2015
+#
+# Code derived from Project Kimchi
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,8 +17,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-SUBDIRS = help tabs websockify
+SUBDIRS = websockify
 
-htmldir = $(datadir)/kimchi/ui/pages
+htmldir = $(datadir)/wok/ui/pages
 
 dist_html_DATA = $(wildcard *.tmpl) $(NULL)

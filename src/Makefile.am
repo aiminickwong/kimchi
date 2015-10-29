@@ -1,7 +1,9 @@
 #
-# Kimchi
+# Project Wok
 #
 # Copyright IBM Corp, 2013-2015
+#
+# Code derived from Project Kimchi
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -17,19 +19,19 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-SUBDIRS = kimchi distros.d nginx
+SUBDIRS = wok nginx
 
-EXTRA_DIST = kimchid.in \
-	kimchi.conf.in \
+EXTRA_DIST = wokd.in \
+	wok.conf.in \
 	firewalld.xml \
 	$(NULL)
 
-bin_SCRIPTS = kimchid
+bin_SCRIPTS = wokd
 
-confdir = $(sysconfdir)/kimchi
-dist_conf_DATA = kimchi.conf template.conf
+confdir = $(sysconfdir)/wok
+dist_conf_DATA = wok.conf
 
-BUILT_SOURCES = kimchi.conf
+BUILT_SOURCES = wok.conf
 
 do_substitution = \
 	sed -e 's,[@]pythondir[@],$(pythondir),g'     \
@@ -38,11 +40,17 @@ do_substitution = \
 	-e 's,[@]VERSION[@],$(VERSION),g'
 
 
-kimchid: kimchid.in Makefile
-	$(do_substitution) < $(srcdir)/kimchid.in > kimchid
-	chmod +x kimchid
+wokd: wokd.in Makefile
+	$(do_substitution) < $(srcdir)/wokd.in > wokd
+	chmod +x wokd
 
-kimchi.conf: kimchi.conf.in Makefile
-	$(do_substitution) < kimchi.conf.in > kimchi.conf
+wok.conf: wok.conf.in Makefile
+	$(do_substitution) < wok.conf.in > wok.conf
 
-CLEANFILES = $(bin_SCRIPTS) $(BUILT_SOURCES)
+# Generate unique Diffie-Hellman group with 2048-bit
+all-local: dhparams.pem
+
+dhparams.pem:
+	openssl dhparam -out dhparams.pem 2048
+
+CLEANFILES = $(bin_SCRIPTS) $(BUILT_SOURCES) dhparams.pem

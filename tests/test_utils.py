@@ -1,7 +1,9 @@
 #
-# Project Kimchi
+# Project Wok
 #
 # Copyright IBM, Corp. 2015
+#
+# Code delivered from Project Kimchi
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -19,8 +21,8 @@
 
 import unittest
 
-from kimchi.exception import InvalidParameter
-from kimchi.utils import convert_data_size
+from wok.exception import InvalidParameter
+from wok.utils import convert_data_size
 
 
 class UtilsTests(unittest.TestCase):

@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 #
-# Project Kimchi
+# Project Wok
 #
 # Copyright IBM, Corp. 2015
+#
+# Code delivered from Project Kimchi
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -23,8 +25,9 @@ import tempfile
 import threading
 import unittest
 
-from kimchi.exception import NotFoundError
-from kimchi import objectstore
+from wok import objectstore
+from wok.exception import NotFoundError
+
 
 tmpfile = None
 

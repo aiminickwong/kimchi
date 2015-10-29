@@ -1,8 +1,10 @@
 #!/usr/bin/env python2
 #
-# Project Kimchi
+# Project Wok
 #
 # Copyright IBM, Corp. 2014-2015
+#
+# Code derived from Project Kimchi
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -55,8 +57,8 @@ def check_obsolete_messages(path, messages):
         for root, dirs, files in os.walk(path):
             for f in files:
                 fname = os.path.join(root, f)
-                if (not fname.endswith("i18n.py") and fname.endswith(".py")
-                   or fname.endswith(".json")):
+                if (not fname.endswith("i18n.py") and fname.endswith(".py") or
+                   fname.endswith(".json")):
                     with open(fname) as f:
                         string = "".join(f.readlines())
                         if k in string:

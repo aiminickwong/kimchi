@@ -1,7 +1,9 @@
 #*
- * Project Kimchi
+ * Project Wok
  *
  * Copyright IBM, Corp. 2014-2015
+ *
+ * Code derived from Project Kimchi
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +19,7 @@
  *#
 #unicode UTF-8
 #import gettext
-#from kimchi.cachebust import href
+#from wok.cachebust import href
 #silent t = gettext.translation($lang.domain, $lang.localedir, languages=$lang.lang, fallback=True)
 #silent _ = t.gettext
 #silent _t = t.gettext
@@ -39,6 +41,8 @@
     "KCHAPI6004E": "$_("This is not a valid URL.")",
     "KCHAPI6005E": "$_("No such data available.")",
     "KCHAPI6007E": "$_("Can not contact the host system. Verify the host system is up and that you have network connectivity to it. HTTP request response %1. ")",
+    "KCHAPI6008E": "$_("Unable to read file.")",
+    "KCHAPI6009E": "$_("Error while uploading file.")",
 
     "KCHAPI6001M": "$_("Delete Confirmation")",
     "KCHAPI6002M": "$_("OK")",

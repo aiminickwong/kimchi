@@ -1,7 +1,9 @@
 /*
- * Project Kimchi
+ * Project Wok
  *
- * Copyright IBM, Corp. 2014
+ * Copyright IBM, Corp. 2014-2015
+ *
+ * Code derived from Project Kimchi
  *
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -16,7 +18,7 @@
  * limitations under the License.
  */
 (function($) {
-    $.widget('kimchi.combobox', {
+    $.widget('wok.combobox', {
         _create : function() {
             this.selectDiv = this.element;
             this.listControl = this.selectDiv.find('ul').first();

@@ -1,7 +1,7 @@
 #
-# Kimchi
+# Project wok
 #
-# Copyright IBM Corp, 2013
+# Copyright IBM Corp, 2015
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -31,7 +31,7 @@ do_substitution = \
 	-e 's,[@]prefix[@],$(prefix),g' \
 	-e 's,[@]datadir[@],$(datadir),g' \
 	-e 's,[@]PYTHON_VERSION[@],$(PYTHON_VERSION),g' \
-	-e 's,[@]kimchidir[@],$(pythondir)/kimchi,g' \
+	-e 's,[@]wokdir[@],$(pythondir)/wok,g' \
 	-e 's,[@]pkgdatadir[@],$(pkgdatadir),g'
 
 

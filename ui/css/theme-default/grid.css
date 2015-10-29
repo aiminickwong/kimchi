@@ -1,7 +1,9 @@
 /*
- * Project Kimchi
+ * Project Wok
  *
- * Copyright IBM, Corp. 2013-2014
+ * Copyright IBM, Corp. 2013-2015
+ *
+ * Code derived from Project Kimchi
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -236,7 +238,7 @@
 }
 
 .grid-loading-icon {
-    background: url("../images/theme-default/kimchi-loading.gif") no-repeat left top;
+    background: url("../images/theme-default/wok-loading.gif") no-repeat left top;
     height: 48px;
     width: 49px;
 }

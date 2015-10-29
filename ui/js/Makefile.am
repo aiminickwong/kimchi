@@ -1,7 +1,9 @@
 #
-# Kimchi
+# Project Wok
 #
-# Copyright IBM, Corp. 2013
+# Copyright IBM, Corp. 2013-2015
+#
+# Code derived from Project Kimchi
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,11 +19,11 @@
 
 EXTRA_DIST = src widgets
 
-jsdir = $(datadir)/kimchi/ui/js
+jsdir = $(datadir)/wok/ui/js
 
-dist_js_DATA = kimchi.min.js $(filter-out kimchi.min.js, $(wildcard *.js))
+dist_js_DATA = wok.min.js $(filter-out wok.min.js, $(wildcard *.js))
 
-kimchi.min.js: widgets/*.js src/*.js
+wok.min.js: widgets/*.js src/*.js
 	cat $(sort $^) > $@
 
-CLEANFILES = kimchi.min.js
+CLEANFILES = wok.min.js

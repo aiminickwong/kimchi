@@ -1,4 +1,9 @@
-# Copyright IBM Corp, 2013
+#
+# Project Wok
+#
+# Copyright IBM Corp, 2013-2015
+#
+# Code derived from Project Kimchi
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -18,11 +23,11 @@ SUBDIRS = DEBIAN
 
 EXTRA_DIST = \
 	check_i18n.py \
-	kimchid.sysvinit \
-	kimchid.service.fedora \
-	kimchi.spec.fedora.in \
-	kimchid-upstart.conf.debian \
-	kimchid-upstart.conf.fedora \
+	wokd.sysvinit \
+	wokd.service.fedora \
+	wok.spec.fedora.in \
+	wokd-upstart.conf.debian \
+	wokd-upstart.conf.fedora \
 	make-deb.sh.in \
 	$(NULL)
 
@@ -35,4 +40,4 @@ make-deb.sh: make-deb.sh.in $(top_builddir)/config.status
 	    mv $@-t $@
 BUILT_SOURCES = make-deb.sh
 
-CLEANFILES = kimchi.spec.fedora kimchi.spec.suse kimchi.spec make-deb.sh
+CLEANFILES = wok.spec.fedora wok.spec.suse wok.spec make-deb.sh

@@ -1,7 +1,9 @@
 #
-# Kimchi
+# Project Wok
 #
-# Copyright IBM Corp, 2013
+# Copyright IBM Corp, 2013-2015
+#
+# Code derived from Project Kimchi
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -17,13 +19,12 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-docdir = $(datadir)/kimchi/doc
+docdir = $(datadir)/wok/doc
 
 dist_doc_DATA = \
 	API.md \
 	README.md \
-	README-federation.md \
-	kimchi-guest.png \
-	kimchi-templates.png \
-	kimchid.8 \
+	wokd.8 \
 	$(NULL)
+
+CLEANFILES = wokd.8
