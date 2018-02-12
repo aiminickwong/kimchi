@@ -1,0 +1,118 @@
+//
+// Project Kimchi
+//
+// Copyright IBM Corp, 2015-2017
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+
+.network-config input.invalid-field[type="text"] {
+    border-color: #FF4444;
+}
+
+.network-config input.invalid-field[type="text"][disabled] {
+    border-color: #666666;
+}
+
+
+#add-network-window {
+
+    #vlan-enabled {
+        padding-left: 26px;
+
+        label, input[type="text"] {
+            display: block;
+        }
+
+    }
+
+}
+
+#networkConfig .alert-dismissable .close, .alert-dismissible .close{
+  right: -2px !important;
+}
+
+#network-root-container {
+
+    .wok-datagrid-body {
+        span > .fa {
+            font-size: 22px;
+            width: 22px;
+            position: relative;
+        }
+
+        .loading .fa-spinner {
+            display: inline-block;
+        }
+
+        .up .fa-power-off {
+          color: $fa-green;
+        }
+
+        .down .fa-power-off {
+          display: none;
+        }
+    }
+
+    .wok-datagrid > .wok-datagrid-header,
+    .wok-datagrid > .wok-datagrid-body > .wok-datagrid-row {
+
+        > span.column-state {
+            width: 2.92207%;
+            text-align: center;
+        }
+
+        > span.column-name {
+            width: 19.2207%;
+        }
+
+        > span.column-type {
+            width: 11.3896%;
+        }
+
+        > span.column-interface {
+            width: 15.3896%;
+            padding-right: 40px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        > span.column-space {
+            width: 25%;
+        }
+
+        > span.column-action {
+            width: 25.909%;
+            text-align: right;
+        }
+    }
+
+    .wok-datagrid > .wok-datagrid-body > .wok-datagrid-row > span {
+
+      &.column-state {
+        height: 53px;
+        vertical-align: middle;
+      }
+
+    }
+
+}
+
+#add-network-window {
+    #networkConfig {
+        #alert-modal-container .alert {
+            padding: 8px 34px 8px 16px;
+        }
+    }
+}

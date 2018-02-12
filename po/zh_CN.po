@@ -1,163 +1,2005 @@
-# i18n portable object for kimchi.
-# Copyright (C) IBM, Corp. 2013-2014
-# ShaoHe Feng <shaohef@linux.vnet.ibm.com>, 2013-04-18.
-#
-# This library is free software; you can redistribute it and/or
-# modify it under the terms of the GNU Lesser General Public
-# License as published by the Free Software Foundation; either
-# version 2.1 of the License, or (at your option) any later version.
-#
-# This library is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-# Lesser General Public License for more details.
-#
-# You should have received a copy of the GNU Lesser General Public
-# License along with this library; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+# Chinese (zh_CN) translations for kimchi package.
+# Copyright IBM Corp, 2013-2017
+# Adam Litke <agl@us.ibm.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kimchi 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-01 16:40-0300\n"
-"PO-Revision-Date: 2013-06-27 10:48+0000\n"
-"Last-Translator: ShaoHe Feng <shaohef@linux.vnet.ibm.com>\n"
-"Language-Team: ShaoHe Feng <shaohef@linux.vnet.ibm.com>\n"
+"POT-Creation-Date: 2017-06-30 10:27-0300\n"
+"PO-Revision-Date: 2013-07-11 17:32-0400\n"
+"Last-Translator: Crístian Viana <vianac@linux.vnet.ibm.com>\n"
+"Language-Team: English\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
 "Generated-By: pygettext.py 1.5\n"
-"X-Poedit-Country: CHINA\n"
-"X-Poedit-Language: Chinese\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #, python-format
-msgid "Delete is not allowed for %(resource)s"
-msgstr "不允许删除%(resource)s"
+msgid "Unknown parameter %(value)s"
+msgstr "未知参数 %(value)s"
 
 #, python-format
-msgid "%(resource)s does not implement update method"
-msgstr "不支持更新%(resource)s"
+msgid "User %(user_id)s not found with given LDAP settings."
+msgstr "找不到具有给定 LDAP 设置的用户 %(user_id)s。"
 
 #, python-format
-msgid "Create is not allowed for %(resource)s"
-msgstr "不允许创建%(resource)s"
+msgid "Partition %(name)s does not exist in the host"
+msgstr "分区 %(name)s 在主机中不存在"
 
-msgid "Unable to parse JSON request"
-msgstr "无法解析JSON请求"
-
-msgid "This API only supports JSON"
-msgstr "这个API仅支持JSON"
-
-#, python-format
-msgid "Parameters does not match requirement in schema: %(err)s"
-msgstr "参数不符合要求的格式：%(err)s"
-
-msgid "You don't have permission to perform this operation."
-msgstr "您没有权限执行这项操作。"
-
-msgid "Datastore is not initiated in the model object."
-msgstr "尚未为model对象初始化数据存储。"
-
-#, python-format
-msgid "Unable to start task due error: %(err)s"
-msgstr "由于错误%(err)s任务启动失败"
-
-#, python-format
-msgid "Authentication failed for user '%(username)s'. [Error code: %(code)s]"
-msgstr "用户'%(username)s'身份验证失败.[错误代码：%(code)s]"
-
-msgid "You are not authorized to access Kimchi"
-msgstr "您没有被授权访问Kimchi"
-
-#, python-format
-msgid "Specify %(item)s to login into Kimchi"
-msgstr "指定登录Kimchi的%(item)s"
-
-#, python-format
-msgid "Invalid LDAP configuration: %(item)s : %(value)s"
-msgstr "无效的LDAP配置：%(item)s : %(value)s"
-
-#, python-format
-msgid "Unable to find %(item)s in datastore"
-msgstr "在数据存储中找不到%(item)s"
-
-#, python-format
-msgid "Timeout while running command '%(cmd)s' after %(seconds)s seconds"
-msgstr "命令'%(cmd)s'运行%(seconds)s秒后超时。"
-
-#, python-format
-msgid "Invalid data value '%(value)s'"
+msgid "Error while accessing dev mapper device, %(err)s"
 msgstr ""
 
-#, fuzzy, python-format
-msgid "Invalid data unit '%(unit)s'"
-msgstr "无效的URI %(uri)s"
+msgid "Block device not found."
+msgstr ""
 
-msgid "ERROR CODE"
-msgstr "错误码"
+msgid "Block device %(device)s not found."
+msgstr ""
 
-msgid "REASON"
-msgstr "原因"
+msgid "Unable to retrieve LVM information. Details: %(err)s"
+msgstr ""
 
-msgid "STACK"
-msgstr "调用栈"
+msgid "Unknown \"_cap\" specified"
+msgstr "指定了未知“_cap”"
 
-msgid "Go to Homepage"
-msgstr "返回主页"
+msgid "\"_passthrough\" should be \"true\" or \"false\""
+msgstr "“_passthrough”应该为“true”或“false”"
 
-msgid "The username or password you entered is incorrect. Please try again."
-msgstr "用户名或密码错误，请重新输入。"
+msgid "\"_passthrough_affected_by\" should be a device name string"
+msgstr "“_passthrough_affected_by”应该为设备名字符串"
 
-msgid "This field is required."
-msgstr "需要填写此处"
+msgid "\"_available_only\" should be \"true\" or \"false\""
+msgstr "“_available_only”应该为“true”或“false”"
 
-msgid "Log in"
-msgstr "登录"
+#, python-format
+msgid "Unable to find distro file: %(filename)s"
+msgstr "找不到 distro 文件：%(filename)s"
 
-msgid "Logging in..."
-msgstr "登录中..."
+#, python-format
+msgid ""
+"Unable to parse distro file: %(filename)s. Make sure, it is a JSON file."
+msgstr "无法解析 Distro 文件：%(filename)s。请确保该文件是 JSON 文件。"
+
+#, python-format
+msgid "Unable to login to iSCSI host target %(portal)s. Details: %(err)s"
+msgstr "无法登录 iSCSI 主机目标 %(portal)s。详细信息：%(err)s"
+
+#, python-format
+msgid "Unable to login to iSCSI host %(host)s target %(target)s"
+msgstr "无法登录 iSCSI 主机 %(host)s 目标 %(target)s"
+
+#, python-format
+msgid "Unable to find ISO file %(filename)s"
+msgstr "找不到 ISO 文件 %(filename)s"
+
+#, python-format
+msgid "The ISO file %(filename)s is not bootable"
+msgstr "ISO 文件 %(filename)s 不可引导"
+
+#, python-format
+msgid "The ISO file %(filename)s does not have a valid El Torito boot record"
+msgstr "ISO 文件 %(filename)s 没有有效的 EI Torito 引导记录"
+
+#, python-format
+msgid "Invalid El Torito validation entry in ISO %(filename)s"
+msgstr "ISO %(filename)s 中的 El Torito 验证条目无效"
+
+#, python-format
+msgid "Invalid El Torito boot indicator in ISO %(filename)s"
+msgstr "ISO %(filename)s 中的 El Torito 引导指示器无效"
+
+#, python-format
+msgid "Unexpected volume type for primary volume in ISO %(filename)s"
+msgstr "ISO %(filename)s 中主要卷具有意外的卷类型"
+
+#, python-format
+msgid "Bad format while reading volume descriptor in ISO %(filename)s"
+msgstr "在 ISO %(filename)s 中读取卷描述符时格式错误"
+
+#, python-format
+msgid ""
+"The hypervisor doesn't have permission to use this ISO %(filename)s. "
+"Consider moving it under /var/lib/libvirt,  or set the search permission to "
+"file access control lists for '%(user)s' user if possible, or add the "
+"'%(user)s' to the ISO path group, or (not recommended) 'chmod -R o+x "
+"'path_to_iso'.Details: %(err)s"
+msgstr ""
+"管理程序不具使用此 ISO %(filename)s 的许可权。考虑在 /var/lib/libvirt 下移动"
+"该 ISO、设置对“%(user)s”用户的文件访问控制表的搜索许可权（如果可能）、"
+"将“%(user)s”添加至 ISO 路径组或者（不推荐）使用 'chmod -R o+x 'path_to_iso'。"
+"详细信息：%(err)s"
+
+#, python-format
+msgid "Unable to access remote ISO. Details: %(err)s"
+msgstr "无法访问远程 ISO。详细信息：%(err)s"
+
+#, python-format
+msgid "Error probing image OS information: %(err)s"
+msgstr ""
+
+#, python-format
+msgid "Unable to read image file %(filename)s"
+msgstr "无法读取映像文件 %(filename)s"
+
+#, python-format
+msgid ""
+"Image file must be an existing file on system. %(filename)s is not a valid "
+"input."
+msgstr "映像文件必须是系统上的现有文件。%(filename)s 是无效输入。"
+
+#, python-format
+msgid "Virtual machine %(name)s already exists"
+msgstr "虚拟机 %(name)s 已存在"
+
+#, python-format
+msgid "Virtual machine %(name)s does not exist"
+msgstr "虚拟机 %(name)s 不存在"
+
+#, python-format
+msgid "Unable to retrieve screenshot for stopped virtual machine %(name)s"
+msgstr "无法检索已停止的虚拟机  %(name)s 的屏幕快照"
+
+msgid "Remote ISO image is not supported by this server."
+msgstr "远程 ISO 映像不受此服务器支持。"
+
+#, python-format
+msgid "Screenshot is not supported on virtual machine %(name)s"
+msgstr "屏幕快照在虚拟机 %(name)s 上不受支持"
+
+#, python-format
+msgid "Unable to create virtual machine %(name)s. Details: %(err)s"
+msgstr "无法创建虚拟机 %(name)s。详细信息：%(err)s"
+
+#, python-format
+msgid "Unable to update virtual machine %(name)s. Details: %(err)s"
+msgstr "无法更新虚拟机 %(name)s。详细信息：%(err)s"
+
+#, python-format
+msgid "Unable to retrieve virtual machine %(name)s. Details: %(err)s"
+msgstr "无法检索虚拟机 %(name)s。详细信息：%(err)s"
+
+#, python-format
+msgid "Unable to connect to powered off virtual machine %(name)s."
+msgstr "无法连接到已关闭电源的虚拟机 %(name)s。"
+
+msgid "Virtual machine name must be a string without slashes (/)"
+msgstr "虚拟机名称必须是不带斜杠 (/) 的字符串"
+
+#, python-format
+msgid "Invalid template URI %(value)s specified for virtual machine"
+msgstr "为虚拟机指定的模板 URI %(value)s 无效"
+
+#, python-format
+msgid "Invalid storage pool URI %(value)s specified for virtual machine"
+msgstr "为虚拟机指定的存储池 URI %(value)s 无效"
+
+msgid "Supported virtual machine graphics are Spice or VNC"
+msgstr "受支持的虚拟机图形为 Spice 或 VNC"
+
+msgid "Graphics address to listen on must be IPv4 or IPv6"
+msgstr "要侦听的图形地址必须是 IPv4 或 IPv6"
+
+msgid "Specify a template to create a virtual machine from"
+msgstr "指定要从其创建虚拟机的模板"
+
+#, python-format
+msgid "Unable to start virtual machine %(name)s. Details: %(err)s"
+msgstr "无法启动虚拟机 %(name)s。详细信息：%(err)s"
+
+#, python-format
+msgid "Unable to power off virtual machine %(name)s. Details: %(err)s"
+msgstr "无法对虚拟机 %(name)s 断电。详细信息：%(err)s"
+
+#, python-format
+msgid "Unable to delete virtual machine %(name)s. Details: %(err)s"
+msgstr "无法删除虚拟机 %(name)s。详细信息：%(err)s"
+
+#, python-format
+msgid "Unable to reset virtual machine %(name)s. Details: %(err)s"
+msgstr "无法重置虚拟机 %(name)s。详细信息：%(err)s"
+
+msgid "User name list must be an array"
+msgstr "用户名列表必须是数组"
+
+msgid "User name must be a string"
+msgstr "用户名必须是字符串"
+
+msgid "Group name list must be an array"
+msgstr "组名列表必须是数组"
+
+msgid "Group name must be a string"
+msgstr "组名必须是字符串"
+
+#, python-format
+msgid "User(s) '%(users)s' do not exist"
+msgstr "用户“%(users)s”不存在"
+
+#, python-format
+msgid "Group(s) '%(groups)s' do not exist"
+msgstr "组“%(groups)s”不存在"
+
+#, python-format
+msgid "Unable to shutdown virtual machine %(name)s. Details: %(err)s"
+msgstr "无法关闭虚拟机 %(name)s。详细信息：%(err)s"
+
+msgid "The guest console password must be a string."
+msgstr "访客控制台密码必须是字符串。"
+
+msgid "The life time for the guest console password must be a number."
+msgstr "访客控制台密码的有效期必须是数字。"
+
+#, python-format
+msgid "Virtual machine '%(name)s' must be stopped before cloning it."
+msgstr "在对虚拟机“%(name)s”进行克隆之前，必须将其停止。"
+
+#, python-format
+msgid "Insufficient disk space to clone virtual machine '%(name)s'"
+msgstr "没有足够的磁盘空间，无法对虚拟机“%(name)s”进行克隆"
+
+#, python-format
+msgid "Unable to clone VM '%(name)s'. Details: %(err)s"
+msgstr "无法对 VM“%(name)s”进行克隆。详细信息：%(err)s"
+
+#, python-format
+msgid "Invalid operation for non-persistent virtual machine %(name)s"
+msgstr "对非持久性虚拟机 %(name)s 的操作无效"
+
+#, python-format
+msgid "Cannot suspend VM '%(name)s' because it is not running."
+msgstr "无法暂挂 VM“%(name)s”，因为它未在运行。"
+
+#, python-format
+msgid "Unable to suspend VM '%(name)s'. Details: %(err)s"
+msgstr "无法暂挂 VM“%(name)s”。详细信息：%(err)s"
+
+#, python-format
+msgid "Cannot resume VM '%(name)s' because it is not paused."
+msgstr "无法恢复 VM“%(name)s”，因为它未暂停。"
+
+#, python-format
+msgid "Unable to resume VM '%(name)s'. Details: %(err)s"
+msgstr "无法恢复 VM“%(name)s”。详细信息：%(err)s"
+
+#, python-format
+msgid ""
+"Memory assigned is higher then the maximum allowed in the host: "
+"%(maxmem)sMib."
+msgstr "所分配内存高于主机中允许的最大内存：%(maxmem)sMiB。"
+
+#, python-format
+msgid ""
+"Guest '%(name)s' does not support live memory update. Please, with the guest "
+"offline, set Maximum Memory with a value greater then Memory to enable this "
+"feature."
+msgstr ""
+"访客“%(name)s”不支持实时内存更新。在访客脱机的情况下，请将“最大内存”设置为大"
+"于“内存”的值以启用此功能。"
+
+msgid "Only increase memory is allowed in active VMs"
+msgstr "仅允许在活动 VM 中增加内存"
+
+msgid "There are not enough free slots to add a new memory device."
+msgstr "没有足够的可用插槽来添加新的内存设备。"
+
+msgid ""
+"Host's libvirt or qemu version does not support memory devices and memory "
+"hotplug. Libvirt must be >= 1.2.14 and QEMU must be >= 2.1."
+msgstr ""
+"主机的 libvirt 或 qemu 版本不支持内存设备和内存热插拔。Libvirt 至少是 "
+"1.2.14，QEMU 至少是 2.1。"
+
+#, python-format
+msgid "Error attaching memory device. Details: %(error)s"
+msgstr "连接内存设备时出错。详细信息：%(error)s"
+
+#, python-format
+msgid "Cannot start %(name)s. Virtual machine is already running."
+msgstr "无法启动 %(name)s。虚拟机正在运行。"
+
+#, python-format
+msgid "Cannot power off %(name)s. Virtual machine is shut off."
+msgstr "无法关闭 %(name)s 电源。虚拟机已关机。"
+
+#, python-format
+msgid "Cannot shutdown %(name)s. Virtual machine is shut off."
+msgstr "无法关闭 %(name)s。虚拟机已关机。"
+
+#, python-format
+msgid "Cannot reset %(name)s. Virtual machine is already shut off."
+msgstr "无法重置 %(name)s。虚拟机已关机。"
+
+msgid "Boot order must be a list. Devices accepted: hd, cdrom, fd or network."
+msgstr "引导顺序必须为列表。接受的设备：硬盘、CD-ROM、软盘或网络。"
+
+msgid "Bootmenu must be boolean. Values accepted: true of false."
+msgstr "Bootmenu 必须为布尔值。接受的值：true 或 false。"
+
+msgid "Graphic type not valid. Values accepted: vnc or spice."
+msgstr "图形类型无效。接受的值：vnc 或 spice。"
+
+#, python-format
+msgid "Migrate to localhost %(host)s is not allowed."
+msgstr "不允许迁移至本地主机 %(host)s。"
+
+#, python-format
+msgid ""
+"To migrate a virtual machine to the remote host %(host)s the user %(user)s "
+"must have password-less login to the remote host."
+msgstr ""
+"要将虚拟机迁移至远程主机 %(host)s，用户 %(user)s 必须以无密码方式登录远程主"
+"机。"
+
+#, python-format
+msgid "Can not migrate virtual machine %(name)s when its in %(state)s state."
+msgstr "虚拟机 %(name)s 处于 %(state)s 状态时，无法迁移该虚拟机。"
+
+#, python-format
+msgid "Failed to migrate virtual machine %(name)s due error: %(err)s"
+msgstr "无法迁移虚拟机 %(name)s，因为发生了错误：%(err)s"
+
+msgid "User name of the remote server must be a string."
+msgstr "远程服务器的用户名必须为字符串。"
+
+msgid "Destination host of the migration must be a string."
+msgstr "迁移的目标主机必须为字符串。"
+
+#, python-format
+msgid "Unable to create file %(path)s at %(host)s using user %(user)s."
+msgstr "无法在 %(host)s 上使用用户 %(user)s 创建文件 %(path)s。"
+
+#, python-format
+msgid "Unable to read disk size of %(path)s, error: %(error)s"
+msgstr "无法读取 %(path)s 的磁盘大小，因为发生了错误：%(error)s"
+
+#, python-format
+msgid ""
+"Unable to create disk image %(path)s at %(host)s using user %(user)s. Error: "
+"%(error)s"
+msgstr ""
+"无法在 %(host)s 上使用用户 %(user)s 创建磁盘映像 %(path)s。错误：%(error)s"
+
+#, python-format
+msgid ""
+"Unable to migrate virtual machine to remote host %(host)s with arch "
+"%(destarch)s using localhost with arch %(srcarch)s."
+msgstr ""
+"无法使用体系结构为 %(srcarch)s 的本地主机将虚拟机迁移至体系结构为 "
+"%(destarch)s 的远程主机 %(host)s。"
+
+#, python-format
+msgid ""
+"Unable to migrate virtual machine to remote host %(host)s with hypervisor "
+"%(desthyp)s because localhost uses hypervisor %(srchyp)s."
+msgstr ""
+"无法将虚拟机迁移至管理程序为 %(desthyp)s 的远程主机 %(host)s，因为本地主机使"
+"用管理程序 %(srchyp)s。"
+
+#, python-format
+msgid ""
+"Unable to determine remote host hypervisor and architecture. Error: %(error)s"
+msgstr "无法确定远程主机管理程序和体系结构。错误：%(error)s"
+
+#, python-format
+msgid ""
+"Unable to migrate virtual machine: subcores per core setting from "
+"localhostand remote host %(host)s differs."
+msgstr ""
+"无法迁移虚拟机：远程主机和本地主机 %(host)s 中的每个核心的子核心数设置不同。"
+
+#, python-format
+msgid ""
+"Unable to setup password-less login at remote host %(host)s using user "
+"%(user)s. Error: %(error)s"
+msgstr ""
+"无法通过用户 %(user)s 在远程主机 %(host)s 上设置无密码登录。错误：%(error)s"
+
+msgid "Password field must be a string."
+msgstr "密码字段必须为字符串。"
+
+msgid "Error creating local host ssh rsa key of user 'root'."
+msgstr "创建用户“root”的本地主机 ssh rsa 密钥时出错。"
+
+#, python-format
+msgid "%(param)s value (%(mem)sMiB) must be aligned to %(alignment)sMiB."
+msgstr "%(param)s 值 (%(mem)sMiB) 必须与 %(alignment)sMiB 匹配。"
+
+#, python-format
+msgid ""
+"Unable to update the following parameters while the VM is offline: %(params)s"
+msgstr "VM 脱机时无法更新以下参数：%(params)s"
+
+#, python-format
+msgid ""
+"Unable to update the following parameters while the VM is online: %(params)s"
+msgstr "VM 联机时无法更新以下参数：%(params)s"
+
+#, python-format
+msgid ""
+"VM %(name)s must have serial and console defined to open a web serial console"
+msgstr "VM %(name)s 必须已定义串行线路和控制台以打开 Web 串行控制台"
+
+#, python-format
+msgid "Impossible to get the serial console of %(name)s"
+msgstr "无法获取 %(name)s 的串行控制台"
+
+#, python-format
+msgid ""
+"Memory or Maximum Memory value is higher than amount supported by the host: "
+"%(memHost)sMiB."
+msgstr "“内存”或“最大内存”值高于主机支持的量：%(memHost)sMiB。"
+
+#, python-format
+msgid ""
+"Memory or Maximum Memory value is higher than maximum amount recommended: "
+"%(value)sTiB"
+msgstr "“内存”或“最大内存”值高于建议的最大量：%(value)sTiB。"
+
+msgid "Cannot update Maximum Memory when guest is running."
+msgstr "访客正在运行时，无法更新最大内存。"
+
+#, python-format
+msgid "Impossible to create %(dir)s directory."
+msgstr "无法创建 %(dir)s 目录。"
+
+#, python-format
+msgid ""
+"Either the guest %(name)s did not start to listen to the serial or it is not "
+"configured to use the serial console."
+msgstr "访客 %(name)s 未开始侦听串行线路或它未配置为使用串行控制台。"
+
+#, python-format
+msgid ""
+"Unable to retrieve Virt Viewer file for stopped virtual machine %(name)s"
+msgstr "无法检索已停止虚拟机 %(name)s 的 Virt Viewer 文件"
+
+#, python-format
+msgid ""
+"Error occured while retrieving the Virt Viewer file for virtual machine "
+"%(name)s : %(err)s"
+msgstr "检索虚拟机 %(name)s 的 Virt Viewer 文件时发生了错误：%(err)s"
+
+msgid "Virtual machine title must be a string"
+msgstr "虚拟机标题必须为字符串"
+
+msgid "Virtual machine description must be a string"
+msgstr "虚拟机描述必须为字符串"
+
+msgid "console parameter is only supported for s390x/s390 architecture."
+msgstr "仅 s390x/s390 体系结构支持控制台参数。"
+
+msgid "invalid console type, supported types are sclp/virtio."
+msgstr "无效控制台类型，受支持类型为 sclp/virtio。"
+
+#, python-format
+msgid ""
+"Unable to setup password-less login at remote host %(host)s using user "
+"%(user)s: remote directory %(sshdir)s does not exist."
+msgstr ""
+"无法通过用户 %(user)s 在远程主机 %(host)s 上设置无密码登录：远程目录 "
+"%(sshdir)s 不存在。"
+
+#, python-format
+msgid ""
+"Unable to create a password-less libvirt connection to the remote libvirt "
+"daemon at host %(host)s with the user %(user)s. Please verify the remote "
+"server libvirt configuration. More information: http://libvirt.org/auth."
+"html ."
+msgstr ""
+"无法通过用户 %(user)s 在主机 %(host)s 上创建与远程 libvirt 守护程序的无密码 "
+"libvirt 连接。请验证远程服务器 libvirt 配置。有关更多信息，请参阅 http://"
+"libvirt.org/auth.html。"
+
+msgid "'enable_rdma' must be of type boolean (true or false)."
+msgstr ""
+
+#, python-format
+msgid ""
+"VM %(vmid)s does not contain directly assigned host device %(dev_name)s."
+msgstr "VM %(vmid)s 不包含直接分配的主机设备 %(dev_name)s。"
+
+#, python-format
+msgid "The host device %(dev_name)s is not allowed to directly assign to VM."
+msgstr "不允许将主机设备 %(dev_name)s 直接分配给 VM。"
+
+msgid ""
+"No IOMMU groups found. Host PCI pass through needs IOMMU group to function "
+"correctly. Please enable Intel VT-d or AMD IOMMU in your BIOS, then verify "
+"the Kernel is compiled with IOMMU support. For Intel CPU, add "
+"'intel_iommu=on' to GRUB_CMDLINE_LINUX parameter in /etc/default/grub file. "
+"For AMD CPU, add 'iommu=pt iommu=1'."
+msgstr ""
+"找不到 IOMMU 组。主机 PCI 传递要求 IOMMU 组正常工作。请在 BIOS 中启用 Intel "
+"VT-d 或 AMD IOMMU，然后验证内核在编译时是否带有 IOMMU 支持。对于 Intel CPU，"
+"将“intel_iommu=on”添加至 /etc/default/grub 文件中的 GRUB_CMDLINE_LINUX 参数。"
+"对于 AMD CPU，添加“iommu=pt iommu=1”。"
+
+msgid "\"name\" should be a device name string"
+msgstr "“name”应该为设备名字符串"
+
+#, python-format
+msgid ""
+"The device %(name)s is probably in use by the host. Unable to attach it to "
+"the guest."
+msgstr "主机可能正在使用设备 %(name)s。无法将其连接至访客。"
+
+#, python-format
+msgid "Hot-(un)plug of device %(name)s is not supported."
+msgstr "不支持设备 %(name)s 的热插拔。"
+
+#, python-format
+msgid "Failed to attach %(device)s to %(vm)s"
+msgstr "无法将 %(device)s 连接至 %(vm)s"
+
+#, python-format
+msgid "VM %(vmid)s does not have a USB controller to accept PCI hotplug."
+msgstr ""
+
+#, python-format
+msgid "Interface %(iface)s does not exist in virtual machine %(name)s"
+msgstr "接口 %(iface)s 在虚拟机 %(name)s 中不存在"
+
+#, python-format
+msgid ""
+"Network %(network)s specified for virtual machine %(name)s does not exist"
+msgstr "为虚拟机 %(name)s 所指定的网络 %(network)s 不存在"
+
+msgid ""
+"Supported virtual machine interfaces type are network, ovs and macvtap.Type "
+"ovs and macvtap are only supported for s390x/s390 architecture."
+msgstr ""
+"受支持虚拟机接口类型为 network、ovs 和 macvtap。仅 s390x/s390 体系结构支持类"
+"型 ovs 和 macvtap。"
+
+msgid "Network name for virtual machine interface must be a string"
+msgstr "虚拟机接口的网络名必须是字符串"
+
+msgid "Invalid network model card specified for virtual machine interface"
+msgstr "为虚拟机接口所指定的网络模型卡无效"
+
+msgid "Specify type and network to add a new virtual machine interface"
+msgstr "指定类型和网络以添加新虚拟机接口"
+
+msgid "MAC Address must respect this format FF:FF:FF:FF:FF:FF"
+msgstr "MAC 地址必须遵循格式 FF:FF:FF:FF:FF:FF"
+
+#, python-format
+msgid "MAC Address %(mac)s already exists in virtual machine %(name)s"
+msgstr "MAC 地址 %(mac)s 已在虚拟机 %(name)s 中存在"
+
+msgid "Invalid MAC Address"
+msgstr "无效 MAC 地址"
+
+msgid "Cannot change MAC address of a running virtual machine"
+msgstr "无法更改正在运行的虚拟机的 MAC 地址"
+
+msgid "Type macvtap and ovs are only supported on s390x/s390 architecture."
+msgstr "仅 s390x/s390 体系结构支持类型 macvtap 和 ovs。"
+
+msgid "Source attribute is only supported on s390x/s390 architecture."
+msgstr "仅 s390x/s390 体系结构支持源属性。"
+
+msgid "If source is provided, only type supported are macvtap and ovs."
+msgstr "如果提供了源，那么仅支持类型 macvtap 和 ovs。"
+
+msgid "For type macvtap and ovs, source has to be provided"
+msgstr "对于类型 macvtap 和 ovs，必须提供源"
+
+msgid "Source name for virtual machine interface must be string"
+msgstr "虚拟机接口的源名称必须是字符串"
+
+msgid "Invalid source mode. Valid options are: bridge or vepa."
+msgstr "无效源方式。有效选项为：bridge 或 vepa。"
+
+#, python-format
+msgid "Template %(name)s already exists"
+msgstr "模板 %(name)s 已存在"
+
+#, python-format
+msgid "Source media %(path)s not found"
+msgstr "找不到源介质 %(path)s"
+
+#, python-format
+msgid ""
+"Network '%(network)s' specified for template %(template)s does not exist"
+msgstr "为模板 %(template)s 所指定的网络“%(network)s”不存在"
+
+#, python-format
+msgid ""
+"Storage pool %(pool)s specified for template %(template)s does not exist"
+msgstr "为模板 %(template)s 所指定的存储池“%(pool)s”不存在"
+
+#, python-format
+msgid "Invalid parameter '%(param)s' specified for CDROM."
+msgstr "为 CDROM 所指定的参数“%(param)s”无效。"
+
+#, python-format
+msgid "Network %(network)s specified for template %(template)s is not active"
+msgstr "为模板 %(template)s 所指定的网络 %(network)s 处于不活动状态"
+
+msgid "Template name must be a string"
+msgstr "模板名称必须是字符串"
+
+msgid "Template icon must be a path to the image"
+msgstr "模板图标必须是映像的路径"
+
+msgid "Template distribution must be a string"
+msgstr "模板分发必须是字符串"
+
+msgid "Template distribution version must be a string"
+msgstr "模板分发版本必须是字符串"
+
+msgid "The number of CPUs must be an integer greater than 0"
+msgstr "CPU 的数目必须是一个大于 0 的整数"
+
+msgid ""
+"Amount of memory and maximum memory (MB) must be an integer greater than 512"
+msgstr "内存量和最大内存量 (MB) 必须是大于 512 的整数"
+
+msgid "Template CDROM must be a local or remote ISO file"
+msgstr "模板 CDROM 必须是一个本地或远程 ISO 文件"
+
+#, python-format
+msgid "Invalid storage pool URI %(value)s specified for template"
+msgstr "为模板所指定的存储池 URI %(value)s 无效"
+
+msgid ""
+"Specify a path to source media (ISO, disk or remote ISO) to create a template"
+msgstr "指定源介质（ISO、磁盘或远程 ISO）的路径以创建模板"
+
+msgid "All networks for the template must be specified in a list."
+msgstr "必须以列表格式指定模板的所有网络。"
+
+msgid "Specify a volume to a template when storage pool is iSCSI or SCSI"
+msgstr "当存储池为 iSCSI 或 SCSI 时，请对模板指定卷。"
+
+#, python-format
+msgid "The volume %(volume)s is not in storage pool %(pool)s"
+msgstr "卷 %(volume)s 不在存储池 %(pool)s 中"
+
+#, python-format
+msgid "Unable to create template due error: %(err)s"
+msgstr "无法创建模板，因为错误：%(err)s"
+
+#, python-format
+msgid "Unable to delete template due error: %(err)s"
+msgstr "无法删除模板，因为错误：%(err)s"
+
+msgid "Disk size must be an integer greater than 1GB."
+msgstr "磁盘大小必须是大于 1 GB 的整数。"
+
+#, python-format
+msgid "Cannot identify base image %(path)s format"
+msgstr "无法识别基本映像 %(path)s 格式"
+
+msgid ""
+"When specifying CPU topology, each element must be an integer greater than "
+"zero."
+msgstr "指定 CPU 拓扑时，每个元素必须是大于零的整数。"
+
+msgid ""
+"Invalid disk image format. Valid formats: qcow, qcow2, qed, raw, vmdk, vpc."
+msgstr "无效磁盘映像格式。有效格式为：qcow、qcow2、qed、raw、vmdk 和 vpc。"
+
+msgid ""
+"When setting template disks, following parameters are required: 'index', "
+"'pool name', 'format', 'size' or 'volume' (for scsi/iscsi pools)"
+msgstr ""
+"设置模板磁盘时，需要以下参数：“index”、“pool "
+"name”、“format”、“size”或“volume”（对于 scsi/iscsi 池）"
+
+msgid "Disk format must be 'raw', for logical, iscsi, and scsi pools."
+msgstr "对于逻辑池，iSCSI 池和 SCSI 池，磁盘格式必须为“raw”。"
+
+msgid ""
+"Memory expects an object with one or both parameters: 'current' and "
+"'maxmemory'"
+msgstr "内存需要具有下列一个或两个参数的对象：“current”和“maxmemory”"
+
+#, python-format
+msgid ""
+"Memory value (%(mem)sMiB) must be equal or lesser than maximum memory value "
+"(%(maxmem)sMiB)"
+msgstr "内存值 (%(mem)sMiB) 必须等于或小于最大内存值 (%(maxmem)sMiB)"
+
+#, python-format
+msgid "Unable to update template due error: %(err)s"
+msgstr "无法更新模板，因为发生了错误：%(err)s"
+
+msgid "Parameter 'disks' requires at least one disk object"
+msgstr "参数“disks”需要至少一个磁盘对象"
+
+msgid ""
+"Invalid interface type. Type should be 'macvtap' for host network interface "
+"(Ethernet, Bond, VLAN) to be connected as direct MacVTap or 'ovs' for "
+"openvswitch host network interface to be connected as virtual switch to a VM."
+msgstr ""
+"无效接口类型。对于主机网络接口（Ethernet、Bond 和 VLAN），类型应该"
+"为“macvtap”才能作为直接 MacVTap 进行连接，对于 openvswitch，类型应该为“ovs”以"
+"作为虚拟交换机连接至 VM。"
+
+msgid "Interface name should be string."
+msgstr "接口名称应该为字符串。"
+
+msgid "Invalid interface mode. Valid options are: bridge or vepa."
+msgstr "无效接口方式。有效选项为：bridge 或 vepa。"
+
+msgid ""
+"Interfaces should be list of interfaces. Each interface should have name, "
+"type and mode(optional, only applicable for interfcae type 'macvtap'."
+msgstr ""
+"接口应该为接口列表。每个接口应该具有名称、类型和方式（可选，仅当接口类型"
+"为“macvtap”时才适用）。"
+
+msgid ""
+"Interface expects an object with parameters: 'name', 'type' and 'mode'. Name "
+"should be name of host network interface (Ethernet, Bond, VLAN) for type "
+"'macvtap' or the name of host openvswitch bridge interface for type 'ovs'. "
+"Mode (optional) is only applicable for interface type 'macvtap' to indicates "
+"whether packets will be delivered directly to target device (bridge) or to "
+"the external bridge (vepa-capable bridge)."
+msgstr ""
+"接口需要带有以下参数的对象：“name”、“type”和“mode”。对于类型“macvtap”，名称应"
+"该为主机网络接口（Ethernet、Bond 和 VLAN）的名称，对于类型“ovs”，名称应该为主"
+"机 openvswitch 网桥接口的名称。方式（可选）仅对接口类型“macvtap”适用，用于指"
+"示是直接将包传送至目标设备（网桥）还是传送至外部网桥（支持 vepa 的网桥）。"
+
+msgid "Interfaces parameter only supported on s390x or s390 architecture."
+msgstr "仅 s390x 或 s390 体系结构支持接口参数。"
+
+msgid "Storage without libvirt pool is not supported on this architecture"
+msgstr "此体系结构不支持不带 libvirt 池的存储器"
+
+#, python-format
+msgid "Error while creating the virtual disk for the guest. Details: %(err)s"
+msgstr "为访客创建虚拟盘时出错。详细信息：%(err)s"
+
+msgid ""
+"When setting template disks without libvirt, following parameters are "
+"required: 'index', 'format', 'path', 'size'"
+msgstr ""
+"设置不带 libvirt 的模板磁盘时，需要以下参"
+"数：“index”、“format”、“path”和“size”。"
+
+#, python-format
+msgid "Storage pool %(name)s already exists"
+msgstr "存储池 %(name)s 已存在"
+
+#, python-format
+msgid "Storage pool %(name)s does not exist"
+msgstr "存储池 %(name)s 不存在"
+
+#, python-format
+msgid "Specify %(item)s in order to create the storage pool %(name)s"
+msgstr "指定 %(item)s 以创建存储池 %(name)s"
+
+#, python-format
+msgid "Unable to delete active storage pool %(name)s"
+msgstr "无法删除活动存储池 %(name)s"
+
+#, python-format
+msgid "Unable to list storage pools. Details: %(err)s"
+msgstr "无法列示存储池。详细信息：%(err)s"
+
+#, python-format
+msgid "Unable to create storage pool %(name)s. Details: %(err)s"
+msgstr "无法创建存储池 %(name)s。详细信息：%(err)s"
+
+#, python-format
+msgid "Unable to activate storage pool %(name)s. Details: %(err)s"
+msgstr "无法激活存储池 %(name)s。详细信息：%(err)s"
+
+#, python-format
+msgid "Unable to deactivate storage pool %(name)s. Details: %(err)s"
+msgstr "无法取消激活存储池 %(name)s。详细信息：%(err)s"
+
+#, python-format
+msgid "Unable to delete storage pool %(name)s. Details: %(err)s"
+msgstr "无法删除存储池 %(name)s。详细信息：%(err)s"
+
+#, python-format
+msgid ""
+"Unable to create NFS Pool as export path %(path)s may block during mount"
+msgstr "无法创建 NFS 池，因为导出路径 %(path)s 可能在安装期间被阻塞"
+
+#, python-format
+msgid "Unable to create NFS Pool as export path %(path)s mount failed"
+msgstr "无法创建 NFS 池，因为导出路径 %(path)s 安装失败"
+
+#, python-format
+msgid "Unsupported storage pool type: %(type)s"
+msgstr "不受支持的存储池类型：%(type)s"
+
+#, python-format
+msgid "Error while retrieving storage pool XML to %(pool)s"
+msgstr "将存储池 XML 检索至 %(pool)s 时出错"
+
+msgid "Storage pool name must be a string without slashes (/)"
+msgstr "存储池名称必须是不带斜杠 (/) 的字符串"
+
+msgid ""
+"Supported storage pool types are dir, netfs, logical, iscsi, isci and kimchi-"
+"iso"
+msgstr "受支持的存储池类型为 dir、netfs、logical、iscsi、isci 和 kimchi-iso"
+
+msgid "Storage pool path must be a string"
+msgstr "存储池路径必须是字符串"
+
+msgid "Storage pool host must be a IP or hostname"
+msgstr "存储池主机必须是一个 IP 或主机名"
+
+msgid "Storage pool device must be the absolute path to the block device"
+msgstr "存储池设备必须是块设备的绝对路径"
+
+msgid "Storage pool devices parameter must be a list"
+msgstr "存储池设备参数必须是一个列表"
+
+msgid "Target IQN of an iSCSI pool must be a string"
+msgstr "iSCSI 池的目标 IQN 必须是字符串"
+
+msgid "Port of a remote storage server must be an integer between 1 and 65535"
+msgstr "远程存储服务器的端口必须是一个介于 1 到 65535 之间的整数"
+
+msgid "iSCSI target username must be a string"
+msgstr "iSCSI 目标用户名必须是字符串"
+
+msgid "iSCSI target password must be a string"
+msgstr "iSCSI 目标密码必须是字符串"
+
+msgid "Specify name and type to create a storage pool"
+msgstr "指定名称和类型以创建存储池"
+
+#, python-format
+msgid ""
+"%(disk)s is not a valid disk/partition. Could not add it to the pool "
+"%(pool)s."
+msgstr "%(disk)s 是无效磁盘/分区。无法将其添加至池 %(pool)s。"
+
+#, python-format
+msgid "Unable to extend logical pool %(pool)s. Details: %(err)s"
+msgstr "无法扩展逻辑池 %(pool)s。详细信息：%(err)s"
+
+msgid "The parameter disks only can be updated for logical storage pool."
+msgstr "只能更新逻辑存储池的参数磁盘。"
+
+msgid "The SCSI host adapter name must be a string."
+msgstr "SCSI 主机适配器名称必须是字符串。"
+
+msgid "The storage pool kimchi_isos is reserved for internal use"
+msgstr "存储池 kimchi_isos 已保留供内部使用"
+
+#, python-format
+msgid ""
+"Unable to activate NFS storage pool %(name)s. NFS server %(server)s is "
+"unreachable."
+msgstr "无法激活 NFS 存储池 %(name)s。NFS 服务器 %(server)s不可访问。"
+
+#, python-format
+msgid ""
+"Unable to deactivate NFS storage pool %(name)s. NFS server %(server)s is "
+"unreachable."
+msgstr "无法取消激活 NFS 存储池 %(name)s。NFS 服务器 %(server)s不可访问。"
+
+#, python-format
+msgid ""
+"Unable to deactivate pool %(name)s as it is associated with some templates"
+msgstr "无法取消激活池 %(name)s，因为它与某些模板相关联"
+
+#, python-format
+msgid "Unable to delete pool %(name)s as it is associated with some templates"
+msgstr "无法删除池 %(name)s，因为该池与某些模板关联"
+
+#, python-format
+msgid ""
+"A volume group named '%(name)s' already exists. Please, choose another name "
+"to create the logical pool."
+msgstr "名为“%(name)s”的卷组已存在。请选择另一名称以创建逻辑池。"
+
+#, python-format
+msgid "Unable to update database with deep scan information due error: %(err)s"
+msgstr "无法使用深度扫描信息更新数据库，因为发生了错误：%(err)s"
+
+#, python-format
+msgid ""
+"No volume group '%(name)s' found. Please, specify an existing volume group "
+"to create the logical pool from."
+msgstr "找不到卷组“%(name)s”。请指定现有卷组以通过其创建逻辑池。"
+
+#, python-format
+msgid "Unable to delete pool %(name)s as it is associated with guests: %(vms)s"
+msgstr "无法删除池 %(name)s，因为它与访客 %(vms)s 相关联"
+
+#, python-format
+msgid "Storage volume %(name)s already exists"
+msgstr "存储卷 %(name)s 已存在"
+
+#, python-format
+msgid "Storage volume %(name)s does not exist in storage pool %(pool)s"
+msgstr "存储卷 %(name)s 在存储池 %(pool)s 中不存在"
+
+#, python-format
+msgid ""
+"Unable to create storage volume %(volume)s because storage pool %(pool)s is "
+"not active"
+msgstr "无法创建存储卷 %(volume)s，因为存储池 %(pool)s 处于不活动状态"
+
+#, python-format
+msgid "Specify %(item)s in order to create storage volume %(volume)s"
+msgstr "指定 %(item)s 以创建存储卷 %(volume)s"
+
+#, python-format
+msgid ""
+"Unable to list storage volumes because storage pool %(pool)s is not active"
+msgstr "无法列示存储卷，因为存储池 %(pool)s 处于不活动状态"
+
+#, python-format
+msgid ""
+"Unable to create storage volume %(name)s in storage pool %(pool)s. Details: "
+"%(err)s"
+msgstr "无法在以下存储池中创建存储卷 %(name)s：%(pool)s。详细信息：%(err)s"
+
+#, python-format
+msgid "Unable to wipe storage volumes %(name)s. Details: %(err)s"
+msgstr "无法清除存储卷 %(name)s。详细信息：%(err)s"
+
+#, python-format
+msgid "Unable to delete storage volume %(name)s. Details: %(err)s"
+msgstr "无法删除存储卷 %(name)s。详细信息：%(err)s"
+
+#, python-format
+msgid "Unable to resize storage volume %(name)s. Details: %(err)s"
+msgstr "无法调整存储卷 %(name)s 的大小。详细信息：%(err)s"
+
+#, python-format
+msgid "Storage type %(type)s does not support volume create and delete"
+msgstr "存储类型 %(type)s 不支持创建和删除卷"
+
+msgid "Storage volume name must be a string"
+msgstr "存储卷名称必须是字符串"
+
+msgid "Storage volume allocation must be an integer number"
+msgstr "存储卷分配必须是一个整数数字"
+
+msgid ""
+"Storage volume format not supported. Valid formats: qcow, qcow2, qed, raw, "
+"vmdk, vpc."
+msgstr "存储卷格式不受支持。有效格式为：qcow、qcow2、qed、raw、vmdk 和 vpc。"
+
+msgid "Storage volume requires a volume name"
+msgstr "存储卷需要卷名"
+
+#, python-format
+msgid ""
+"Unable to update database with storage volume information due error: %(err)s"
+msgstr "无法使用存储卷信息更新数据库，因为错误：%(err)s"
+
+#, python-format
+msgid "Only one of parameter %(param)s can be specified"
+msgstr "只能指定一个 %(param)s 参数"
+
+#, python-format
+msgid "Create volume from %(param)s is not supported"
+msgstr "不支持根据 %(param)s 创建卷"
+
+msgid "Storage volume capacity must be an integer number."
+msgstr "存储卷容量必须是整数。"
+
+msgid "Storage volume URL must be http://, https://, ftp:// or ftps://."
+msgstr "存储卷 URL 必须是 http://、https://、ftp:// 或 ftps://。"
+
+#, python-format
+msgid "Unable to access file %(url)s. Please, check it."
+msgstr "无法访问文件 %(url)s。请检查该文件。"
+
+#, python-format
+msgid ""
+"Unable to clone storage volume '%(name)s' in pool '%(pool)s'. Details: "
+"%(err)s"
+msgstr ""
+"无法对以下池中的存储卷“%(name)s”进行克隆：“%(pool)s”。详细信息：%(err)s"
+
+msgid "Specify chunk data and its size to upload a file."
+msgstr "指定区块数据及其大小以上载文件。"
+
+msgid "In order to upload a storage volume, specify the 'upload' parameter."
+msgstr "要上载存储卷，请指定“upload”参数。"
+
+msgid ""
+"Unable to upload chunk data as it does not match with requested chunk size."
+msgstr "无法上载区块数据，因为它与所请求的区块大小不匹配。"
+
+#, python-format
+msgid "The storage volume %(vol)s is not under an upload process."
+msgstr "存储卷 %(vol)s 未包括在上载过程中。"
+
+msgid "The upload chunk data will exceed the storage volume size."
+msgstr "上载区块数据将超过存储卷大小。"
+
+#, python-format
+msgid "Unable to upload chunk data to storage volume. Details: %(err)s."
+msgstr "无法将区块数据上载至存储卷。详细信息：%(err)s。"
+
+#, python-format
+msgid "Interface %(name)s does not exist"
+msgstr "接口 %(name)s 不存在"
+
+#, python-format
+msgid ""
+"Failed to list interfaces. Invalid _inuse parameter. Supported options for "
+"_inuse are: %(supported_inuse)s"
+msgstr ""
+"无法列示接口。无效 _inuse 参数。_inuse 的受支持选项为：%(supported_inuse)s"
+
+#, python-format
+msgid "Network %(name)s already exists"
+msgstr "网络 %(name)s 已存在"
+
+#, python-format
+msgid "Network %(name)s does not exist"
+msgstr "网络 %(name)s 不存在"
+
+#, python-format
+msgid "Subnet %(subnet)s specified for network %(network)s is not valid."
+msgstr "对网络 %(network)s 指定的子网 %(subnet)s 无效。"
+
+msgid "Specify a network interface to create bridged or macvtap networks."
+msgstr "指定用于创建桥接网络或 macvtap 网络的网络接口。"
+
+#, python-format
+msgid "Unable to delete or update active network %(name)s"
+msgstr "无法删除或更新活动网络 %(name)s"
+
+#, python-format
+msgid "Interface %(iface)s specified for network %(network)s is already in use"
+msgstr "为网络 %(network)s 指定的接口 %(iface)s 已在使用中"
+
+msgid "Interface should be bare NIC, bonding or bridge device."
+msgstr "接口应该是空的 NIC、bonding 或网桥设备。"
+
+#, python-format
+msgid "Unable to create or update network %(name)s. Details: %(err)s"
+msgstr "无法创建或更新网络 %(name)s。详细信息：%(err)s"
+
+#, python-format
+msgid "Unable to find a free IP address for network '%(name)s'"
+msgstr "找不到网络“%(name)s”的可用 IP 地址"
+
+#, python-format
+msgid "The interface %(iface)s already exists."
+msgstr "接口 %(iface)s 已存在。"
+
+msgid "Network name must be a string without slashes (/) or quotes (\")"
+msgstr "网络名必须是不带斜杠 (/) 或引号 (\") 的字符串"
+
+msgid ""
+"Supported network types are isolated, NAT, macvtap, bridge, vepa and "
+"passthrough."
+msgstr ""
+"受支持的网络类型为：isolated、NAT、macvtap、bridge、vepa 和 passthrough。"
+
+msgid "Network subnet must be a string with IP address and prefix or netmask"
+msgstr "网络子网必须是具有 IP 地址以及前缀或网络掩码的字符串"
+
+msgid "Network interfaces must be an array."
+msgstr "网络接口必须为数组。"
+
+msgid "Network VLAN ID must be an integer between 1 and 4094"
+msgstr "网络 VLAN 标识必须为 1 到 4094 之间的整数"
+
+msgid "Specify name and type to create a Network"
+msgstr "指定名称和类型以创建网络"
+
+#, python-format
+msgid ""
+"Unable to delete or update network %(name)s as it is linked to some virtual "
+"machines (%(vms)s) and/or templates (%(tmpls)s)."
+msgstr ""
+
+#, python-format
+msgid ""
+"Unable to deactivate network %(name)s as it is linked to are some virtual "
+"machines (%(vms)s) and/or templates (%(tmpls)s)."
+msgstr ""
+
+#, python-format
+msgid "Bridge device %(name)s can not be the trunk device of a VLAN."
+msgstr "网桥设备 %(name)s 不能是 VLAN 的主要设备。"
+
+#, python-format
+msgid "Failed to activate interface %(iface)s: %(err)s."
+msgstr "未能激活接口 %(iface)s：%(err)s。"
+
+#, python-format
+msgid ""
+"Failed to activate interface %(iface)s. Please check the physical link "
+"status."
+msgstr "未能激活接口 %(iface)s。请检查物理链路状态。"
+
+#, python-format
+msgid "Failed to start network %(name)s. Details: %(err)s"
+msgstr "未能启动网络 %(name)s。详细信息：%(err)s"
+
+#, python-format
+msgid "Unable to redefine interface %(name)s. Details: %(err)s"
+msgstr "无法重新定义接口 %(name)s。详细信息：%(err)s"
+
+#, python-format
+msgid "Unable to create bridge %(name)s. Details: %(err)s"
+msgstr "无法创建网桥 %(name)s。详细信息：%(err)s"
+
+msgid ""
+"Unable to create bridge with NetworkManager enabled. Disable it and try "
+"again."
+msgstr "无法创建已启用网络管理器的网桥。请禁用它并重试。"
+
+msgid "Interface should be bare NIC or bonding."
+msgstr "接口应该是裸 NIC 或 bonding。"
+
+msgid "Network interfaces parameter must contain at least one interface."
+msgstr "网络接口参数必须包含至少一个接口。"
+
+msgid "Only one interface is allowed for 'bridge' and 'macvtap' networks."
+msgstr "“bridge”和“macvtap”网络只允许使用一个接口。"
+
+msgid "Subnet is not a valid parameter for this type of virtual network."
+msgstr "子网对于此类型的虚拟网络是无效参数。"
+
+msgid ""
+"VLAN ID and interfaces are not valid parameters for this type of virtual "
+"network."
+msgstr "VLAN 标识和接口对于此类型的虚拟网络是无效参数。"
+
+#, python-format
+msgid "Storage server %(server)s was not used by Kimchi"
+msgstr "Kimchi 未使用存储服务器 %(server)s"
+
+#, python-format
+msgid "Distro '%(name)s' does not exist"
+msgstr "Distro“%(name)s”不存在"
+
+#, python-format
+msgid "Node device '%(name)s' not found"
+msgstr "找不到节点设备“%(name)s”"
+
+msgid "Conflicting flag filters specified."
+msgstr "指定的标志过滤器有冲突。"
+
+msgid "Unable to choose a virtual machine name"
+msgstr "无法选择虚拟机名称"
+
+msgid "Cannot upgrade objectstore data."
+msgstr "无法升级对象库数据。"
+
+msgid "Invalid storage type. Types supported: 'cdrom', 'disk'"
+msgstr "无效存储类型。受支持的类型为：“cdrom”和“disk”"
+
+#, python-format
+msgid "The path '%(value)s' is not a valid local/remote path for the device"
+msgstr "路径“%(value)s”不是设备的有效本地/远程路径"
+
+msgid "Only CDROM path can be update."
+msgstr "只能更新 CDROM 路径。"
+
+#, python-format
+msgid ""
+"The storage device %(dev_name)s does not exist in the virtual machine "
+"%(vm_name)s"
+msgstr "存储设备 %(dev_name)s 在虚拟机 %(vm_name)s 中不存在"
+
+#, python-format
+msgid "Error while creating new storage device: %(error)s"
+msgstr "创建新存储设备时出错：%(error)s"
+
+#, python-format
+msgid "Error while updating storage device: %(error)s"
+msgstr "更新存储设备时出错：%(error)s"
+
+#, python-format
+msgid "Error while removing storage device: %(error)s"
+msgstr "除去存储设备时出错：%(error)s"
+
+msgid "Do not support IDE device hot plug"
+msgstr "不支持 IDE 设备热插拔"
+
+msgid ""
+"Specify type and path or type and pool/volume to add a new virtual machine "
+"disk"
+msgstr "指定类型和路径或者类型和池/卷以添加新的虚拟机磁盘"
+
+msgid "Specify path to update virtual machine disk"
+msgstr "指定路径以更新虚拟机磁盘"
+
+#, python-format
+msgid "Controller type %(type)s limitation of %(limit)s devices reached"
+msgstr "已达到控制器类型 %(type)s 限制 %(limit)s"
+
+#, python-format
+msgid "Cannot retrieve disk path information for given pool/volume: %(error)s"
+msgstr "无法检索给定池/卷的磁盘路径信息：%(error)s"
+
+msgid "Volume already in use by other virtual machine."
+msgstr "其他虚拟机已在使用卷。"
+
+msgid ""
+"Only one of path or pool/volume can be specified to add a new virtual "
+"machine disk"
+msgstr "只能指定路径或池/卷中的一个以添加新的虚拟机磁盘"
+
+#, python-format
+msgid ""
+"Volume chosen with format %(format)s does not fit in the storage type "
+"%(type)s"
+msgstr "格式为 %(format)s 的所选卷无法拟合存储类型 %(type)s"
+
+msgid "On s390x arch one of pool, path of dir_path must be specified"
+msgstr "在 s390x 体系结构上，必须指定池和路径 dir_path 的其中之一"
+
+msgid ""
+"On s390x arch 'format' must be specified while attaching disk to virtual "
+"machine"
+msgstr "在 s390x 体系结构上，将磁盘连接至虚拟机时必须指定“format”"
+
+#, python-format
+msgid "Virtual disk already exists on the system: %(disk_path)s"
+msgstr "虚拟盘已存在于系统上：%(disk_path)s"
+
+#, python-format
+msgid ""
+"Unable to create snapshot '%(name)s' on virtual machine '%(vm)s'. Details: "
+"%(err)s"
+msgstr "无法在以下虚拟机上创建快照“%(name)s”：“%(vm)s”。详细信息：%(err)s"
+
+#, python-format
+msgid "Snapshot '%(name)s' does not exist on virtual machine '%(vm)s'."
+msgstr "快照“%(name)s”在虚拟机“%(vm)s”上不存在。"
+
+#, python-format
+msgid ""
+"Unable to retrieve snapshot '%(name)s' on virtual machine '%(vm)s'. Details: "
+"%(err)s"
+msgstr "无法在以下虚拟机上检索快照“%(name)s”：“%(vm)s”。详细信息：%(err)s"
+
+#, python-format
+msgid "Unable to list snapshots on virtual machine '%(vm)s'. Details: %(err)s"
+msgstr "无法列示虚拟机“%(vm)s”上的快照。详细信息：%(err)s"
+
+#, python-format
+msgid ""
+"Unable to delete snapshot '%(name)s' on virtual machine '%(vm)s'. Details: "
+"%(err)s"
+msgstr "无法删除以下虚拟机上的快照“%(name)s”：“%(vm)s”。详细信息：%(err)s"
+
+#, python-format
+msgid ""
+"Unable to retrieve current snapshot of virtual machine '%(vm)s'. Details: "
+"%(err)s"
+msgstr "无法检索虚拟机“%(vm)s”的当前快照。详细信息：%(err)s"
+
+#, python-format
+msgid ""
+"Unable to revert virtual machine '%(vm)s' to snapshot '%(name)s'. Details: "
+"%(err)s"
+msgstr "无法将虚拟机“%(vm)s”还原到快照“%(name)s”。详细信息：%(err)s"
+
+#, python-format
+msgid ""
+"Unable to create snapshot of virtual machine '%(vm)s' because it contains a "
+"disk with format '%(format)s'; only 'qcow2' is supported."
+msgstr ""
+"无法创建虚拟机“%(vm)s”的快照，因为它包含格式为“%(format)s”的磁盘；仅“qcow2”受"
+"支持。"
+
+msgid ""
+"The number of vCPUs must be less than or equal the maximum number of vCPUs "
+"specified."
+msgstr "vCPU 数必须小于或等于所指定最大 vCPU 数。"
+
+msgid ""
+"When CPU topology is defined, maximum number of vCPUs must be a product of "
+"sockets, cores, and threads."
+msgstr "定义 CPU 拓扑后，最大 vCPU 数必须为套接字数、核心数和线程数的乘积。"
+
+msgid "This host (or current configuration) does not allow CPU topology."
+msgstr "此主机（或当前配置）不允许使用 CPU 拓扑。"
+
+msgid "The maximum number of vCPUs is too large for this system."
+msgstr "最大 vCPU 数对于此系统太大。"
+
+msgid ""
+"When CPU topology is defined, CPUs must be a multiple of the 'threads' "
+"number defined."
+msgstr ""
+
+msgid ""
+"When CPU topology is specified, sockets, cores and threads are required "
+"paramaters."
+msgstr "指定 CPU 拓扑后，sockets、cores 和 threads 是必需参数。"
+
+msgid ""
+"Parameter 'cpu_info' expects an object with fields among: 'vcpus', "
+"'maxvcpus', 'topology'."
+msgstr ""
+"参数“cpu_info”需要带有以下字段的对象：“vcpus”、“maxvcpus”和“topology”。"
+
+msgid ""
+"Parameter 'topology' expects an object with fields among: 'sockets', "
+"'cores', 'threads'."
+msgstr "参数“topology”需要带有以下字段的对象：“sockets”、“cores”和“threads”。"
+
+msgid "Unable to update Max CPU or CPU topology when guest is running."
+msgstr ""
+
+#, python-format
+msgid "Unable to hot plug/unplug CPUs. Details: %(err)s"
+msgstr "无法列示存储池。详细信息：%(err)s"
+
+#, python-format
+msgid "Invalid volume group name parameter: %(name)s."
+msgstr "无效卷组名称参数：%(name)s。"
+
+msgid ""
+"Unable to establish connection with libvirt. Please check your libvirt URI "
+"which is often defined in /etc/libvirt/libvirt.conf"
+msgstr ""
+"无法建立与 libvirt 的连接。请检查 libvirt URI，它通常是在 /etc/libvirt/"
+"libvirt.conf 中定义的"
+
+msgid ""
+"Libvirt service is not active. Please start the libvirt service in your host "
+"system."
+msgstr "Libvirt 服务不活动。请在主机系统中启动 libvirt 服务。"
+
+msgid "Failed to register the default event implementation."
+msgstr "无法注册缺省事件实现。"
+
+msgid "Failed to register timeout event."
+msgstr "无法注册超时事件。"
+
+msgid "Failed to Run the default event implementation."
+msgstr "无法运行缺省事件实现。"
+
+#, python-format
+msgid ""
+"I/O error on guest '%(vm)s': storage pool out of space for %(devAlias)s "
+"(%(srcPath)s)."
+msgstr ""
+"访客“%(vm)s”上发生 I/O 错误：存储池空间不足，无法供 %(devAlias)s "
+"(%(srcPath)s) 使用。"
+
+#, python-format
+msgid "Create virtual network '%(name)s' type '%(connection)s'"
+msgstr "创建虚拟网络“%(name)s”类型“%(connection)s”"
+
+#, python-format
+msgid "Remove virtual network '%(ident)s'"
+msgstr "移除虚拟网络“%(ident)s”"
+
+#, python-format
+msgid "Update virtual network '%(ident)s'"
+msgstr "更新虚拟网络“%(ident)s”"
+
+#, python-format
+msgid "Activate virtual network '%(ident)s'"
+msgstr "激活虚拟网络“%(ident)s”"
+
+#, python-format
+msgid "Deactivate virtual network '%(ident)s'"
+msgstr "取消激活虚拟网络“%(ident)s”"
+
+#, python-format
+msgid "Create storage pool '%(name)s' type '%(type)s'"
+msgstr "创建存储池“%(name)s”类型“%(type)s”"
+
+#, python-format
+msgid "Remove storage pool '%(ident)s'"
+msgstr "移除存储池“%(ident)s”"
+
+#, python-format
+msgid "Update storage pool '%(ident)s'"
+msgstr "更新存储池“%(ident)s”"
+
+#, python-format
+msgid "Activate storage pool '%(ident)s'"
+msgstr "激活存储池“%(ident)s”"
+
+#, python-format
+msgid "Deactivate storage pool '%(ident)s'"
+msgstr "取消激活存储池“%(ident)s”"
+
+#, python-format
+msgid "Create snapshot '%(name)s' at guest '%(vm)s'"
+msgstr "在访客“%(vm)s”上创建快照“%(name)s”"
+
+#, python-format
+msgid "Remove snapshot '%(ident)s' from guest '%(vm)s'"
+msgstr "从访客“%(vm)s”中移除快照“%(ident)s”"
+
+#, python-format
+msgid "Revert guest '%(vm)s' to snapshot '%(ident)s'"
+msgstr "将访客“%(vm)s”还原至快照“%(ident)s”"
+
+#, python-format
+msgid "Create template '%(name)s'"
+msgstr "创建模板“%(name)s”"
+
+#, python-format
+msgid "Remove template '%(ident)s'"
+msgstr "移除模板“%(ident)s”"
+
+#, python-format
+msgid "Update template '%(ident)s'"
+msgstr "更新模板“%(ident)s”"
+
+#, python-format
+msgid "Clone template '%(ident)s'"
+msgstr "克隆模板“%(ident)s”"
+
+#, python-format
+msgid "Create guest '%(name)s' from template '%(template)s'"
+msgstr "通过模板“%(template)s”创建访客“%(name)s”"
+
+#, python-format
+msgid "Remove guest '%(ident)s'"
+msgstr "移除访客“%(ident)s”"
+
+#, python-format
+msgid "Edit guest '%(ident)s'"
+msgstr "编辑访客“%(ident)s”"
+
+#, python-format
+msgid "Start guest '%(ident)s'"
+msgstr "启动访客“%(ident)s”"
+
+#, python-format
+msgid "Power off guest '%(ident)s'"
+msgstr "关闭访客“%(ident)s”电源"
+
+#, python-format
+msgid "Shutdown guest '%(ident)s'"
+msgstr "关闭访客“%(ident)s”"
+
+#, python-format
+msgid "Restart guest '%(ident)s'"
+msgstr "重新启动访客“%(ident)s”"
+
+#, python-format
+msgid "Connect to guest '%(ident)s' through novnc/spice"
+msgstr "通过 novnc/spice 连接至访客“%(ident)s”"
+
+#, python-format
+msgid "Clone guest '%(ident)s'"
+msgstr "克隆访客“%(ident)s”"
+
+#, python-format
+msgid "Migrate guest '%(ident)s' to '%(remote_host)s'"
+msgstr "将访客“%(ident)s”迁移至“%(remote_host)s”"
+
+#, python-format
+msgid "Suspend guest '%(ident)s'"
+msgstr "暂挂访客“%(ident)s”"
+
+#, python-format
+msgid "Resume guest '%(ident)s'"
+msgstr "恢复访客“%(ident)s”"
+
+#, python-format
+msgid "Connect to guest '%(ident)s' through serial"
+msgstr "通过串行线路连接至访客“%(ident)s”"
+
+#, python-format
+msgid "Attach host device '%(name)s' to guest '%(vmid)s'"
+msgstr "将主机设备“%(name)s”连接至访客“%(vmid)s”"
+
+#, python-format
+msgid "Detach host device '%(ident)s' from guest '%(vmid)s'"
+msgstr "从访客“%(vmid)s”拆离主机设备“%(ident)s”"
+
+#, python-format
+msgid "Attach network interface '%(network)s' to guest '%(vm)s'"
+msgstr "将网络接口“%(network)s”连接至访客“%(vm)s”"
+
+#, python-format
+msgid "Detach network interface '%(ident)s' from guest '%(vm)s'"
+msgstr "从访客“%(vm)s”拆离网络接口“%(ident)s”"
+
+#, python-format
+msgid "Update network interface '%(ident)s' at guest '%(vm)s'"
+msgstr "更新访客“%(vm)s”上的网络接口“%(ident)s”"
+
+#, python-format
+msgid "Attach %(type)s storage '%(path)s' to guest '%(vm)s'"
+msgstr "将 %(type)s 存储器“%(path)s”连接至访客“%(vm)s”"
+
+#, python-format
+msgid "Remove storage '%(ident)s' from guest '%(vm)s'"
+msgstr "从访客“%(vm)s”中移除存储器“%(ident)s”"
+
+#, python-format
+msgid "Update storage '%(ident)s' at guest '%(vm)s'"
+msgstr "更新访客“%(vm)s”上的存储器“%(ident)s”"
+
+#, python-format
+msgid "Create storage volume '%(name)s' at pool '%(pool)s'"
+msgstr "在池“%(pool)s”上创建存储卷“%(name)s”"
+
+#, python-format
+msgid "Remove storage volume '%(ident)s' from pool '%(pool)s'"
+msgstr "从池“%(pool)s”中移除存储卷“%(ident)s”"
+
+#, python-format
+msgid "Update storage volume '%(ident)s' at pool '%(pool)s'"
+msgstr "在池“%(pool)s”上更新存储卷“%(ident)s”"
+
+#, python-format
+msgid "Wipe storage volume '%(ident)s' off pool '%(pool)s'"
+msgstr "从池“%(pool)s”中擦除存储卷“%(ident)s”"
+
+#, python-format
+msgid "Resize storage volume '%(ident)s' at pool '%(pool)s' with size %(size)s"
+msgstr "将池“%(pool)s”上的存储卷“%(ident)s”调整为 %(size)s 大小"
+
+#, python-format
+msgid "Clone storage volume '%(ident)s' at pool '%(pool)s'"
+msgstr "在池“%(pool)s”上克隆存储卷“%(ident)s”"
+
+msgid "Create a New Virtual Machine"
+msgstr "创建新虚拟机"
+
+msgid "Virtual Machine Name"
+msgstr "虚拟机名称"
+
+msgid ""
+"The name used to identify the virtual machine. If omitted, a name will be "
+"chosen based on the template used."
+msgstr "用于标识虚拟机的名称。如果省略，那么将根据所使用模板选择名称。"
+
+msgid "Please create a template first."
+msgstr "请先创建模板。"
+
+msgid "Create a Template"
+msgstr "创建模板"
+
+msgid "Please choose a template."
+msgstr "请选择模板。"
+
+msgid "This template has invalid parameters."
+msgstr "此模板具有无效参数。"
+
+msgid "This template has invalid parameters"
+msgstr "此模板具有无效参数"
+
+msgid "OS"
+msgstr "操作系统"
+
+msgid "Version"
+msgstr "版本"
+
+msgid "Current CPUs"
+msgstr "当前 CPU 数"
+
+msgid "Memory"
+msgstr "内存"
+
+msgid "Create"
+msgstr "创建"
+
+msgid "Creating..."
+msgstr "正在创建..."
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Clone a Guest"
+msgstr "克隆访客"
+
+msgid ""
+"When the target guest has SCSI or iSCSI volumes, they will be cloned on the "
+"default storage pool. The same will happen when the target pool does not "
+"have enough space to clone the volumes. Do you want to continue?"
+msgstr ""
+"目标访客具有 SCSI 或 iSCSI 卷时，将在缺省存储池上克隆这些卷。如果目标池没有足"
+"够空间来克隆这些卷，那么会发生同样的事情。要继续吗？"
+
+msgid "Number of times to clone"
+msgstr "要克隆的次数"
+
+msgid "Continue"
+msgstr "继续"
+
+msgid "Edit Guest"
+msgstr "编辑访客"
+
+msgid "General"
+msgstr "常规"
+
+msgid "Storage"
+msgstr "存储器"
+
+msgid "Interface"
+msgstr "接口"
+
+msgid "Permission"
+msgstr "许可权"
+
+msgid "Pci"
+msgstr "PCI"
+
+msgid "Snapshot"
+msgstr "快照"
+
+msgid "Processor"
+msgstr "处理器"
+
+msgid "Name"
+msgstr "名称"
+
+msgid "Memory (MB)"
+msgstr "内存 (MB)"
+
+msgid "More"
+msgstr "更多"
+
+msgid "Max Memory (MB)"
+msgstr "最大内存 (MB)"
+
+msgid "Host does not support memory hotplug"
+msgstr "主机不支持内存热插拔"
+
+msgid "Icon"
+msgstr "图标"
+
+msgid "Console"
+msgstr "控制台"
+
+msgid "Nothing selected"
+msgstr "未选择任何内容"
+
+msgid "sclp"
+msgstr "sclp"
+
+msgid "virtio"
+msgstr "virtio"
+
+msgid ""
+"Select which items for boot order and grad them when needed to order them. "
+"At least one option must be selected."
+msgstr ""
+
+msgid "Add"
+msgstr "添加"
+
+msgid "Device"
+msgstr "设备"
+
+msgid "Path"
+msgstr "路径"
+
+msgid "Actions"
+msgstr "操作"
+
+msgid "Network"
+msgstr "网络"
+
+msgid "Type"
+msgstr "类型"
+
+msgid "MAC Address"
+msgstr "MAC 地址"
+
+msgid "IP Address"
+msgstr "IP 地址"
+
+msgid "Network/Interface"
+msgstr "网络/接口"
+
+msgid "Mode"
+msgstr "方式"
+
+msgid "Available system users and groups"
+msgstr "可用的系统用户和组"
+
+msgid "Users"
+msgstr "用户"
+
+msgid "Groups"
+msgstr "组"
+
+msgid "Selected system users and groups"
+msgstr "所选系统用户和组"
+
+msgid "User"
+msgstr "用户"
+
+msgid "All"
+msgstr "所有"
+
+msgid "To Add"
+msgstr "待添加"
+
+msgid "Added"
+msgstr "已添加"
+
+msgid "Filter"
+msgstr "过滤器"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Product"
+msgstr "产品"
+
+msgid "Vendor"
+msgstr "供应商"
+
+msgid "Loading"
+msgstr "正在装入"
+
+msgid "Created"
+msgstr "已创建"
+
+msgid "Current CPU Number"
+msgstr "当前 CPU 数"
+
+msgid ""
+"Current CPU must be equal or lower than the Maximum CPU value. If a topology "
+"is set, it must be also be a multiple of the 'threads' value."
+msgstr ""
+
+msgid "Max CPU"
+msgstr "最大 CPU 数"
+
+msgid ""
+"Unable to edit maximum CPU or CPU topology when editing a running or paused "
+"virtual machine."
+msgstr ""
+
+msgid ""
+"If a topology is set, this value will be the product of sockets * times * "
+"cores."
+msgstr ""
+
+msgid "Manually set CPU topology"
+msgstr "手动设置 CPU 拓扑"
+
+msgid "Sockets"
+msgstr ""
+
+msgid "Cores"
+msgstr "核心数"
+
+msgid "Threads"
+msgstr "线程数"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Replace"
+msgstr "替换"
+
+msgid "Detach"
+msgstr "拆离"
+
+msgid "Remove"
+msgstr "移除"
+
+msgid "Edit"
+msgstr "编辑"
+
+msgid "LDAP User ID,e.g.foo@foo.com"
+msgstr "LDAP 用户标识，如 foo@foo.com"
+
+msgid "Revert"
+msgstr "还原"
+
+msgid "Running"
+msgstr "正在运行"
+
+msgid "Disconnected"
+msgstr "已断开连接"
+
+msgid "Starting"
+msgstr "正在启动"
+
+msgid "Crashed"
+msgstr "已崩溃"
+
+msgid "Unknown"
+msgstr "未知"
+
+msgid "Paused"
+msgstr "已暂停"
+
+msgid "Suspended"
+msgstr "已暂挂"
+
+msgid "Resetting"
+msgstr "正在重置"
+
+msgid "View Console"
+msgstr "查看控制台"
+
+msgid "View Serial"
+msgstr "查看序列号"
+
+msgid "Clone"
+msgstr "克隆"
+
+msgid "Migrate"
+msgstr "迁移"
+
+msgid "Reset"
+msgstr "重置"
+
+msgid "Pause"
+msgstr "暂停"
+
+msgid "Resume"
+msgstr "恢复"
+
+msgid "Shut Down"
+msgstr "关闭"
+
+msgid "Start"
+msgstr "启动"
+
+msgid "Power Off"
+msgstr "断电"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "No Data Available"
+msgstr "没有可用数据"
+
+msgid "Processors Utilization"
+msgstr "处理器利用率"
+
+msgid "Memory Utilization"
+msgstr "内存利用率"
+
+msgid "Storage I/O"
+msgstr "存储器 I/O"
+
+msgid "Network I/O"
+msgstr "网络 I/O"
+
+msgid "Migrate a Guest"
+msgstr "迁移访客"
+
+msgid ""
+"Disclaimer: This process cannot be stopped after started, can take a long "
+"time to complete and will turn off the VM on this Hypervisor when it is "
+"successfully migrated to the remote destination."
+msgstr ""
+"免责声明：此进程启动后无法停止，可能需要很长时间完成，成功迁移至远程目标后将"
+"在此管理程序上关闭 VM。"
+
+msgid "Remote Server"
+msgstr "远程服务器"
+
+msgid "IP Address or Hostname"
+msgstr "IP 地址或主机名"
+
+msgid ""
+"The following fields are optional. Fill them if you want Kimchi to setup a "
+"password-less ssh session between the localhost and the remote host. The "
+"setup process will only be successful if the user has 'SUDO ALL' permission "
+"in the remote machine."
+msgstr ""
+"下列字段是可选的。如果希望 Kimchi 设置本地主机与远程主机之间的无密码 ssh 会"
+"话，请填写这些字段。仅当用户在远程机器中具有“SUDO ALL”许可权时，此设置过程才"
+"会成功。"
+
+msgid "Username of the remote host"
+msgstr "远程主机的用户名"
+
+msgid "Password"
+msgstr "密码"
+
+msgid "Password of the user in the remote host"
+msgstr "远程主机中的用户的密码"
+
+msgid "Use RDMA transport"
+msgstr ""
+
+msgid ""
+"Check this option only if RDMA is properly configured in both source and "
+"destination hosts, otherwise migration will fail."
+msgstr ""
+
+msgid "Delete this VM when the migration is completed"
+msgstr "迁移完成时删除此 VM"
+
+msgid "Add a Storage Device to VM"
+msgstr "将存储设备添加至 VM"
+
+msgid "Device Type"
+msgstr "设备类型"
+
+msgid ""
+"The device type. Currently, \"cdrom\" and \"disk\" are supported. If the "
+"guest is running, only \"disk\" is supported."
+msgstr ""
+"设备类型。目前，“cdrom”和“disk”受支持。如果访客正在运行，那么仅“disk”受支持。"
+
+msgid "Create a new disk"
+msgstr "创建新的磁盘"
+
+msgid "Select an existing disk"
+msgstr "选择现有磁盘"
+
+msgid "Source"
+msgstr "源"
+
+msgid "Storage based on Libvirt pool or direct block device"
+msgstr "基于 Libvirt 池的存储器或直接块设备"
+
+msgid "Storage Pool"
+msgstr "存储池"
+
+msgid "Storage pool to create the volume in"
+msgstr "用于创建卷的存储池"
+
+msgid "Disk Size (GB)"
+msgstr "磁盘大小 (GB)"
+
+msgid "New disk size to be created"
+msgstr "要创建的新磁盘大小"
+
+msgid "Format"
+msgstr "格式"
+
+msgid "Format of the new disk to be created"
+msgstr "要创建的新磁盘的格式"
+
+msgid "Directory Path"
+msgstr "目录路径"
+
+msgid "Provide a directory path"
+msgstr "提供目录路径"
+
+msgid "Storage pool in which the volume is located in"
+msgstr "卷所在的存储池"
+
+msgid "Storage Volume"
+msgstr "存储卷"
+
+msgid "Storage volume to be attached"
+msgstr "要连接的存储卷"
+
+msgid "Disk Path"
+msgstr "磁盘路径"
+
+msgid "Provide a block device"
+msgstr "提供块设备"
+
+msgid "File Path"
+msgstr "文件路径"
+
+msgid "The ISO file path in the server for CDROM."
+msgstr "CDROM 服务器中的 ISO 文件。"
+
+msgid "Attach"
+msgstr "连接"
 
 msgid "Host"
 msgstr "主机"
 
 msgid "Guests"
-msgstr "客户机"
+msgstr "访客"
 
 msgid "Templates"
 msgstr "模板"
 
-msgid "Storage"
-msgstr "存储"
-
-msgid "Network"
-msgstr "网络"
-
-msgid "Failed to get application configuration"
-msgstr "获取应用配置失败"
-
 msgid "This is not a valid Linux path"
-msgstr "这不是一个有效的Linux路径"
-
-msgid "This is not a valid URL."
-msgstr "这不是一个有效的URL"
-
-msgid "No such data available."
-msgstr "没有可用的数据"
-
-msgid ""
-"Can not contact the host system. Verify the host system is up and that you "
-"have network connectivity to it. HTTP request response %1. "
-msgstr ""
-"连接不上主机。请确保主机系统已启动，并且能通过网络连接主机。HTTP请求响应：%1"
+msgstr "这是无效 Linux 路径"
 
 msgid "Unable to read file."
-msgstr ""
+msgstr "无法读取文件。"
 
 msgid "Error while uploading file."
-msgstr ""
+msgstr "上载文件时出错。"
 
 msgid "Delete Confirmation"
 msgstr "删除确认"
@@ -165,260 +2007,121 @@ msgstr "删除确认"
 msgid "OK"
 msgstr "确定"
 
-msgid "Cancel"
-msgstr "取消"
-
 msgid "Confirm"
 msgstr "确认"
-
-msgid "Create"
-msgstr "创建"
 
 msgid "Warning"
 msgstr "警告"
 
-msgid "Save"
-msgstr "保存"
-
-msgid "Creating..."
-msgstr "正在创建..."
-
 msgid "Cloning..."
-msgstr ""
+msgstr "正在克隆..."
 
-msgid "Loading..."
-msgstr "正在加载..."
+msgid "Saving..."
+msgstr "正在保存..."
 
-msgid "An error occurred while retrieving system information."
-msgstr ""
-
-msgid "Retry"
-msgstr "重试"
-
-msgid "Detailed message:"
-msgstr "详细消息："
+msgid "Migrating..."
+msgstr "正在迁移..."
 
 msgid "No ISO found"
-msgstr "没有发现ISO文件"
+msgstr "找不到 ISO"
 
-msgid "This is not a valid ISO file."
-msgstr "这不是一个有效的ISO文件"
+msgid "Add Template"
+msgstr "添加模板"
 
 msgid "This may take a long time. Do you want to continue?"
-msgstr "这需要一段时间。是否继续？"
-
-msgid "This will permanently delete the template. Would you like to continue?"
-msgstr "这将永久删除模板。是否继续？"
-
-msgid "Unable to shut down system as there are some virtual machines running!"
-msgstr "有虚拟机在运行，不能关闭主机。"
-
-msgid "Max:"
-msgstr "最大："
-
-msgid "Utilization"
-msgstr "利用率"
-
-msgid "Available"
-msgstr "可利用的"
-
-msgid "Read Rate"
-msgstr "读速率"
-
-msgid "Write Rate"
-msgstr "写速率"
-
-msgid "Received"
-msgstr "接收"
-
-msgid "Sent"
-msgstr "发送"
+msgstr "可能需要较长时间。要继续吗？"
 
 msgid ""
-"Shutting down or restarting host will cause unsaved work lost. Continue to "
-"shut down/restarting?"
-msgstr "关闭或者重启主机会导致没有保存的工作丢失。继续关机/重启？"
+"This will permanently delete the %1 template. Would you like to continue?"
+msgstr "这将永久删除 %1 模板。要继续吗？"
+
+msgid "View Table"
+msgstr "查看表"
+
+msgid "View Gallery"
+msgstr "查看库"
+
+msgid "Not Available"
+msgstr "不可用"
+
+msgid "Please check the invalid Storage Pools"
+msgstr "请检查无效存储池"
+
+msgid "Please check the invalid Storage Pools or Paths"
+msgstr "请检查无效存储池或路径"
+
+msgid "macvtap"
+msgstr "macvtap"
+
+msgid "ovs"
+msgstr "ovs"
+
+msgid "network"
+msgstr "网络"
 
 msgid ""
-"Repository will be removed permanently and can't be recovered. Do you want "
-"to continue?"
-msgstr "软件仓库将被永久删除，不能恢复。是否继续？"
-
-msgid "Repositories"
-msgstr "软件仓库"
-
-msgid "ID"
-msgstr "标识符"
-
-msgid "Name"
-msgstr "名称"
-
-msgid "Base URL"
-msgstr "基本URL"
-
-msgid "Is Mirror"
-msgstr "是否为镜像"
-
-msgid "URL Args"
-msgstr "URL参数"
-
-msgid "Enabled"
-msgstr "已启用"
-
-msgid "GPG Check"
-msgstr "GPG校验"
-
-msgid "GPG Key"
-msgstr "GPG键"
-
-msgid "Add"
-msgstr "增加"
-
-msgid "Edit"
-msgstr "编辑"
-
-msgid "Remove"
-msgstr "删除"
-
-msgid "Enable"
-msgstr "使能"
-
-msgid "Disable"
-msgstr "禁用"
-
-msgid "Software Updates"
-msgstr "软件更新"
-
-msgid "Package Name"
-msgstr "软件包名称"
-
-msgid "Version"
-msgstr "版本"
-
-msgid "Architecture"
-msgstr "体系结构"
-
-msgid "Repository"
-msgstr "软件仓库"
-
-msgid "Update All"
-msgstr "更新所有"
-
-msgid "Updating..."
-msgstr "正在更新..."
-
-msgid "Failed to retrieve packages update information."
-msgstr "查找软件包更新信息失败。"
-
-msgid "Failed to update package(s)."
-msgstr "更新软件包失败"
-
-msgid ""
-"Debug report will be removed permanently and can't be recovered. Do you want "
-"to continue?"
-msgstr "诊断报告将被永久删除，并且不能恢复。是否继续？"
-
-msgid "Debug Reports"
-msgstr "主机诊断报告"
-
-msgid "Generated Time"
-msgstr "生成时间"
-
-msgid "Generate"
-msgstr "生成"
-
-msgid "Generating..."
-msgstr "正在生成..."
-
-msgid "Rename"
-msgstr "重命名"
-
-msgid "Download"
-msgstr "下载"
-
-msgid ""
-"Report name should contain only letters, digits, underscore ('_') and/or "
-"hyphen ('-')."
-msgstr "报告名字中只能包含字母、数字、下划线('_')和连字符('-')"
-
-msgid "Pending..."
-msgstr "正在加载..."
-
-msgid "Report name is the same as the original one."
-msgstr "报告名称与原始名称重复。"
-
-msgid ""
-"This will delete the virtual machine and its virtual disks. This operation "
-"cannot be undone. Would you like to continue?"
-msgstr "这将删除虚拟机和它的虚拟磁盘。该操作不能撤销，继续吗？"
+"This will delete the %1 virtual machine and its virtual disks. This "
+"operation cannot be undone. Would you like to continue?"
+msgstr "这将删除 %1 虚拟机及其虚拟盘。此操作无法撤销。要继续吗？"
 
 msgid "Power off Confirmation"
-msgstr "关闭电源确认"
+msgstr "断电确认"
 
 msgid ""
 "This action may produce undesirable results, for example unflushed disk "
-"cache in the guest. Would you like to continue?"
-msgstr "这样做可能导致不良后果，比如客户机磁盘缓存未刷新，确认要继续吗？"
+"cache in the %1 guest. Would you like to continue?"
+msgstr ""
+"此操作可能产生意外结果，例如，%1 访客中出现未刷新的磁盘高速缓存。要继续吗？"
 
 msgid "Reset Confirmation"
 msgstr "重置确认"
 
 msgid ""
-"There is a risk of data loss caused by reset without the guest OS shutdown. "
-"Would you like to continue?"
-msgstr "在客户机操作系统未关闭的情况下重置有风险导致数据丢失，确认要继续吗？"
+"There is a risk of data loss caused by reset without the %1 guest OS "
+"shutdown. Would you like to continue?"
+msgstr ""
+"如果不关闭 %1 访客操作系统，那么会有因为重置而导致的数据丢失风险。要继续吗？"
 
 msgid "Shut Down Confirmation"
-msgstr "关机确认"
+msgstr "关闭确认"
 
-msgid "Note the guest OS may ignore this request. Would you like to continue?"
-msgstr "注意，客户机操作系统可能会忽略这个请求，确认要继续吗？"
+msgid ""
+"Note the %1 guest OS may ignore this request. Would you like to continue?"
+msgstr "注意，%1 访客操作系统可能会忽略此请求。要继续吗？"
 
 msgid "Virtual Machine delete Confirmation"
 msgstr "虚拟机删除确认"
 
 msgid ""
-"This virtual machine is not persistent. Power Off will delete it. Continue?"
-msgstr "该虚拟机不是一个稳定的虚拟机，关机将会删除它，是否继续？"
+"The %1 virtual machine is not persistent. Power Off will delete it. Continue?"
+msgstr "%1 虚拟机不是持久虚拟机。断电会将其删除。要继续吗？"
+
+msgid "Add Guest"
+msgstr ""
+
+msgid "Input is not a number"
+msgstr "输入不是数字"
+
+msgid "Memory value cannot be higher than Max Memory value"
+msgstr "内存值不能高于最大内存值"
 
 msgid ""
-"When the target guest has SCSI or iSCSI volumes, they will be cloned on "
-"default storage pool. The same will happen when the target pool does not "
-"have enough space to clone the volumes. Do you want to continue?"
+"For better performance it is recommended a threads per core value not "
+"greater than %1."
 msgstr ""
-"当目标客户机使用SCSI或者iSCSI存储卷时，这些存储卷的副本将被放置于默认存储池"
-"中。在目标存储池没有足够空间放置其他存储卷的时候也会如此。确认继续？"
 
 msgid ""
 "This CDROM will be detached permanently and you can re-attach it. Continue "
 "to detach it?"
-msgstr "CDROM将被永久卸载，你可以重新装载它。继续卸载？"
-
-msgid "Attach"
-msgstr "装载"
+msgstr "此 CDROM 将永久拆离，您可重新连接该 CDROM。要继续拆离吗？"
 
 msgid "Attaching..."
-msgstr "正在装载"
-
-msgid "Replace"
-msgstr "替换"
-
-msgid "Replacing..."
-msgstr "正在替换..."
-
-msgid "Successfully attached!"
-msgstr "成功装载"
-
-msgid "Successfully replaced!"
-msgstr "成功替换"
-
-msgid "Successfully detached!"
-msgstr "成功卸载"
+msgstr "正在连接..."
 
 msgid ""
 "This disk will be detached permanently and you can re-attach it. Continue to "
 "detach it?"
-msgstr "该磁盘将会被永久卸载，你可以重新添加它，继续执行卸载操作吗?"
+msgstr "此磁盘将永久拆离，您可重新连接该磁盘。要继续拆离吗？"
 
 msgid "interface:"
 msgstr "接口："
@@ -427,110 +2130,110 @@ msgid "address:"
 msgstr "地址："
 
 msgid "link_type:"
-msgstr "连接类型："
+msgstr "链接类型："
 
 msgid "block:"
 msgstr "块："
 
 msgid "drive_type:"
-msgstr "设备类型："
+msgstr "驱动类型："
 
 msgid "model:"
-msgstr "模型："
+msgstr "型号："
 
 msgid "Affected devices:"
-msgstr "被影响的设备："
+msgstr "受影响的设备："
 
-msgid "The VLAN id must be between 1 and 4094."
-msgstr "VLAN 标识符必须在1至4094之间"
+msgid "Less"
+msgstr "更少"
+
+msgid "Successfully attached device to VM"
+msgstr "已将设备成功连接至 VM"
+
+msgid "Successfully detached device from VM"
+msgstr "已成功从 VM 拆离设备"
+
+msgid "Following devices will be affected, confirm?"
+msgstr "以下设备将受影响，是否确认？"
+
+msgid "Bridge"
+msgstr "网桥"
+
+msgid "Vepa"
+msgstr "Vepa"
+
+msgid "None"
+msgstr "无"
 
 msgid "unavailable"
-msgstr "无法获取"
+msgstr "不可用"
 
 msgid ""
 "This action will interrupt network connectivity for any virtual machine that "
-"depend on this network."
-msgstr "﻿此操作将中断依赖此网络的虚拟机的网络连接。"
+"depend on the %1 network."
+msgstr "此操作将中断依赖于 %1 网络的任何虚拟机的网络连接。"
 
-msgid "Create a network"
-msgstr "创建一个网络"
+msgid "Add Network"
+msgstr ""
 
 msgid ""
-"This network is not persistent. Instead of stop, this action will "
+"The %1 network is not persistent. Instead of stop, this action will "
 "permanently delete it. Would you like to continue?"
 msgstr ""
-"这是一个临时的网络配置，该操作会永久地删除这个网络而不是停止其运行，确定要继"
-"续吗？"
+"%1 网络不是持久网络。此操作将永久删除此网络，而不是停止此网络。要继续吗？"
 
 msgid ""
 "The bridged VLAN tag may not work well with NetworkManager enabled. You "
 "should consider disabling it."
 msgstr ""
+"在启用了网络管理器的情况下，桥接 VLAN 标记的工作情况可能不良。应考虑将其禁"
+"用。"
 
 msgid ""
-"This will permanently delete the storage pool. Would you like to continue?"
-msgstr "这将永久删除存储池。是否继续？"
+"This will permanently delete the %1 storage pool. Would you like to continue?"
+msgstr "这将永久删除 %1 存储池。要继续吗？"
 
 msgid "This storage pool is empty."
-msgstr "这个存储池为空"
+msgstr "此存储池为空。"
 
 msgid ""
 "It will format your disk and you will loose any data in there, are you sure "
 "to continue? "
-msgstr "你的磁盘将会格式化，磁盘上的数据会丢失，你确定要继续吗？"
+msgstr "它将格式化磁盘，并且您将丢失其中的所有数据，确定要继续吗？"
 
 msgid "SCSI Fibre Channel"
-msgstr "SCSI光纤通道"
+msgstr "SCSI 光纤通道"
 
 msgid "No SCSI adapters found."
-msgstr "没有发现SCSI适配器"
+msgstr "找不到任何 SCSI 适配器。"
 
 msgid "Loading iSCSI targets..."
-msgstr "读取iSCSI目标..."
+msgstr "正在装入 iSCSI 目标..."
 
 msgid "No iSCSI found. Please input one."
-msgstr "未能找到iSCSI,请输入一个。"
+msgstr "找不到 iSCSI。请输入一个。"
 
 msgid "Failed to load iSCSI targets."
-msgstr "读取iSCSI目标失败。"
+msgstr "无法装入 iSCSI 目标。"
 
-msgid "The storage pool name can not be blank."
-msgstr "存储池的名称不能为空。"
+msgid "Would you like to continue?"
+msgstr "要继续吗？"
 
-msgid "The storage pool path can not be blank."
-msgstr "存储池的路径不能为空。"
-
-msgid "NFS server mount path can not be blank."
-msgstr "NFS服务器挂载路径不能为空。"
-
-msgid "Invalid NFS mount path."
-msgstr "无效的NFS挂载路径。"
-
-msgid "No logical device selected."
-msgstr "没有选择逻辑设备。"
-
-msgid "The iSCSI target can not be blank."
-msgstr "iSCSI目标不能为空。"
-
-msgid "Server name can not be blank."
-msgstr "服务器不能为空。"
-
-msgid "This is not a valid Server Name or IP. Please, modify it."
-msgstr "这不是你个有效的服务器名称或IP地址，请对其进行修改。"
-
-msgid "Looking for available partitions ..."
-msgstr "查找有效的分区 ..."
+msgid "This will permanently delete the following storage volumes: %1"
+msgstr "这将永久删除以下存储卷：%1"
 
 msgid "No available partitions found."
-msgstr "没有发现模板。"
+msgstr "找不到任何可用分区。"
 
 msgid ""
-"This storage pool is not persistent. Instead of deactivate, this action will "
-"permanently delete it. Would you like to continue?"
-msgstr "对于非持久存储池，这个操作将会永久删除存储池而不是停用。是否继续？"
+"The %1 storage pool is not persistent. Instead of deactivate, this action "
+"will permanently delete it. Would you like to continue?"
+msgstr ""
+"%1 存储池不是持久存储池。此操作将永久删除此存储池，而不是取消激活此存储池。要"
+"继续吗？"
 
 msgid "Unable to retrieve partitions information."
-msgstr "未能找到分区信息。"
+msgstr "无法检索分区信息。"
 
 msgid "In progress..."
 msgstr "正在进行..."
@@ -538,1389 +2241,412 @@ msgstr "正在进行..."
 msgid "Failed!"
 msgstr "失败！"
 
+msgid "No LVM found in the system."
+msgstr "在系统中找不到 LVM。"
+
+msgid "This will permanently wipe the following storage volumes: %1"
+msgstr "这将永久擦除以下存储卷：%1"
+
+msgid "Wipe Confirmation"
+msgstr "擦除确认"
+
+msgid "Select one or more partitions to be added to the logical pool %1:"
+msgstr "选择一个或多个要添加到逻辑池 %1 的分区："
+
+msgid "Add Storage"
+msgstr "添加存储器"
+
+msgid "DIR"
+msgstr "DIR"
+
+msgid "NFS"
+msgstr "NFS"
+
+msgid "iSCSI"
+msgstr "iSCSI"
+
+msgid "LOGICAL"
+msgstr "LOGICAL"
+
+msgid "device"
+msgstr "设备"
+
+msgid "path"
+msgstr "路径"
+
+msgid "size (GiB)"
+msgstr "大小 (GiB)"
+
+msgid "free size (GiB)"
+msgstr "可用大小 (GiB)"
+
+msgid "Invalid NFS mount path."
+msgstr "NFS 安装路径无效。"
+
+msgid "No logical device selected."
+msgstr "未选择任何逻辑设备。"
+
+msgid "This is not a valid Server Name or IP. Please, modify it."
+msgstr "这不是有效的服务器名称或 IP。请对其进行修改。"
+
 msgid "CDROM path needs to be a valid local/remote path and cannot be blank."
-msgstr "CDROM路径需要一个有效的本地/远程路径且不能为空。"
+msgstr "CDROM 路径必须是有效的本地/远程路径，并且不能为空白。"
 
 msgid "Disk pool or volume cannot be blank."
-msgstr "存储池或卷不能为空"
+msgstr "磁盘池或卷不能为空白。"
 
-msgid "Session timeout, please re-login."
-msgstr "登录超时，请重新登录。"
+msgid ""
+"Disk size or Format or Directory path cannot be blank and Directory path "
+"needs to be a valid local/remote path."
+msgstr "磁盘大小、格式或目录路径不能为空白，目录路径必须为有效本地/远程路径。"
+
+msgid "Disk path needs to be a valid local/remote path and cannot be blank."
+msgstr "磁盘路径必须是有效的本地/远程路径，并且不能为空白。"
+
+msgid "Storage pool or Disk size or Format cannot be blank."
+msgstr "存储池、磁盘大小或格式不能为空白。"
+
+msgid "cdrom"
+msgstr "cdrom"
+
+msgid "disk"
+msgstr "磁盘"
+
+msgid "Pool"
+msgstr "池"
+
+msgid "qcow"
+msgstr "qcow"
+
+msgid "qcow2"
+msgstr "qcow2"
+
+msgid "qed"
+msgstr "qed"
+
+msgid "raw"
+msgstr "原始"
+
+msgid "vmdk"
+msgstr "vmdk"
+
+msgid "vpc"
+msgstr "vpc"
+
+msgid "Create a network"
+msgstr "创建网络"
+
+msgid "Network Name"
+msgstr "网络名称"
+
+msgid "Name should not contain '/' and '\"'."
+msgstr "名称不应包含“/”和“\"”。"
+
+msgid "Network Type"
+msgstr "网络类型"
+
+msgid "Isolated: no external network connection"
+msgstr "隔离：没有外部网络连接"
+
+msgid "NAT: outbound physical network connection only"
+msgstr "NAT：仅适用于出站物理网络连接"
+
+msgid "Macvtap: Virtual machines are connected to physical network directly"
+msgstr "Macvtap：虚拟机直接连接至物理网络"
+
+msgid ""
+"Passthrough: Virtual machines are connected using a macvtap connection in "
+"passthrough mode."
+msgstr "Passthrough：虚拟机以传递方式使用 macvtap 连接进行连接。"
+
+msgid ""
+"VEPA: special mode where virtual machines are connected to a VEPA-enabled "
+"switch"
+msgstr "VEPA：特殊方式，虚拟机以此方式连接至支持 VEPA 的交换机"
+
+msgid "Bridged: Virtual machines are connected through a network bridge"
+msgstr "Bridged：虚拟机通过网桥连接"
+
+msgid "Destination"
+msgstr "目标"
+
+msgid "Select an Interface"
+msgstr "选择接口"
+
+msgid "Enable VLAN"
+msgstr "启用 VLAN"
+
+msgid "VLAN ID"
+msgstr "VLAN 标识"
+
+msgid "Edit Network"
+msgstr "编辑网络"
+
+msgid "Address Space"
+msgstr "地址空间"
+
+msgid "Define a New Storage Pool"
+msgstr "定义新存储池"
+
+msgid "Storage Pool Name"
+msgstr "存储池名称"
+
+msgid ""
+"The name used to identify the storage pools, and it should not be empty."
+msgstr "用于标识存储池的名称，且该名称不能为空。"
+
+msgid "Storage Pool Type"
+msgstr "存储池类型"
+
+msgid "Storage Path"
+msgstr "存储路径"
+
+msgid ""
+"The path of the Storage Pool. Each Storage Pool must have a unique path."
+msgstr "存储池的路径。每个存储池必须具有唯一路径。"
+
+msgid ""
+"Kimchi will try to create the directory when it does not already exist in "
+"your system."
+msgstr "Kimchi 将尝试创建目录（如果您的系统中还没有目录）。"
+
+msgid "NFS Server IP"
+msgstr "NFS 服务器 IP"
+
+msgid "NFS server IP or hostname. It can be input or chosen from history."
+msgstr "NFS 服务器 IP 或主机名。您可输入，也可从历史记录中选择。"
+
+msgid "NFS Path"
+msgstr "NFS 路径"
+
+msgid "The NFS exported path on NFS server."
+msgstr "NFS 服务器中的 NFS 已导出的路径。"
+
+msgid "Create from existing LVM"
+msgstr "通过现有 LVM 创建"
+
+msgid "Create from raw disk"
+msgstr "通过原始磁盘创建"
+
+msgid "Looking for existing lvms ..."
+msgstr "正在查找现有 lvm..."
+
+msgid "Looking for available partitions ..."
+msgstr "正在查找可用分区..."
+
+msgid "iSCSI Server"
+msgstr "iSCSI 服务器"
+
+msgid "Server"
+msgstr "服务器"
+
+msgid "Port"
+msgstr "端口"
+
+msgid "iSCSI server IP or hostname. It should not be empty."
+msgstr "iSCSI 服务器 IP 或主机名。它不应为空。"
+
+msgid "Target"
+msgstr "目标"
+
+msgid "The iSCSI target on iSCSI server"
+msgstr "iSCSI 服务器上的 iSCSI 目标"
+
+msgid "Add iSCSI Authentication"
+msgstr "添加 iSCSI 认证"
 
 msgid "User Name"
 msgstr "用户名"
 
-msgid "Password"
-msgstr "密码"
+msgid "SCSI Adapter"
+msgstr "SCSI 适配器"
 
-msgid "Peers"
-msgstr "对等机"
+msgid "Please, wait..."
+msgstr "请稍等..."
 
-msgid "Searching"
-msgstr "正在查询"
+msgid "Add a Volume to Storage Pool"
+msgstr "将卷添加至存储池"
 
-msgid "No peers found."
-msgstr "没有发现对等机。"
+msgid "Fetch from remote URL"
+msgstr "从远程 URL 中访存"
 
-msgid "Help"
-msgstr "帮助"
+msgid "Enter the remote URL here."
+msgstr "在此处输入远程 URL。"
 
-msgid "About"
-msgstr "关于"
+msgid "Upload a file"
+msgstr "上载文件"
 
-msgid "Log out"
-msgstr "登出"
+msgid "Choose the file you want to upload."
+msgstr "选择要上载的文件。"
 
-msgid "Version:"
-msgstr "版本："
+msgid "Resize Volume"
+msgstr "调整卷大小"
 
-#~ msgid "Unknown parameter %(value)s"
-#~ msgstr "未知变量 %(value)s"
+msgid "Size"
+msgstr "大小"
 
-#~ msgid "Timeout of %(seconds)s seconds expired while running task '%(task)s."
-#~ msgstr "任务'%(task)s超时%(seconds)s秒。"
+msgid "The total space which can be used to store data. The unit is megabytes."
+msgstr "可用于存储数据的总空间。单位为兆字节。"
 
-#~ msgid "User %(user_id)s not found with given LDAP settings."
-#~ msgstr "使用指定的LDAP配置未找到%(user_id)s用户"
+msgid "Ok"
+msgstr "确定"
 
-#~ msgid "Unknown \"_cap\" specified"
-#~ msgstr "未识别的\"_cap\""
+msgid "Template Name"
+msgstr "模板"
 
-#~ msgid "\"_passthrough\" should be \"true\" or \"false\""
-#~ msgstr "\"_passthrough\"值应为\"true\"或者\"false\""
+msgid ""
+"The name used to identify the template. If omitted, a name will be "
+"automatically chosen."
+msgstr "用于标识虚拟机的名称。如果省略，那么将根据所使用的模板选择一个名称。"
 
-#~ msgid "\"_passthrough_affected_by\" should be a device name string"
-#~ msgstr "\"_passthrough_affected_by\"应为一个字符串型设备名"
+msgid ""
+"When selecting more than one Image Template, a name will be automatically "
+"chosen for each Image Template selected."
+msgstr ""
 
-#~ msgid "Error while getting block devices. Details: %(err)s"
-#~ msgstr "获取块设备时出错。详情：%(err)s"
+msgid "Where is the source media for this template? "
+msgstr "此模板的源介质在哪里？"
 
-#~ msgid "Error while getting block device information for %(device)s."
-#~ msgstr "获取块设备 %(device)s 信息时出错。"
+msgid "Image Template"
+msgstr "映像模板"
 
-#~ msgid "Unable to find distro file: %(filename)s"
-#~ msgstr "找不到发行版文件：%(filename)s"
+msgid "Netboot Template"
+msgstr "网络引导模板"
 
-#~ msgid ""
-#~ "Unable to parse distro file: %(filename)s. Make sure, it is a JSON file."
-#~ msgstr "不能解析发行版文件：%(filename)s。请确保它是一个JSON格式的文件。"
+msgid "File Path:"
+msgstr "文件路径："
 
-#~ msgid "Unable to login to iSCSI host target %(portal)s. Details: %(err)s"
-#~ msgstr "无法通过 %(portal)s 登录iSCSI主机和目标。详情：%(err)s"
+msgid "Search ISOs"
+msgstr "搜索 ISO"
 
-#~ msgid "Unable to login to iSCSI host %(host)s target %(target)s"
-#~ msgstr "无法登录iSCSI主机%(host)s上的目标%(target)s。"
+msgid "The following ISOs are available:"
+msgstr "以下 ISO 可用："
 
-#~ msgid "Unable to find ISO file %(filename)s"
-#~ msgstr "未能找到ISO文件 %(filename)s"
+msgid "QEMU does not have enough permission to work with this file"
+msgstr "QEMU 没有足够的许可权来处理此文件"
 
-#~ msgid "The ISO file %(filename)s is not bootable"
-#~ msgstr "ISO文件%(filename)s不可引导。"
+msgid "Search more ISOs"
+msgstr "搜索更多 ISO"
 
-#~ msgid ""
-#~ "The ISO file %(filename)s does not have a valid El Torito boot record"
-#~ msgstr "ISO文件%(filename)s没有有效的El Torito引导记录。"
+msgid "Loading..."
+msgstr "正在装入..."
 
-#~ msgid "Invalid El Torito validation entry in ISO %(filename)s"
-#~ msgstr "在ISO文件%(filename)s中发现无效的El Torito校验条目。。"
+msgid "Edit Template"
+msgstr "编辑模板"
 
-#~ msgid "Invalid El Torito boot indicator in ISO %(filename)s"
-#~ msgstr "ISO文件%(filename)s的El Torito引导标志是无效的"
+msgid "CDROM"
+msgstr "CDROM"
 
-#~ msgid "Unexpected volume type for primary volume in ISO %(filename)s"
-#~ msgstr "未能识别ISO文件%(filename)s的主卷类型"
+msgid "Image File"
+msgstr "映像文件"
 
-#~ msgid "Bad format while reading volume descriptor in ISO %(filename)s"
-#~ msgstr "ISO文件%(filename)s的卷描述符格式错误"
+msgid "Graphics"
+msgstr "图形"
 
-#~ msgid ""
-#~ "The hypervisor doesn't have permission to use this ISO %(filename)s. "
-#~ "Consider moving it under /var/lib/libvirt,  or set the search permission "
-#~ "to file access control lists for '%(user)s' user if possible, or add the "
-#~ "'%(user)s' to the ISO path group, or (not recommended) 'chmod -R o+x "
-#~ "'path_to_iso'.Details: %(err)s"
-#~ msgstr ""
-#~ "hypervisor没有访问ISO文件%(filename)s的权限。可以将ISO移到/var/lib/libvirt"
-#~ "目录下；或为'%(user)s'用户设置访问权限；或将'%(user)s'用户增加到ISO路径的"
-#~ "属组；或者为所有的用户增加访问权限 'chmod -R o+x '（不推荐）。详情：%(err)"
-#~ "s"
+msgid "Disk(GB)"
+msgstr "磁盘 (GB)"
 
-#~ msgid "An error occurred when probing image OS information."
-#~ msgstr "搜索镜像操作系统信息时发生错误。"
+msgid "Disk Format"
+msgstr "磁盘格式"
 
-#~ msgid "No OS information found in given image."
-#~ msgstr "在指定的镜像文件中未发现操作系统信息。"
+msgid "Add Interface"
+msgstr "添加接口"
 
-#~ msgid "Unable to read image file %(filename)s"
-#~ msgstr "未能读取镜像文件 %(filename)s"
+msgid "pool"
+msgstr "池"
 
-#~ msgid ""
-#~ "Image file must be an existing file on system. %(filename)s is not a "
-#~ "valid input."
-#~ msgstr "磁盘文件必须已存在系统中，%(filename)s不是合法文件名"
+msgid "bridge"
+msgstr "网桥"
 
-#~ msgid "Virtual machine %(name)s already exists"
-#~ msgstr "虚拟机%(name)s已经存在"
+msgid "vepa"
+msgstr "vepa"
 
-#~ msgid "Virtual machine %(name)s does not exist"
-#~ msgstr "虚拟机%(name)s不存在"
+msgid "State"
+msgstr "状态"
 
-#~ msgid ""
-#~ "Unable to rename virtual machine %(name)s. The name %(new_name)s is "
-#~ "already in use or the virtual machine is not powered off."
-#~ msgstr ""
-#~ "未能实现虚拟机 %(name)s 重命名，名称 %(new_name)s 已被使用或者该虚拟机未关"
-#~ "机。"
+msgid "Guest Name ID"
+msgstr "访客名称标识"
 
-#~ msgid "Unable to retrieve screenshot for stopped virtual machine %(name)s"
-#~ msgstr "不能获取停止状态的虚拟机%(name)s的截屏"
+msgid "OS Type"
+msgstr "操作系统类型"
 
-#~ msgid "Remote ISO image is not supported by this server."
-#~ msgstr "该服务器不支持远程ISO镜像。"
+msgid "VNC"
+msgstr "VNC"
 
-#~ msgid "Screenshot is not supported on virtual machine %(name)s"
-#~ msgstr "虚拟机 %(name)s 不支持快照"
+msgid "No guests found."
+msgstr "找不到访客。"
 
-#~ msgid "Unable to create virtual machine %(name)s. Details: %(err)s"
-#~ msgstr "不能创建虚拟机%(name)s。详情：%(err)s"
+msgid "Stop"
+msgstr ""
 
-#~ msgid "Unable to update virtual machine %(name)s. Details: %(err)s"
-#~ msgstr "不能更新虚拟机%(name)s。详情：%(err)s"
+msgid "Location"
+msgstr "位置"
 
-#~ msgid "Unable to retrieve virtual machine %(name)s. Details: %(err)s"
-#~ msgstr "不能获取虚拟机%(name)s。详情：%(err)s"
+msgid "%Used"
+msgstr "使用百分比"
 
-#~ msgid "Unable to connect to powered off virtual machine %(name)s."
-#~ msgstr "虚拟机%(name)s已关机，连接失败。"
+msgid "Allocated"
+msgstr "已分配"
 
-#~ msgid "Invalid template URI %(value)s specified for virtual machine"
-#~ msgstr "无效的虚拟机模板URI %(value)s"
+msgid "Capacity"
+msgstr "容量"
 
-#~ msgid "Invalid storage pool URI %(value)s specified for virtual machine"
-#~ msgstr "无效的虚拟机存储池URI %(value)s"
+msgid "Disks"
+msgstr "磁盘"
 
-#~ msgid "Supported virtual machine graphics are Spice or VNC"
-#~ msgstr "虚拟机图形界面仅支持Spice以及VNC"
+msgid "Extending logical pool"
+msgstr "正在扩展逻辑池"
 
-#~ msgid "Graphics address to listen on must be IPv4 or IPv6"
-#~ msgstr "远程图形访问的监听地址必须是IPv4或IPv6地址。"
+msgid "%"
+msgstr "%"
 
-#~ msgid "Specify a template to create a virtual machine from"
-#~ msgstr "指定用于创建虚拟机的模板"
+msgid "Deactivate"
+msgstr "取消激活"
 
-#~ msgid "Unable to start virtual machine %(name)s. Details: %(err)s"
-#~ msgstr "不能启动虚拟机 %(name)s. 详情：%(err)s"
+msgid "Activate"
+msgstr "激活"
 
-#~ msgid "Unable to power off virtual machine %(name)s. Details: %(err)s"
-#~ msgstr "不能关闭虚拟机%(name)s。详情：%(err)s"
+msgid "Extend"
+msgstr "扩展"
 
-#~ msgid "Unable to delete virtual machine %(name)s. Details: %(err)s"
-#~ msgstr "不能删除虚拟机 %(name)s。详情：%(err)s"
+msgid "Undefine"
+msgstr "取消定义"
 
-#~ msgid "Unable to reset virtual machine %(name)s. Details: %(err)s"
-#~ msgstr "未能重置虚拟机%(name)s。详情：%(err)s"
+msgid "Add Volume"
+msgstr "添加卷"
 
-#~ msgid "User name list must be an array"
-#~ msgstr "用户名列表必须为一个数组"
+msgid "Resize"
+msgstr "调整大小"
 
-#~ msgid "User name must be a string"
-#~ msgstr "用户名必须是一个字符串"
+msgid "Wipe"
+msgstr "擦除"
 
-#~ msgid "Group name list must be an array"
-#~ msgstr "组名称列表必须为一个数组"
+msgid "Filter:"
+msgstr "过滤器："
 
-#~ msgid "Group name must be a string"
-#~ msgstr "用户组名称必须是一个字符串"
+msgid "Used By"
+msgstr "使用者"
 
-#~ msgid "User(s) '%(users)s' do not exist"
-#~ msgstr "用户'%(users)s'不存在"
+msgid "Used"
+msgstr "使用率"
 
-#~ msgid "Group(s) '%(groups)s' do not exist"
-#~ msgstr "用户组'%(groups)s'不存在"
+msgid "Progress"
+msgstr "进度"
 
-#~ msgid "Unable to shutdown virtual machine %(name)s. Details: %(err)s"
-#~ msgstr "未能关闭虚拟机%(name)s。详情：%(err)s"
+msgid "Used by the following VMs:"
+msgstr "由以下 VM 使用："
 
-#~ msgid ""
-#~ "Unable to get access metadata of virtual machine %(name)s. Details: %(err)"
-#~ "s"
-#~ msgstr "无法获得虚拟机 %(name)s的元数据，详情：%(err)s"
+msgid "Allocation"
+msgstr "分配"
 
-#~ msgid "The guest console password must be a string."
-#~ msgstr "客户机控制台密码必须为一个字符串。"
+msgid "Template Name (ID)"
+msgstr "模板名称（标识）"
 
-#~ msgid "The life time for the guest console password must be a number."
-#~ msgstr "客户机命令行密码有效时间必须是一个数字。"
+msgid "No templates found."
+msgstr "找不到模板。"
 
-#~ msgid "Virtual machine '%(name)s' must be stopped before cloning it."
-#~ msgstr "虚拟机'%(name)s'在制作副本前必须关机。"
+msgid "M"
+msgstr "M"
 
-#~ msgid "Insufficient disk space to clone virtual machine '%(name)s'"
-#~ msgstr "制作虚拟机'%(name)s'副本所需的磁盘空间不足"
-
-#~ msgid "Unable to clone VM '%(name)s'. Details: %(err)s"
-#~ msgstr "未能成功制作虚拟机'%(name)s'副本。详情：%(err)s"
-
-#~ msgid ""
-#~ "VM %(vmid)s does not contain directly assigned host device %(dev_name)s."
-#~ msgstr "虚拟机%(vmid)s未指明被分配的主机设备%(dev_name)s。"
-
-#~ msgid ""
-#~ "The host device %(dev_name)s is not allowed to directly assign to VM."
-#~ msgstr "主机设备%(dev_name)s不允许直接分配给虚拟机。"
-
-#~ msgid ""
-#~ "No IOMMU groups found. Host PCI pass through needs IOMMU group to "
-#~ "function correctly. Please enable Intel VT-d or AMD IOMMU in your BIOS, "
-#~ "then verify the Kernel is compiled with IOMMU support. For Intel CPU, add "
-#~ "intel_iommu=on to your Kernel parameter in /boot/grub2/grub.conf. For AMD "
-#~ "CPU, add iommu=pt iommu=1."
-#~ msgstr ""
-#~ "未找到IOMMU groups。主机PCI pass through需要IOMMU group才可以正确工作。请"
-#~ "在BIOS设置里将Intel VT-d 或者 AMD IOMMU 设为使能，而后确认内核支持IOMMU。"
-#~ "对于Intel CPU，在路径/boot/grub2/grub.conf中添加内核变量intel_iommu=on。对"
-#~ "于AMD CPU，则添加iommu=pt iommu=1。"
-
-#~ msgid "\"name\" should be a device name string"
-#~ msgstr "\"name\"应该为一个字符串型的设备名"
-
-#~ msgid "Interface %(iface)s does not exist in virtual machine %(name)s"
-#~ msgstr "虚拟机 %(name)s 中没有接口 %(iface)s"
-
-#~ msgid ""
-#~ "Network %(network)s specified for virtual machine %(name)s does not exist"
-#~ msgstr "为虚拟机%(name)s指定的网络%(network)s不存在"
-
-#~ msgid "Supported virtual machine interfaces type is only network"
-#~ msgstr "只支持网络类型的虚拟机接口"
-
-#~ msgid "Network name for virtual machine interface must be a string"
-#~ msgstr "虚拟机接口的网络名字必须是字符串"
-
-#~ msgid "Invalid network model card specified for virtual machine interface"
-#~ msgstr "虚拟机接口指定的网络模型卡无效"
-
-#~ msgid "Specify type and network to add a new virtual machine interface"
-#~ msgstr "为新的虚拟机接口指定类型和网络"
-
-#~ msgid "Template %(name)s already exists"
-#~ msgstr "模板 %(name)s 已经存在"
-
-#~ msgid ""
-#~ "Network '%(network)s' specified for template %(template)s does not exist"
-#~ msgstr "为模板 %(template)s 指定的网络 '%(network)s' 不存在"
-
-#~ msgid ""
-#~ "Storage pool %(pool)s specified for template %(template)s does not exist"
-#~ msgstr "为模板 %(template)s 指定的存储池 '%(pool)s' 不存在"
-
-#~ msgid ""
-#~ "Storage pool %(pool)s specified for template %(template)s is not active"
-#~ msgstr "为模板 %(template)s 指定的存储池 '%(pool)s' 没有激活"
-
-#~ msgid "Invalid parameter '%(param)s' specified for CDROM."
-#~ msgstr "为CDROM指定的参数 '%(param)s' 无效"
-
-#~ msgid ""
-#~ "Network %(network)s specified for template %(template)s is not active"
-#~ msgstr "为模板 %(template)s 指定的网络 '%(network)s' 没有激活"
-
-#~ msgid "Template name must be a string"
-#~ msgstr "模板的名字必须是一个字符串"
-
-#~ msgid "Template icon must be a path to the image"
-#~ msgstr "模板的图标必须是一个指向镜像的路径"
-
-#~ msgid "Template distribution must be a string"
-#~ msgstr "模板的发行版必须是一个字符串"
-
-#~ msgid "Template distribution version must be a string"
-#~ msgstr "模板的发行版版本号必须是一个字符串"
-
-#~ msgid "The number of CPUs must be an integer greater than 0"
-#~ msgstr "CPU数量必须为一个大于0的整数"
-
-#~ msgid "Amount of memory (MB) must be an integer greater than 512"
-#~ msgstr "总内存数（MB为单位）必须是一个大于512的整数"
-
-#~ msgid "Template CDROM must be a local or remote ISO file"
-#~ msgstr "模板的CDROM必须是一个本地或者远程的ISO文件"
-
-#~ msgid "Invalid storage pool URI %(value)s specified for template"
-#~ msgstr "给模板指定了无效的存储池URI %(value)s"
-
-#~ msgid "Specify an ISO image as CDROM or a base image to create a template"
-#~ msgstr "指定一个ISO镜像作为创建模板的CDROM或者基础镜像"
-
-#~ msgid "All networks for the template must be specified in a list."
-#~ msgstr "为模板指定的网络必须在一个列表中"
-
-#~ msgid "Specify a volume to a template when storage pool is iSCSI or SCSI"
-#~ msgstr "当存储池类型为iSCSI或者SCSI的时候须为模板指定一个卷"
-
-#~ msgid "The volume %(volume)s is not in storage pool %(pool)s"
-#~ msgstr "卷%(volume)s不在存储池%(pool)s中"
-
-#~ msgid "Unable to create template due error: %(err)s"
-#~ msgstr "创建模板失败。详情：%(err)s"
-
-#~ msgid "Unable to delete template due error: %(err)s"
-#~ msgstr "由于错误：%(err)s，未能删除模板"
-
-#~ msgid "Disk size must be an integer greater than 1GB."
-#~ msgstr "磁盘大小必须大于1GB。"
-
-#~ msgid "Template base image must be a valid local image file"
-#~ msgstr "模板基础镜像必须为一个有效的本地镜像文件"
-
-#~ msgid "Cannot identify base image %(path)s format"
-#~ msgstr "未能识别基础镜像%(path)s格式"
-
-#~ msgid ""
-#~ "When specifying CPU topology, VCPUs must be a product of sockets, cores, "
-#~ "and threads."
-#~ msgstr "CPU拓扑中，VCPUs必须包括sockets, cores 以及threads。"
-
-#~ msgid ""
-#~ "When specifying CPU topology, each element must be an integer greater "
-#~ "than zero."
-#~ msgstr "CPU拓扑中，每一个参数必须为大于零的整数。"
-
-#~ msgid ""
-#~ "Invalid disk image format. Valid formats: bochs, cloop, cow, dmg, qcow, "
-#~ "qcow2, qed, raw, vmdk, vpc."
-#~ msgstr ""
-#~ "无效的磁盘镜像格式。有效的格式为：bochs, cloop, cow, dmg, qcow, qcow2, "
-#~ "qed, raw, vmdk, vpc。"
-
-#~ msgid "Storage pool %(name)s already exists"
-#~ msgstr "存储池%(name)s已经存在"
-
-#~ msgid "Storage pool %(name)s does not exist"
-#~ msgstr "存储池%(name)s不存在"
-
-#~ msgid "Specify %(item)s in order to create the storage pool %(name)s"
-#~ msgstr "为新存储池%(name)s指定%(item)s"
-
-#~ msgid "Unable to delete active storage pool %(name)s"
-#~ msgstr "不能删除激活的存储池 %(name)s"
-
-#~ msgid "Unable to list storage pools. Details: %(err)s"
-#~ msgstr "不能列举存储池。 详情： %(err)s"
-
-#~ msgid "Unable to create storage pool %(name)s. Details: %(err)s"
-#~ msgstr "不能创建存储池 %(name)s。详情： %(err)s"
-
-#~ msgid ""
-#~ "Unable to get number of storage volumes in storage pool %(name)s. "
-#~ "Details: %(err)s"
-#~ msgstr "不能获取储存池%(name)s中卷的数目。详情： %(err)s"
-
-#~ msgid "Unable to activate storage pool %(name)s. Details: %(err)s"
-#~ msgstr "不能激活储存池%(name)s。详情： %(err)s"
-
-#~ msgid "Unable to deactivate storage pool %(name)s. Details: %(err)s"
-#~ msgstr "不能停用储存池%(name)s。详情： %(err)s"
-
-#~ msgid "Unable to delete storage pool %(name)s. Details: %(err)s"
-#~ msgstr "不能删除储存池%(name)s。详情： %(err)s"
-
-#~ msgid ""
-#~ "Unable to create NFS Pool as export path %(path)s may block during mount"
-#~ msgstr "不能创建NFS存储池，可能导出路径%(path)s在挂载时被阻塞了"
-
-#~ msgid "Unable to create NFS Pool as export path %(path)s mount failed"
-#~ msgstr "不能创建NFS存储池，挂载导出路径%(path)s失败"
-
-#~ msgid "Unsupported storage pool type: %(type)s"
-#~ msgstr "不支持的存储池类型：%(type)s"
-
-#~ msgid "Error while retrieving storage pool XML to %(pool)s"
-#~ msgstr "查询存储池XML到%(pool)s时出现错误"
-
-#~ msgid ""
-#~ "Supported storage pool types are dir, netfs, logical, iscsi, isci and "
-#~ "kimchi-iso"
-#~ msgstr "存储池类型仅支持dir，netfs，logical，iscsi，isci以及kimchi-iso"
-
-#~ msgid "Storage pool path must be a string"
-#~ msgstr "存储池路径必须是字符串"
-
-#~ msgid "Storage pool host must be a IP or hostname"
-#~ msgstr "存储池主机必须是一个IP后者主机名"
-
-#~ msgid "Storage pool device must be the absolute path to the block device"
-#~ msgstr "存储池设备必须为块设备的一个绝对路径"
-
-#~ msgid "Storage pool devices parameter must be a list"
-#~ msgstr "存储池设备参数必须是一个列表"
-
-#~ msgid "Target IQN of an iSCSI pool must be a string"
-#~ msgstr "iSCSI存储池的目标IQN必须是字符串"
-
-#~ msgid ""
-#~ "Port of a remote storage server must be an integer between 1 and 65535"
-#~ msgstr "远程存储服务器的端口必须是1到65535之间的整数"
-
-#~ msgid "iSCSI target username must be a string"
-#~ msgstr "iSCSI目标用户名必须为一个字符串"
-
-#~ msgid "iSCSI target password must be a string"
-#~ msgstr "iSCSI目标密码必须为一个字符串"
-
-#~ msgid "Specify name and type to create a storage pool"
-#~ msgstr "为新存储池指定名字和类型"
-
-#~ msgid ""
-#~ "%(disk)s is not a valid disk/partition. Could not add it to the pool %"
-#~ "(pool)s."
-#~ msgstr "%(disk)s 不是有效的磁盘/分区。不能被添加到存储池%(pool)s中"
-
-#~ msgid "Unable to extend logical pool %(pool)s. Details: %(err)s"
-#~ msgstr "未能实现逻辑池%(pool)s的扩展，详情：%(err)s"
-
-#~ msgid "The parameter disks only can be updated for logical storage pool."
-#~ msgstr "只有逻辑存储池支持更新磁盘参数。"
-
-#~ msgid "The SCSI host adapter name must be a string."
-#~ msgstr "SCSI主机适配器名必须是个字符串"
-
-#~ msgid "The storage pool kimchi_isos is reserved for internal use"
-#~ msgstr "存储池kimchi_isos留作内部使用"
-
-#~ msgid ""
-#~ "Unable to activate NFS storage pool %(name)s. NFS server %(server)s is "
-#~ "unreachable."
-#~ msgstr "不能激活NFS存储池%(name)s。NFS服务器%(server)s不可到达。"
-
-#~ msgid ""
-#~ "Unable to deactivate NFS storage pool %(name)s. NFS server %(server)s is "
-#~ "unreachable."
-#~ msgstr "不能停用NFS存储池%(name)s。NFS服务器%(server)s不可到达。"
-
-#~ msgid ""
-#~ "Unable to deactivate pool %(name)s as it is associated with some templates"
-#~ msgstr "不能停用存储池%(name)s，该存储池与一些模板关联"
-
-#~ msgid ""
-#~ "Unable to delete pool %(name)s as it is associated with some templates"
-#~ msgstr "不能删除存储池%(name)s，该存储池与一些模板关联"
-
-#~ msgid ""
-#~ "A volume group named '%(name)s' already exists. Please, choose another "
-#~ "name to create the logical pool."
-#~ msgstr "卷组'%(name)s'已经存在，请选择其它的名字来创建逻辑存储池。"
-
-#~ msgid ""
-#~ "Unable to update database with deep scan information due error: %(err)s"
-#~ msgstr "全盘扫描信息更新失败。详情：%(err)s。"
-
-#~ msgid "Storage volume %(name)s already exists"
-#~ msgstr "存储卷%(name)s已经存在"
-
-#~ msgid "Storage volume %(name)s does not exist in storage pool %(pool)s"
-#~ msgstr "存储池%(pool)s中没有存储卷%(name)s"
-
-#~ msgid ""
-#~ "Unable to create storage volume %(volume)s because storage pool %(pool)s "
-#~ "is not active"
-#~ msgstr "未能创建存储卷%(volume)s，因为存储池%(pool)s 未被激活"
-
-#~ msgid "Specify %(item)s in order to create storage volume %(volume)s"
-#~ msgstr "为新存储卷%(volume)s指定指定%(item)s"
-
-#~ msgid ""
-#~ "Unable to list storage volumes because storage pool %(pool)s is not active"
-#~ msgstr "不能列出存储卷，因为存储池%(pool)s没有激活"
-
-#~ msgid ""
-#~ "Unable to create storage volume %(name)s in storage pool %(pool)s. "
-#~ "Details: %(err)s"
-#~ msgstr "不能在存储池%(pool)s中创建存储卷%(name)s。详情：%(err)s"
-
-#~ msgid ""
-#~ "Unable to list storage volumes in storage pool %(pool)s. Details: %(err)s"
-#~ msgstr "不能在存储池%(pool)s中列出存储卷。详情：%(err)s"
-
-#~ msgid "Unable to wipe storage volumes %(name)s. Details: %(err)s"
-#~ msgstr "不能擦除存储卷%(name)s。详情：%(err)s"
-
-#~ msgid "Unable to delete storage volume %(name)s. Details: %(err)s"
-#~ msgstr "不能删除存储卷%(name)s。详情：%(err)s"
-
-#~ msgid "Unable to resize storage volume %(name)s. Details: %(err)s"
-#~ msgstr "不能改变存储卷%(name)s的大小。详情：%(err)s"
-
-#~ msgid "Storage type %(type)s does not support volume create and delete"
-#~ msgstr "存储类型%(type)s不支持卷的创建和删除"
-
-#~ msgid "Storage volume name must be a string"
-#~ msgstr "存储卷的名字必须是字符串"
-
-#~ msgid "Storage volume allocation must be an integer number"
-#~ msgstr "存储卷分配额必须是整数"
-
-#~ msgid ""
-#~ "Storage volume format not supported. Valid formats: bochs, cloop, cow, "
-#~ "dmg, qcow, qcow2, qed, raw, vmdk, vpc."
-#~ msgstr ""
-#~ "不支持该存储卷格式，支持的格式：bochs, cloop, cow, dmg, qcow, qcow2, qed, "
-#~ "raw, vmdk, vpc。"
-
-#~ msgid "Storage volume requires a volume name"
-#~ msgstr "存储卷需要名字"
-
-#~ msgid ""
-#~ "Unable to update database with storage volume information due error: %"
-#~ "(err)s"
-#~ msgstr "存储卷信息更新失败。详情：%(err)s"
-
-#~ msgid "Only one of parameter %(param)s can be specified"
-#~ msgstr "只能对参数%(param)s中的一个进行指定"
-
-#~ msgid "Create volume from %(param)s is not supported"
-#~ msgstr "不支持从%(param)s创建虚拟机"
-
-#~ msgid "Storage volume capacity must be an integer number."
-#~ msgstr "存储卷容量必须为一个整数"
-
-#~ msgid "Storage volume URL must be http://, https://, ftp:// or ftps://."
-#~ msgstr "存储卷URL必须为http://，https://，ftp://或ftps://"
-
-#~ msgid "Unable to access file %(url)s. Please, check it."
-#~ msgstr "不能访问文件%(url)s，请检查该文件是否存在。"
-
-#~ msgid ""
-#~ "Unable to clone storage volume '%(name)s' in pool '%(pool)s'. Details: %"
-#~ "(err)s"
-#~ msgstr "未能于存储池'%(pool)s'制作存储卷'%(name)s'的副本，详情：%(err)s"
-
-#~ msgid "Interface %(name)s does not exist"
-#~ msgstr "接口%(name)s不存在"
-
-#~ msgid "Network %(name)s already exists"
-#~ msgstr "网络%(name)s已经存在"
-
-#~ msgid "Network %(name)s does not exist"
-#~ msgstr "网络%(name)s不存在"
-
-#~ msgid "Subnet %(subnet)s specified for network %(network)s  is not valid."
-#~ msgstr "给网络%(network)s指定的子网%(subnet)s无效"
-
-#~ msgid "Specify a network interface to create bridged network %(name)s"
-#~ msgstr "指定一个网络接口来创建桥接类型的网络%(name)s"
-
-#~ msgid "Unable to delete active network %(name)s"
-#~ msgstr "不能删除激活的网络%(name)s"
-
-#~ msgid ""
-#~ "Interface %(iface)s specified for network %(network)s is already in use"
-#~ msgstr "给网络%(network)s指定的接口%(iface)s已被使用"
-
-#~ msgid "Interface should be bare NIC, bonding or bridge device."
-#~ msgstr "接口应该是一个裸的网络接口卡、bonding或者桥接设备。"
-
-#~ msgid "Unable to create network %(name)s. Details: %(err)s"
-#~ msgstr "不能创建网络%(name)s。详情：%(err)s"
-
-#~ msgid "Unable to find a free IP address for network '%(name)s'"
-#~ msgstr "不能为网络'%(name)s'找到一个未使用的IP网络地址。"
-
-#~ msgid "Supported network types are isolated, NAT and bridge"
-#~ msgstr "支持的网络类型有隔离、NAT和桥接"
-
-#~ msgid ""
-#~ "Network subnet must be a string with IP address and prefix or netmask"
-#~ msgstr "网络子网必须是一个IP地址加网络前缀或子网掩码的字符串"
-
-#~ msgid "Network interface must be a string"
-#~ msgstr "网络接口必须是一个字符串"
-
-#~ msgid "Network VLAN ID must be an integer between 1 and 4094"
-#~ msgstr "网络VLAN号必须是1到4094之间的整数"
-
-#~ msgid "Specify name and type to create a Network"
-#~ msgstr "为新网络指定名字和类型"
-
-#~ msgid "Bridge device %(name)s can not be the trunk device of a VLAN."
-#~ msgstr "不能以桥设备%(name)s作为VLAN的trunk设备。"
-
-#~ msgid "Failed to activate interface %(iface)s: %(err)s."
-#~ msgstr "网络接口启动失败 %(iface)s：%(err)s。"
-
-#~ msgid ""
-#~ "Failed to activate interface %(iface)s. Please check the physical link "
-#~ "status."
-#~ msgstr "网络接口%(iface)s启动失败，请检查网络连接情况。"
-
-#~ msgid "Failed to start network %(name)s. Details: %(err)s"
-#~ msgstr "启动网络%(name)s失败，详情：%(err)s"
-
-#~ msgid "Debug report %(name)s does not exist"
-#~ msgstr "诊断报告%(name)s不存在"
-
-#~ msgid "Debug report tool not found in system"
-#~ msgstr "系统上没有诊断报告工具"
-
-#~ msgid "Unable to create debug report %(name)s. Details: %(err)s."
-#~ msgstr "不能创建诊断报告%(name)s。详情：%(err)s"
-
-#~ msgid "Can not find any debug report with the given name %(name)s"
-#~ msgstr "未能找到指定名称%(name)s的调试报告"
-
-#~ msgid "Unable to generate debug report %(name)s. Details: %(err)s"
-#~ msgstr "不能生成诊断报告%(name)s。详情：%(err)s"
-
-#~ msgid "You should give a name for the debug report file."
-#~ msgstr "不能生成诊断报告%(name)s。详情：%(err)s"
-
-#~ msgid ""
-#~ "Debug report name must be a string. Only letters, digits, underscore "
-#~ "('_') and hyphen ('-') are allowed."
-#~ msgstr ""
-#~ "调试报告名称必须为一个字符串。只有英文字符，数字，下划线('_')以及连字符"
-#~ "('-')为合法字符。"
-
-#~ msgid ""
-#~ "The debug report with specified name \"%(name)s\" already exists. Please "
-#~ "use another one."
-#~ msgstr "名字为\"'%(name)s\"的调试报告已经存在，请选择其它的名字。"
-
-#~ msgid "Storage server %(server)s was not used by Kimchi"
-#~ msgstr "存储服务器%(server)s未被Kimchi使用"
-
-#~ msgid "Distro '%(name)s' does not exist"
-#~ msgstr "发行版本'%(name)s'不存在"
-
-#~ msgid "Partition %(name)s does not exist in the host"
-#~ msgstr "主机中上没有分区%(name)s"
-
-#~ msgid ""
-#~ "Unable to shutdown host machine as there are running virtual machines"
-#~ msgstr "有虚拟机在运行，不能关闭主机"
-
-#~ msgid "Unable to reboot host machine as there are running virtual machines"
-#~ msgstr "有虚拟机在运行，不能重起主机"
-
-#~ msgid "Node device '%(name)s' not found"
-#~ msgstr "没有找到节点设备'%(name)s'"
-
-#~ msgid "Conflicting flag filters specified."
-#~ msgstr "flag filters冲突。"
-
-#~ msgid "No packages marked for update"
-#~ msgstr "没有软件包标识要升级"
-
-#~ msgid "Package %(name)s is not marked to be updated."
-#~ msgstr "软件包%(name)s没有标识为要升级"
-
-#~ msgid "Error while getting packages marked to be updated. Details: %(err)s"
-#~ msgstr "获取标识为要升级的软件包时出错。详情：%(err)s"
-
-#~ msgid "There is no compatible package manager for this system."
-#~ msgstr "系统上没有兼容的软件包管理器"
-
-#~ msgid "Unable to choose a virtual machine name"
-#~ msgstr "未能选择一个虚拟机名称"
-
-#~ msgid "Invalid storage type. Types supported: 'cdrom', 'disk'"
-#~ msgstr "无效的存储类型。支持类型为：'cdrom'，'disk'"
-
-#~ msgid "The path '%(value)s' is not a valid local/remote path for the device"
-#~ msgstr "路径'%(value)s'不是设备的有效本地/远程路径"
-
-#~ msgid "Only CDROM path can be update."
-#~ msgstr "仅支持CDROM路径更新。"
-
-#~ msgid ""
-#~ "The storage device %(dev_name)s does not exist in the virtual machine %"
-#~ "(vm_name)s"
-#~ msgstr "存储设备%(dev_name)s在虚拟机%(vm_name)s中不存在"
-
-#~ msgid "Error while creating new storage device: %(error)s"
-#~ msgstr "创建新的存储设备时出错：%(error)s"
-
-#~ msgid "Error while updating storage device: %(error)s"
-#~ msgstr "更新存储设备时出错：%(error)s"
-
-#~ msgid "Error while removing storage device: %(error)s"
-#~ msgstr "移除存储设备时出错：%(error)s"
-
-#~ msgid "Do not support IDE device hot plug"
-#~ msgstr "不支持IDE设备的热插拔"
-
-#~ msgid ""
-#~ "Specify type and path or type and pool/volume to add a new virtual "
-#~ "machine disk"
-#~ msgstr "为添加新建虚拟机磁盘指定类型和路径或者类型和存储池/存储卷"
-
-#~ msgid "Specify path to update virtual machine disk"
-#~ msgstr "指定更新虚拟机磁盘的路径"
-
-#~ msgid "Controller type %(type)s limitation of %(limit)s devices reached"
-#~ msgstr "控制器类型为%(type)s的设备达到上限%(limit)s"
-
-#~ msgid ""
-#~ "Cannot retrieve disk path information for given pool/volume: %(error)s"
-#~ msgstr "未能为给出的存储池/存储卷找到对应磁盘路径信息：%(error)s"
-
-#~ msgid "Volume already in use by other virtual machine."
-#~ msgstr "该卷已经被其他虚拟机使用。"
-
-#~ msgid ""
-#~ "Only one of path or pool/volume can be specified to add a new virtual "
-#~ "machine disk"
-#~ msgstr "增加虚拟机磁盘时，仅能指定路径或存储池/存储卷中的一个"
-
-#~ msgid ""
-#~ "Volume chosen with format %(format)s does not fit in the storage type %"
-#~ "(type)s"
-#~ msgstr "格式为%(format)s的卷不符合存储类型%(type)s"
-
-#~ msgid "YUM Repository ID must be one word only string."
-#~ msgstr "YUM软件仓库ID必须是只包含一个单词的字符串"
-
-#~ msgid "Repository URL must be an http://, ftp:// or file:// URL."
-#~ msgstr "软件仓库URL必须是http://、 ftp:// 或 file://"
-
-#~ msgid ""
-#~ "Repository configuration is a dictionary with specific values according "
-#~ "to repository type."
-#~ msgstr "软件仓库配置是一个与仓库键和特定值对应的字典"
-
-#~ msgid "Distribution to DEB repository must be a string"
-#~ msgstr "DEB仓库的发行版本必须是一个字符串"
-
-#~ msgid "Components to DEB repository must be listed in a array"
-#~ msgstr "DEB仓库的组件必须以数组形式列出"
-
-#~ msgid "Components to DEB repository must be a string"
-#~ msgstr "DEB仓库的组件必须是一个字符串"
-
-#~ msgid "YUM Repository name must be string."
-#~ msgstr "YUM仓库的名字必须是一个字符串"
-
-#~ msgid "GPG check must be a boolean value."
-#~ msgstr "GPG校验必须是一个布尔值"
-
-#~ msgid "GPG key must be a URL pointing to the ASCII-armored file."
-#~ msgstr "GPG键必须是一个指向ASCII转义文件（.asc文件）的URL"
-
-#~ msgid "Could not update repository %(repo_id)s."
-#~ msgstr "不能更新软件仓库%(repo_id)s"
-
-#~ msgid "Repository %(repo_id)s does not exist."
-#~ msgstr "软件仓库%(repo_id)s不存在。"
-
-#~ msgid "Repository management tool was not recognized for your system."
-#~ msgstr "您的系统无法识别软件管理工具"
-
-#~ msgid "Repository %(repo_id)s is already enabled."
-#~ msgstr "软件仓库%(repo_id)s已经启用。"
-
-#~ msgid "Repository %(repo_id)s is already disabled."
-#~ msgstr "软件仓库%(repo_id)s已经禁用。"
-
-#~ msgid "Could not remove repository %(repo_id)s."
-#~ msgstr "不能移除软件仓库%(repo_id)s"
-
-#~ msgid "Could not write repository configuration file %(repo_file)s"
-#~ msgstr "无法写软件仓库的配置文件%(repo_file)s"
-
-#~ msgid "Specify repository distribution in order to create a DEB repository."
-#~ msgstr "指定软件仓库发行版本来创建一个DEB仓库。"
-
-#~ msgid "Could not enable repository %(repo_id)s."
-#~ msgstr "不能启用软件仓库%(repo_id)s"
-
-#~ msgid "Could not disable repository %(repo_id)s."
-#~ msgstr "不能禁用软件仓库%(repo_id)s"
-
-#~ msgid "YUM Repository ID already exists"
-#~ msgstr "YUM仓库ID已经存在"
-
-#~ msgid "YUM Repository name must be a string"
-#~ msgstr "YUM仓库名字必须是一个字符串"
-
-#~ msgid "Unable to list repositories. Details: '%(err)s'"
-#~ msgstr "不能列举软件仓库。详情：'%(err)s'"
-
-#~ msgid "Unable to retrieve repository information. Details: '%(err)s'"
-#~ msgstr "不能获取软件仓库的信息。详情：'%(err)s'"
-
-#~ msgid "Unable to add repository. Details: '%(err)s'"
-#~ msgstr "不能增加软件仓库。详情：'%(err)s'"
-
-#~ msgid "Unable to remove repository. Details: '%(err)s'"
-#~ msgstr "不能移除软件仓库。详情：'%(err)s'"
-
-#~ msgid ""
-#~ "Configuration items: '%(items)s' are not supported by repository manager"
-#~ msgstr "软件仓库不支持配置类型: %(items)s"
-
-#~ msgid ""
-#~ "Virtual machine '%(vm)s' must be stopped before creating a snapshot of it."
-#~ msgstr "虚拟机'%(vm)s'在制作快照前必须关机。"
-
-#~ msgid ""
-#~ "Unable to create snapshot '%(name)s' on virtual machine '%(vm)s'. "
-#~ "Details: %(err)s"
-#~ msgstr "未能为虚拟机'%(vm)s'制作快照'%(name)s'。详情：%(err)s"
-
-#~ msgid "Snapshot '%(name)s' does not exist on virtual machine '%(vm)s'."
-#~ msgstr "快照'%(name)s'不存在虚拟机'%(vm)s'上。"
-
-#~ msgid ""
-#~ "Unable to retrieve snapshot '%(name)s' on virtual machine '%(vm)s'. "
-#~ "Details: %(err)s"
-#~ msgstr "未能在虚拟机'%(vm)s'找到快照'%(name)s'。详情：%(err)s"
-
-#~ msgid ""
-#~ "Unable to list snapshots on virtual machine '%(vm)s'. Details: %(err)s"
-#~ msgstr "未能列出虚拟机'%(vm)s'的快照。详情：%(err)s"
-
-#~ msgid ""
-#~ "Unable to delete snapshot '%(name)s' on virtual machine '%(vm)s'. "
-#~ "Details: %(err)s"
-#~ msgstr "未能删除虚拟机'%(vm)s'快照'%(name)s'。详情：%(err)s"
-
-#~ msgid ""
-#~ "Unable to retrieve current snapshot of virtual machine '%(vm)s'. Details: "
-#~ "%(err)s"
-#~ msgstr "未能找到虚拟机'%(vm)s'当前快照。详情：%(err)s"
-
-#~ msgid ""
-#~ "Unable to revert virtual machine '%(vm)s' to snapshot '%(name)s'. "
-#~ "Details: %(err)s"
-#~ msgstr "未能恢复虚拟机'%(vm)s'到快照'%(name)s'。详情：%(err)s"
-
-#~ msgid ""
-#~ "Unable to create snapshot of virtual machine '%(vm)s' because it contains "
-#~ "a disk with format '%(format)s'; only 'qcow2' is supported."
-#~ msgstr ""
-#~ "未能为虚拟机'%(vm)s'创建快照因为其使用了格式为'%(format)s'的磁盘；当前仅支"
-#~ "持'qcow2'格式。"
-
-#~ msgid "The number of vCPUs is too large for this system."
-#~ msgstr "vCPUs的数量对该系统而言太大。"
-
-#~ msgid "Invalid vCPU/topology combination."
-#~ msgstr "无效的vCPU/topology组合。"
-
-#~ msgid "This host (or current configuration) does not allow CPU topology."
-#~ msgstr "当前主机（或当前配置）不允许CPU拓扑。"
-
-#~ msgid "Create a New Virtual Machine"
-#~ msgstr "创建一个新的虚拟机"
-
-#~ msgid "Virtual Machine Name"
-#~ msgstr "虚拟机名称"
-
-#~ msgid ""
-#~ "The name used to identify the virtual machine. If omitted, a name will be "
-#~ "chosen based on the template used."
-#~ msgstr "名字是虚拟机的标识。如果省略，将会基于使用的模板选择一个名字。"
-
-#~ msgid "Template"
-#~ msgstr "模板"
-
-#~ msgid "Please create a template first."
-#~ msgstr "请先选择一个模板"
-
-#~ msgid "Create a Template"
-#~ msgstr "创建一个模板"
-
-#~ msgid "Please choose a template."
-#~ msgstr "请选择模板。"
-
-#~ msgid "OS"
-#~ msgstr "操作系统"
-
-#~ msgid "OS Version"
-#~ msgstr "操作系统版本"
-
-#~ msgid "CPUS"
-#~ msgstr "中央处理器"
-
-#~ msgid "Memory"
-#~ msgstr "内存"
-
-#~ msgid "Edit Guest"
-#~ msgstr "修改客户机"
-
-#~ msgid "General"
-#~ msgstr "常规"
-
-#~ msgid "Interface"
-#~ msgstr "网络接口"
-
-#~ msgid "Permission"
-#~ msgstr "权限"
-
-#~ msgid "Host PCI Device"
-#~ msgstr "主机PCI设备"
-
-#~ msgid "Snapshot"
-#~ msgstr "快照"
-
-#~ msgid "CPUs"
-#~ msgstr "中央处理器"
-
-#~ msgid "Memory (MB)"
-#~ msgstr "内存(MB)"
-
-#~ msgid "Icon"
-#~ msgstr "图标"
-
-#~ msgid "Device"
-#~ msgstr "设备名称"
-
-#~ msgid "Path"
-#~ msgstr "路径"
-
-#~ msgid "Type"
-#~ msgstr "类型"
-
-#~ msgid "Available system users and groups"
-#~ msgstr "可选的系统用户及用户组"
-
-#~ msgid "Selected system users and groups"
-#~ msgstr "已选的系统用户及用户组"
-
-#~ msgid "User"
-#~ msgstr "用户"
-
-#~ msgid "All"
-#~ msgstr "所有"
-
-#~ msgid "To Add"
-#~ msgstr "待添加"
-
-#~ msgid "Added"
-#~ msgstr "已添加"
-
-#~ msgid "filter"
-#~ msgstr "过滤器"
-
-#~ msgid "Product"
-#~ msgstr "产品"
-
-#~ msgid "Vendor"
-#~ msgstr "厂商"
-
-#~ msgid "Created"
-#~ msgstr "创建于"
-
-#~ msgid "Detach"
-#~ msgstr "卸载"
-
-#~ msgid "revert"
-#~ msgstr "恢复"
-
-#~ msgid "Start"
-#~ msgstr "启用"
-
-#~ msgid "Reset"
-#~ msgstr "重置"
-
-#~ msgid "Power Off"
-#~ msgstr "关闭电源"
-
-#~ msgid "Actions"
-#~ msgstr "操作"
-
-#~ msgid "Connect"
-#~ msgstr "连接到"
-
-#~ msgid "Clone"
-#~ msgstr "制作副本"
-
-#~ msgid "Shut Down"
-#~ msgstr "关机"
-
-#~ msgid "Delete"
-#~ msgstr "删除"
-
-#~ msgid "CPU"
-#~ msgstr "处理器"
-
-#~ msgid "Disk I/O"
-#~ msgstr "磁盘I/O"
-
-#~ msgid "Network I/O"
-#~ msgstr "网络I/O"
-
-#~ msgid "Livetile"
-#~ msgstr "屏幕"
-
-#~ msgid "No guests found."
-#~ msgstr "没有发现客户机"
-
-#~ msgid "Add a Storage Device to VM"
-#~ msgstr "为虚拟机添加一个存储设备"
-
-#~ msgid "Device Type"
-#~ msgstr "设备类型"
-
-#~ msgid "The device type. Currently,  \"cdrom\" and \"disk\" are supported."
-#~ msgstr "设备类型。目前支持设备类型：\"cdrom\"和\"disk\"。 "
-
-#~ msgid "Storage Pool"
-#~ msgstr "存储池"
-
-#~ msgid "Storage pool which volume located in"
-#~ msgstr "存储卷所在的存储池"
-
-#~ msgid "Storage Volume"
-#~ msgstr "存储卷"
-
-#~ msgid "Storage volume to be attached"
-#~ msgstr "被添加的存储卷"
-
-#~ msgid "File Path"
-#~ msgstr "文件路径"
-
-#~ msgid "The ISO file path in the server for CDROM."
-#~ msgstr "服务器端CDROM所使用的ISO文件路径"
-
-#~ msgid "Shut down"
-#~ msgstr "关机"
-
-#~ msgid "Restart"
-#~ msgstr "重启"
-
-#~ msgid "Basic Information"
-#~ msgstr "基本信息"
-
-#~ msgid "OS Distro"
-#~ msgstr "操作系统发行版"
-
-#~ msgid "OS Code Name"
-#~ msgstr "操作系统代号"
-
-#~ msgid "Processor"
-#~ msgstr "处理器"
-
-#~ msgid "CPU(s)"
-#~ msgstr "CPU(s)"
-
-#~ msgid "System Statistics"
-#~ msgstr "系统统计信息"
-
-#~ msgid "Update Progress"
-#~ msgstr "更新进度"
-
-#, fuzzy
-#~ msgid "Filter"
-#~ msgstr "过滤器"
-
-#~ msgid "Network Name"
-#~ msgstr "网络名称"
-
-#~ msgid "State"
-#~ msgstr "状态"
-
-#~ msgid "Network Type"
-#~ msgstr "网络类型"
-
-#~ msgid "Address Space"
-#~ msgstr "地址空间"
-
-#~ msgid "Name should not contain '/' and '\"'."
-#~ msgstr "名字中不能包含‘/’和'\"'。"
-
-#~ msgid "Isolated: no external network connection"
-#~ msgstr "隔离: 同物理网络不连通"
-
-#~ msgid "NAT: outbound physical network connection only"
-#~ msgstr "NAT: 从虚拟机到物理网络单向连接"
-
-#~ msgid "Bridged: Virtual machines are connected to physical network directly"
-#~ msgstr "桥接：虚拟机可以直接连接到物理网络中。"
-
-#~ msgid "(No interfaces found)"
-#~ msgstr "(没有发现网络接口)"
-
-#~ msgid "Destination"
-#~ msgstr "目标设备"
-
-#~ msgid "Enable VLAN"
-#~ msgstr "启用VLAN"
-
-#~ msgid "VLAN ID"
-#~ msgstr "VLAN号"
-
-#~ msgid "Stop"
-#~ msgstr "停止"
-
-#~ msgid "Generate a New Debug Report"
-#~ msgstr "产生一个新的诊断报告"
-
-#~ msgid "Report Name"
-#~ msgstr "诊断报告名"
-
-#~ msgid ""
-#~ "The name used to identify the report. If omitted, a name will be chosen "
-#~ "based on current time. Name can contain: letters, digits, underscore (\"_"
-#~ "\") and hyphen (\"-\")."
-#~ msgstr ""
-#~ "名字用来标识诊断报告。如果省略，将会基于当前时间生成一个新名字。名字中可以"
-#~ "包含字母、数字、下划线 ('_') 和连字符（'-'）"
-
-#~ msgid "Rename a Debug Report"
-#~ msgstr "重命名一个调试报告"
-
-#~ msgid ""
-#~ "The name used to identify the report. Name can contain: letters, digits "
-#~ "and hyphen (\"-\")."
-#~ msgstr "报告的唯一表示名称，名称可以包含：英文字符，数字和连字符(\"-\")。"
-
-#~ msgid "Submit"
-#~ msgstr "提交"
-
-#~ msgid "Add a Repository"
-#~ msgstr "增加一个软件仓库"
-
-#~ msgid "Identifier"
-#~ msgstr "标识符"
-
-#~ msgid "Single word, unique identifier for the repository."
-#~ msgstr "一个单词，唯一标识软件仓库"
-
-#~ msgid "Textual name for the repository."
-#~ msgstr "软件仓库的字面名字"
-
-#~ msgid "URL"
-#~ msgstr "URL"
-
-#~ msgid "Required Field"
-#~ msgstr "必需的字段"
-
-#~ msgid "URL to the repository. Supported protocols are http, ftp, and file."
-#~ msgstr "软件仓库的URL，支持的协议有http、ftp、和file"
-
-#~ msgid "Repository is a mirror"
-#~ msgstr "软件仓库是一个镜像"
-
-#~ msgid "Distribution"
-#~ msgstr "发行版"
-
-#~ msgid "Distribution of the DEB repository."
-#~ msgstr "DEB仓库的发行版"
-
-#~ msgid "Components"
-#~ msgstr "组件"
-
-#~ msgid "List of components in DEB repository."
-#~ msgstr "DEB仓库中的组件列表"
-
-#~ msgid "Edit Repository"
-#~ msgstr "修改软件仓库"
-
-#~ msgid "Mirror List URL"
-#~ msgstr "镜像列表URL"
-
-#~ msgid "Yes"
-#~ msgstr "是"
-
-#~ msgid "No"
-#~ msgstr "否"
-
-#~ msgid "Capacity"
-#~ msgstr "容量"
-
-#~ msgid "Allocated"
-#~ msgstr "已分配"
-
-#~ msgid "Location"
-#~ msgstr "路径"
-
-#~ msgid "Device path"
-#~ msgstr "设备路径"
-
-#~ msgid "active"
-#~ msgstr "已激活"
-
-#~ msgid "inactive"
-#~ msgstr "未激活"
-
-#~ msgid "Deactivate"
-#~ msgstr "停用"
-
-#~ msgid "Activate"
-#~ msgstr "激活"
-
-#~ msgid "Add Volume"
-#~ msgstr "添加卷"
-
-#~ msgid "Extend"
-#~ msgstr "扩展"
-
-#~ msgid "Undefine"
-#~ msgstr "取消定义"
-
-#~ msgid "Format"
-#~ msgstr "格式"
-
-#~ msgid "Allocation"
-#~ msgstr "分配"
-
-#~ msgid "Define a New Storage Pool"
-#~ msgstr "定义一个新的存储池"
-
-#~ msgid "Storage Pool Name"
-#~ msgstr "存储池名称"
-
-#~ msgid ""
-#~ "The name used to identify the storage pools, and it should not be empty."
-#~ msgstr "该名称用来唯一标识存储池，该名称不能为空。"
-
-#~ msgid "Storage Pool Type"
-#~ msgstr "存储池类型"
-
-#~ msgid "Storage Path"
-#~ msgstr "存储路径"
-
-#~ msgid ""
-#~ "The path of the Storage Pool. Each Storage Pool must have a unique path."
-#~ msgstr "存储池的路径.每个存储池的路径是唯一的。"
-
-#~ msgid ""
-#~ "Kimchi will try to create the directory when it does not already exist in "
-#~ "your system."
-#~ msgstr "如果目录不存在，KIMCHI会自动在系统中创建一个新的目录"
-
-#~ msgid "NFS Server IP"
-#~ msgstr "NFS服务器IP"
-
-#~ msgid "NFS server IP or hostname. It can be input or chosen from history."
-#~ msgstr "NFS服务器IP或者主机名，可以直接输入或者从历史记录中选取。"
-
-#~ msgid "NFS Path"
-#~ msgstr "NFS 路径"
-
-#~ msgid "The NFS exported path on NFS server."
-#~ msgstr "NFS服务器上导出的NFS路径"
-
-#~ msgid "iSCSI Server"
-#~ msgstr "iSCSI服务器"
-
-#~ msgid "Server"
-#~ msgstr "服务器"
-
-#~ msgid "Port"
-#~ msgstr "端口"
-
-#~ msgid "iSCSI server IP or hostname. It should not be empty."
-#~ msgstr "iSCSI服务器IP或者主机名， 不能为空。"
-
-#~ msgid "Target"
-#~ msgstr "目标"
-
-#~ msgid "The iSCSI target on iSCSI server"
-#~ msgstr "iSCSI目标"
-
-#~ msgid "Add iSCSI Authentication"
-#~ msgstr "添加ISCSI认证"
-
-#~ msgid "iSCSI Authentication"
-#~ msgstr "iSCSI认证"
-
-#~ msgid "SCSI Adapter"
-#~ msgstr "SCSI适配器"
-
-#~ msgid "Please, wait..."
-#~ msgstr "请等待..."
-
-#~ msgid "Add a Volume to Storage Pool"
-#~ msgstr "为存储池添加一个卷"
-
-#~ msgid "Fetch from remote URL"
-#~ msgstr "从远程URL获取"
-
-#~ msgid "Enter the remote URL here."
-#~ msgstr "在这里输入远程URL。"
-
-#~ msgid "Upload a file"
-#~ msgstr "上传一个文件"
-
-#~ msgid "Choose the file you want to upload."
-#~ msgstr "选择需要上传的文件。"
-
-#~ msgid "Add Template"
-#~ msgstr "创建模板"
-
-#~ msgid "Where is the source media for this template? "
-#~ msgstr "模板的源介质在哪里？"
-
-#~ msgid "Local ISO Image"
-#~ msgstr "本地ISO镜像"
-
-#~ msgid "Local Image File"
-#~ msgstr "本地镜像文件"
-
-#~ msgid "Remote ISO Image"
-#~ msgstr "远程ISO镜像"
-
-#~ msgid "Search ISOs"
-#~ msgstr "搜索ISO"
-
-#~ msgid "The following ISOs are available:"
-#~ msgstr "可用ISO文件如下"
-
-#~ msgid "OS: "
-#~ msgstr "操作系统： "
-
-#~ msgid "Version: "
-#~ msgstr "版本： "
-
-#~ msgid "Size: "
-#~ msgstr "大小："
-
-#~ msgid "Search more ISOs"
-#~ msgstr "搜索更多ISO"
-
-#~ msgid "Create Templates from Selected ISO"
-#~ msgstr "从选中的ISO中创建模板"
-
-#~ msgid "I want to use a specific ISO file"
-#~ msgstr "指定一个ISO文件"
-
-#~ msgid "Loading default remote ISOs ..."
-#~ msgstr "加载默认的远程ISOs ..."
-
-#~ msgid "Arch: "
-#~ msgstr "体系结构："
-
-#~ msgid "I want to use a custom URL"
-#~ msgstr "我想用一个自定义的URL"
-
-#~ msgid "Edit Template"
-#~ msgstr "编辑模板"
-
-#~ msgid "CDROM"
-#~ msgstr "光驱"
-
-#~ msgid "Image File"
-#~ msgstr "镜像文件"
-
-#~ msgid "Graphics"
-#~ msgstr "图形"
-
-#~ msgid "Disk(GB)"
-#~ msgstr "磁盘(GB)"
-
-#~ msgid "CPU Number"
-#~ msgstr "CPU个数"
-
-#~ msgid "Manually set CPU topology"
-#~ msgstr "手动配置CPU拓扑"
-
-#~ msgid "Cores"
-#~ msgstr "内核数"
-
-#~ msgid "Threads"
-#~ msgstr "线程"
-
-#~ msgid "No templates found."
-#~ msgstr "没有发现模板"
+#~ msgid "Peers"
+#~ msgstr "同级"

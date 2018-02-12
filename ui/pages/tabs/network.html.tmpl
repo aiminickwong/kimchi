@@ -1,0 +1,95 @@
+#*
+ * Project Kimchi
+ *
+ * Copyright IBM Corp, 2013-2017
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *#
+
+#unicode UTF-8
+#import gettext
+#from wok.cachebust import href
+#silent t = gettext.translation($lang.domain, $lang.localedir, languages=$lang.lang, fallback=True)
+#silent _ = t.gettext
+#silent _t = t.gettext
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="plugins/kimchi/css/kimchi.css">
+    <script src="plugins/kimchi/js/kimchi.min.js"></script>
+</head>
+<body>
+<div id="network-root-container">
+    <div id="network-content-container">
+        <div class="container">
+            <div class="row grid-control">
+                <div class="pull-right">
+                    <label for="network-filter" class="sr-only">$_("Filter"):</label>
+                    <input type="text" class="filter form-control" placeholder="$_("Filter")">
+                </div>
+            </div>
+            <div id="networkGrid" class="hidden">
+                <div>
+                    <span class="column-state"><span class="sr-only">$_("State")</span></span><!--
+                    --><span class="column-name">$_("Network Name")</span><!--
+                    --><span class="column-type">$_("Network Type")</span><!--
+                    --><span class="column-interface">$_("Interface")</span><!--
+                    --><span class="column-space">$_("Address Space")</span><!--
+                    --><span class="column-action" style="display:none">
+                            <span class="sr-only">$_("Actions")</span><!--
+                    --></span>
+                </div>
+                <div id="networkBody" class="empty-when-logged-off"></div>
+            </div>
+
+            </div>
+        </div>
+        <div class="wok-mask">
+            <div class="wok-mask-loader-container">
+                <div class="wok-mask-loading">
+                    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                    <div class="wok-mask-loading-text">$_("Loading...")</div>
+                </div>
+            </div>
+        </div>
+</div>
+<div id="modalWindow" class="modal fade network-modal" tabindex="-1" role="dialog" aria-labelledby="networkModalLabel" aria-hidden="true"> </div>
+<script id="networkItem" type="text/html">
+    <div id='{name}' class='wok-nw-grid-body remove-when-logged-off'>
+        <span class='network-state column-state {state}' val="{state}"><i class="fa fa-power-off"></i></span><!--
+                    --><span class='column-name' title="{name}" val="{name}">{name}</span><!--
+                    --><span class='column-type' val="{type}">{type}</span><!--
+                    --><span class='column-interface' data-placement="top" data-toggle="tooltip" title="{interface}" val="{interface}">{interface}</span><!--
+                    --><span class='column-space' val="{addrSpace}">{addrSpace}</span><!--
+                    --><span class='column-action' style="display:none">
+                                <span class="pull-right">
+                                    <div class="dropdown menu-flat">
+                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                          <i class="fa fa-pencil-square-o" aria-hidden="true"> </i>$_("Actions")<span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li role="presentation" nwAct="start" class='{startClass}'><a><i class="fa fa-undo"></i>$_("Start")</a></li>
+                                            <li role="presentation" nwAct="stop" class='{stopClass}'><a {stopDisabled}><i class="fa fa-ban"></i>$_("Stop")</a></li>
+                                            <li role="presentation" nwAct="edit" class='{editClass}'><a {editDisabled}><i class="fa fa-pencil"></i>$_("Edit")</a></li>
+                                            <li role="presentation" nwAct="delete" class='critical {deleteClass}'><a {deleteDisabled}><i class="fa fa-minus-circle"></i>$_("Delete")</a></li>
+                                        </ul>
+                                    </div>
+                                </span>
+                        </span>
+            </div>
+</script>
+<script>
+    kimchi.initNetwork();
+</script>
+</body>
+</html>

@@ -1,9 +1,7 @@
 #
-# Project Wok
+# Kimchi
 #
-# Copyright IBM, Corp. 2013-2015
-#
-# Code derived from Project Kimchi
+# Copyright IBM Corp, 2013-2016
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,18 +15,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-SUBDIRS = fontawesome opensans
+cssdir = $(datadir)/wok/plugins/kimchi/ui/css
+dist_css_DATA = kimchi.css
 
-EXTRA_DIST = theme-default
-
-cssdir = $(datadir)/wok/ui/css
-dist_css_DATA = theme-default.min.css jquery-ui.custom.css wok.css  bootstrap.custom.css bootstrap-select.custom.css
-
-%.css: src/%.scss
+css: src/*.scss src/modules/*.scss
 	echo "Compiling .scss file $<"
-	sassc -s expanded $< $(@:.scss=.css)
-
-theme-default.min.css: theme-default/*.css
-	cat $^ > $@
-
-CLEANFILES = theme-default.min.css
+	sassc -s expanded $< kimchi.css

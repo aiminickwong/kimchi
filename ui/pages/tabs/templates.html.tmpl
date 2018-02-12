@@ -1,0 +1,121 @@
+#*
+* Project Kimchi
+*
+* Copyright IBM Corp, 2013-2017
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*#
+#unicode UTF-8
+#import gettext
+#from wok.cachebust import href
+#silent t = gettext.translation($lang.domain, $lang.localedir, languages=$lang.lang, fallback=True)
+#silent _ = t.gettext
+#silent _t = t.gettext
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="plugins/kimchi/css/kimchi.css">
+    <script src="plugins/kimchi/js/kimchi.min.js"></script>
+</head>
+<body>
+    <div id="templates-root-container">
+    <div class="templates">
+        <div id="templates-container" class="container hidden">
+            <div class="row grid-control empty-when-logged-off">
+                <div class="pull-left">
+                    <button type="button" id="gallery-table-button" class="btn btn-default"><span class="text">$_("View Gallery")</span> <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i></button>
+                </div>
+
+                <div class="form-group pull-right">
+                    <div class="btn-group bootstrap-select control" id="templatestatusselect">
+                        <button type="button" class="btn dropdown-toggle form-control selectpicker btn-default sort-button" data-toggle="dropdown" aria-expanded="false"><span class="filter-option pull-left" data-placement="auto bottom" data-toggle="tooltip" title="$_('Status')">$_("Status")</span>&nbsp;<span class="caret"></span></button>
+                        <div class="dropdown-menu open" style="max-height: 668px; overflow: hidden; min-height: 0px;padding: 0px;">
+                            <ul class="dropdown-menu inner selectpicker" role="menu" style="max-height: 656px; overflow-y: auto; min-height: 0px;">
+                                <li nwAct="sort"><a href="#" class="sort" data-sort="name-filter" title="$_('Name')">$_("Name")</a></li>
+                                <li nwAct="clone"><a href="#" class="sort" data-sort="os-type-filter" title="$_('OS')">$_("OS")</a></li>
+                                <li nwAct="clone"><a href="#" class="sort" data-sort="os-version-filter" title="$_('Version')">$_("Version")</a></li>
+                                <li nwAct="clone"><a href="#" class="sort" data-sort="cpus-filter" title="$_('Current CPUs')">$_("Current CPUs")</a></li>
+                                <li nwAct="clone"><a href="#" class="sort" data-sort="memory-filter" title="$_('Memory')">$_("Memory")</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                     <label for="search_input" class="sr-only">$_("Filter"):</label>
+                     <input type="text" class="filter form-control search" id="search_input" placeholder="$_("Filter")">
+                 </div>
+            </div>
+            <ul id="templates-grid" class="wok-vm-list hidden empty-when-logged-off">
+                <li class="wok-vm-header">
+                        <span class="column-name"  title="$_('Template Name (ID)')">$_("Template Name (ID)")</span><!--
+                  --><span class="column-type" title="$_('OS')">$_("OS")</span><!--
+                  --><span class="column-version" title="$_('Version')">$_("Version")</span><!--
+                  --><span class="column-processors" title="$_('Current CPUs')">$_("Current CPUs")</span><!--
+                  --><span class="column-memory" title="$_('Memory')">$_("Memory")</span><!--
+                  --><span class="column-action" style="display:none"><span class="sr-only">$_("Actions")</span></span>
+                    </li>
+                    <li>
+                        <ul id="templateList" class="ul-body list">
+                        </ul>
+                    </li>
+            </ul>
+        </div>
+        <div id="noTemplates" class="list-no-result" style="display: none;">
+            $_("No templates found.")
+        </div>
+    </div>
+    <div class="wok-mask">
+        <div class="wok-mask-loader-container">
+            <div class="wok-mask-loading">
+                <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                <div class="wok-mask-loading-text">$_("Loading...")</div>
+            </div>
+        </div>
+    </div>
+    <div id="modalWindow" class="modal fade host-modal templates-modal" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="templatesModalLabel" aria-hidden="true">
+    </div>
+    <script>
+    kimchi.template_main();
+    </script>
+    <script id="templateTmpl" type="html/text">
+        <li class="wok-vm-body" data-invalid="{invalid_indicator}">
+            <span class='column-name name-filter name-distro-icon icon-{os_distro}' title="{name}" val="{name}">
+                <span class="template-status" data-invalid="{invalid_indicator}" data-toggle="tooltip" title="$_("This template has invalid parameters.")">
+                    <i role="presentation" class="fa fa-exclamation-triangle invalid-icon"></i>
+                    <span class="sr-only">$_("This template has invalid parameters")</span>
+                </span>{name}</span><!--
+            --><span class='column-action pull-right'>
+                <span class="pull-right">
+                    <div class="dropdown menu-flat">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                          <i class="fa fa-pencil-square-o" aria-hidden="true"> </i>$_("Actions")<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li nwAct="edit" class='template-edit'><a href="#" data-template='{name}'><i class="fa fa-pencil"></i>$_("Edit")</a></li>
+                            <li nwAct="clone" class='template-clone'><a href="#" data-template='{name}'><i class="fa fa-files-o"></i>$_("Clone")</a></li>
+                            <li nwAct="delete" class='critical template-delete'><a href="#" data-template='{name}'><i class="fa fa-minus-circle"></i>$_("Delete")</a></li>
+                        </ul>
+                    </div>
+                </span>
+            </span><!--
+            --><span class='column-type os-type-filter distro-icon icon-{os_distro} font-bold' val="{os_distro}">{os_distro}</span><!--
+            --><span class="item-hidden column-type os-type-filter">$_("OS")</span><!--
+            --><span class='column-version os-version-filter font-bold' val="{os_version}">{os_version}</span><!--
+            --><span class="item-hidden column-version os-version-filter">$_("Version")</span><!--
+            --><span class='column-processors cpus-filter' val="{cpu_info.vcpus}"><strong>{cpu_info.vcpus} $_("Cores")</strong></span><!--
+            --><span class="item-hidden column-processors cpus-filter">$_("Current CPUs")</span><!--
+            --><span class='column-memory memory-filter' val="{memory.current}"><strong>{memory.current} $_("M")</strong></span><!--
+            --><span class="item-hidden column-memory memory-filter">$_("Memory")</span>
+        </li>
+    </script>
+</body>
+</html>

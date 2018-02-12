@@ -1,0 +1,206 @@
+#*
+ * Project Kimchi
+ *
+ * Copyright IBM Corp, 2013-2017
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *#
+
+#unicode UTF-8
+#import gettext
+#silent t = gettext.translation($lang.domain, $lang.localedir, languages=$lang.lang, fallback=True)
+#silent _ = t.gettext
+#silent _t = t.gettext
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="plugins/kimchi/css/kimchi.css">
+    <script src="plugins/kimchi/js/kimchi.min.js"></script>
+</head>
+<body>
+<div id="storage-root-container">
+    <div class='storage'>
+        <div class="container">
+            <div class="row grid-control">
+                <div class="pull-right">
+                    <label for="storage-filter" class="sr-only">$_("Filter"):</label>
+                    <input type="text" class="filter form-control" placeholder="$_("Filter")">
+                </div>
+            </div>
+            <div id='storageGrid' class="hidden">
+                <div>
+                    <span class="column-state"><span class="sr-only">$_("State")</span></span><!--
+                    --><span class="column-name" title="$_('Name')">$_("Name")</span><!--
+                    --><span class="column-type" title="$_('Type')">$_("Type")</span><!--
+                    --><span class="column-location" title="$_('Location')">$_("Location")</span><!--
+                    --><span class="column-usage" title="$_('%Used')">$_("%Used")</span><!--
+                    --><span class="column-allocated" title="$_('Allocated')">$_("Allocated")</span><!--
+                    --><span class="column-capacity" title="$_('Capacity')">$_("Capacity")</span><!--
+                    --><span class="column-disks" title="$_('Disks')">$_("Disks")</span><!--
+                    --><span class="column-action" display="none"><span class="sr-only">$_("Actions")</span></span>
+                </div>
+                <div id="storagepoolsList" class="list-storage empty-when-logged-off"></div>
+            </div>
+            <div id="logicalPoolExtend" class="modal fade logicalpool-modal" tabindex="-2" role="dialog" aria-labelledby="logicalPoolExtendLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="logicalPoolExtendLabel">$_("Extending logical pool")</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="host-partition">
+                                <i class="wok-loading-icon fa fa-spinner fa-pulse fa-3x fa-fw"></i><span>$_("Looking for available partitions ...")</span>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="savePartitions" class="btn btn-default" disabled="disabled">$_("Save")</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">$_("Cancel")</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wok-mask">
+            <div class="wok-mask-loader-container">
+                <div class="wok-mask-loading">
+                    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                    <div class="wok-mask-loading-text">$_("Loading...")</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script id="storageTmpl" type="html/text">
+<div id="{name}" class="storage-li in" data-name="{name}" data-stat="{state}">
+         <span class='column-state' val="{state}"><span class='storage-state {state}'><i class="fa fa-power-off"></i></span></span><!--
+    --><span class='column-name' title="{name}" val="{name}">{name}</span><!--
+    --><span class='column-type' val="{type}">{type}</span><!--
+    --><span class='column-location' title="{path}" val="{path}">{path}</span><!--
+    --><span class='column-usage {state}' val="{usage}" ><span class='usage-icon {icon}'>{usage}</span>$_("%")</span><!--
+    --><span class='column-allocated' val="{allocated}">{allocated}</span><!--
+    --><span class='column-capacity' val="{capacity}">{capacity}</span><!--
+    --><span class="column-disks {state}"><div class="handle arrow-down"></div></span><!--
+    --><span class="column-action storage-button" style="display:none">
+            <span class="pull-right">
+                <div class="dropdown menu-flat storage-action" data-state="{state}" data-type="{type}" data-name="{name}">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"> </i>$_("Actions")<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu actionsheet">
+                        <li><a href="#" class="pool-deactivate" data-inuse="{in_use}" data-stat="{state}" data-name="{name}" data-persistent="{persistent}"><i class="fa fa-minus-circle"></i>$_("Deactivate")</a></li>
+                        <li><a href="#" class="pool-activate" data-stat="{state}" data-name="{name}"><i class="fa fa-power-off"></i>$_("Activate")</a></li>
+                        <li class="{enableExt}"><a href="#" class="pool-extend" data-stat="{state}" data-name="{name}" data-toggle="modal" data-target="#logicalPoolExtend"><i class="fa fa-external-link-square"></i>$_("Extend")</a></li>
+                        <li class="critical"><a href="#" class="pool-delete" data-inuse="{in_use}" data-stat="{state}" data-name="{name}"><i class="fa fa-ban"></i>$_("Undefine")</a></li>
+                    </ul>
+                </div>
+            </span>
+         </span>
+         <div class="volumes">
+            <div id="volume-{name}" class="volumeslist" data-name="{name}" data-type="{type}">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <div class="btn-group">
+                        <div class="dropdown menu-flat pool-action">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                              <i class="fa fa-pencil-square-o" aria-hidden="true"> </i>$_("Actions")<span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu actionsheet">
+                                <li class="disabled"><a href="#" class="volume-add" data-stat="{state}" data-name="{name}" data-type="{type}"><i class="fa fa-plus-circle"></i> $_("Add Volume")</a></li>
+                                <li class="disabled"><a href="#" class="volume-resize" data-name="{name}"><i class="fa fa-external-link-square"></i> $_("Resize")</a></li>
+                                <li class="disabled"><a href="#" class="volume-clone" data-name="{name}"><i class="fa fa-copy"></i> $_("Clone")</a></li>
+                                <li class="disabled"><a href="#" class="volume-wipe" data-name="{name}"><i class="fa fa-eraser"></i> $_("Wipe")</a></li>
+                                <li class="disabled critical"><a href="#" class="volume-delete" data-name="{name}"><i class="fa fa-minus-circle"></i> $_("Delete")</a></li>
+                            </ul>
+                        </div>
+                      </div>
+                      <button type="button" class="btn btn-default toggle-gallery"><span class="text">$_('View Gallery')</span> <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i></button>
+                    </div>
+                    <div class="col-sm-5">
+                    <div class="pull-right">
+                        <label><span class="sr-only">$_('Filter:')</span>
+                            <input type="text" class="filter form-control search" placeholder="$_('Filter')">
+                        </label>
+                    </div>
+                </div>
+              </div>
+                <div class="wok-datagrid wok-list">
+                    <div class="wok-datagrid-header">
+                        <span class="column-name">$_('Name')</span><!--
+                   --><span class="column-format">$_('Format')</span><!--
+                   --><span class="column-type">$_('Type')</span><!--
+                   --><span class="column-used-by">$_('Used By')</span><!--<!--
+                   --><span class="column-used">$_('Used')</span><!--
+                   --><span class="column-allocated">$_('Allocated')</span><!--
+                   --><span class="column-capacity">$_('Capacity')</span><!--
+                   --><span class="column-progress hidden">$_('Progress')</span>
+                    </div>
+                    <ul class="wok-datagrid-body list" id="volume-{name}-table">
+                    </ul>
+                </div>
+                <div class="wok-mask hidden">
+                    <div class="wok-mask-loader-container">
+                        <div class="wok-mask-loading">
+                            <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                            <div class="wok-mask-loading-text">$_("Loading...")</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+         </div>
+</div>
+</script>
+<script id="volumeTmpl" type="html/text">
+<li class="wok-datagrid-row">
+    <div class="volume-progress hidden">
+        <div class="progress-bar-outer progress">
+            <div class="progress-bar-inner progress-bar" role="progressbar" aria-valuenow="0%" aria-valuemin="0%" aria-valuemax="100%" ></div>
+        </div>
+    </div>
+    <div class="volume-box-outer">
+        <div class="volume-box-border">
+            <div class="volume-box-inner" data-volume-name="{name}">
+                <span class="column-name" title="{name}">
+                    <input type="checkbox" class="wok-checkbox" name="selected-volume[]" id="{checkbox}" value="{name}">
+                    <label class="volume-name volume-name-filter" for="{checkbox}"><span class="volume-inline-progress hidden"><i class="wok-loading-icon fa fa-spinner fa-pulse fa-3x fa-fw"></i></span> {name}</label><!--
+                   --></span><!--
+                   --><span class="column-used"><span role="presentation" class="volume-icon {capacityIcon}"></span> {capacityLevel}%</span><!--
+                   --><span class="column-used-by volume-used-by-filter"><i class="fa fa-exclamation-circle" data-toggle="tooltip" title="$_('Used by the following VMs:') {used_by_formatted}" data-placement="bottom" data-original-title="$_('Used by the following VMs:') {used_by_formatted}"></i><span class="format-text" data-toggle="tooltip" title="$_('Used by the following VMs:') {used_by_formatted}" data-placement="bottom" data-original-title="$_('Used by the following VMs:') {used_by_formatted}">{used_by_text}</span></span><!--
+                   --><span class="column-format volume-format-filter"><span class="gallery-header" title="$_('Format')">$_('Format')</span><span class="format-text">{format}</span></span><!--
+                   --><span class="column-type volume-type-filter"><span class="gallery-header" title="$_('Type')">$_('Type')</span>{type}</span><!--
+                   --><span class="column-allocated"><span class="gallery-header" title="$_('Allocation')">$_('Allocation')</span>{allocation}</span><!--
+                   --><span class="column-capacity"><span class="gallery-header" title="$_('Capacity')">$_('Capacity')</span>{capacity}</span><!--
+                   --><span class="column-progress hidden"><span class="progress-status"></span> <span class="progress-transferred"></span>
+                        </span>
+            </div>
+        </div>
+    </div>
+</li>
+</script>
+
+<script id="partitionTmpl" type="html/text">
+    <tr>
+        <td><input type="checkbox" class="wok-checkbox" id="{name}" value="{path}" name="devices"><label for="{name}"></label></td>
+        <td>{name}</td>
+        <td>{path}</td>
+        <td>{size}</td>
+    </tr>
+</script>
+
+<script>
+    kimchi.storage_main();
+</script>
+<div id="modalWindow" class="modal fade storage-modal" tabindex="-1" role="dialog" aria-labelledby="storageModalLabel" aria-hidden="true"> </div>
+</body>
+</html>

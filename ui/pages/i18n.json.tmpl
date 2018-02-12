@@ -1,9 +1,7 @@
 #*
- * Project Wok
+ * Project Kimchi
  *
- * Copyright IBM, Corp. 2014-2015
- *
- * Code derived from Project Kimchi
+ * Copyright IBM Corp, 2014-2017
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,23 +22,13 @@
 #silent _ = t.gettext
 #silent _t = t.gettext
 {
-    "KCHAUTH6001E": "$_("The username or password you entered is incorrect. Please try again.")",
-    "KCHAUTH6002E": "$_("This field is required.")",
-
-    "KCHAUTH6001M": "$_("Log in")",
-    "KCHAUTH6002M": "$_("Logging in...")",
-
     "Host": "$_("Host")",
     "Guests": "$_("Guests")",
     "Templates": "$_("Templates")",
     "Storage": "$_("Storage")",
     "Network": "$_("Network")",
 
-    "KCHAPI6002E": "$_("Failed to get application configuration")",
     "KCHAPI6003E": "$_("This is not a valid Linux path")",
-    "KCHAPI6004E": "$_("This is not a valid URL.")",
-    "KCHAPI6005E": "$_("No such data available.")",
-    "KCHAPI6007E": "$_("Can not contact the host system. Verify the host system is up and that you have network connectivity to it. HTTP request response %1. ")",
     "KCHAPI6008E": "$_("Unable to read file.")",
     "KCHAPI6009E": "$_("Error while uploading file.")",
 
@@ -53,95 +41,44 @@
     "KCHAPI6007M": "$_("Save")",
     "KCHAPI6008M": "$_("Creating...")",
     "KCHAPI6009M": "$_("Cloning...")",
-
-    "KCHGRD6001M": "$_("Loading...")",
-    "KCHGRD6002M": "$_("An error occurred while retrieving system information.")",
-    "KCHGRD6003M": "$_("Retry")",
-    "KCHGRD6004M": "$_("Detailed message:")",
+    "KCHAPI6010M": "$_("Saving...")",
+    "KCHAPI6012M": "$_("Migrating...")",
 
     "KCHTMPL6001W": "$_("No ISO found")",
 
-    "KCHTMPL6002E": "$_("This is not a valid ISO file.")",
-
+    "KCHTMPL6001M": "$_("Add Template")",
     "KCHTMPL6002M": "$_("This may take a long time. Do you want to continue?")",
-    "KCHTMPL6003M": "$_("This will permanently delete the template. Would you like to continue?")",
+    "KCHTMPL6003M": "$_("This will permanently delete the %1 template. Would you like to continue?")",
+    "KCHTMPL6004M": "$_("View Table")",
+    "KCHTMPL6005M": "$_("View Gallery")",
+    "KCHTMPL6006M": "$_("Not Available")",
+    "KCHTMPL6007M": "$_("Please check the invalid Storage Pools")",
+    "KCHTMPL6008M": "$_("Please check the invalid Storage Pools or Paths")",
+    "KCHTMPL6009M": "$_("macvtap")",
+    "KCHTMPL6010M": "$_("ovs")",
+    "KCHTMPL6011M": "$_("network")",
 
-    "KCHHOST6001E": "$_("Unable to shut down system as there are some virtual machines running!")",
-
-    "KCHHOST6001M": "$_("Max:")",
-    "KCHHOST6002M": "$_("Utilization")",
-    "KCHHOST6003M": "$_("Available")",
-    "KCHHOST6004M": "$_("Read Rate")",
-    "KCHHOST6005M": "$_("Write Rate")",
-    "KCHHOST6006M": "$_("Received")",
-    "KCHHOST6007M": "$_("Sent")",
-    "KCHHOST6008M": "$_("Shutting down or restarting host will cause unsaved work lost. Continue to shut down/restarting?")",
-
-
-    "KCHREPO6001M": "$_("Confirm")",
-    "KCHREPO6002M": "$_("Repository will be removed permanently and can't be recovered. Do you want to continue?")",
-    "KCHREPO6003M": "$_("Repositories")",
-    "KCHREPO6004M": "$_("ID")",
-    "KCHREPO6005M": "$_("Name")",
-    "KCHREPO6006M": "$_("Base URL")",
-    "KCHREPO6007M": "$_("Is Mirror")",
-    "KCHREPO6008M": "$_("URL Args")",
-    "KCHREPO6009M": "$_("Enabled")",
-    "KCHREPO6010M": "$_("GPG Check")",
-    "KCHREPO6011M": "$_("GPG Key")",
-    "KCHREPO6012M": "$_("Add")",
-    "KCHREPO6013M": "$_("Edit")",
-    "KCHREPO6014M": "$_("Remove")",
-    "KCHREPO6016M": "$_("Enable")",
-    "KCHREPO6017M": "$_("Disable")",
-
-
-    "KCHUPD6001M": "$_("Software Updates")",
-    "KCHUPD6002M": "$_("Package Name")",
-    "KCHUPD6003M": "$_("Version")",
-    "KCHUPD6004M": "$_("Architecture")",
-    "KCHUPD6005M": "$_("Repository")",
-    "KCHUPD6006M": "$_("Update All")",
-    "KCHUPD6007M": "$_("Updating...")",
-    "KCHUPD6008M": "$_("Failed to retrieve packages update information.")",
-    "KCHUPD6009M": "$_("Failed to update package(s).")",
-
-
-    "KCHDR6001M": "$_("Debug report will be removed permanently and can't be recovered. Do you want to continue?")",
-    "KCHDR6002M": "$_("Debug Reports")",
-    "KCHDR6003M": "$_("Name")",
-    "KCHDR6005M": "$_("Generated Time")",
-    "KCHDR6006M": "$_("Generate")",
-    "KCHDR6007M": "$_("Generating...")",
-    "KCHDR6008M": "$_("Rename")",
-    "KCHDR6009M": "$_("Remove")",
-    "KCHDR6010M": "$_("Download")",
-    "KCHDR6011M": "$_("Report name should contain only letters, digits, underscore ('_') and/or hyphen ('-').")",
-    "KCHDR6012M": "$_("Pending...")",
-    "KCHDR6013M": "$_("Report name is the same as the original one.")",
-
-    "KCHVM6001M": "$_("This will delete the virtual machine and its virtual disks. This operation cannot be undone. Would you like to continue?")",
+    "KCHVM6001M": "$_("This will delete the %1 virtual machine and its virtual disks. This operation cannot be undone. Would you like to continue?")",
     "KCHVM6002M": "$_("Power off Confirmation")",
     "KCHVM6003M": "$_("This action may produce undesirable results, "
-                      "for example unflushed disk cache in the guest. "
+                      "for example unflushed disk cache in the %1 guest. "
                       "Would you like to continue?")",
     "KCHVM6004M": "$_("Reset Confirmation")",
     "KCHVM6005M": "$_("There is a risk of data loss caused by reset without"
-                      " the guest OS shutdown. Would you like to continue?")",
+                      " the %1 guest OS shutdown. Would you like to continue?")",
     "KCHVM6006M": "$_("Shut Down Confirmation")",
-    "KCHVM6007M": "$_("Note the guest OS may ignore this request. Would you like to continue?")",
+    "KCHVM6007M": "$_("Note the %1 guest OS may ignore this request. Would you like to continue?")",
     "KCHVM6008M": "$_("Virtual Machine delete Confirmation")",
-    "KCHVM6009M": "$_("This virtual machine is not persistent. Power Off will delete it. Continue?")",
-    "KCHVM6010M": "$_("When the target guest has SCSI or iSCSI volumes, they will be cloned on default storage pool. The same will happen when the target pool does not have enough space to clone the volumes. Do you want to continue?")",
+    "KCHVM6009M": "$_("The %1 virtual machine is not persistent. Power Off will delete it. Continue?")",
+    "KCHVM6010M": "$_("Add Guest")",
+
+    "KCHVM0001E": "$_("Input is not a number")",
+    "KCHVM0002E": "$_("Memory value cannot be higher than Max Memory value")",
+    "KCHVM0003E": "$_("For better performance it is recommended a threads per core value not greater than %1.")",
 
     "KCHVMCD6001M": "$_("This CDROM will be detached permanently and you can re-attach it. Continue to detach it?")",
     "KCHVMCD6002M": "$_("Attach")",
     "KCHVMCD6003M": "$_("Attaching...")",
-    "KCHVMCD6004M": "$_("Replace")",
-    "KCHVMCD6005M": "$_("Replacing...")",
-    "KCHVMCD6006M": "$_("Successfully attached!")",
-    "KCHVMCD6007M": "$_("Successfully replaced!")",
-    "KCHVMCD6008M": "$_("Successfully detached!")",
     "KCHVMCD6009M": "$_("This disk will be detached permanently and you can re-attach it. Continue to detach it?")",
 
     "KCHVMED6001M": "$_("interface:")",
@@ -151,16 +88,26 @@
     "KCHVMED6005M": "$_("drive_type:")",
     "KCHVMED6006M": "$_("model:")",
     "KCHVMED6007M": "$_("Affected devices:")",
+    "KCHVMED6008M": "$_("More")",
+    "KCHVMED6009M": "$_("Less")",
+    "KCHVMED6010M": "$_("Successfully attached device to VM")",
+    "KCHVMED6011M": "$_("Successfully detached device from VM")",
+    "KCHVMED6012M": "$_("Following devices will be affected, confirm?")",
+    "KCHVMED6013M": "$_("macvtap")",
+    "KCHVMED6014M": "$_("ovs")",
+    "KCHVMED6015M": "$_("network")",
+    "KCHVMED6016M": "$_("Bridge")",
+    "KCHVMED6017M": "$_("Vepa")",
+    "KCHVMED6018M": "$_("None")",
 
-    "KCHNET6001E": "$_("The VLAN id must be between 1 and 4094.")",
 
     "KCHNET6001M": "$_("unavailable")",
-    "KCHNET6002M": "$_("This action will interrupt network connectivity for any virtual machine that depend on this network.")",
-    "KCHNET6003M": "$_("Create a network")",
-    "KCHNET6004M": "$_("This network is not persistent. Instead of stop, this action will permanently delete it. Would you like to continue?")",
+    "KCHNET6002M": "$_("This action will interrupt network connectivity for any virtual machine that depend on the %1 network.")",
+    "KCHNET6003M": "$_("Add Network")",
+    "KCHNET6004M": "$_("The %1 network is not persistent. Instead of stop, this action will permanently delete it. Would you like to continue?")",
     "KCHNET6001W": "$_("The bridged VLAN tag may not work well with NetworkManager enabled. You should consider disabling it.")",
 
-    "KCHPOOL6001M": "$_("This will permanently delete the storage pool. Would you like to continue?")",
+    "KCHPOOL6001M": "$_("This will permanently delete the %1 storage pool. Would you like to continue?")",
     "KCHPOOL6002M": "$_("This storage pool is empty.")",
     "KCHPOOL6003M": "$_("It will format your disk and you will loose any data in there, are you sure to continue? ")",
     "KCHPOOL6004M": "$_("SCSI Fibre Channel")",
@@ -168,22 +115,44 @@
     "KCHPOOL6006M": "$_("Loading iSCSI targets...")",
     "KCHPOOL6007M": "$_("No iSCSI found. Please input one.")",
     "KCHPOOL6008M": "$_("Failed to load iSCSI targets.")",
-
-    "KCHPOOL6001E": "$_("The storage pool name can not be blank.")",
-    "KCHPOOL6002E": "$_("The storage pool path can not be blank.")",
-    "KCHPOOL6003E": "$_("NFS server mount path can not be blank.")",
-    "KCHPOOL6005E": "$_("Invalid NFS mount path.")",
-    "KCHPOOL6006E": "$_("No logical device selected.")",
-    "KCHPOOL6007E": "$_("The iSCSI target can not be blank.")",
-    "KCHPOOL6008E": "$_("Server name can not be blank.")",
-    "KCHPOOL6009E": "$_("This is not a valid Server Name or IP. Please, modify it.")",
-    "KCHPOOL6010M": "$_("Looking for available partitions ...")",
+    "KCHPOOL6009M": "$_("Would you like to continue?")",
+    "KCHPOOL6010M": "$_("This will permanently delete the following storage volumes: %1")",
     "KCHPOOL6011M": "$_("No available partitions found.")",
-    "KCHPOOL6012M": "$_("This storage pool is not persistent. Instead of deactivate, this action will permanently delete it. Would you like to continue?")",
+    "KCHPOOL6012M": "$_("The %1 storage pool is not persistent. Instead of deactivate, this action will permanently delete it. Would you like to continue?")",
     "KCHPOOL6013M": "$_("Unable to retrieve partitions information.")",
     "KCHPOOL6014M": "$_("In progress...")",
     "KCHPOOL6015M": "$_("Failed!")",
+    "KCHPOOL6016M": "$_("No LVM found in the system.")",
+    "KCHPOOL6017M": "$_("This will permanently wipe the following storage volumes: %1")",
+    "KCHPOOL6018M": "$_("Wipe Confirmation")",
+    "KCHPOOL6019M": "$_("Select one or more partitions to be added to the logical pool %1:")",
+    "KCHPOOL6020M": "$_("Add Storage")",
+    "KCHPOOL6021M": "$_("DIR")",
+    "KCHPOOL6022M": "$_("NFS")",
+    "KCHPOOL6023M": "$_("iSCSI")",
+    "KCHPOOL6024M": "$_("LOGICAL")",
+    "KCHPOOL6025M": "$_("device")",
+    "KCHPOOL6026M": "$_("path")",
+    "KCHPOOL6027M": "$_("size (GiB)")",
+    "KCHPOOL6028M": "$_("free size (GiB)")",
+
+    "KCHPOOL6005E": "$_("Invalid NFS mount path.")",
+    "KCHPOOL6006E": "$_("No logical device selected.")",
+    "KCHPOOL6009E": "$_("This is not a valid Server Name or IP. Please, modify it.")",
 
     "KCHVMSTOR0001E": "$_("CDROM path needs to be a valid local/remote path and cannot be blank.")",
-    "KCHVMSTOR0002E": "$_("Disk pool or volume cannot be blank.")"
+    "KCHVMSTOR0002E": "$_("Disk pool or volume cannot be blank.")",
+    "KCHVMSTOR0003E": "$_("Disk size or Format or Directory path cannot be blank and Directory path needs to be a valid local/remote path.")",
+    "KCHVMSTOR0004E": "$_("Disk path needs to be a valid local/remote path and cannot be blank.")",
+    "KCHVMSTOR0005E": "$_("Storage pool or Disk size or Format cannot be blank.")",
+    "KCHVMSTOR0001M": "$_("cdrom")",
+    "KCHVMSTOR0002M": "$_("disk")",
+    "KCHVMSTOR0003M": "$_("Pool")",
+    "KCHVMSTOR0004M": "$_("Path")",
+    "KCHVMSTOR0005M": "$_("qcow")",
+    "KCHVMSTOR0006M": "$_("qcow2")",
+    "KCHVMSTOR0007M": "$_("qed")",
+    "KCHVMSTOR0008M": "$_("raw")",
+    "KCHVMSTOR0009M": "$_("vmdk")",
+    "KCHVMSTOR0010M": "$_("vpc")"
 }

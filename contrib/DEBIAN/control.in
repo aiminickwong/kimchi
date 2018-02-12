@@ -3,23 +3,30 @@ Version: @PACKAGE_VERSION@
 Section: base
 Priority: optional
 Architecture: all
-Depends: python-cherrypy3 (>= 3.2.0),
-         python-cheetah,
+Depends: wok (>= 2.1.0),
+         python-imaging,
+         python-configobj,
+         novnc,
          python-jsonschema (>= 1.3.0),
+         python-libvirt,
          gettext,
-         python-m2crypto,
-         python-pam,
-         python-lxml,
-         nginx,
-         python-ldap,
+         libvirt-clients,
+         nfs-common,
+         qemu-kvm,
+         python-parted,
          python-psutil (>= 0.6.0),
-         fonts-font-awesome,
-         texlive-fonts-extra
+         python-ethtool,
+         sosreport,
+         python-ipaddr,
+         python-lxml,
+         open-iscsi,
+         python-guestfs,
+         libguestfs-tools,
+         spice-html5,
+         python-magic,
+         python-paramiko
 Build-Depends: xsltproc,
-               openssl,
-               python-lxml,
-               pkg-config,
-               python-dev,
-               python-pip
+               gettext,
+               python-lxml
 Maintainer: Aline Manera <alinefm@br.ibm.com>
-Description: Wok - Webserver Originated from Kimchi
+Description: Kimchi web application

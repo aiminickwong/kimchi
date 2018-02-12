@@ -1,0 +1,140 @@
+#*
+ * Project Kimchi
+ *
+ * Copyright IBM Corp, 2013-2017
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *#
+#unicode UTF-8
+#import gettext
+#from wok.cachebust import href
+#silent t = gettext.translation($lang.domain, $lang.localedir, languages=$lang.lang, fallback=True)
+#silent _ = t.gettext
+#silent _t = t.gettext
+<html>
+<body>
+<div id="template-add-window" class="window modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">$_("Add Template")</h4>
+            </div>
+            <div class="modal-body">
+                <div class="template-modal-container">
+                    <div id="alert-modal-container"></div>
+                    <div class="form-group">
+                        <label for="tmpl-name">$_("Template Name")</label>
+                        <input type="text" class="form-control" name="name" id="tmpl-name" />
+                        <p class="help-block"><i class="fa fa-info-circle"></i> $_("The name used to identify the template. If omitted, a name will be automatically chosen.")
+                        </p>
+                        <p class="help-block"><i class="fa fa-info-circle"></i> $_("When selecting more than one Image Template, a name will be automatically chosen for each Image Template selected.")
+                        </p>
+                    </div>
+                    <div>
+                        <h5>$_("Where is the source media for this template? ")</h5>
+                        <input type="radio" checked="checked" name="iso-source" id="image-src" value="image-src" class="wok-radio">
+                        <label for="image-src">$_("Image Template")</label>
+                        <input type="radio" name="iso-source" id="netboot-src" value="netboot-src" class="wok-radio netboot-template">
+                        <label for="netboot-src" class="netboot-template">$_("Netboot Template")</label>
+                    </div>
+                </div>
+                <div class="template-pager">
+                    <div class="page-list">
+                        <div class="page" id="iso-local-box">
+                                <!-- 1-1-2 -->
+                                <div id="iso-file-field">
+                                    <div id="iso-file-box" class="custom-iso-field">
+                                        <div class="form-group">
+                                        <label for="iso-file">$_("File Path:")</label>
+                                        <input type="text" class="form-control" id="iso-file" name="iso-file">
+                                        </div>
+                                    </div>
+                                </div>
+                                <span id="local-iso-warning-container"></span>
+                                <span id="local-iso-error-container"></span>
+                                <button class="btn btn-primary" id="iso-search" style="display: none">$_("Search ISOs")</button>
+                                <button class="btn btn-primary" id="iso-search-loading" style="display: none"><i class="wok-loading-icon fa fa-spinner fa-pulse fa-3x fa-fw"></i> $_("Please, wait...")</button>
+
+                                <!-- 1-1-1 -->
+                                <div id="local-iso-field" class="iso-field" style="display: none;">
+                                    <div class="row">
+                                        <p>$_("The following ISOs are available:")</p>
+                                    </div>
+                                    <div class="checkbox row">
+                                        <input type="checkbox" class="wok-checkbox" id="select-all-local-iso">
+                                        <label class="check-all" for="select-all-local-iso">$_("All")</label>
+                                        <div id="template-filter" class="form-group filter">
+                                                <input type="text" class="form-control" id="template-add-iso-filter" placeholder="$_("Filter")" />
+                                        </div>
+                                    </div>
+                                    <div class="row" id="isoRow">
+                                        <form id="form-local-iso">
+                                        <ul id="list-local-iso" class="list-iso">
+                                        </ul>
+                                        </form>
+                                        <script id="tmpl-list-local-iso" type="text/html">
+                                            <li class="col-md-3">
+                                                <label class="box-iso-outer">
+                                                    <input type="checkbox" class="iso-checkbox-hidden" name="iso" value="{isoId}" {disabled} data-permission="{has_permission}">
+                                                    <span class="box-iso-border">
+                                                        <span class="box-iso-inner">
+                                                            <h3 class="iso-title {os_distro}" title="{name}">
+                                                                {name}
+                                                            </h3>
+                                                            <dl class="iso-info">
+                                                                <dt>{os_distro}</dt>
+                                                                <dd>$_("OS")</dd>
+                                                                <dt>{os_version}</dt>
+                                                                <dd>$_("Version")</dd>
+                                                                <dt>{capacity}</dt>
+                                                                <dd>$_("Size")</dd>
+                                                            </dl>
+                                                            <span data-toggle="tooltip" title="$_('QEMU does not have enough permission to work with this file')" class="{volume_hidden} iso-image-alert"><i class="fa fa-exclamation-triangle fa-lg"></i></span>
+                                                            <span class="iso-image-indicator"><i class="fa fa-file-{format}"></i><i class="{icon}"></i></span>
+                                                        </span>
+                                                    </span>
+                                                </label>
+                                            </li>
+                                        </script>
+                                    </div>
+                                    <div class="row">
+                                        <button class="btn btn-primary" id="iso-more" style="display: none"><span class="text">$_("Search more ISOs")</span></button>
+                                        <button class="btn btn-primary" id="iso-more-loading" style="display: none"><i class="wok-loading-icon fa fa-spinner fa-pulse fa-3x fa-fw"></i> $_("Please, wait...")</button>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="page" id="netboot-path">
+                        </div>
+                    </div>
+                    <div id="loading-isos">
+                        <div class="wok-mask-loader-container">
+                            <div class="wok-mask-loading">
+                                <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                                <div class="wok-mask-loading-text">$_("Loading...")</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" id="btn-template-file-create" disabled="disabled">$_("Create")</button>
+                    <button class="btn btn-default" id="btn-template-local-iso-create" disabled="disabled">$_("Create")</button>
+                    <button class="btn btn-default" id="btn-template-netboot-create" disabled="disabled">$_("Create")</button>
+                    <button class="btn btn-default" data-dismiss="modal" type="button">$_("Cancel")</button>
+                </div>
+            </div>
+<script>
+kimchi.template_add_main();
+</script>
+
+
+</div>
+</body>
+</html>

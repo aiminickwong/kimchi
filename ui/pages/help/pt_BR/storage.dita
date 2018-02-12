@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Arbortext, Inc., 1988-2011, v.4002-->
+<!DOCTYPE cshelp PUBLIC "-//IBM//DTD DITA CSHelp//EN"
+ "..\dtd\cshelp.dtd">
+
+
+<!--This DITA specialized document type is not supported by the Authoring Tools development team.
+For support please see:
+https://w3.opensource.ibm.com/projects/dita-cshelp/-->
+<cshelp id="kimhstor" xml:lang="pt-br">
+<title>Armazenamento</title>
+<shortdesc>A página <wintitle>Armazenamento</wintitle> lista os bancos de armazenamento disponíveis, inclusive os bancos de armazenamento 'default' e 'ISO' integrados. Se desejar usar seu próprio ISO, inclua-o em seu caminho do banco de armazenamento 'ISO'.</shortdesc>
+<csbody>
+<p>Para cada banco de armazenamento, as informações a seguir são exibidas:<dl>
+<dlentry>
+<dt>Nome</dt>
+<dd>Nome do banco de armazenamento.</dd>
+</dlentry><dlentry>
+<dt>% Usado</dt>
+<dd>Porcentagem do banco de armazenamento que está sendo usada.</dd>
+</dlentry><dlentry>
+<dt>Estado</dt>
+<dd>Estado do banco de armazenamento, ativo (verde) ou inativo (vermelho). </dd>
+</dlentry><dlentry>
+<dt>Local</dt>
+<dd>Caminho do arquivo para o local do banco de armazenamento.</dd>
+</dlentry><dlentry>
+<dt>Tipo</dt>
+<dd>Tipo de banco de armazenamento, por exemplo, <uicontrol>dir</uicontrol>.</dd>
+</dlentry><dlentry>
+<dt>Capacidade</dt>
+<dd>Quantia de espaço no banco de armazenamento.</dd>
+</dlentry><dlentry>
+<dt>Alocado</dt>
+<dd>Quantia de espaço já alocado no banco de armazenamento.</dd>
+</dlentry></dl></p>
+<p>As ações a seguir podem ser selecionadas para cada banco de armazenamento:<ul>
+<li>Selecione <uicontrol>Ativar</uicontrol> para ativar o banco de armazenamento
+para que ele possa ser usado.</li>
+<li>Selecione <uicontrol>Desativar</uicontrol> para desativar um banco de armazenamento
+ativo.</li>
+<li>Selecione <uicontrol>Incluir volume</uicontrol> para incluir mais volume em um banco de armazenamento ativo.</li>
+<li>Selecione <uicontrol>Indefinir</uicontrol> para remover um banco de armazenamento
+inativo.</li>
+</ul></p>
+<p>Para exibir detalhes do volume de armazenamento para um banco de armazenamento, clique na
+seta no lado direito da linha do banco de armazenamento. Para definir um banco de armazenamento, clique no ícone de <uicontrol>mais (+)</uicontrol>.</p>
+</csbody>
+<cshelp id="kimhdefstor" xml:lang="en-us">
+<title>Definir um banco de armazenamento</title>
+<shortdesc> Defina um banco de armazenamento.</shortdesc>
+<csbody>
+<p> <ol>
+<li>No campo <uicontrol>Nome do banco de armazenamento</uicontrol>, digite o
+nome a ser usado para identificar o banco de armazenamento.</li>
+<li>Na lista <uicontrol>Tipo de banco de armazenamento</uicontrol>, selecione o
+tipo: <dl><dlentry>
+<dt><uicontrol>DIR</uicontrol></dt>
+<dd>Especifica um banco de diretórios. Ao selecionar <uicontrol>DIR</uicontrol>,
+digite o <uicontrol>Caminho do armazenamento</uicontrol> (caminho do arquivo para o
+banco de armazenamento).</dd>
+</dlentry><dlentry>
+<dt><uicontrol>NFS</uicontrol></dt>
+<dd>Especifica um banco de sistema de arquivos de rede. Ao selecionar <uicontrol>NFS</uicontrol>,
+digite o endereço <uicontrol>IP do servidor NFS</uicontrol> e o <uicontrol>Caminho
+do NFS</uicontrol> (caminho do diretório exportado).</dd>
+</dlentry><dlentry>
+<dt><uicontrol>iSCSI</uicontrol></dt>
+<dd>Especifica um banco com base em um destino alocado em um servidor iSCSI.
+Ao selecionar <uicontrol>iSCSI</uicontrol>, digite o endereço IP do <uicontrol>Servidor
+iSCSI</uicontrol> e o <uicontrol>Destino</uicontrol> no
+servidor iSCSI. Opcionalmente, é possível selecionar para incluir a autenticação iSCSI.</dd>
+</dlentry><dlentry>
+<dt><uicontrol>Lógico</uicontrol></dt>
+<dd>Especifica um banco de armazenamento do volume lógico. Selecione o local para
+o dispositivo em <uicontrol>Caminho do dispositivo</uicontrol>.</dd>
+</dlentry><dlentry>
+<dt><uicontrol>Fibre Channel SCSI</uicontrol></dt>
+<dd>Especifica um banco com base em um Fibre Channel SCSI. Selecione qual
+adaptador SCSI deve ser usado.</dd>
+</dlentry></dl></li>
+<li>Especifique um caminho do armazenamento para o banco  de armazenamento. O caminho do armazenamento é o local no sistema de arquivos local para o qual o banco está mapeado.
+O caminho deve ser exclusivo. Se o diretório não existir quando o banco for criado, ele será criado para você.</li>
+<li>Clique em <uicontrol>Criar</uicontrol>.</li>
+</ol> </p>
+</csbody>
+</cshelp>
+<cshelp id="kimhdefstor" xml:lang="en-us">
+<title>Incluir volume</title>
+<shortdesc>Inclui volume em um banco de armazenamento.</shortdesc>
+<csbody>
+<dl><dlentry>
+<dt>Buscar a partir da URL remota</dt>
+<dd>Especifica um local do qual fazer o download do volume. Por exemplo: <filepath>https://my-server/fedora22.img</filepath>.</dd>
+</dlentry><dlentry>
+<dt>Fazer upload de um arquivo</dt>
+<dd>Especifica um local em seu sistema local. </dd>
+</dlentry></dl>
+</csbody>
+</cshelp>
+</cshelp>
+
+
+<!-- ENGL1SH_VERS10N 52145_5 DO NOT REMOVE OR CHANGE THIS LINE -->
+<!-- T9N_SRC_ID 233 -->
+<!-- T9N_SH1P_STR1NG KV310AAP001 1 -->

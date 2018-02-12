@@ -1,9 +1,7 @@
 #
-# Project Wok
+# Kimchi
 #
-# Copyright IBM Corp, 2013-2015
-#
-# Code derived from Project Kimchi
+# Copyright IBM Corp, 2013-2016
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -19,9 +17,26 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-SUBDIRS = src ui docs contrib po tests
+SUBDIRS = contrib control distros.d docs model po tests ui xmlutils
 
-man_MANS = docs/wokd.8
+kimchi_PYTHON = $(filter-out config.py, $(wildcard *.py))
+
+nodist_kimchi_PYTHON = config.py
+
+if WITH_SPICE
+WITH_SPICE=yes
+else
+WITH_SPICE=no
+endif
+
+wokdir = $(pythondir)/wok
+kimchidir = $(pythondir)/wok/plugins/kimchi
+
+wokconfdir = $(sysconfdir)/wok/plugins.d
+dist_wokconf_DATA = kimchi.conf
+
+confdir = $(sysconfdir)/kimchi
+dist_conf_DATA = template.conf
 
 AUTOMAKE_OPTIONS = foreign
 
@@ -29,33 +44,48 @@ ACLOCAL_AMFLAGS = --install -I m4
 
 EXTRA_DIST = \
 	config.rpath \
+	API.json \
 	autogen.sh \
 	COPYING.ASL2 \
 	COPYING.LGPL \
 	CONTRIBUTE.md \
 	VERSION \
 	build-aux/pkg-version \
+	config.py.in \
 	$(NULL)
 
 
-PEP8_BLACKLIST = *src/wok/plugins,*src/wok/config.py,*src/wok/i18n.py,*tests/test_config.py
+PEP8_BLACKLIST = *config.py,*i18n.py,*tests/test_config.py
 
-SKIP_PYFLAKES_ERR = "\./src/wok/websocket\.py"
-
-I18N_FILES = src/wok/plugins/*/i18n.py \
-	src/wok/i18n.py \
+I18N_FILES = ./i18n.py \
 	$(NULL)
 
 check-local:
-	PYTHONPATH=src contrib/check_i18n.py $(I18N_FILES)
-	find . -path './.git' -prune -type f -o \
-		-name '*.py' -o -name '*.py.in'  | xargs $(PYFLAKES) | \
-		grep -w -v $(SKIP_PYFLAKES_ERR) | \
-		while read LINE; do echo "$$LINE"; false; done
-
+	contrib/check_i18n.py $(I18N_FILES)
+	@if [ -d '.git' ]; then                                        \
+		find . -path './.git' -prune -o                        \
+			-name '*.py' -o -name '*.py.in'  |             \
+			xargs $(PYFLAKES) |                            \
+			while read LINE; do echo "$$LINE"; false; done \
+	else                                                           \
+		find . -name '*.py' -o -name '*.py.in'  |              \
+			xargs $(PYFLAKES) |                            \
+			while read LINE; do echo "$$LINE"; false; done \
+	fi
 	$(PEP8) --version
 	$(PEP8) --filename '*.py,*.py.in' --exclude="$(PEP8_BLACKLIST)" .
-
+	./check_ui_code_errors.sh
+	@if $(GIT) rev-parse &> /dev/null ; then                         \
+		echo "Whitespace verification ...";                      \
+		git grep --cached -Il '' | grep -v '^ui/spice-html5/' |  \
+			xargs egrep '.* +$$'                             \
+			&& echo "ERROR: Whitespaces found" || echo "Ok"; \
+		echo "IBM copyright year verification ..." ;              \
+		/bin/bash ../../../../check-IBM-license-header.sh ;       \
+	fi;
+	@if [ -f $(RPMLINT) ]; then \
+		./check_spec_errors.sh; \
+	fi;
 
 # Link built mo files in the source tree to enable use of translations from
 # within the source tree
@@ -63,8 +93,24 @@ all-local:
 	while read L && test -n "$$L"; do                  \
 		dir=mo/$$L/LC_MESSAGES ;                       \
 		$(MKDIR_P) $$dir ;                             \
-		ln -sf ../../../po/$$L.gmo $$dir/wok.mo ;   \
+		ln -sf ../../../po/$$L.gmo $$dir/kimchi.mo ;   \
 	done < po/LINGUAS
+
+do_substitution = \
+	sed -e 's,[@]prefix[@],$(prefix),g'             \
+	-e 's,[@]datadir[@],$(datadir),g'               \
+	-e 's,[@]sysconfdir[@],$(sysconfdir),g'         \
+	-e 's,[@]localstatedir[@],$(localstatedir),g'   \
+	-e 's,[@]pkgdatadir[@],$(pkgdatadir),g'         \
+	-e 's,[@]wokdir[@],$(wokdir),g'           			\
+	-e 's,[@]kimchidir[@],$(kimchidir),g'           \
+	-e 's,[@]kimchiversion[@],$(PACKAGE_VERSION),g' \
+	-e 's,[@]kimchirelease[@],$(PACKAGE_RELEASE),g' \
+	-e 's,[@]withspice[@],$(WITH_SPICE),g'
+
+config.py: config.py.in Makefile
+	$(do_substitution) < $(srcdir)/config.py.in > config.py
+
 
 #
 # Packaging helpers
@@ -72,98 +118,79 @@ all-local:
 
 install-deb: install
 	cp -R $(top_srcdir)/contrib/DEBIAN $(DESTDIR)/
-	@if test -d "$(systemdsystemunitdir)" ; then \
-		$(MKDIR_P) $(DESTDIR)/$(systemdsystemunitdir); \
-		cp -R contrib/wokd.service.fedora \
-			$(DESTDIR)/$(systemdsystemunitdir)/wokd.service; \
-	else \
-		$(MKDIR_P) $(DESTDIR)/etc/init; \
-		cp -R $(top_srcdir)/contrib/wokd-upstart.conf.debian \
-			$(DESTDIR)/etc/init/wokd.conf; \
-	fi
-	$(MKDIR_P) $(DESTDIR)/$(localstatedir)/lib/wok/
-	$(MKDIR_P) $(DESTDIR)/usr/lib/firewalld/services
-	cp -R $(top_srcdir)/src/firewalld.xml \
-		$(DESTDIR)/usr/lib/firewalld/services/wokd.xml
+	mkdir -p $(DESTDIR)/$(localstatedir)/lib/kimchi
+	mkdir -p $(DESTDIR)/$(localstatedir)/lib/kimchi/ws-tokens
+	mkdir -p $(DESTDIR)/$(localstatedir)/lib/kimchi/screenshots
+	mkdir -p $(DESTDIR)/$(localstatedir)/lib/kimchi/isos
+	mkdir -p $(DESTDIR)/$(localstatedir)/lib/kimchi/virtviewerfiles
 
 
 deb: contrib/make-deb.sh
 	$(top_srcdir)/contrib/make-deb.sh
 
-wok.spec: contrib/wok.spec.fedora contrib/wok.spec.suse
+kimchi.spec: contrib/kimchi.spec.fedora contrib/kimchi.spec.suse
 	@if test -e /etc/redhat-release; then                   \
-		ln -sf contrib/wok.spec.fedora $@ ;              \
+		ln -sf contrib/kimchi.spec.fedora $@ ;              	\
 	elif test -e /etc/SuSE-release; then                    \
-		ln -sf contrib/wok.spec.suse $@ ;                \
+		ln -sf contrib/kimchi.spec.suse $@ ;                	\
 	else                                                    \
-		echo "Unable to select a spec file for RPM build" ; \
-		/bin/false ;                                        \
+		echo "Unable to select a spec file for RPM build" ; 	\
+		/bin/false ;                                        	\
 	fi
 
-rpm: dist wok.spec
+rpm: dist kimchi.spec
 	$(MKDIR_P) rpm/BUILD rpm/RPMS rpm/SOURCES rpm/SPECS rpm/SRPMS
-	cp $(top_srcdir)/wok.spec rpm/SPECS/wok.spec
+	cp $(top_srcdir)/kimchi.spec rpm/SPECS/kimchi.spec
 	cp $(DIST_ARCHIVES) rpm/SOURCES
-	rpmbuild -ba --define "_topdir `pwd`/rpm" rpm/SPECS/wok.spec
+	rpmbuild -ba --define "_topdir `pwd`/rpm" rpm/SPECS/kimchi.spec
 
-fedora-rpm: contrib/wok.spec.fedora
-	ln -sf contrib/wok.spec.fedora wok.spec
+fedora-rpm: dist contrib/kimchi.spec.fedora
+	ln -sf contrib/kimchi.spec.fedora kimchi.spec
 	$(MAKE) rpm
 
-suse-rpm: contrib/wok.spec.suse
-	ln -sf contrib/wok.spec.suse wok.spec
+suse-rpm: dist contrib/kimchi.spec.suse
+	ln -sf contrib/kimchi.spec.suse kimchi.spec
 	$(MAKE) rpm
 
 ChangeLog:
-	@if test -d .git; then                                   \
+	@if $(GIT) rev-parse &> /dev/null ; then                     \
 		$(top_srcdir)/build-aux/genChangelog --release > $@; \
 	fi
 
 install-data-local:
 	@if test -d "$(systemdsystemunitdir)" ; then \
-		mkdir -p $(DESTDIR)/$(systemdsystemunitdir); \
-		$(INSTALL_DATA) contrib/wokd.service.fedora $(DESTDIR)/$(systemdsystemunitdir)/wokd.service; \
-	else \
-		mkdir -p $(DESTDIR)/etc/init.d/; \
-		$(INSTALL_DATA) contrib/wokd.sysvinit $(DESTDIR)/etc/init.d/wokd; \
-		chmod +x $(DESTDIR)/etc/init.d/wokd; \
+		mkdir -p $(DESTDIR)/etc/systemd/system/wokd.service.d; \
+		if test -f /etc/debian_version; then \
+			$(INSTALL_DATA) contrib/kimchid.service.debian $(DESTDIR)/etc/systemd/system/wokd.service.d/kimchi.conf; \
+		else \
+			$(INSTALL_DATA) contrib/kimchid.service.fedora $(DESTDIR)/etc/systemd/system/wokd.service.d/kimchi.conf; \
+		fi; \
 	fi; \
-	if test -d /usr/lib/firewalld/services/; then \
-		mkdir -p $(DESTDIR)/usr/lib/firewalld/services/; \
-		$(INSTALL_DATA) src/firewalld.xml $(DESTDIR)/usr/lib/firewalld/services/wokd.xml; \
-	fi; \
-	mkdir -p $(DESTDIR)/$(localstatedir)/lib/wok/
-	mkdir -p $(DESTDIR)/$(localstatedir)/log/wok/
-	touch $(DESTDIR)/$(localstatedir)/log/wok/wok-access.log
-	touch $(DESTDIR)/$(localstatedir)/log/wok/wok-error.log
-	mkdir -p $(DESTDIR)/etc/wok/
-	$(INSTALL_DATA) src/dhparams.pem $(DESTDIR)/etc/wok/dhparams.pem
-	touch $(DESTDIR)/etc/nginx/conf.d/wok.conf
+	$(MKDIR_P) $(DESTDIR)/$(localstatedir)/lib/kimchi/
+	$(MKDIR_P) $(DESTDIR)$(kimchidir)
+	$(INSTALL_DATA) API.json $(DESTDIR)$(kimchidir)/API.json
+	mkdir -p $(DESTDIR)/$(localstatedir)/lib/kimchi/ws-tokens
+	mkdir -p $(DESTDIR)/$(localstatedir)/lib/kimchi/screenshots
+	mkdir -p $(DESTDIR)/$(localstatedir)/lib/kimchi/isos
+	mkdir -p $(DESTDIR)/$(localstatedir)/lib/kimchi/virtviewerfiles
 
 uninstall-local:
-	@if test -f $(systemdsystemunitdir)/wokd.service; then \
-		$(RM) $(DESTDIR)/$(systemdsystemunitdir)/wokd.service; \
-	elif test -f /etc/init.d/wokd; then \
-		$(RM) $(DESTDIR)/etc/init.d/wokd; \
-		$(RM) $(DESTDIR)/etc/init/wok.conf; \
+	@if test -f $(DESTDIR)/etc/systemd/system/wokd.service.d/kimchi.conf; then \
+		$(RM) $(DESTDIR)/etc/systemd/system/wokd.service.d/kimchi.conf; \
 	fi; \
-	if test -d /usr/lib/firewalld/services/; then \
-		$(RM) $(DESTDIR)/usr/lib/firewalld/services/wokd.xml; \
-	fi; \
-	$(RM) -rf $(DESTDIR)/$(localstatedir)/lib/wok
-	$(RM) -rf $(DESTDIR)/$(localstatedir)/log/wok
-	$(RM) -rf $(DESTDIR)/etc/wok
-	$(RM) $(DESTDIR)/etc/nginx/conf.d/wok.conf
+	$(RM) $(DESTDIR)$(kimchidir)/API.json
+	$(RM) -rf $(DESTDIR)/$(localstatedir)/lib/kimchi
 
 VERSION:
-	@if test -d .git; then                                \
-		git describe --abbrev=0 > $@;                     \
+	@if $(GIT) rev-parse &> /dev/null ; then                  \
+		git describe --abbrev=0 --always > $@;            \
 	fi
 
-.PHONY: deb install-deb rpm fedora-rpm suse-rpm ChangeLog VERSION
+.PHONY: deb install-deb rpm fedora-rpm suse-rpm VERSION
 
 
 clean-local:
 	rm -rf mo rpm
 
-CLEANFILES = wok.spec `find "$(top_srcdir)" -type f -name "*.pyc" -print`
+BUILT_SOURCES = config.py
+CLEANFILES = config.py kimchi.spec `find "$(top_srcdir)" -type f -name "*.pyc" -print`

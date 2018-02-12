@@ -1,0 +1,396 @@
+#*
+ * Project Kimchi
+ *
+ * Copyright IBM Corp, 2013-2017
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *#
+#unicode UTF-8
+#import gettext
+#silent t = gettext.translation($lang.domain, $lang.localedir, languages=$lang.lang, fallback=True)
+#silent _ = t.gettext
+#silent _t = t.gettext
+<!DOCTYPE html>
+<html>
+<body>
+<div id="guest-edit-window" class="window modal-content" style="width:1280px; right:80px;">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">$_("Edit Guest")</h4>
+    </div>
+    <div class="modal-body">
+    <span id="alert-modal-container"></span>
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#form-guest-edit-general" aria-controls="form-guest-edit-general" role="tab" data-id="form-guest-edit-general" data-toggle="tab">$_("General")</a></li>
+    <li role="presentation"><a href="#form-guest-edit-storage" aria-controls="form-guest-edit-storage" role="tab" data-id="form-guest-edit-storage" data-toggle="tab">$_("Storage")</a></li>
+    <li role="presentation"><a href="#form-guest-edit-interface" aria-controls="form-guest-edit-interface" role="tab" data-id="form-guest-edit-interface" data-toggle="tab">$_("Interface")</a></li>
+    <li role="presentation"><a href="#form-guest-edit-permission" aria-controls="form-guest-edit-permission" role="tab" data-id="form-guest-edit-permission" data-toggle="tab">$_("Permission")</a></li>
+    <li role="presentation"><a href="#form-guest-edit-pci" aria-controls="form-guest-edit-pci" role="form-guest-edit-pci" data-id="form-guest-edit-pci" data-toggle="tab">$_("Pci")</a></li>
+    <li role="presentation"><a href="#form-guest-edit-snapshot" aria-controls="form-guest-edit-snapshot" role="tab" data-id="form-guest-edit-snapshot" data-toggle="tab">$_("Snapshot")</a></li>
+    <li role="presentation"><a href="#form-edit-processor" aria-controls="form-edit-processor" role="tab" data-id="form-edit-processor" data-toggle="tab">$_("Processor")</a></li>
+  </ul>
+        <div class="tab-content" id="guest-edit-tabs">
+            <form role="tabpanel" class="tab-pane active" id="form-guest-edit-general">
+                <div class="form-group">
+                    <label for="guest-edit-id-textbox">$_("Name")</label>
+                    <input id="guest-edit-id-textbox" class="form-control" name="name" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="guest-edit-memory-textbox">$_("Memory (MB)")</label>
+                    <div id="guest-memory">
+                        <input id="guest-edit-memory-textbox" class="form-control" name="memory-ui" type="number" min="1024" step="1024" />
+                        <button id="guest-show-max-memory" class="btn btn-primary" type="button"><i class="fa fa-plus-circle"></i> <span class="text">$_("More")</span></button>
+                    </div>
+                </div>
+                <div id="guest-max-memory-panel" class="form-group">
+                    <label for="guest-edit-max-memory-textbox">$_("Max Memory (MB)")</label>
+                    <input id="guest-edit-max-memory-textbox" class="form-control" name="max-memory" type="number" min="1024" step="1024" />
+                    <p id="guest-edit-memory-hotplug-unsupported" class="help-block hidden"><i class="fa fa-info-circle"></i> $_("Host does not support memory hotplug")</p>
+                </div>
+                <div class="form-group">
+                    <label for="guest-edit-icon-textbox">$_("Icon")</label>
+                    <input id="guest-edit-icon-textbox" class="form-control" name="icon" type="text" disabled="disabled"  />
+                </div>
+                <div class="form-group" id="guest-console-panel" style="display:none;">
+                    <label for="guest-edit-console">$_("Console")</label>
+                    <select id="guest-edit-console" data-none-selected-text="$_("Nothing selected")" name="console" class="form-control">
+                        <option value="sclp">$_("sclp")</option>
+                        <option value="virtio">$_("virtio")</option>
+                    </select>
+                </div>
+                <div class="guest-edit-bootorder tab-pane" id="form-guest-edit-bootorder">
+                    <div id="bootOrder">
+                        <label for="guest-edit-boot-order-textbox">Boot Order</label>
+                            <ul id="myList" class="list-group boot-order">
+                                <li class="list-group-item" data-value="CDROM"> CD-ROM <button id="add-cdrom" class="btn btn-link addBootOrderElem"><i class="fa fa-plus-circle"></i> Add </button><button id="remove-cdrom" class="btn btn-link deleteBootOrderElem"><i class="fa fa-minus-circle"></i> Remove</button></li>
+                                <li class="list-group-item" data-value="HD"> HD <button id="add-cdrom" class="btn btn-link addBootOrderElem"><i class="fa fa-plus-circle"></i> Add </button><button id="remove-hd" class="btn btn-link deleteBootOrderElem"><i class="fa fa-minus-circle"></i> Remove</button></li>
+                                <li class="list-group-item" data-value="Network"> Network <button id="add-cdrom" class="btn btn-link addBootOrderElem"><i class="fa fa-plus-circle"></i> Add </button><button id="remove-network" class="btn btn-link deleteBootOrderElem"><i class="fa fa-minus-circle"></i> Remove</button></li>
+                            </ul>
+                            <p class="help-block">
+                                <i class="fa fa-info-circle"></i> $_("Select which items for boot order and grad them when needed to order them. At least one option must be selected.")</p>
+                            </p>
+                    </div>
+                </div>
+            </form>
+            <form role="tabpanel" class="tab-pane" id="form-guest-edit-storage">
+                <div class="btn-group action-area">
+                    <button type="button" id="guest-edit-attach-cdrom-button" class="attach btn btn-primary"><i class="fa fa-plus-circle"></i> $_("Add")</button>
+                </div>
+                <div class="header">
+                    <span class="cell column-device">$_("Device")</span>
+                    <span class="cell column-path">$_("Path")</span>
+                    <span class="cell column-actions"><span class="sr-only">$_("Actions")</span></span>
+                </div>
+                <div class="body"></div>
+            </form>
+            <form role="tabpanel" class="guest-edit-interface tab-pane" id="form-guest-edit-interface">
+                <button class="add btn btn-primary"><i class="fa fa-plus-circle"></i>$_("Add")</button>
+                <div class="header">
+                    <span class="cell column-network" title="$_('Network')">$_("Network")</span>
+                    <span class="cell column-type" title="$_('Type')">$_("Type")</span>
+                    <span class="cell column-mac" title="$_('MAC Address')">$_("MAC Address")</span>
+                    <span class="cell column-ip" title="$_('IP Address')">$_("IP Address")</span>
+                    <span class="cell column-actions"><span class="sr-only">$_("Actions")</span></span>
+                </div>
+                <div class="header s390x" style="display:none">
+                    <span class="cell column-type" title="$_('Type')">$_("Type")</span>
+                    <span class="cell column-network" title="$_('Network/Interface')">$_("Network/Interface")</span>
+                    <span class="cell column-mode" title="$_('Mode')">$_("Mode")</span>
+                    <span class="cell column-mac" title="$_('MAC Address')">$_("MAC Address")</span>
+                    <span class="cell column-ip" title="$_('IP Address')">$_("IP Address")</span>
+                    <span class="cell column-actions"><span class="sr-only">$_("Actions")</span></span>
+                </div>
+                <div class="body"></div>
+            </form>
+            <form role="tabpanel" class="guest-edit-permission tab-pane" id="form-guest-edit-permission">
+                <div class="pam col-md-12">
+                    <div class="column avail col-md-5">
+                        <h4 class="title">$_("Available system users and groups")</h4>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                            <input type="text" id="permission-avail-searchBox" class="form-control">
+                        </div>
+                        <div class="body col-md-12">
+                            <div class="head">
+                                <div class="column column-user col-md-6"><div class="item">$_("Users")</div></div>
+                                <div class="column column-group col-md-6"><div class="item">$_("Groups")</div></div>
+                            </div>
+                            <div id="permission-avail-users" class="column column-user col-md-6"></div>
+                            <div id="permission-avail-groups"  class="column column-group col-md-6"></div>
+                        </div>
+                    </div>
+                    <div class="column control col-md-2 v-center">
+                        <button id="permissionBack" class="center-block btn btn-primary btn-lg"><i class="fa fa-chevron-left"></i></button>
+                        <button id="permissionGo" class="center-block btn btn-primary btn-lg"><i class="fa fa-chevron-right"></i></button>
+                    </div>
+                    <div class="column selected col-md-5">
+                        <h4 class="title">$_("Selected system users and groups")</h4>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                            <input type="text" id="permission-sel-searchBox" class="form-control">
+                        </div>
+                        <div class="body col-md-12">
+                            <div class="head">
+                                <div class="column column-user col-md-6"><div class="item">$_("Users")</div></div>
+                                <div class="column column-group col-md-6"><div class="item">$_("Groups")</div></div>
+                            </div>
+                            <div id="permission-sel-users" class="column column-user col-md-6"></div>
+                            <div id="permission-sel-groups"  class="column column-group col-md-6"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ldap">
+                    <div class="header">
+                        <span class="cell">$_("User")</span>
+                        <button type="button" id="guest-edit-add-user-button" class="action-area add btn btn-primary">$_("Add")</button>
+                    </div>
+                    <div class="body"></div>
+                </div>
+            </form>
+            <form role="tabpanel" class="guest-edit-pci tab-pane" id="form-guest-edit-pci">
+                <div class="guest-scroll-indent">
+                    <div class="filter">
+                        <div class="form-group pull-right">
+                            <select class="control selectpicker">
+                                <option value="all">$_("All")</option>
+                                <option value="toAdd">$_("To Add")</option>
+                                <option value="added">$_("Added")</option>
+                            </select>
+                            <input type="text" class="form-control" id="guest-edit-pci-filter" placeholder="$_("Filter")" />
+                        </div>
+                    </div>
+                    <div class="header">
+                        <span class="cell status column-pci-status"><span class="sr-only">$_("Status")</span></span>
+                        <span class="cell name column-pci-name">$_("Name")</span>
+                        <span class="cell product column-product">$_("Product")</span>
+                        <span class="cell vendor column-vendor">$_("Vendor")</span>
+                        <span class="cell column-actions"><span class="sr-only">$_("Actions")</span></span>
+                    </div>
+                    <div class="body"></div>
+                </div>
+                <div class="wok-mask" role="presentation" class="hidden">
+                    <div class="wok-mask-loader-container">
+                        <div class="wok-mask-loading">
+                            <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                            <div class="wok-mask-loading-text">$_("Loading")...</div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <form role="tabpanel" id="form-guest-edit-snapshot" class="guest-edit-snapshot tab-pane">
+                <div class="btn-group">
+                    <button class="add btn btn-primary"><i class="fa fa-plus-circle"></i> $_("Add")</button>
+                </div>
+                <div class="header">
+                    <span class="cell column-sel"><span class="sr-only">$_("Status")</span></span>
+                    <span class="cell column-snapshot-name">$_("Name")</span>
+                    <span class="cell column-snapshot-created">$_("Created")</span>
+                    <span class="cell column-actions"><span class="sr-only">$_("Actions")</span></span>
+                </div>
+                <div class="task"></div>
+                <div class="body"></div>
+            </form>
+            <form role="tabpanel" class="tab-pane" id="form-edit-processor">
+                <div class="form-group">
+                    <div id="guest-processor">
+                        <label for="vcpus">$_("Current CPU Number")</label>
+                        <input id="vcpus" class="form-control" name="processor" type="number" min="1" />
+                        <p class="help-block">
+                            <i class="fa fa-info-circle"></i>
+                            $_("Current CPU must be equal or lower than the Maximum CPU value. If a topology is set, it must be also be a multiple of the 'threads' value.")
+                        </p>
+                    </div>
+                    <div id="guest-max-processor-panel" class="form-group">
+                        <label for="guest-edit-max-processor-textbox">$_("Max CPU")</label>
+                        <p id="settings-readonly-help" class="hidden">$_("Unable to edit maximum CPU or CPU topology when editing a running or paused virtual machine.")</p>
+                        <input id="guest-edit-max-processor-textbox" class="form-control" name="max-processor" type="number" min="1" />
+                        <p class="help-block">
+                            <i class="fa fa-info-circle"></i>
+                            $_("If a topology is set, this value will be the product of sockets * times * cores.")
+                        </p>
+                    </div>
+                </div>
+                <div class="manual form-group" id="topology-checkbox">
+                    <input type="checkbox" class="wok-checkbox" id="cpus-check" />
+                    <label for="cpus-check">$_("Manually set CPU topology")</label>
+                </div>
+                <div class="topology">
+                    <div class="form-group">
+                        <label for="sockets">$_("Sockets")</label>
+                        <input type="text" class="form-control" value="1" id="sockets" />
+                    </div>
+                    <div class="form-group">
+                        <label for="cores">$_("Cores")</label>
+                        <input type="text" class="form-control" value="1" id="cores" />
+                    </div>
+                    <div class="form-group">
+                        <label for="threads">$_("Threads")</label>
+                        <input type="text" class="form-control" value="1" id="threads" />
+                        <p class="help-block">
+                            <i class="fa fa-info-circle"></i>
+                            <spam class="text" id="threads-recommended-values" />
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button id="guest-edit-button-save" class="btn btn-default">$_("Save")</button>
+        <button id="guest-edit-button-cancel" class="btn btn-default" data-dismiss="modal">$_("Cancel")</button>
+    </div>
+</div>
+<script id="cdrom-row-tmpl" type="text/html">
+    <div class="item view" id="cdrom-{dev}">
+        <span class="cell dev column-device">
+            <input type="text" readonly="readonly"
+                id="cdrom-dev-{dev}" name="cdrom-dev-{dev}" value="{dev}" class="form-control" />
+        </span>
+        <span class="cell path column-path">
+            <input id="cdrom-path-{dev}" name="cdrom" type="text"
+                data-vm="{vm}" data-dev="{dev}"
+                value="{path}" readonly="readonly" class="form-control" />
+        </span>
+        <span class="cell action-area column-actions">
+            <button type="button" class="guest-edit-cdrom-button replace btn btn-link"
+                data-vm="{vm}" data-dev="{dev}"
+                title='$_("Replace")'><i class="fa fa-pencil"></i> $_("Replace")</button>
+
+            <button type="button" class="guest-edit-cdrom-button detach btn btn-link"
+                data-vm="{vm}" data-dev="{dev}" data-type="{type}"
+                title='$_("Detach")'><i class="fa fa-minus-circle"></i> $_("Detach")</button>
+
+            <button type="button" class="guest-edit-cdrom-button save hidden btn btn-primary"
+                data-vm="{vm}" data-dev="{dev}"
+                title='$_("Save")'>$_("Save")</button>
+
+            <button type="button" class="guest-edit-cdrom-button cancel hidden btn btn-primary"
+                data-vm="{vm}" data-dev="{dev}"
+                title='$_("Cancel")'>$_("Cancel")</button>
+        </span>
+    </div>
+</script>
+<script id="interface-tmpl" type="text/html">
+    <div class="item" id="{mac}">
+        <span class="cell column-network">
+            <span id="label-network-{id}" class="{viewMode}">{network}</span>
+            <select class="{editMode}" data-none-selected-text="$_("Nothing selected")"></select>
+        </span>
+        <span class="cell column-type">
+            {type}
+        </span>
+        <span class="cell column-mac">
+            <span id="label-mac-{id}" class="{viewMode}">{mac}</span>
+            <input class="form-control {editMode}" type="text"
+               id="edit-mac-{id}" class="form-control" name="{mac}" value="{mac}" />
+        </span>
+        <span class="cell column-ip">
+            <span class=ipText>{ips}</span>
+        </span>
+        <span class="cell {editMode} column-actions action-area">
+                <button class="btn btn-primary save">$_("Save")</button>
+                <button class="btn btn-primary cancel">$_("Remove")</button>
+        </span>
+        <span class="cell {viewMode} column-actions action-area">
+            <button class="btn btn-link edit"><i class="fa fa-pencil"></i> $_("Edit")</button>
+            <button class="btn btn-link delete"><i class="fa fa-minus-circle"></i> $_("Remove")</button>
+        </span>
+    <div>
+</script>
+<script id="interface-s390x-tmpl" type="text/html">
+    <div class="item" id="{mac}">
+        <span class="cell column-type">
+          <span id="label-type-{id}" class="{viewMode}">{type}</span>
+          <select id="interface-s390x-type-{id}" data-none-selected-text="$_("Nothing selected")" class="{editMode}"></select>
+        </span>
+        <span class="cell column-network">
+            <span id="label-network-{id}" class="{viewMode}">{network}{source}</span>
+            <select id="interface-s390x-network-{id}" data-none-selected-text="$_("Nothing selected")" class="{editMode}"></select>
+        </span>
+        <span class="cell column-mode">
+            <span id="label-mode-{id}" class="{viewMode}">{mode}</span>
+            <select id="interface-s390x-mode-{id}" data-none-selected-text="$_("Nothing selected")" class="{editMode}"></select>
+        </span>
+        <span class="cell column-mac">
+            <span id="label-mac-{id}" class="{viewMode}">{mac}</span>
+            <input class="form-control {editMode}" type="text"
+               id="edit-mac-{id}" class="form-control" name="{mac}" value="{mac}" />
+        </span>
+        <span class="cell column-ip">
+            <span class=ipText>{ips}</span>
+        </span>
+        <span class="cell {editMode} column-actions action-area">
+                <button class="btn btn-primary save">$_("Save")</button>
+                <button class="btn btn-primary cancel">$_("Remove")</button>
+        </span>
+        <span class="cell {viewMode} column-actions action-area">
+            <button class="btn btn-link edit"><i class="fa fa-pencil"></i> $_("Edit")</button>
+            <button class="btn btn-link delete"><i class="fa fa-minus-circle"></i> $_("Remove")</button>
+        </span>
+    <div>
+</script>
+<script id="ldap-user-tmpl" type="text/html">
+    <div class="item" id="{user}">
+        <span class="cell">
+            <span class="{viewMode}">{user}</span>
+            <input type="text" placeholder=$_("LDAP User ID,e.g.foo@foo.com") class="form-control {editMode}" />
+        </span>
+        <span class="action-area">
+            <button class="btn btn-default delete"><i class="fa fa-minus-circle"></i> $_("Remove")</button>
+        </span>
+    <div>
+</script>
+<script id="disk-row-tmpl" type="text/html">
+    <div class="item" id="cdrom-{dev}">
+        <span class="cell dev column-device">
+            <input type="text" readonly="readonly"
+                id="disk-dev-{dev}" name="disk-dev-{dev}" class="form-control" value="{dev}" />
+        </span>
+        <span class="cell path column-path">
+            <input id="disk-path-{dev}" class="" name="path-{dev}" type="text"
+                data-vm="{vm}" data-dev="{dev}"
+                value="{path}" readonly="readonly" class="form-control" />
+        </span>
+        <span class="action-area column-actions">
+            <button type="button" class="guest-edit-cdrom-button detach btn btn-link"
+                data-vm="{vm}" data-dev="{dev}" data-type="{type}"
+                title="$_("Detach")"><i class="fa fa-minus-circle"></i> $_("Detach")</button>
+        </span>
+    </div>
+</script>
+<script id="permission-item-pam" type="text/html">
+<div class="item">
+    <i class="fa {class}"></i>
+    <label>{val}</label>
+</div>
+</script>
+<script id="pci-tmpl" type="text/html"><div class="item {status}" id="{name}"><span class="cell status column-pci-status"><i class="fa fa-power-off"></i></span><span class="cell name column-pci-name" title="{name}">{name}</span><span class="cell product column-product" title="{product}">{product}</span><span class="cell vendor column-vendor" title="{vendor}">{vendor}</span><span class="cell column-actions action-area"><button class="btn btn-link"><i class="fa"></i></button></span></div></script>
+<script id="snapshot-tmpl" type="text/html">
+    <div class="item" id="{name}">
+        <span class="cell column-sel">
+            <i class="wok-loading-icon {createMode} fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+            <i class="fa fa-check hide"></i>
+        </span>
+        <span class="cell column-snapshot-name name"><input type="text" readonly="readonly" value="{name}" class="form-control" /></span>
+        <span class="cell column-snapshot-created created"><input type="text" readonly="readonly" value="{created}" class="form-control" /></span>
+        <span class="cell column-actions action-area">
+            <button class="revert {listMode} btn btn-link" title="$_("Revert")"><i class="fa fa-undo"></i> $_("Revert")</button>
+            <button class="delete {listMode} btn btn-link"><i class="fa fa-minus-circle"></i> $_("Remove")</button>
+        </span>
+    <div>
+</script>
+<script type="text/javascript">
+    kimchi.guest_edit_main();
+</script>
+</body>
+</html>

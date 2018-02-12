@@ -1,0 +1,54 @@
+/*
+ * Project Kimchi
+ *
+ * Copyright IBM Corp, 2015-2016
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+//
+// Wok Variables
+// ----------------------------------------------------------------------------
+@import "../../../../../../../ui/css/src/modules/wok-variables";
+
+//
+// Imported functions
+// ----------------------------------------------------------------------------
+@import "../../../../../../../ui/css/src/modules/compact";
+@import "../../../../../../../ui/css/src/vendor/compass-mixins/lib/compass";
+@import "../../../../../../../ui/css/src/vendor/bootstrap-sass/bootstrap/mixins";
+
+//
+// Extended classes
+// ----------------------------------------------------------------------------
+@import "../../../../../../../ui/css/src/modules/utils";
+@import "../../../../../../../ui/css/src/modules/animation";
+
+//
+// Kimchi variables and classes
+// ----------------------------------------------------------------------------
+$virtColor:     #8cc63f;
+$storages-low:  #8BC53E !default;
+
+$guestCharts: (
+    lightGray:  #e6e7e8,
+    mediumGray: #bbbdbf,
+    darkGray:   #929497
+);
+
+@import "modules/iso-list";
+@import "modules/guests";
+@import "modules/edit-guests";
+@import "modules/templates";
+@import "modules/network";
+@import "modules/storage";

@@ -1,0 +1,285 @@
+#*
+ * Project Kimchi
+ *
+ * Copyright IBM Corp, 2013-2017
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *#
+#unicode UTF-8
+#import gettext
+#from wok.cachebust import href
+#silent t = gettext.translation($lang.domain, $lang.localedir, languages=$lang.lang, fallback=True)
+#silent _ = t.gettext
+#silent _t = t.gettext
+<html>
+<body>
+<div id="template-edit-window" class="window modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title">$_("Edit Template")</h4>
+    </div>
+    <div class="modal-body">
+        <span id="alert-modal-container"></span>
+        <div id="edit-template-tabs">
+            <input type="hidden" id="template-name" name="templateName" />
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#general" aria-controls="general" role="tab" data-toggle="tab">$_("General")</a>
+                </li>
+                <li role="presentation">
+                    <a href="#storage" aria-controls="storage" role="tab" data-toggle="tab">$_("Storage")</a>
+                </li>
+                <li role="presentation">
+                    <a href="#interface" aria-controls="interface" role="tab" data-toggle="tab">$_("Interface")</a>
+                </li>
+                <li role="presentation">
+                    <a href="#processor" aria-controls="processor" role="tab" data-toggle="tab">$_("Processor")</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="general">
+                    <form id="form-template-general">
+                        <div class="form-template-inline-wrapper">
+                            <div class="template-edit-wrapper-label">
+                                <label for="template-edit-id-textbox">$_("Name")</label>
+                            </div>
+                            <div class="template-edit-wrapper-label">
+                                <label for="template-edit-vendor-textbox">$_("Vendor")</label>
+                            </div>
+                            <div class="template-edit-wrapper-label">
+                                <label for="template-edit-version-textbox">$_("Version")</label>
+                            </div>
+                            <div class="template-edit-wrapper-label">
+                                <label for="template-edit-memory-textbox">$_("Memory (MB)")</label>
+                            </div>
+                            <div class="template-edit-wrapper-label max-memory-field" style="display: none;">
+                                <label for="template-edit-max-memory-textbox">$_("Max Memory (MB)")</label>
+                            </div>
+                            <div class="template-edit-wrapper-label templ-edit-cdrom">
+                                <label for="template-edit-cdrom-textbox">$_("CDROM")</label>
+                            </div>
+                            <div class="template-edit-wrapper-label templ-edit-vm-image hide">
+                                <label for="template-edit-vmimage-textbox">$_("Image File")</label>
+                            </div>
+                            <div class="template-edit-wrapper-label graphics">
+                                <label>$_("Graphics")</label>
+                            </div>
+                            <div class="template-edit-wrapper-label console" style="display:none">
+                                <label>$_("Console")</label>
+                            </div>
+                        </div>
+                        <div class="form-template-inline-wrapper">
+                            <div class="template-edit-wrapper-controls">
+                                <input id="template-edit-id-textbox" class="form-control" name="name" type="text" />
+                            </div>
+                            <div class="template-edit-wrapper-controls">
+                                <input id="template-edit-vendor-textbox" class="form-control"  name="os_distro" type="text" disabled="disabled" />
+                            </div>
+                            <div class="template-edit-wrapper-controls">
+                                <input id="template-edit-version-textbox" class="form-control"  name="os_version" type="text" disabled="disabled" />
+                            </div>
+                            <div class="template-edit-wrapper-controls">
+                                <input id="template-edit-memory-textbox" class="form-control"  name="memory" type="number" step="1024" min="1024" />
+                                <button id="template-show-max-memory" class="btn btn-primary" type="button"><i class="fa fa-plus-circle"></i> <span class="text">$_("More")</span></button>
+                            </div>
+                            <div class="template-edit-wrapper-controls max-memory-field" style="display: none;">
+                                <input id="template-edit-max-memory-textbox" class="form-control" name="max-memory" type="number" min="1024" step="1024" />
+                            </div>
+                            <div class="template-edit-wrapper-controls templ-edit-cdrom form-group has-feedback">
+                                <input id="template-edit-cdrom-textbox" class="form-control" name="cdrom" type="text" disabled="disabled" />
+                                <span class="form-control-feedback">
+                                    <i class="fa fa-times"></i>
+                                </span>
+                            </div>
+                            <div class="template-edit-wrapper-controls templ-edit-vm-image form-group has-feedback hide">
+                                <input id="template-edit-vmimage-textbox"  class="form-control" name="vm-image" type="text" disabled="disabled" />
+                                <span class="fa fa-times form-control-feedback"></span>
+                            </div>
+                            <div class="template-edit-wrapper-controls graphics">
+                                    <select id="template-edit-graphics" name="graphics" class="form-control"  />
+                            </div>
+                            <div class="template-edit-wrapper-controls console" style="display:none">
+                                <select id="template-edit-console" name="console" class="form-control">
+                                    <option value="sclp">$_("sclp")</option>
+                                    <option value="virtio">$_("virtio")</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="storage">
+                    <form id="form-template-storage">
+                        <div class="template-tab-header">
+                            <span class="template-storage-cell source" style="display:none">$_("Source")</span>
+                            <span class="template-storage-cell storage-pool">$_("Storage Pool")</span>
+                            <span class="template-storage-cell storage" style="display:none">$_("Storage")</span>
+                            <span class="template-storage-cell type">$_("Type")</span>
+                            <span class="template-storage-cell disk">$_("Disk(GB)")</span>
+                            <span class="template-storage-cell format">$_("Disk Format")</span>
+                            <button type="button" id="template-edit-storage-add-button" class="pull-right btn btn-primary"><i class="fa fa-plus-circle"></i> $_("Add Storage")</button>
+                        </div>
+                        <div class="template-tab-body">
+                        </div>
+                    </form>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="interface">
+                    <form id="form-template-interface">
+                        <div class="template-tab-header">
+                            <span class="template-interface-cell network">$_("Network")</span>
+                            <span class="template-interface-cell type">$_("Type")</span>
+                            <button type="button" id="template-edit-interface-add-button" class="pull-right btn btn-primary"><i class="fa fa-plus-circle"></i> $_("Add Interface")</button>
+                        </div>
+                        <div class="template-tab-body"></div>
+                    </form>
+                    <form id="form-template-interface-s390x" style="display:none">
+                        <div class="template-tab-header">
+                            <span class="template-interface-cell type">$_("Type")</span>
+                            <span class="template-interface-cell network">$_("Network/Interface")</span>
+                            <span class="template-interface-cell mode">$_("Mode")</span>
+                            <button type="button" id="template-edit-interface-add-button-s390x" class="pull-right btn btn-primary"><i class="fa fa-plus-circle"></i> $_("Add Interface")</button>
+                        </div>
+                        <div class="template-tab-body"></div>
+                    </form>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="processor">
+                    <form id="form-edit-processor">
+                        <div class="form-group">
+                            <div id="guest-processor">
+                                <label for="vcpus">$_("Current CPU Number")</label>
+                                <input id="vcpus" class="form-control" name="processor" type="number" min="1" />
+                                <p class="help-block">
+                                    <i class="fa fa-info-circle"></i>
+                                    $_("Current CPU must be equal or lower than the Maximum CPU value. If a topology is set, it must be also be a multiple of the 'threads' value.")
+                                </p>
+                            </div>
+                            <div id="guest-max-processor-panel" class="form-group">
+                                <label for="guest-edit-max-processor-textbox">$_("Max CPU")</label>
+                                <input id="guest-edit-max-processor-textbox" class="form-control" name="max-processor" type="number" min="1" />
+                                <p class="help-block">
+                                    <i class="fa fa-info-circle"></i>
+                                    $_("If a topology is set, this value will be the product of sockets * times * cores.")
+                                </p>
+                            </div>
+                        </div>
+                        <div class="manual form-group">
+                            <input type="checkbox" class="wok-checkbox" id="cpus-check" />
+                            <label for="cpus-check">$_("Manually set CPU topology")</label>
+                        </div>
+                        <div class="topology">
+                            <div class="form-group">
+                                <label for="sockets">$_("Sockets")</label>
+                                <input type="text" class="form-control" value="1" id="sockets" />
+                            </div>
+                            <div class="form-group">
+                                <label for="cores">$_("Cores")</label>
+                                <input type="text" class="form-control" value="1" id="cores" />
+                            </div>
+                            <div class="form-group">
+                                <label for="threads">$_("Threads")</label>
+                                <input type="text" class="form-control" value="1" id="threads" />
+                                <p class="help-block">
+                                    <i class="fa fa-info-circle"></i>
+                                    <spam class="text" id="threads-recommended-values" />
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="wok-mask hidden" role="presentation">
+          <div class="wok-mask-loader-container">
+            <div class="wok-mask-loading"></div>
+          </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+            <button id="tmpl-edit-button-save" class="btn btn-default">$_("Save")</button>
+            <button class="btn btn-default" type="button" data-dismiss="modal">$_("Cancel")</button>
+    </div>
+</div>
+<script>
+    kimchi.template_edit_main();
+</script>
+<script id="template-storage-pool-tmpl" type="text/html">
+    <div id="storageRow{storageIndex}" class='item'>
+        <span class="template-storage-cell source" style="display:none">
+            <input class="template-storage-source" value={storageSource} type="text" style="display:none" />
+            <select id="source">
+                <option value="pool">$_("pool")</option>
+                <option value="path">$_("path")</option>
+            </select>
+        </span>
+        <span class="template-storage-cell storage-pool">
+            <input class="template-storage-name" value="{storageName}" type="text" style="display:none" />
+            <select id="selectStorageName-{storageIndex}" data-none-selected-text="$_('Nothing selected')" class="selectStorageName"></select>
+        </span>
+        <span class="template-storage-cell storage-path" style="display:none">
+            <input class="template-storage-path storage-path form-control" value="{storagePath}" type="text" />
+        </span>
+        <span class="template-storage-cell type">
+            <input class="template-storage-type form-control" value={storageType} readonly=true type="text" />
+        </span>
+        <span class="template-storage-cell disk">
+            <input class="template-storage-disk form-control" value={storageDisk} type="text" />
+        </span>
+        <span class="template-storage-cell format">
+            <input class="template-storage-disk-format" value={storageDiskFormat} type="text" style="display:none" />
+            <select id="diskFormat">
+               <option value="qcow2">$_("qcow2")</option>
+               <option value="raw">$_("raw")</option>
+               <option value="qcow">$_("qcow")</option>
+               <option value="qed">$_("qed")</option>
+               <option value="vmdk">$_("vmdk")</option>
+               <option value="vpc">$_("vpc")</option>
+            </select>
+        </span>
+        <span class="pull-right">
+            <button class="delete btn-primary btn"><i class="fa fa-minus-circle"></i> $_("Delete")</button>
+        </span>
+    </div>
+</script>
+<script id="template-interface-tmpl" type="text/html">
+    <div class="item" id={networkID}>
+        <span class="template-interface-cell network">
+            <select data-none-selected-text="$_('Nothing selected')"></select>
+        </span>
+        <span class="template-interface-cell type">
+            <input value={type} readonly=true class="form-control" type="text" />
+        </span>
+        <span class="pull-right">
+            <button class="delete btn-primary btn"><i class="fa fa-minus-circle"></i> $_("Delete")</button>
+        </span>
+    </div>
+</script>
+<script id="template-interface-s390x-tmpl" type="text/html">
+    <div class="item" id={networkID}>
+        <span class="template-interface-cell type">
+            <select></select>
+        </span>
+        <span class="template-interface-cell network">
+            <select data-none-selected-text="$_('Nothing selected')"></select>
+        </span>
+        <span class="template-interface-cell mode">
+            <span class="label-mode hide">$_("None")</span>
+            <select>
+                <option value="bridge">$_("bridge")</option>
+                <option value="vepa">$_("vepa")</option>
+            </select>
+        </span>
+        <span class="pull-right">
+            <button class="delete btn-primary btn"><i class="fa fa-minus-circle"></i> $_("Delete")</button>
+        </span>
+    </div>
+</script>
+</body>
+</html>

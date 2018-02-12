@@ -1,110 +1,2238 @@
-# English translations for kimchi package.
-# Copyright (C) 2013 ORGANIZATION
+# Japonese translations for kimchi package.
+# Copyright IBM Corp, 2014-2017
+# Adam Litke <agl@us.ibm.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kimchi 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-01 16:40-0300\n"
+"POT-Creation-Date: 2017-06-30 10:27-0300\n"
 "PO-Revision-Date: 2013-07-11 17:32-0400\n"
 "Last-Translator: Crístian Viana <vianac@linux.vnet.ibm.com>\n"
 "Language-Team: English\n"
+"Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja_JP\n"
 "Generated-By: pygettext.py 1.5\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #, python-format
-msgid "Delete is not allowed for %(resource)s"
-msgstr "%(resource)s の削除は許可されません"
+msgid "Unknown parameter %(value)s"
+msgstr "パラメーター %(value)s が不明です"
 
 #, python-format
-msgid "%(resource)s does not implement update method"
-msgstr "%(resource)s は更新メソッドを実装していません"
+msgid "User %(user_id)s not found with given LDAP settings."
+msgstr "指定の LDAP 設定を持つユーザー %(user_id)s が見つかりません。"
 
 #, python-format
-msgid "Create is not allowed for %(resource)s"
-msgstr "%(resource)s の作成は許可されません"
-
-msgid "Unable to parse JSON request"
-msgstr "JSON 要求を解析できません"
-
-msgid "This API only supports JSON"
-msgstr "この API は JSON のみサポートします"
+msgid "Partition %(name)s does not exist in the host"
+msgstr "パーティション %(name)s はホストに存在しません"
 
 #, python-format
-msgid "Parameters does not match requirement in schema: %(err)s"
+msgid "Error while accessing dev mapper device, %(err)s"
 msgstr ""
 
-msgid "You don't have permission to perform this operation."
-msgstr ""
-
-msgid "Datastore is not initiated in the model object."
-msgstr "データ・ストアは、モデル・オブジェクトで開始されていません。"
-
-#, python-format
-msgid "Unable to start task due error: %(err)s"
-msgstr "次のエラーのため、タスクを開始できません: %(err)s"
-
-#, python-format
-msgid "Authentication failed for user '%(username)s'. [Error code: %(code)s]"
-msgstr ""
-"ユーザー「%(username)s」の認証に失敗しました。[エラー・コード: %(code)s]"
-
-msgid "You are not authorized to access Kimchi"
-msgstr "Kimchi へのアクセスを許可されていません"
-
-#, python-format
-msgid "Specify %(item)s to login into Kimchi"
-msgstr "Kimchi にログインするには、%(item)s を指定します"
-
-#, python-format
-msgid "Invalid LDAP configuration: %(item)s : %(value)s"
+msgid "Block device not found."
 msgstr ""
 
 #, python-format
-msgid "Unable to find %(item)s in datastore"
-msgstr "%(item)s はデータ・ストアに見つかりません"
-
-#, python-format
-msgid "Timeout while running command '%(cmd)s' after %(seconds)s seconds"
-msgstr ""
-"コマンド「%(cmd)s」を実行していましたが、%(seconds)s 秒を経過してタイムアウト"
-"になりました"
-
-#, python-format
-msgid "Invalid data value '%(value)s'"
+msgid "Block device %(device)s not found."
 msgstr ""
 
-#, fuzzy, python-format
-msgid "Invalid data unit '%(unit)s'"
-msgstr "無効な URI %(uri)s"
+#, python-format
+msgid "Unable to retrieve LVM information. Details: %(err)s"
+msgstr ""
 
-msgid "ERROR CODE"
-msgstr "エラー・コード"
+msgid "Unknown \"_cap\" specified"
+msgstr "不明な「_cap」が指定されました"
 
-msgid "REASON"
-msgstr "理由"
+msgid "\"_passthrough\" should be \"true\" or \"false\""
+msgstr "「_passthrough」は「true」または「false」でなければなりません"
 
-msgid "STACK"
-msgstr "スタック"
+msgid "\"_passthrough_affected_by\" should be a device name string"
+msgstr "「_passthrough_affected_by」はデバイス名ストリングでなければなりません"
 
-msgid "Go to Homepage"
-msgstr "ホーム・ページに移動する"
+msgid "\"_available_only\" should be \"true\" or \"false\""
+msgstr "「_available_only」は「true」または「false」でなければなりません"
 
-msgid "The username or password you entered is incorrect. Please try again."
-msgstr "入力したユーザー名またはパスワードが誤っています。やり直してください。"
+#, python-format
+msgid "Unable to find distro file: %(filename)s"
+msgstr "distro ファイル %(filename)s が見つかりません"
 
-msgid "This field is required."
-msgstr "このフィールドは必須です。"
+#, python-format
+msgid ""
+"Unable to parse distro file: %(filename)s. Make sure, it is a JSON file."
+msgstr ""
+"distro ファイル %(filename)s を解析できません。JSON ファイルであることを確認"
+"してください。"
 
-msgid "Log in"
-msgstr "ログイン"
+#, python-format
+msgid "Unable to login to iSCSI host target %(portal)s. Details: %(err)s"
+msgstr ""
+"iSCSI ホスト・ターゲット %(portal)s にログインできません。詳細: %(err)s"
 
-msgid "Logging in..."
-msgstr "ログインしています..."
+#, python-format
+msgid "Unable to login to iSCSI host %(host)s target %(target)s"
+msgstr "iSCSI ホスト %(host)s ターゲット %(target)s にログインできません"
+
+#, python-format
+msgid "Unable to find ISO file %(filename)s"
+msgstr "ISO ファイル %(filename)s が見つかりません"
+
+#, python-format
+msgid "The ISO file %(filename)s is not bootable"
+msgstr "ISO ファイル %(filename)s がブート可能ではありません"
+
+#, python-format
+msgid "The ISO file %(filename)s does not have a valid El Torito boot record"
+msgstr ""
+"ISO ファイル %(filename)s に有効な El Torito ブート・レコードがありません"
+
+#, python-format
+msgid "Invalid El Torito validation entry in ISO %(filename)s"
+msgstr "ISO %(filename)s に無効な El Torito 検証項目があります"
+
+#, python-format
+msgid "Invalid El Torito boot indicator in ISO %(filename)s"
+msgstr "ISO %(filename)s に無効な El Torito ブート・インジケーターがあります"
+
+#, python-format
+msgid "Unexpected volume type for primary volume in ISO %(filename)s"
+msgstr "ISO %(filename)s 内の 1 次ボリュームが予期しないボリューム・タイプです"
+
+#, python-format
+msgid "Bad format while reading volume descriptor in ISO %(filename)s"
+msgstr ""
+"ISO %(filename)s 内のボリューム・ディスクリプターを読み取り中にフォーマットが"
+"正しくありませんでした"
+
+#, python-format
+msgid ""
+"The hypervisor doesn't have permission to use this ISO %(filename)s. "
+"Consider moving it under /var/lib/libvirt,  or set the search permission to "
+"file access control lists for '%(user)s' user if possible, or add the "
+"'%(user)s' to the ISO path group, or (not recommended) 'chmod -R o+x "
+"'path_to_iso'.Details: %(err)s"
+msgstr ""
+"ハイパーバイザーにこの ISO %(filename)s を使用する権限がありません。これを /"
+"var/lib/libvirt の下に移動することを検討してください。あるいは、「%(user)s」"
+"ユーザーのファイル・アクセス制御リストに検索許可を設定する (可能な場合) か、"
+"「%(user)s」を ISO パス・グループに追加するか、または (非推奨ですが)「chmod -"
+"R o+x 'path_to_iso'」を実行してください。詳細: %(err)s"
+
+#, python-format
+msgid "Unable to access remote ISO. Details: %(err)s"
+msgstr "リモート ISO にアクセスできません。詳細: %(err)s"
+
+#, python-format
+msgid "Error probing image OS information: %(err)s"
+msgstr ""
+
+#, python-format
+msgid "Unable to read image file %(filename)s"
+msgstr "イメージ・ファイル %(filename)s を読み取ることができません"
+
+#, python-format
+msgid ""
+"Image file must be an existing file on system. %(filename)s is not a valid "
+"input."
+msgstr ""
+"イメージ・ファイルはシステム上に存在するファイルでなければなりませ"
+"ん。%(filename)s は有効な入力ではありません。"
+
+#, python-format
+msgid "Virtual machine %(name)s already exists"
+msgstr "仮想マシン %(name)s は既に存在します"
+
+#, python-format
+msgid "Virtual machine %(name)s does not exist"
+msgstr "仮想マシン %(name)s は存在しません"
+
+#, python-format
+msgid "Unable to retrieve screenshot for stopped virtual machine %(name)s"
+msgstr "停止している仮想マシン %(name)s のスクリーン・ショットを取得できません"
+
+msgid "Remote ISO image is not supported by this server."
+msgstr "リモート ISO イメージは、このサーバーではサポートされていません。"
+
+#, python-format
+msgid "Screenshot is not supported on virtual machine %(name)s"
+msgstr ""
+"スクリーン・ショットはこの仮想マシン %(name)s ではサポートされていません"
+
+#, python-format
+msgid "Unable to create virtual machine %(name)s. Details: %(err)s"
+msgstr "仮想マシン %(name)s を作成できません。詳細: %(err)s"
+
+#, python-format
+msgid "Unable to update virtual machine %(name)s. Details: %(err)s"
+msgstr "仮想マシン %(name)s を更新できません。詳細: %(err)s"
+
+#, python-format
+msgid "Unable to retrieve virtual machine %(name)s. Details: %(err)s"
+msgstr "仮想マシン %(name)s を取得できません。詳細: %(err)s"
+
+#, python-format
+msgid "Unable to connect to powered off virtual machine %(name)s."
+msgstr "電源オフされた仮想マシン %(name)s に接続できません。"
+
+msgid "Virtual machine name must be a string without slashes (/)"
+msgstr "仮想マシン名はスラッシュ (/) のないストリングでなければなりません"
+
+#, python-format
+msgid "Invalid template URI %(value)s specified for virtual machine"
+msgstr "無効なテンプレート URI %(value)s が仮想マシンに指定されています"
+
+#, python-format
+msgid "Invalid storage pool URI %(value)s specified for virtual machine"
+msgstr "無効なストレージ・プール URI %(value)s が仮想マシンに指定されています"
+
+msgid "Supported virtual machine graphics are Spice or VNC"
+msgstr "サポートされている仮想マシン・グラフィックスは Spice または VNC です"
+
+msgid "Graphics address to listen on must be IPv4 or IPv6"
+msgstr ""
+"listen を行うグラフィックス・アドレスは IPv4 または IPv6 でなければなりません"
+
+msgid "Specify a template to create a virtual machine from"
+msgstr "仮想マシンの作成元となるテンプレートを指定してください"
+
+#, python-format
+msgid "Unable to start virtual machine %(name)s. Details: %(err)s"
+msgstr "仮想マシン %(name)s を開始できません。詳細: %(err)s"
+
+#, python-format
+msgid "Unable to power off virtual machine %(name)s. Details: %(err)s"
+msgstr "仮想マシン %(name)s を電源オフできません。詳細: %(err)s"
+
+#, python-format
+msgid "Unable to delete virtual machine %(name)s. Details: %(err)s"
+msgstr "仮想マシン %(name)s を削除できません。詳細: %(err)s"
+
+#, python-format
+msgid "Unable to reset virtual machine %(name)s. Details: %(err)s"
+msgstr "仮想マシン %(name)s をリセットできません。詳細: %(err)s"
+
+msgid "User name list must be an array"
+msgstr "ユーザー名リストは配列でなければなりません"
+
+msgid "User name must be a string"
+msgstr "ユーザー名はストリングでなければなりません"
+
+msgid "Group name list must be an array"
+msgstr "グループ名リストは配列でなければなりません"
+
+msgid "Group name must be a string"
+msgstr "グループ名はストリングでなければなりません"
+
+#, python-format
+msgid "User(s) '%(users)s' do not exist"
+msgstr "ユーザー「%(users)s」は存在しません"
+
+#, python-format
+msgid "Group(s) '%(groups)s' do not exist"
+msgstr "グループ「%(groups)s」は存在しません"
+
+#, python-format
+msgid "Unable to shutdown virtual machine %(name)s. Details: %(err)s"
+msgstr "仮想マシン %(name)s をシャットダウンできません。詳細: %(err)s"
+
+msgid "The guest console password must be a string."
+msgstr "ゲスト・コンソール・パスワードはストリングでなければなりません。"
+
+msgid "The life time for the guest console password must be a number."
+msgstr "ゲスト・コンソール・パスワードの存続時間は数値でなければなりません。"
+
+#, python-format
+msgid "Virtual machine '%(name)s' must be stopped before cloning it."
+msgstr "仮想マシン「%(name)s」のクローンを作成する前に停止する必要があります。"
+
+#, python-format
+msgid "Insufficient disk space to clone virtual machine '%(name)s'"
+msgstr ""
+"仮想マシン「%(name)s」のクローンを作成するためのディスク・スペースが不足して"
+"います"
+
+#, python-format
+msgid "Unable to clone VM '%(name)s'. Details: %(err)s"
+msgstr "VM「%(name)s」のクローンを作成できません。詳細: %(err)s"
+
+#, python-format
+msgid "Invalid operation for non-persistent virtual machine %(name)s"
+msgstr "非永続仮想マシン %(name)s の操作が無効です"
+
+#, python-format
+msgid "Cannot suspend VM '%(name)s' because it is not running."
+msgstr "VM「%(name)s」は実行されていないため、中断できません。"
+
+#, python-format
+msgid "Unable to suspend VM '%(name)s'. Details: %(err)s"
+msgstr "VM「%(name)s」を中断できません。詳細: %(err)s"
+
+#, python-format
+msgid "Cannot resume VM '%(name)s' because it is not paused."
+msgstr "VM「%(name)s」は一時停止されていないため、再開できません。"
+
+#, python-format
+msgid "Unable to resume VM '%(name)s'. Details: %(err)s"
+msgstr "VM「%(name)s」を再開できません。詳細: %(err)s"
+
+#, python-format
+msgid ""
+"Memory assigned is higher then the maximum allowed in the host: "
+"%(maxmem)sMib."
+msgstr ""
+"割り当てられたメモリーはホストで許可された最大を超えています: %(maxmem)sMib。"
+
+#, python-format
+msgid ""
+"Guest '%(name)s' does not support live memory update. Please, with the guest "
+"offline, set Maximum Memory with a value greater then Memory to enable this "
+"feature."
+msgstr ""
+"ゲスト「%(name)s」はライブ・メモリー・アップデートをサポートしていません。こ"
+"の機能を使用可能にするには、このゲストをオフラインにした状態で、Maximum "
+"Memory を Memory より大きい値で設定してください。"
+
+msgid "Only increase memory is allowed in active VMs"
+msgstr "アクティブ VM ではメモリーの増加のみが許可されています"
+
+msgid "There are not enough free slots to add a new memory device."
+msgstr ""
+"新規メモリー・デバイスを追加するだけの十分なフリー・スロットがありません。"
+
+msgid ""
+"Host's libvirt or qemu version does not support memory devices and memory "
+"hotplug. Libvirt must be >= 1.2.14 and QEMU must be >= 2.1."
+msgstr ""
+"ホストの libvirt または qemu のバージョンはデバイスやメモリー・ホット・プラグ"
+"をサポートしていません。Libvirt は 1.2.14 以上でなければなりません。QEMU は "
+"2.1 以上でなければなりません。"
+
+#, python-format
+msgid "Error attaching memory device. Details: %(error)s"
+msgstr "メモリー・デバイスの接続エラーです。詳細: %(error)s"
+
+#, python-format
+msgid "Cannot start %(name)s. Virtual machine is already running."
+msgstr "%(name)s を開始できません。仮想マシンは既に稼働中です。"
+
+#, python-format
+msgid "Cannot power off %(name)s. Virtual machine is shut off."
+msgstr ""
+"%(name)s の電源をオフにできません。仮想マシンはシャットオフされています。"
+
+#, python-format
+msgid "Cannot shutdown %(name)s. Virtual machine is shut off."
+msgstr ""
+"%(name)s をシャットダウンできません。仮想マシンはシャットオフされています。"
+
+#, python-format
+msgid "Cannot reset %(name)s. Virtual machine is already shut off."
+msgstr ""
+"%(name)s をリセットできません。仮想マシンは既にシャットオフされています。"
+
+msgid "Boot order must be a list. Devices accepted: hd, cdrom, fd or network."
+msgstr ""
+"Boot order はリストになっていなければなりません。受け入れられるデバイス: hd、"
+"cdrom、fd、または network。"
+
+msgid "Bootmenu must be boolean. Values accepted: true of false."
+msgstr ""
+"Bootmenu はブール値になっていなければなりません。受け入れられる値: true また"
+"は false。"
+
+msgid "Graphic type not valid. Values accepted: vnc or spice."
+msgstr "グラフィック・タイプが無効です。受け入れられる値: vnc または spice。"
+
+#, python-format
+msgid "Migrate to localhost %(host)s is not allowed."
+msgstr "ローカル・ホスト %(host)s へのマイグレーションは許可されていません。"
+
+#, python-format
+msgid ""
+"To migrate a virtual machine to the remote host %(host)s the user %(user)s "
+"must have password-less login to the remote host."
+msgstr ""
+"ユーザー %(user)s がリモート・ホスト %(host)s に仮想マシンをマイグレーション"
+"するには、そのユーザーがリモート・ホストにパスワードなしでログインできなけれ"
+"ばなりません。"
+
+#, python-format
+msgid "Can not migrate virtual machine %(name)s when its in %(state)s state."
+msgstr ""
+"%(state)s 状態になっている仮想マシン %(name)s はマイグレーションできません。"
+
+#, python-format
+msgid "Failed to migrate virtual machine %(name)s due error: %(err)s"
+msgstr ""
+"エラーが発生したため、仮想マシン %(name)s をマイグレーションできませんでし"
+"た: %(err)s"
+
+msgid "User name of the remote server must be a string."
+msgstr "リモート・サーバーのユーザー名はストリングでなければなりません。"
+
+msgid "Destination host of the migration must be a string."
+msgstr "マイグレーションの宛先ホストはストリングでなければなりません。"
+
+#, python-format
+msgid "Unable to create file %(path)s at %(host)s using user %(user)s."
+msgstr ""
+"ユーザー %(user)s を使用してホスト %(host)s でファイル %(path)s を作成できま"
+"せん。"
+
+#, python-format
+msgid "Unable to read disk size of %(path)s, error: %(error)s"
+msgstr "%(path)s のディスク・サイズを読み取れません。エラー: %(error)s"
+
+#, python-format
+msgid ""
+"Unable to create disk image %(path)s at %(host)s using user %(user)s. Error: "
+"%(error)s"
+msgstr ""
+"ユーザー %(user)s を使用して %(host)s でディスク・イメージ %(path)s を作成で"
+"きません。エラー: %(error)s"
+
+#, python-format
+msgid ""
+"Unable to migrate virtual machine to remote host %(host)s with arch "
+"%(destarch)s using localhost with arch %(srcarch)s."
+msgstr ""
+"アーキテクチャー %(srcarch)s のローカル・ホストを使用してアーキテクチャー "
+"%(destarch)s のリモート・ホスト %(host)s に仮想マシンをマイグレーションできま"
+"せん。"
+
+#, python-format
+msgid ""
+"Unable to migrate virtual machine to remote host %(host)s with hypervisor "
+"%(desthyp)s because localhost uses hypervisor %(srchyp)s."
+msgstr ""
+"ローカル・ホストではハイパーバイザー  %(srchyp)s が使用されているため、ハイ"
+"パーバイザー %(desthyp)s のリモート・ホスト %(host)s に仮想マシンをマイグレー"
+"ションできません。"
+
+#, python-format
+msgid ""
+"Unable to determine remote host hypervisor and architecture. Error: %(error)s"
+msgstr ""
+"リモート・ホストのハイパーバイザーとアーキテクチャーを判別できません。エ"
+"ラー: %(error)s"
+
+#, python-format
+msgid ""
+"Unable to migrate virtual machine: subcores per core setting from "
+"localhostand remote host %(host)s differs."
+msgstr ""
+"仮想マシンをマイグレーションできません: コアあたりのサブコアの設定がローカ"
+"ル・ホストとリモート・ホスト %(host)s で異なります。"
+
+#, python-format
+msgid ""
+"Unable to setup password-less login at remote host %(host)s using user "
+"%(user)s. Error: %(error)s"
+msgstr ""
+"ユーザー %(user)s を使用したリモート・ホスト %(host)s へのパスワードなしのロ"
+"グインをセットアップできません。エラー: %(error)s"
+
+msgid "Password field must be a string."
+msgstr "「パスワード」フィールドの値はストリングでなければなりません。"
+
+msgid "Error creating local host ssh rsa key of user 'root'."
+msgstr ""
+"ユーザー「root」のローカル・ホスト ssh rsa 鍵を作成するときにエラーが発生しま"
+"した。"
+
+#, python-format
+msgid "%(param)s value (%(mem)sMiB) must be aligned to %(alignment)sMiB."
+msgstr ""
+"%(param)s 値 (%(mem)sMiB) は %(alignment)sMiB に調整する必要があります。"
+
+#, python-format
+msgid ""
+"Unable to update the following parameters while the VM is offline: %(params)s"
+msgstr ""
+"次のパラメーターは、VM がオフラインのときには更新できません: %(params)s"
+
+#, python-format
+msgid ""
+"Unable to update the following parameters while the VM is online: %(params)s"
+msgstr ""
+"次のパラメーターは、VM がオンラインのときには更新できません: %(params)s"
+
+#, python-format
+msgid ""
+"VM %(name)s must have serial and console defined to open a web serial console"
+msgstr ""
+"VM %(name)s には、Web シリアル・コンソールを開くために定義されているシリアル"
+"およびコンソールが必要です"
+
+#, python-format
+msgid "Impossible to get the serial console of %(name)s"
+msgstr "%(name)s のシリアル・コンソールを取得できません"
+
+#, python-format
+msgid ""
+"Memory or Maximum Memory value is higher than amount supported by the host: "
+"%(memHost)sMiB."
+msgstr ""
+"Memory または Maximum Memory の値が、ホストでサポートされている量 "
+"(%(memHost)sMiB) より大きい値です。"
+
+#, python-format
+msgid ""
+"Memory or Maximum Memory value is higher than maximum amount recommended: "
+"%(value)sTiB"
+msgstr ""
+"Memory または Maximum Memory の値が最大推奨量 (%(value)sTiB) より大きい値です"
+
+msgid "Cannot update Maximum Memory when guest is running."
+msgstr "ゲストで実行しているときは Maximum Memory は更新できません。"
+
+#, python-format
+msgid "Impossible to create %(dir)s directory."
+msgstr "%(dir)s ディレクトリーを作成できません。"
+
+#, python-format
+msgid ""
+"Either the guest %(name)s did not start to listen to the serial or it is not "
+"configured to use the serial console."
+msgstr ""
+"ゲスト %(name)s はシリアルを listen し始めなかったか、またはシリアル・コン"
+"ソールを使用するように構成されていません。"
+
+#, python-format
+msgid ""
+"Unable to retrieve Virt Viewer file for stopped virtual machine %(name)s"
+msgstr ""
+"停止した仮想マシン %(name)s の Virt ビューアー・ファイルを取得できません"
+
+#, python-format
+msgid ""
+"Error occured while retrieving the Virt Viewer file for virtual machine "
+"%(name)s : %(err)s"
+msgstr ""
+"仮想マシン %(name)s の Virt ビューアー・ファイルを取得するときにエラーが発生"
+"しました: %(err)s"
+
+msgid "Virtual machine title must be a string"
+msgstr "仮想マシン名はストリングでなければなりません"
+
+msgid "Virtual machine description must be a string"
+msgstr "仮想マシンの説明はストリングでなければなりません"
+
+msgid "console parameter is only supported for s390x/s390 architecture."
+msgstr ""
+"コンソール・パラメーターは s390x/s390 アーキテクチャーに対してのみサポートさ"
+"れています。"
+
+msgid "invalid console type, supported types are sclp/virtio."
+msgstr ""
+"コンソール・タイプが無効です。サポートされているタイプは sclp/virtio です。"
+
+#, python-format
+msgid ""
+"Unable to setup password-less login at remote host %(host)s using user "
+"%(user)s: remote directory %(sshdir)s does not exist."
+msgstr ""
+"ユーザー %(user)s を使用したリモート・ホスト %(host)s へのパスワードなしのロ"
+"グインをセットアップできません: リモート・ディレクトリー %(sshdir)s がありま"
+"せん。"
+
+#, python-format
+msgid ""
+"Unable to create a password-less libvirt connection to the remote libvirt "
+"daemon at host %(host)s with the user %(user)s. Please verify the remote "
+"server libvirt configuration. More information: http://libvirt.org/auth."
+"html ."
+msgstr ""
+"リモート libvirt デーモンへのパスワード不要 libvirt 接続 (ホスト %(host)s、"
+"ユーザー %(user)s) を作成できません。リモート・サーバー libvirt 構成を確認し"
+"てください。詳細は、http://libvirt.org/auth.html にあります。"
+
+msgid "'enable_rdma' must be of type boolean (true or false)."
+msgstr ""
+
+#, python-format
+msgid ""
+"VM %(vmid)s does not contain directly assigned host device %(dev_name)s."
+msgstr ""
+"直接割り当てられたホスト・デバイス %(dev_name)s が VM %(vmid)s に含まれていま"
+"せん。"
+
+#, python-format
+msgid "The host device %(dev_name)s is not allowed to directly assign to VM."
+msgstr ""
+"ホスト・デバイス %(dev_name)s は VM への直接割り当てを許可されていません。"
+
+msgid ""
+"No IOMMU groups found. Host PCI pass through needs IOMMU group to function "
+"correctly. Please enable Intel VT-d or AMD IOMMU in your BIOS, then verify "
+"the Kernel is compiled with IOMMU support. For Intel CPU, add "
+"'intel_iommu=on' to GRUB_CMDLINE_LINUX parameter in /etc/default/grub file. "
+"For AMD CPU, add 'iommu=pt iommu=1'."
+msgstr ""
+"IOMMU グループが見つかりません。ホスト PCI パススルーでは IOMMU グループが正"
+"しく機能しなければなりません。BIOS で Intel VT-d または AMD IOMMU を使用可能"
+"にして、カーネルが IOMMU サポートを使用してコンパイルされていることを確認して"
+"ください。Intel CPU に関しては、/etc/default/grub ファイルにおいて"
+"「intel_iommu=on」を GRUB_CMDLINE_LINUX パラメーターに追加してください。AMD "
+"CPU に関しては、「iommu=pt iommu=1」を追加してください。"
+
+msgid "\"name\" should be a device name string"
+msgstr "「name」はデバイス名ストリングでなければなりません"
+
+#, python-format
+msgid ""
+"The device %(name)s is probably in use by the host. Unable to attach it to "
+"the guest."
+msgstr ""
+"デバイス %(name)s はホストで使用中である可能性があります。これはゲストに接続"
+"できません。"
+
+#, python-format
+msgid "Hot-(un)plug of device %(name)s is not supported."
+msgstr ""
+"デバイス %(name)s のホット・プラグ/アンプラグはサポートされていません。"
+
+#, python-format
+msgid "Failed to attach %(device)s to %(vm)s"
+msgstr "%(device)s を %(vm)s に接続できませんでした"
+
+#, python-format
+msgid "VM %(vmid)s does not have a USB controller to accept PCI hotplug."
+msgstr ""
+
+#, python-format
+msgid "Interface %(iface)s does not exist in virtual machine %(name)s"
+msgstr "インターフェース %(iface)s は仮想マシン %(name)s に存在しません"
+
+#, python-format
+msgid ""
+"Network %(network)s specified for virtual machine %(name)s does not exist"
+msgstr ""
+"仮想マシン %(name)s に指定されたネットワーク %(network)s は存在しません"
+
+msgid ""
+"Supported virtual machine interfaces type are network, ovs and macvtap.Type "
+"ovs and macvtap are only supported for s390x/s390 architecture."
+msgstr ""
+"サポートされている仮想マシン・インターフェース・タイプは network、ovs、およ"
+"び macvtap です。タイプ ovs および macvtap は s390x/s390 アーキテクチャーに対"
+"してのみサポートされています。"
+
+msgid "Network name for virtual machine interface must be a string"
+msgstr ""
+"仮想マシン・インターフェースのネットワーク名はストリングでなければなりません"
+
+msgid "Invalid network model card specified for virtual machine interface"
+msgstr ""
+"無効なネットワーク・モデル・カードが仮想マシン・インターフェースに指定されて"
+"います"
+
+msgid "Specify type and network to add a new virtual machine interface"
+msgstr ""
+"新しい仮想マシン・インターフェースに追加するタイプおよびネットワークを指定し"
+"てください"
+
+msgid "MAC Address must respect this format FF:FF:FF:FF:FF:FF"
+msgstr "MAC アドレスは FF:FF:FF:FF:FF:FF の形式に従っていなければなりません"
+
+#, python-format
+msgid "MAC Address %(mac)s already exists in virtual machine %(name)s"
+msgstr "MAC アドレス %(mac)s は既に仮想マシン %(name)s に存在します"
+
+msgid "Invalid MAC Address"
+msgstr "MAC アドレスが無効です"
+
+msgid "Cannot change MAC address of a running virtual machine"
+msgstr "実行中の仮想マシンの MAC アドレスは変更できません"
+
+msgid "Type macvtap and ovs are only supported on s390x/s390 architecture."
+msgstr ""
+"タイプ macvtap および ovs は s390x/s390 アーキテクチャーでのみサポートされて"
+"います。"
+
+msgid "Source attribute is only supported on s390x/s390 architecture."
+msgstr "ソース属性は s390x/s390 アーキテクチャーでのみサポートされています。"
+
+msgid "If source is provided, only type supported are macvtap and ovs."
+msgstr ""
+"ソースが指定されている場合、サポートされているタイプは macvtap と ovs のみで"
+"す。"
+
+msgid "For type macvtap and ovs, source has to be provided"
+msgstr "タイプ macvtap および ovs に関しては、ソースを指定する必要があります。"
+
+msgid "Source name for virtual machine interface must be string"
+msgstr "仮想マシン・インターフェースのソース名はストリングでなければなりません"
+
+msgid "Invalid source mode. Valid options are: bridge or vepa."
+msgstr "ソース・モードが無効です。有効なオプションは bridge または vepa です。"
+
+#, python-format
+msgid "Template %(name)s already exists"
+msgstr "テンプレート %(name)s は既に存在します"
+
+#, python-format
+msgid "Source media %(path)s not found"
+msgstr "ソース・メディア %(path)s が見つかりません"
+
+#, python-format
+msgid ""
+"Network '%(network)s' specified for template %(template)s does not exist"
+msgstr ""
+"テンプレート %(template)s に指定されたネットワーク「%(network)s」は存在しませ"
+"ん"
+
+#, python-format
+msgid ""
+"Storage pool %(pool)s specified for template %(template)s does not exist"
+msgstr ""
+"テンプレート %(template)s に指定されたストレージ・プール %(pool)s は存在しま"
+"せん"
+
+#, python-format
+msgid "Invalid parameter '%(param)s' specified for CDROM."
+msgstr "無効なパラメーター「%(param)s」が CDROM に指定されました。"
+
+#, python-format
+msgid "Network %(network)s specified for template %(template)s is not active"
+msgstr ""
+"テンプレート %(template)s に指定されたネットワーク %(network)s はアクティブで"
+"はありません"
+
+msgid "Template name must be a string"
+msgstr "テンプレート名はストリングでなければなりません"
+
+msgid "Template icon must be a path to the image"
+msgstr "テンプレート・アイコンはイメージのパスでなければなりません"
+
+msgid "Template distribution must be a string"
+msgstr "テンプレート・ディストリビューションはストリングでなければなりません"
+
+msgid "Template distribution version must be a string"
+msgstr ""
+"テンプレート・ディストリビューション・バージョンはストリングでなければなりま"
+"せん"
+
+msgid "The number of CPUs must be an integer greater than 0"
+msgstr "CPU の数は 0 より大きい整数でなければなりません"
+
+msgid ""
+"Amount of memory and maximum memory (MB) must be an integer greater than 512"
+msgstr ""
+"メモリー量および最大メモリー量 (MB) は 512 を超える整数でなければなりません"
+
+msgid "Template CDROM must be a local or remote ISO file"
+msgstr ""
+"テンプレート CDROM はローカルまたはリモートの ISO ファイルでなければなりませ"
+"ん"
+
+#, python-format
+msgid "Invalid storage pool URI %(value)s specified for template"
+msgstr ""
+"無効なストレージ・プール URI %(value)s がテンプレートに指定されています"
+
+msgid ""
+"Specify a path to source media (ISO, disk or remote ISO) to create a template"
+msgstr ""
+"テンプレートを作成するには、ソース・メディア (ISO、ディスク、またはリモート "
+"ISO) へのパスを指定してください"
+
+msgid "All networks for the template must be specified in a list."
+msgstr "テンプレート用のネットワークをすべてリストに指定する必要があります。"
+
+msgid "Specify a volume to a template when storage pool is iSCSI or SCSI"
+msgstr ""
+"ストレージ・プールが iSCSI または SCSI である場合はテンプレートに対してボ"
+"リュームを指定してください"
+
+#, python-format
+msgid "The volume %(volume)s is not in storage pool %(pool)s"
+msgstr "ボリューム %(volume)s がストレージ・プール %(pool)s にありません"
+
+#, python-format
+msgid "Unable to create template due error: %(err)s"
+msgstr "次のエラーのため、テンプレートを作成できません: %(err)s"
+
+#, python-format
+msgid "Unable to delete template due error: %(err)s"
+msgstr "次のエラーのため、テンプレートを削除できません: %(err)s"
+
+msgid "Disk size must be an integer greater than 1GB."
+msgstr "ディスク・サイズは 1GB より大きい整数でなければなりません。"
+
+#, python-format
+msgid "Cannot identify base image %(path)s format"
+msgstr "ベース・イメージ %(path)s のフォーマットを識別できません"
+
+msgid ""
+"When specifying CPU topology, each element must be an integer greater than "
+"zero."
+msgstr ""
+"CPU トポロジーを指定する場合、各エレメントはゼロより大きい整数でなければなり"
+"ません。"
+
+msgid ""
+"Invalid disk image format. Valid formats: qcow, qcow2, qed, raw, vmdk, vpc."
+msgstr ""
+"ディスク・イメージ・フォーマットが無効です。有効なフォーマット: qcow、qcow2、"
+"qed、raw、vmdk、vpc。"
+
+msgid ""
+"When setting template disks, following parameters are required: 'index', "
+"'pool name', 'format', 'size' or 'volume' (for scsi/iscsi pools)"
+msgstr ""
+"テンプレート・ディスクを設定する場合は、次のパラメーターが必要です: "
+"「index」、「pool name」、「format」、「size」、または「volume」(scsi/iscsi "
+"プールの場合)"
+
+msgid "Disk format must be 'raw', for logical, iscsi, and scsi pools."
+msgstr ""
+"論理プール、iscsi プール、および scsi プールに関しては、ディスク・フォーマッ"
+"トは「raw」でなければなりません。"
+
+msgid ""
+"Memory expects an object with one or both parameters: 'current' and "
+"'maxmemory'"
+msgstr ""
+"Memory には、パラメーター「current」と「maxmemory」の一方または両方が指定され"
+"たオブジェクトが予想されます。"
+
+#, python-format
+msgid ""
+"Memory value (%(mem)sMiB) must be equal or lesser than maximum memory value "
+"(%(maxmem)sMiB)"
+msgstr ""
+"メモリー値 (%(mem)sMiB) は最大メモリー値 (%(maxmem)sMiB) 以下でなければなりま"
+"せん"
+
+#, python-format
+msgid "Unable to update template due error: %(err)s"
+msgstr "エラーが発生したため、テンプレートを更新できません: %(err)s"
+
+msgid "Parameter 'disks' requires at least one disk object"
+msgstr ""
+"パラメーター「disks」にはディスク・オブジェクトが少なくとも 1 つは必要です"
+
+msgid ""
+"Invalid interface type. Type should be 'macvtap' for host network interface "
+"(Ethernet, Bond, VLAN) to be connected as direct MacVTap or 'ovs' for "
+"openvswitch host network interface to be connected as virtual switch to a VM."
+msgstr ""
+"インターフェース・タイプが無効です。タイプは、ホスト・ネットワーク・インター"
+"フェース (イーサネット、結合、VLAN) を直接 MacVTap として接続する場合は"
+"「macvtap」でなければならず、openvswitch ホスト・ネットワーク・インターフェー"
+"スを VM に仮想スイッチとして接続する場合は「ovs」でなければなりません。"
+
+msgid "Interface name should be string."
+msgstr "インターフェース名はストリングでなければなりません。"
+
+msgid "Invalid interface mode. Valid options are: bridge or vepa."
+msgstr ""
+"インターフェース・モードが無効です。有効なオプションは bridge または vepa で"
+"す。"
+
+msgid ""
+"Interfaces should be list of interfaces. Each interface should have name, "
+"type and mode(optional, only applicable for interfcae type 'macvtap'."
+msgstr ""
+"Interfaces はインターフェースのリストでなければなりません。各インターフェース"
+"には名前、タイプ、およびモード (インターフェース・タイプ「macvtap」の場合にの"
+"み使用できるオプション) が必要です。"
+
+msgid ""
+"Interface expects an object with parameters: 'name', 'type' and 'mode'. Name "
+"should be name of host network interface (Ethernet, Bond, VLAN) for type "
+"'macvtap' or the name of host openvswitch bridge interface for type 'ovs'. "
+"Mode (optional) is only applicable for interface type 'macvtap' to indicates "
+"whether packets will be delivered directly to target device (bridge) or to "
+"the external bridge (vepa-capable bridge)."
+msgstr ""
+"インターフェースには、パラメーター「name」、「type」、および「mode」が指定さ"
+"れたオブジェクトが予想されます。name は、タイプ「macvtap」の場合はホスト・"
+"ネットワーク・インターフェース (イーサネット、結合、VLAN) の名前でなければな"
+"らず、タイプ「ovs」の場合はホスト openvswitch ブリッジ・インターフェースの名"
+"前でなければなりません。mode (オプション) は、インターフェース・タイプ"
+"「macvtap」の場合に限り、パケットをターゲット・デバイス (ブリッジ) に直接送信"
+"するのか外部ブリッジ (vepa 対応ブリッジ) に送信するのかを指示するために使用で"
+"きます。"
+
+msgid "Interfaces parameter only supported on s390x or s390 architecture."
+msgstr ""
+"Interfaces パラメーターは s390x または s390 アーキテクチャーでのみサポートさ"
+"れています。"
+
+msgid "Storage without libvirt pool is not supported on this architecture"
+msgstr ""
+"libvirt プールがないストレージは、このアーキテクチャーではサポートされていま"
+"せん"
+
+#, python-format
+msgid "Error while creating the virtual disk for the guest. Details: %(err)s"
+msgstr ""
+"ゲスト用の仮想ディスクを作成するときにエラーが発生しました。詳細: %(err)s"
+
+msgid ""
+"When setting template disks without libvirt, following parameters are "
+"required: 'index', 'format', 'path', 'size'"
+msgstr ""
+"libvirt なしでテンプレート・ディスクを設定する場合は、次のパラメーターが必要"
+"です: 「index」、「format」、「path」、「size」"
+
+#, python-format
+msgid "Storage pool %(name)s already exists"
+msgstr "ストレージ・プール %(name)s は既に存在します"
+
+#, python-format
+msgid "Storage pool %(name)s does not exist"
+msgstr "ストレージ・プール %(name)s は存在しません"
+
+#, python-format
+msgid "Specify %(item)s in order to create the storage pool %(name)s"
+msgstr ""
+"ストレージ・プール %(name)s を作成するには、%(item)s を指定してください"
+
+#, python-format
+msgid "Unable to delete active storage pool %(name)s"
+msgstr "アクティブ・ストレージ・プール %(name)s を削除できません"
+
+#, python-format
+msgid "Unable to list storage pools. Details: %(err)s"
+msgstr "ストレージ・プールをリストできません。詳細: %(err)s"
+
+#, python-format
+msgid "Unable to create storage pool %(name)s. Details: %(err)s"
+msgstr "ストレージ・プール %(name)s を作成できません。詳細: %(err)s"
+
+#, python-format
+msgid "Unable to activate storage pool %(name)s. Details: %(err)s"
+msgstr "ストレージ・プール %(name)s をアクティブにできません。詳細: %(err)s"
+
+#, python-format
+msgid "Unable to deactivate storage pool %(name)s. Details: %(err)s"
+msgstr "ストレージ・プール %(name)s を非アクティブにできません。詳細: %(err)s"
+
+#, python-format
+msgid "Unable to delete storage pool %(name)s. Details: %(err)s"
+msgstr "ストレージ・プール %(name)s を削除にできません。詳細: %(err)s"
+
+#, python-format
+msgid ""
+"Unable to create NFS Pool as export path %(path)s may block during mount"
+msgstr ""
+"エクスポート・パス %(path)s がマウント中にブロックしている可能性があるため、"
+"NFS プールを作成できません"
+
+#, python-format
+msgid "Unable to create NFS Pool as export path %(path)s mount failed"
+msgstr ""
+"エクスポート・パス %(path)s マウントが失敗したため、NFS プールを作成できませ"
+"ん"
+
+#, python-format
+msgid "Unsupported storage pool type: %(type)s"
+msgstr "ストレージ・プール・タイプ %(type)s はサポートされていません"
+
+#, python-format
+msgid "Error while retrieving storage pool XML to %(pool)s"
+msgstr "ストレージ・プール XML を %(pool)s に取得中にエラーが発生しました"
+
+msgid "Storage pool name must be a string without slashes (/)"
+msgstr ""
+"ストレージ・プール名はスラッシュ (/) のないストリングでなければなりません"
+
+msgid ""
+"Supported storage pool types are dir, netfs, logical, iscsi, isci and kimchi-"
+"iso"
+msgstr ""
+"サポートされているストレージ・プール・タイプは dir、netfs、logical、iscsi、"
+"isci、および kimchi-iso です"
+
+msgid "Storage pool path must be a string"
+msgstr "ストレージ・プール・パスはストリングでなければなりません"
+
+msgid "Storage pool host must be a IP or hostname"
+msgstr "ストレージ・プール・ホストは、IP またはホスト名でなければなりません"
+
+msgid "Storage pool device must be the absolute path to the block device"
+msgstr ""
+"ストレージ・プール・デバイスはブロック・デバイスへの絶対パスでなければなりま"
+"せん"
+
+msgid "Storage pool devices parameter must be a list"
+msgstr "ストレージ・プール・デバイス・パラメーターはリストでなければなりません"
+
+msgid "Target IQN of an iSCSI pool must be a string"
+msgstr "iSCSI プールのターゲット IQN はストリングでなければなりません"
+
+msgid "Port of a remote storage server must be an integer between 1 and 65535"
+msgstr ""
+"リモート・ストレージ・サーバーのポートは 1 から 65535 までの整数でなければな"
+"りません"
+
+msgid "iSCSI target username must be a string"
+msgstr "iSCSI ターゲット・ユーザー名はストリングでなければなりません"
+
+msgid "iSCSI target password must be a string"
+msgstr "iSCSI ターゲット・パスワードはストリングでなければなりません"
+
+msgid "Specify name and type to create a storage pool"
+msgstr "ストレージ・プールを作成するには、名前とタイプを指定してください"
+
+#, python-format
+msgid ""
+"%(disk)s is not a valid disk/partition. Could not add it to the pool "
+"%(pool)s."
+msgstr ""
+"%(disk)s は有効なディスク/パーティションではありません。これはプール "
+"%(pool)s に追加できませんでした。"
+
+#, python-format
+msgid "Unable to extend logical pool %(pool)s. Details: %(err)s"
+msgstr "論理プール %(pool)s を拡張できません。詳細: %(err)s"
+
+msgid "The parameter disks only can be updated for logical storage pool."
+msgstr ""
+"論理ストレージ・プールを対象に更新できるのは、パラメーター・ディスクだけで"
+"す。"
+
+msgid "The SCSI host adapter name must be a string."
+msgstr "SCSI ホスト・アダプター名はストリングでなければなりません。"
+
+msgid "The storage pool kimchi_isos is reserved for internal use"
+msgstr "ストレージ・プール kimchi_isos は、内部使用のために予約されています"
+
+#, python-format
+msgid ""
+"Unable to activate NFS storage pool %(name)s. NFS server %(server)s is "
+"unreachable."
+msgstr ""
+"NFS ストレージ・プール %(name)s をアクティブにできません。NFS サーバー "
+"%(server)s は到達不能です。"
+
+#, python-format
+msgid ""
+"Unable to deactivate NFS storage pool %(name)s. NFS server %(server)s is "
+"unreachable."
+msgstr ""
+"NFS ストレージ・プール %(name)s を非アクティブにできません。NFS サーバー "
+"%(server)s は到達不能です。"
+
+#, python-format
+msgid ""
+"Unable to deactivate pool %(name)s as it is associated with some templates"
+msgstr ""
+"プール %(name)s はいくつかのテンプレートに関連付けられているため、非アクティ"
+"ブにすることはできません"
+
+#, python-format
+msgid "Unable to delete pool %(name)s as it is associated with some templates"
+msgstr ""
+"プール %(name)s はいくつかのテンプレートに関連付けられているため、削除できま"
+"せん"
+
+#, python-format
+msgid ""
+"A volume group named '%(name)s' already exists. Please, choose another name "
+"to create the logical pool."
+msgstr ""
+"ボリューム・グループ「%(name)s」は既に存在します。論理プールを作成するには、"
+"別の名前を選択してください。"
+
+#, python-format
+msgid "Unable to update database with deep scan information due error: %(err)s"
+msgstr ""
+"次のエラーのため、データベースをディープ・スキャン情報で更新できません:"
+"%(err)s"
+
+#, python-format
+msgid ""
+"No volume group '%(name)s' found. Please, specify an existing volume group "
+"to create the logical pool from."
+msgstr ""
+"ボリューム・グループ「%(name)s」が見つかりません。論理プールの作成元となる既"
+"存のボリューム・グループを指定してください。"
+
+#, python-format
+msgid "Unable to delete pool %(name)s as it is associated with guests: %(vms)s"
+msgstr ""
+"プール %(name)s はゲスト %(vms)s に関連付けられているため削除できません"
+
+#, python-format
+msgid "Storage volume %(name)s already exists"
+msgstr "ストレージ・ボリューム %(name)s は既に存在します"
+
+#, python-format
+msgid "Storage volume %(name)s does not exist in storage pool %(pool)s"
+msgstr ""
+"ストレージ・ボリューム %(name)s がストレージ・プール %(pool)s に存在しません"
+
+#, python-format
+msgid ""
+"Unable to create storage volume %(volume)s because storage pool %(pool)s is "
+"not active"
+msgstr ""
+"ストレージ・プール %(pool)s がアクティブでないため、ストレージ・ボリューム "
+"%(volume)s を作成できません"
+
+#, python-format
+msgid "Specify %(item)s in order to create storage volume %(volume)s"
+msgstr ""
+"ストレージ・ボリューム %(volume)s を作成するには、%(item)s を指定してください"
+
+#, python-format
+msgid ""
+"Unable to list storage volumes because storage pool %(pool)s is not active"
+msgstr ""
+"ストレージ・プール %(pool)s がアクティブでないため、ストレージ・ボリュームを"
+"リストできません"
+
+#, python-format
+msgid ""
+"Unable to create storage volume %(name)s in storage pool %(pool)s. Details: "
+"%(err)s"
+msgstr ""
+"ストレージ・ボリューム %(name)s をストレージ・プール %(pool)s に作成できませ"
+"ん。詳細: %(err)s"
+
+#, python-format
+msgid "Unable to wipe storage volumes %(name)s. Details: %(err)s"
+msgstr "ストレージ・ボリューム %(name)s をワイプできません。詳細: %(err)s"
+
+#, python-format
+msgid "Unable to delete storage volume %(name)s. Details: %(err)s"
+msgstr "ストレージ・ボリューム %(name)s を削除できません。詳細: %(err)s"
+
+#, python-format
+msgid "Unable to resize storage volume %(name)s. Details: %(err)s"
+msgstr "ストレージ・ボリューム %(name)s をサイズ変更できません。詳細: %(err)s"
+
+#, python-format
+msgid "Storage type %(type)s does not support volume create and delete"
+msgstr ""
+"ストレージ・タイプ %(type)s ではボリュームの作成および削除はサポートされてい"
+"ません"
+
+msgid "Storage volume name must be a string"
+msgstr "ストレージ・ボリューム名はストリングでなければなりません"
+
+msgid "Storage volume allocation must be an integer number"
+msgstr "ストレージ・ボリューム割り振りは整数でなければなりません"
+
+msgid ""
+"Storage volume format not supported. Valid formats: qcow, qcow2, qed, raw, "
+"vmdk, vpc."
+msgstr ""
+"ストレージ・ボリューム・フォーマットがサポートされていません。有効なフォー"
+"マット: qcow、qcow2、qed、raw、vmdk、vpc。"
+
+msgid "Storage volume requires a volume name"
+msgstr "ストレージ・ボリュームにはボリューム名が必要です"
+
+#, python-format
+msgid ""
+"Unable to update database with storage volume information due error: %(err)s"
+msgstr ""
+"次のエラーのため、データベースをストレージ・ボリューム情報で更新できません:"
+"%(err)s"
+
+#, python-format
+msgid "Only one of parameter %(param)s can be specified"
+msgstr "1 つのパラメーター %(param)s のみを指定できます"
+
+#, python-format
+msgid "Create volume from %(param)s is not supported"
+msgstr "%(param)s からのボリュームの作成はサポートされていません"
+
+msgid "Storage volume capacity must be an integer number."
+msgstr "ストレージ・ボリューム容量は整数値でなければなりません。"
+
+msgid "Storage volume URL must be http://, https://, ftp:// or ftps://."
+msgstr ""
+"ストレージ・ボリューム URL は http://、https://、ftp://、または ftps:// でな"
+"ければなりません。"
+
+#, python-format
+msgid "Unable to access file %(url)s. Please, check it."
+msgstr "ファイル %(url)s にアクセスできません。確認してください。"
+
+#, python-format
+msgid ""
+"Unable to clone storage volume '%(name)s' in pool '%(pool)s'. Details: "
+"%(err)s"
+msgstr ""
+"ストレージ・ボリューム「%(name)s」のクローンをプール「%(pool)s」に作成できま"
+"せん。詳細: %(err)s"
+
+msgid "Specify chunk data and its size to upload a file."
+msgstr ""
+"ファイルをアップロードするには、チャンク・データとそのサイズを指定してくださ"
+"い。"
+
+msgid "In order to upload a storage volume, specify the 'upload' parameter."
+msgstr ""
+"ストレージ・ボリュームをアップロードするには、「upload」パラメーターを指定し"
+"てください。"
+
+msgid ""
+"Unable to upload chunk data as it does not match with requested chunk size."
+msgstr ""
+"要求されたチャンク・サイズに一致しないため、チャンク・データをアップロードで"
+"きません。"
+
+#, python-format
+msgid "The storage volume %(vol)s is not under an upload process."
+msgstr ""
+"ストレージ・ボリューム %(vol)s はアップロード・プロセス中ではありません。"
+
+msgid "The upload chunk data will exceed the storage volume size."
+msgstr ""
+"アップロード・チャンク・データはストレージ・ボリューム・サイズを超過します。"
+
+#, python-format
+msgid "Unable to upload chunk data to storage volume. Details: %(err)s."
+msgstr ""
+"チャンク・データをストレージ・ボリュームにアップロードできません。詳細: "
+"%(err)s。"
+
+#, python-format
+msgid "Interface %(name)s does not exist"
+msgstr "インターフェース %(name)s は存在しません"
+
+#, python-format
+msgid ""
+"Failed to list interfaces. Invalid _inuse parameter. Supported options for "
+"_inuse are: %(supported_inuse)s"
+msgstr ""
+"インターフェースをリストできませんでした。_inuse パラメーターが無効です。"
+"_inuse に対してサポートされているオプションは次のとおりです: "
+"%(supported_inuse)s"
+
+#, python-format
+msgid "Network %(name)s already exists"
+msgstr "ネットワーク %(name)s は既に存在します"
+
+#, python-format
+msgid "Network %(name)s does not exist"
+msgstr "ネットワーク %(name)s は存在しません"
+
+#, python-format
+msgid "Subnet %(subnet)s specified for network %(network)s is not valid."
+msgstr ""
+"ネットワーク %(network)s に指定されたサブネット %(subnet)s は無効です。"
+
+msgid "Specify a network interface to create bridged or macvtap networks."
+msgstr ""
+"ブリッジ・ネットワークまたは macvtap ネットワークを作成するには、ネットワー"
+"ク・インターフェースを指定してください。"
+
+#, python-format
+msgid "Unable to delete or update active network %(name)s"
+msgstr "アクティブ・ネットワーク %(name)s を削除/更新できません"
+
+#, python-format
+msgid "Interface %(iface)s specified for network %(network)s is already in use"
+msgstr ""
+"ネットワーク %(network)s に指定されたインターフェース %(iface)s は既に使用中"
+"です"
+
+msgid "Interface should be bare NIC, bonding or bridge device."
+msgstr ""
+"インターフェースはベア NIC、結合、またはブリッジ・デバイスでなければなりませ"
+"ん。"
+
+#, python-format
+msgid "Unable to create or update network %(name)s. Details: %(err)s"
+msgstr "ネットワーク %(name)s を作成/更新できません。詳細: %(err)s"
+
+#, python-format
+msgid "Unable to find a free IP address for network '%(name)s'"
+msgstr "ネットワーク「%(name)s」のフリー IP アドレスが見つかりません"
+
+#, python-format
+msgid "The interface %(iface)s already exists."
+msgstr "インターフェース %(iface)s は既に存在します。"
+
+msgid "Network name must be a string without slashes (/) or quotes (\")"
+msgstr ""
+"ネットワーク名はスラッシュ (/) または引用符 (\") のないストリングでなければな"
+"りません"
+
+msgid ""
+"Supported network types are isolated, NAT, macvtap, bridge, vepa and "
+"passthrough."
+msgstr ""
+"サポートされているネットワーク・タイプは isolated、NAT、macvtap、bridge、"
+"vepa、および passthrough です。"
+
+msgid "Network subnet must be a string with IP address and prefix or netmask"
+msgstr ""
+"ネットワーク・サブネットは、IP アドレスとプレフィックスまたはネットマスクのあ"
+"るストリングでなければなりません"
+
+msgid "Network interfaces must be an array."
+msgstr "ネットワーク・インターフェースは配列でなければなりません。"
+
+msgid "Network VLAN ID must be an integer between 1 and 4094"
+msgstr "ネットワーク VLAN ID は、1 から 4094 までの整数でなければなりません"
+
+msgid "Specify name and type to create a Network"
+msgstr "ネットワークを作成するには、名前とタイプを指定してください"
+
+#, python-format
+msgid ""
+"Unable to delete or update network %(name)s as it is linked to some virtual "
+"machines (%(vms)s) and/or templates (%(tmpls)s)."
+msgstr ""
+
+#, python-format
+msgid ""
+"Unable to deactivate network %(name)s as it is linked to are some virtual "
+"machines (%(vms)s) and/or templates (%(tmpls)s)."
+msgstr ""
+
+#, python-format
+msgid "Bridge device %(name)s can not be the trunk device of a VLAN."
+msgstr ""
+"ブリッジ・デバイス %(name)s は VLAN のトランク・デバイスにはできません。"
+
+#, python-format
+msgid "Failed to activate interface %(iface)s: %(err)s."
+msgstr "インターフェース %(iface)s のアクティブ化に失敗しました: %(err)s。"
+
+#, python-format
+msgid ""
+"Failed to activate interface %(iface)s. Please check the physical link "
+"status."
+msgstr ""
+"インターフェース %(iface)s のアクティブ化に失敗しました。物理リンク状況を調べ"
+"てください。"
+
+#, python-format
+msgid "Failed to start network %(name)s. Details: %(err)s"
+msgstr "ネットワーク %(name)s の開始に失敗しました。詳細: %(err)s"
+
+#, python-format
+msgid "Unable to redefine interface %(name)s. Details: %(err)s"
+msgstr "インターフェース %(name)s を再定義できません。詳細: %(err)s"
+
+#, python-format
+msgid "Unable to create bridge %(name)s. Details: %(err)s"
+msgstr "ブリッジ %(name)s を作成できません。詳細: %(err)s"
+
+msgid ""
+"Unable to create bridge with NetworkManager enabled. Disable it and try "
+"again."
+msgstr ""
+"ネットワーク・マネージャーを使用可能にしてブリッジを作成することができませ"
+"ん。これを使用不可にして、再試行してください。"
+
+msgid "Interface should be bare NIC or bonding."
+msgstr "インターフェースはベア NIC または結合でなければなりません。"
+
+msgid "Network interfaces parameter must contain at least one interface."
+msgstr ""
+"Network interfaces パラメーターには 1 つ以上のインターフェースが含まれていな"
+"ければなりません。"
+
+msgid "Only one interface is allowed for 'bridge' and 'macvtap' networks."
+msgstr ""
+"「bridge」ネットワークおよび「macvtap」ネットワークに使用できるインターフェー"
+"スは 1 つのみです。"
+
+msgid "Subnet is not a valid parameter for this type of virtual network."
+msgstr ""
+"Subnet は、このタイプの仮想ネットワークには有効なパラメーターではありません。"
+
+msgid ""
+"VLAN ID and interfaces are not valid parameters for this type of virtual "
+"network."
+msgstr ""
+"VLAN ID および interfaces は、このタイプの仮想ネットワークには有効なパラメー"
+"ターではありません。"
+
+#, python-format
+msgid "Storage server %(server)s was not used by Kimchi"
+msgstr "ストレージ・サーバー %(server)s は Kimchi で使用されていませんでした"
+
+#, python-format
+msgid "Distro '%(name)s' does not exist"
+msgstr "Distro「%(name)s」は存在しません"
+
+#, python-format
+msgid "Node device '%(name)s' not found"
+msgstr "ノード・デバイス「%(name)s」が見つかりません"
+
+msgid "Conflicting flag filters specified."
+msgstr "競合するフラグ・フィルターが指定されました。"
+
+msgid "Unable to choose a virtual machine name"
+msgstr "仮想マシン名を選択できません"
+
+msgid "Cannot upgrade objectstore data."
+msgstr "オブジェクト・ストア・データをアップグレードできません。"
+
+msgid "Invalid storage type. Types supported: 'cdrom', 'disk'"
+msgstr ""
+"ストレージ・タイプが無効です。サポートされているタイプは「cdrom」および"
+"「disk」です"
+
+#, python-format
+msgid "The path '%(value)s' is not a valid local/remote path for the device"
+msgstr ""
+"パス「%(value)s」はデバイスに有効なローカルまたはリモートのパスではありません"
+
+msgid "Only CDROM path can be update."
+msgstr "CDROM パスのみが更新可能です。"
+
+#, python-format
+msgid ""
+"The storage device %(dev_name)s does not exist in the virtual machine "
+"%(vm_name)s"
+msgstr ""
+"ストレージ・デバイス %(dev_name)s は仮想マシン %(vm_name)s には存在していませ"
+"ん"
+
+#, python-format
+msgid "Error while creating new storage device: %(error)s"
+msgstr "新しいストレージ・デバイスの作成中にエラーが発生しました: %(error)s"
+
+#, python-format
+msgid "Error while updating storage device: %(error)s"
+msgstr "ストレージ・デバイスの更新中にエラーが発生しました: %(error)s"
+
+#, python-format
+msgid "Error while removing storage device: %(error)s"
+msgstr "ストレージ・デバイスの除去中にエラーが発生しました: %(error)s"
+
+msgid "Do not support IDE device hot plug"
+msgstr "IDE デバイス・ホット・プラグはサポートされていません"
+
+msgid ""
+"Specify type and path or type and pool/volume to add a new virtual machine "
+"disk"
+msgstr ""
+"新規仮想マシン・ディスクを追加するには、タイプとパス、またはタイプとプール/ボ"
+"リュームを指定してください"
+
+msgid "Specify path to update virtual machine disk"
+msgstr "仮想マシン・ディスクを更新するには、パスを指定してください"
+
+#, python-format
+msgid "Controller type %(type)s limitation of %(limit)s devices reached"
+msgstr ""
+"コントローラー・タイプ %(type)s のデバイスの制限 %(limit)s に達しました"
+
+#, python-format
+msgid "Cannot retrieve disk path information for given pool/volume: %(error)s"
+msgstr ""
+"指定のプールまたはボリュームのディスク・パス情報を取得できません: %(error)s"
+
+msgid "Volume already in use by other virtual machine."
+msgstr "ボリュームは既に他の仮想マシンで使用中です。"
+
+msgid ""
+"Only one of path or pool/volume can be specified to add a new virtual "
+"machine disk"
+msgstr ""
+"新規仮想マシン・ディスクを追加するために指定できるパスやプール/ボリュームは "
+"1 つのみです"
+
+#, python-format
+msgid ""
+"Volume chosen with format %(format)s does not fit in the storage type "
+"%(type)s"
+msgstr ""
+"フォーマット %(format)s で選択されたボリュームがストレージ・タイプ%(type)s に"
+"適合しません"
+
+msgid "On s390x arch one of pool, path of dir_path must be specified"
+msgstr ""
+"s390x アーキテクチャーでは、pool、path、または dir_path のいずれかを指定する"
+"必要があります"
+
+msgid ""
+"On s390x arch 'format' must be specified while attaching disk to virtual "
+"machine"
+msgstr ""
+"s390x アーキテクチャーでは、ディスクを仮想マシンに接続するときに「format」を"
+"指定する必要があります"
+
+#, python-format
+msgid "Virtual disk already exists on the system: %(disk_path)s"
+msgstr "仮想ディスクは既にシステム上に存在しています: %(disk_path)s"
+
+#, python-format
+msgid ""
+"Unable to create snapshot '%(name)s' on virtual machine '%(vm)s'. Details: "
+"%(err)s"
+msgstr ""
+"仮想マシン「%(vm)s」でスナップショット「%(name)s」を作成できません。詳細: "
+"%(err)s"
+
+#, python-format
+msgid "Snapshot '%(name)s' does not exist on virtual machine '%(vm)s'."
+msgstr "スナップショット「%(name)s」は仮想マシン「%(vm)s」に存在しません。"
+
+#, python-format
+msgid ""
+"Unable to retrieve snapshot '%(name)s' on virtual machine '%(vm)s'. Details: "
+"%(err)s"
+msgstr ""
+"仮想マシン「%(vm)s」でスナップショット「%(name)s」を取得できません。詳細: "
+"%(err)s"
+
+#, python-format
+msgid "Unable to list snapshots on virtual machine '%(vm)s'. Details: %(err)s"
+msgstr ""
+"仮想マシン「%(vm)s」でスナップショットをリストできません。詳細: %(err)s"
+
+#, python-format
+msgid ""
+"Unable to delete snapshot '%(name)s' on virtual machine '%(vm)s'. Details: "
+"%(err)s"
+msgstr ""
+"仮想マシン「%(vm)s」でスナップショット「%(name)s」を削除できません。詳細: "
+"%(err)s"
+
+#, python-format
+msgid ""
+"Unable to retrieve current snapshot of virtual machine '%(vm)s'. Details: "
+"%(err)s"
+msgstr ""
+"仮想マシン「%(vm)s」の最新スナップショットを取得できません。詳細: %(err)s"
+
+#, python-format
+msgid ""
+"Unable to revert virtual machine '%(vm)s' to snapshot '%(name)s'. Details: "
+"%(err)s"
+msgstr ""
+"仮想マシン「%(vm)s」をスナップショット「%(name)s」に戻すことができません。詳"
+"細: %(err)s"
+
+#, python-format
+msgid ""
+"Unable to create snapshot of virtual machine '%(vm)s' because it contains a "
+"disk with format '%(format)s'; only 'qcow2' is supported."
+msgstr ""
+"仮想マシン「%(vm)s」にはフォーマット「%(format)s」のディスクが含まれているた"
+"め、この仮想マシンのスナップショットを作成できません。「qcow2」のみがサポート"
+"されています。"
+
+msgid ""
+"The number of vCPUs must be less than or equal the maximum number of vCPUs "
+"specified."
+msgstr "vCPU の数は、指定された vCPU の最大数以下でなければなりません。"
+
+msgid ""
+"When CPU topology is defined, maximum number of vCPUs must be a product of "
+"sockets, cores, and threads."
+msgstr ""
+"CPU トポロジーが定義されている場合、vCPU の最大数はソケット、コア、およびス"
+"レッドの積でなければなりません。"
+
+msgid "This host (or current configuration) does not allow CPU topology."
+msgstr "このホスト (または現行構成) では CPU トポロジーは許可されていません。"
+
+msgid "The maximum number of vCPUs is too large for this system."
+msgstr "vCPU の最大数がこのシステムには大きすぎます。"
+
+msgid ""
+"When CPU topology is defined, CPUs must be a multiple of the 'threads' "
+"number defined."
+msgstr ""
+
+msgid ""
+"When CPU topology is specified, sockets, cores and threads are required "
+"paramaters."
+msgstr ""
+"CPU トポロジーが指定される場合、sockets、cores、および threads は必須パラメー"
+"ターです。"
+
+msgid ""
+"Parameter 'cpu_info' expects an object with fields among: 'vcpus', "
+"'maxvcpus', 'topology'."
+msgstr ""
+"パラメーター「cpu_info」では、「vcpus」、「maxvcpus」、「topology」のいずれか"
+"のフィールドでオブジェクトが予想されます。"
+
+msgid ""
+"Parameter 'topology' expects an object with fields among: 'sockets', "
+"'cores', 'threads'."
+msgstr ""
+"パラメーター「topology」では、「sockets」、「cores」、「threads」のいずれかの"
+"フィールドでオブジェクトが予想されます。"
+
+msgid "Unable to update Max CPU or CPU topology when guest is running."
+msgstr ""
+
+#, python-format
+msgid "Unable to hot plug/unplug CPUs. Details: %(err)s"
+msgstr "ストレージ・プールをリストできません。詳細: %(err)s"
+
+#, python-format
+msgid "Invalid volume group name parameter: %(name)s."
+msgstr "ボリューム・グループ名パラメーターが無効です: %(name)s。"
+
+msgid ""
+"Unable to establish connection with libvirt. Please check your libvirt URI "
+"which is often defined in /etc/libvirt/libvirt.conf"
+msgstr ""
+"libvirt との接続を確立できません。libvirt URI (多くの場合、/etc/libvirt/"
+"libvirt.conf に定義されています) を調べてください。"
+
+msgid ""
+"Libvirt service is not active. Please start the libvirt service in your host "
+"system."
+msgstr ""
+"Libvirt サービスがアクティブではありません。ご使用のホスト・システムで "
+"libvirt サービスを開始してください。"
+
+msgid "Failed to register the default event implementation."
+msgstr "デフォルト・イベント実装環境を登録できませんでした。"
+
+msgid "Failed to register timeout event."
+msgstr "タイムアウト・イベントを登録できませんでした。"
+
+msgid "Failed to Run the default event implementation."
+msgstr "デフォルト・イベント実装を実行できませんでした。"
+
+#, python-format
+msgid ""
+"I/O error on guest '%(vm)s': storage pool out of space for %(devAlias)s "
+"(%(srcPath)s)."
+msgstr ""
+"ゲスト「%(vm)s」で入出力エラーが発生しました: %(devAlias)s (%(srcPath)s) 用の"
+"スペースがストレージ・プールにありません。"
+
+#, python-format
+msgid "Create virtual network '%(name)s' type '%(connection)s'"
+msgstr "仮想ネットワーク「%(name)s」タイプ「%(connection)s」の作成"
+
+#, python-format
+msgid "Remove virtual network '%(ident)s'"
+msgstr "仮想ネットワーク「%(ident)s」の除去"
+
+#, python-format
+msgid "Update virtual network '%(ident)s'"
+msgstr "仮想ネットワーク「%(ident)s」の更新"
+
+#, python-format
+msgid "Activate virtual network '%(ident)s'"
+msgstr "仮想ネットワーク「%(ident)s」のアクティブ化"
+
+#, python-format
+msgid "Deactivate virtual network '%(ident)s'"
+msgstr "仮想ネットワーク「%(ident)s」の非アクティブ化"
+
+#, python-format
+msgid "Create storage pool '%(name)s' type '%(type)s'"
+msgstr "ストレージ・プール「%(name)s」タイプ「%(type)s」の作成"
+
+#, python-format
+msgid "Remove storage pool '%(ident)s'"
+msgstr "ストレージ・プール「%(ident)s」の除去"
+
+#, python-format
+msgid "Update storage pool '%(ident)s'"
+msgstr "ストレージ・プール「%(ident)s」の更新"
+
+#, python-format
+msgid "Activate storage pool '%(ident)s'"
+msgstr "ストレージ・プール「%(ident)s」のアクティブ化"
+
+#, python-format
+msgid "Deactivate storage pool '%(ident)s'"
+msgstr "ストレージ・プール「%(ident)s」の非アクティブ化"
+
+#, python-format
+msgid "Create snapshot '%(name)s' at guest '%(vm)s'"
+msgstr "スナップショット「%(name)s」をゲスト「%(vm)s」で作成"
+
+#, python-format
+msgid "Remove snapshot '%(ident)s' from guest '%(vm)s'"
+msgstr "スナップショット「%(ident)s」をゲスト「%(vm)s」から除去"
+
+#, python-format
+msgid "Revert guest '%(vm)s' to snapshot '%(ident)s'"
+msgstr "ゲスト「%(vm)s」をスナップショット「%(ident)s」に戻す"
+
+#, python-format
+msgid "Create template '%(name)s'"
+msgstr "テンプレート「%(name)s」の作成"
+
+#, python-format
+msgid "Remove template '%(ident)s'"
+msgstr "テンプレート「%(ident)s」の除去"
+
+#, python-format
+msgid "Update template '%(ident)s'"
+msgstr "テンプレート「%(ident)s」の更新"
+
+#, python-format
+msgid "Clone template '%(ident)s'"
+msgstr "テンプレート「%(ident)s」のクローンを作成"
+
+#, python-format
+msgid "Create guest '%(name)s' from template '%(template)s'"
+msgstr "ゲスト「%(name)s」をテンプレート「%(template)s」から作成"
+
+#, python-format
+msgid "Remove guest '%(ident)s'"
+msgstr "ゲスト「%(ident)s」の除去"
+
+#, python-format
+msgid "Edit guest '%(ident)s'"
+msgstr "ゲスト「%(ident)s」の編集"
+
+#, python-format
+msgid "Start guest '%(ident)s'"
+msgstr "ゲスト「%(ident)s」の開始"
+
+#, python-format
+msgid "Power off guest '%(ident)s'"
+msgstr "ゲスト「%(ident)s」の電源をオフにする"
+
+#, python-format
+msgid "Shutdown guest '%(ident)s'"
+msgstr "ゲスト「%(ident)s」のシャットダウン"
+
+#, python-format
+msgid "Restart guest '%(ident)s'"
+msgstr "ゲスト「%(ident)s」の再始動"
+
+#, python-format
+msgid "Connect to guest '%(ident)s' through novnc/spice"
+msgstr "novnc/spice を使用してゲスト「%(ident)s」に接続"
+
+#, python-format
+msgid "Clone guest '%(ident)s'"
+msgstr "ゲスト「%(ident)s」のクローンを作成"
+
+#, python-format
+msgid "Migrate guest '%(ident)s' to '%(remote_host)s'"
+msgstr "ゲスト「%(ident)s」を「%(remote_host)s」にマイグレーション"
+
+#, python-format
+msgid "Suspend guest '%(ident)s'"
+msgstr "ゲスト「%(ident)s」の中断"
+
+#, python-format
+msgid "Resume guest '%(ident)s'"
+msgstr "ゲスト「%(ident)s」の再開"
+
+#, python-format
+msgid "Connect to guest '%(ident)s' through serial"
+msgstr "シリアルを使用してゲスト「%(ident)s」に接続"
+
+#, python-format
+msgid "Attach host device '%(name)s' to guest '%(vmid)s'"
+msgstr "ホスト・デバイス「%(name)s」をゲスト「%(vmid)s」に接続"
+
+#, python-format
+msgid "Detach host device '%(ident)s' from guest '%(vmid)s'"
+msgstr "ホスト・デバイス「%(ident)s」をゲスト「%(vmid)s」から切り離す"
+
+#, python-format
+msgid "Attach network interface '%(network)s' to guest '%(vm)s'"
+msgstr "ネットワーク・インターフェース「%(network)s」をゲスト「%(vm)s」に接続"
+
+#, python-format
+msgid "Detach network interface '%(ident)s' from guest '%(vm)s'"
+msgstr ""
+"ネットワーク・インターフェース「%(ident)s」をゲスト「%(vm)s」から切り離す"
+
+#, python-format
+msgid "Update network interface '%(ident)s' at guest '%(vm)s'"
+msgstr "ゲスト「%(vm)s」でネットワーク・インターフェース「%(ident)s」を更新"
+
+#, python-format
+msgid "Attach %(type)s storage '%(path)s' to guest '%(vm)s'"
+msgstr "%(type)s ストレージ「%(path)s」をゲスト「%(vm)s」に接続"
+
+#, python-format
+msgid "Remove storage '%(ident)s' from guest '%(vm)s'"
+msgstr "ストレージ「%(ident)s」をゲスト「%(vm)s」から除去"
+
+#, python-format
+msgid "Update storage '%(ident)s' at guest '%(vm)s'"
+msgstr "ゲスト「%(vm)s」でストレージ「%(ident)s」を更新"
+
+#, python-format
+msgid "Create storage volume '%(name)s' at pool '%(pool)s'"
+msgstr "ストレージ・ボリューム「%(name)s」をプール「%(pool)s」に作成"
+
+#, python-format
+msgid "Remove storage volume '%(ident)s' from pool '%(pool)s'"
+msgstr "ストレージ・ボリューム「%(ident)s」をプール「%(pool)s」から除去"
+
+#, python-format
+msgid "Update storage volume '%(ident)s' at pool '%(pool)s'"
+msgstr "プール「%(pool)s」でストレージ・ボリューム「%(ident)s」を更新"
+
+#, python-format
+msgid "Wipe storage volume '%(ident)s' off pool '%(pool)s'"
+msgstr "ストレージ・ボリューム「%(ident)s」をプール「%(pool)s」からワイプ"
+
+#, python-format
+msgid "Resize storage volume '%(ident)s' at pool '%(pool)s' with size %(size)s"
+msgstr ""
+"プール「%(pool)s」にあるストレージ・ボリューム「%(ident)s」のサイズをサイズ "
+"%(size)s で変更"
+
+#, python-format
+msgid "Clone storage volume '%(ident)s' at pool '%(pool)s'"
+msgstr ""
+"ストレージ・ボリューム「%(ident)s」のクローンをプール「%(pool)s」に作成"
+
+msgid "Create a New Virtual Machine"
+msgstr "新規仮想マシンの作成"
+
+msgid "Virtual Machine Name"
+msgstr "仮想マシン名"
+
+msgid ""
+"The name used to identify the virtual machine. If omitted, a name will be "
+"chosen based on the template used."
+msgstr ""
+"この名前は仮想マシンを識別するために使用されます。省略されると、使用している"
+"テンプレートを基準に選択されます。"
+
+msgid "Please create a template first."
+msgstr "まずテンプレートを作成してください。"
+
+msgid "Create a Template"
+msgstr "テンプレートの作成"
+
+msgid "Please choose a template."
+msgstr "テンプレートを選択してください。"
+
+msgid "This template has invalid parameters."
+msgstr "このテンプレートには、無効なパラメーターがあります。"
+
+msgid "This template has invalid parameters"
+msgstr "このテンプレートには、無効なパラメーターがあります"
+
+msgid "OS"
+msgstr "OS"
+
+msgid "Version"
+msgstr "バージョン"
+
+msgid "Current CPUs"
+msgstr "現行 CPU"
+
+msgid "Memory"
+msgstr "メモリー"
+
+msgid "Create"
+msgstr "作成"
+
+msgid "Creating..."
+msgstr "作成中..."
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Clone a Guest"
+msgstr "ゲストのクローンを作成"
+
+msgid ""
+"When the target guest has SCSI or iSCSI volumes, they will be cloned on the "
+"default storage pool. The same will happen when the target pool does not "
+"have enough space to clone the volumes. Do you want to continue?"
+msgstr ""
+"ターゲット・ゲストに SCSI ボリュームまたは iSCSI ボリュームがある場合は、その"
+"ボリュームのクローンがデフォルト・ストレージ・プール上に作成されます。ボ"
+"リュームのクローンを作成するだけの十分なスペースがターゲット・プールにない場"
+"合も同様です。続行しますか ?"
+
+msgid "Number of times to clone"
+msgstr "クローンを作成する回数"
+
+msgid "Continue"
+msgstr "続行"
+
+msgid "Edit Guest"
+msgstr "ゲストの編集"
+
+msgid "General"
+msgstr "一般"
+
+msgid "Storage"
+msgstr "ストレージ"
+
+msgid "Interface"
+msgstr "インターフェース"
+
+msgid "Permission"
+msgstr "許可"
+
+msgid "Pci"
+msgstr "Pci"
+
+msgid "Snapshot"
+msgstr "スナップショット"
+
+msgid "Processor"
+msgstr "プロセッサー"
+
+msgid "Name"
+msgstr "名前"
+
+msgid "Memory (MB)"
+msgstr "メモリー (MB)"
+
+msgid "More"
+msgstr "詳細"
+
+msgid "Max Memory (MB)"
+msgstr "最大メモリー (MB)"
+
+msgid "Host does not support memory hotplug"
+msgstr "ホストはメモリー・ホット・プラグをサポートしていません"
+
+msgid "Icon"
+msgstr "アイコン"
+
+msgid "Console"
+msgstr "コンソール"
+
+msgid "Nothing selected"
+msgstr "何も選択されていません"
+
+msgid "sclp"
+msgstr "sclp"
+
+msgid "virtio"
+msgstr "virtio"
+
+msgid ""
+"Select which items for boot order and grad them when needed to order them. "
+"At least one option must be selected."
+msgstr ""
+
+msgid "Add"
+msgstr "追加"
+
+msgid "Device"
+msgstr "デバイス"
+
+msgid "Path"
+msgstr "パス"
+
+msgid "Actions"
+msgstr "アクション"
+
+msgid "Network"
+msgstr " ネットワーク"
+
+msgid "Type"
+msgstr "タイプ"
+
+msgid "MAC Address"
+msgstr "MAC アドレス"
+
+msgid "IP Address"
+msgstr "IP アドレス"
+
+msgid "Network/Interface"
+msgstr "ネットワーク/インターフェース"
+
+msgid "Mode"
+msgstr "モード"
+
+msgid "Available system users and groups"
+msgstr "使用可能なシステム・ユーザーおよびグループ"
+
+msgid "Users"
+msgstr "ユーザー"
+
+msgid "Groups"
+msgstr "グループ"
+
+msgid "Selected system users and groups"
+msgstr "選択されたシステム・ユーザーおよびグループ"
+
+msgid "User"
+msgstr "ユーザー"
+
+msgid "All"
+msgstr "すべて"
+
+msgid "To Add"
+msgstr "追加予定"
+
+msgid "Added"
+msgstr "追加済み"
+
+msgid "Filter"
+msgstr "フィルター"
+
+msgid "Status"
+msgstr "状況"
+
+msgid "Product"
+msgstr "製品"
+
+msgid "Vendor"
+msgstr "ベンダー"
+
+msgid "Loading"
+msgstr "ロード中"
+
+msgid "Created"
+msgstr "作成日"
+
+msgid "Current CPU Number"
+msgstr "現行 CPU 数"
+
+msgid ""
+"Current CPU must be equal or lower than the Maximum CPU value. If a topology "
+"is set, it must be also be a multiple of the 'threads' value."
+msgstr ""
+
+msgid "Max CPU"
+msgstr "最大 CPU"
+
+msgid ""
+"Unable to edit maximum CPU or CPU topology when editing a running or paused "
+"virtual machine."
+msgstr ""
+
+msgid ""
+"If a topology is set, this value will be the product of sockets * times * "
+"cores."
+msgstr ""
+
+msgid "Manually set CPU topology"
+msgstr "CPU トポロジーを手動で設定"
+
+msgid "Sockets"
+msgstr ""
+
+msgid "Cores"
+msgstr "コア"
+
+msgid "Threads"
+msgstr "スレッド"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Replace"
+msgstr "置換"
+
+msgid "Detach"
+msgstr "切り離し"
+
+msgid "Remove"
+msgstr "除去"
+
+msgid "Edit"
+msgstr "編集"
+
+msgid "LDAP User ID,e.g.foo@foo.com"
+msgstr "LDAP ユーザー ID (例: foo@foo.com)"
+
+msgid "Revert"
+msgstr "戻す"
+
+msgid "Running"
+msgstr "実行中"
+
+msgid "Disconnected"
+msgstr "切断済み"
+
+msgid "Starting"
+msgstr "開始中"
+
+msgid "Crashed"
+msgstr "異常終了"
+
+msgid "Unknown"
+msgstr "不明"
+
+msgid "Paused"
+msgstr "一時停止"
+
+msgid "Suspended"
+msgstr "中断状態"
+
+msgid "Resetting"
+msgstr "リセット中"
+
+msgid "View Console"
+msgstr "コンソールの表示"
+
+msgid "View Serial"
+msgstr "シリアルの表示"
+
+msgid "Clone"
+msgstr "クローン"
+
+msgid "Migrate"
+msgstr "マイグレーション"
+
+msgid "Reset"
+msgstr "リセット"
+
+msgid "Pause"
+msgstr "一時停止"
+
+msgid "Resume"
+msgstr "再開"
+
+msgid "Shut Down"
+msgstr "シャットダウン"
+
+msgid "Start"
+msgstr "開始"
+
+msgid "Power Off"
+msgstr "電源オフ"
+
+msgid "Delete"
+msgstr "削除"
+
+msgid "No Data Available"
+msgstr "使用可能なデータがありません"
+
+msgid "Processors Utilization"
+msgstr "プロセッサー使用状況"
+
+msgid "Memory Utilization"
+msgstr "メモリー使用状況"
+
+msgid "Storage I/O"
+msgstr "ストレージ入出力"
+
+msgid "Network I/O"
+msgstr "ネットワーク入出力"
+
+msgid "Migrate a Guest"
+msgstr "ゲストのマイグレーション"
+
+msgid ""
+"Disclaimer: This process cannot be stopped after started, can take a long "
+"time to complete and will turn off the VM on this Hypervisor when it is "
+"successfully migrated to the remote destination."
+msgstr ""
+"特記事項: このプロセスは開始後は停止できません。完了までに長い時間がかかる可"
+"能性があります。リモート宛先へのマイグレーションが正常に行われると、このハイ"
+"パーバイザー上の VM はオフになります。"
+
+msgid "Remote Server"
+msgstr "リモート・サーバー"
+
+msgid "IP Address or Hostname"
+msgstr "IP アドレスまたはホスト名"
+
+msgid ""
+"The following fields are optional. Fill them if you want Kimchi to setup a "
+"password-less ssh session between the localhost and the remote host. The "
+"setup process will only be successful if the user has 'SUDO ALL' permission "
+"in the remote machine."
+msgstr ""
+"次のフィールドはオプションです。ローカル・ホストとリモート・ホストの間でパス"
+"ワードなしの ssh セッションを Kimchi にセットアップさせたい場合は、これらの"
+"フィールドに値を入力してください。リモート・マシンにおいてユーザーに「SUDO "
+"ALL」許可がある場合に限り、セットアップ・プロセスは正常に行われます。"
+
+msgid "Username of the remote host"
+msgstr "リモート・ホストのユーザー名"
+
+msgid "Password"
+msgstr "パスワード"
+
+msgid "Password of the user in the remote host"
+msgstr "リモート・ホストのユーザーのパスワード"
+
+msgid "Use RDMA transport"
+msgstr ""
+
+msgid ""
+"Check this option only if RDMA is properly configured in both source and "
+"destination hosts, otherwise migration will fail."
+msgstr ""
+
+msgid "Delete this VM when the migration is completed"
+msgstr "マイグレーションが完了したときに、この VM を削除"
+
+msgid "Add a Storage Device to VM"
+msgstr "VM にストレージ・デバイスを追加"
+
+msgid "Device Type"
+msgstr "デバイス・タイプ"
+
+msgid ""
+"The device type. Currently, \"cdrom\" and \"disk\" are supported. If the "
+"guest is running, only \"disk\" is supported."
+msgstr ""
+"デバイス・タイプを示します。現在、「cdrom」と「disk」がサポート対象です。ゲス"
+"トで実行している場合は、「disk」のみがサポートされます。"
+
+msgid "Create a new disk"
+msgstr "新規ディスクの作成"
+
+msgid "Select an existing disk"
+msgstr "既存ディスクの選択"
+
+msgid "Source"
+msgstr "ソース"
+
+msgid "Storage based on Libvirt pool or direct block device"
+msgstr "Libvirt プールまたは直接ブロック・デバイスに基づくストレージ"
+
+msgid "Storage Pool"
+msgstr "ストレージ・プール"
+
+msgid "Storage pool to create the volume in"
+msgstr "ボリュームの作成先のストレージ・プール"
+
+msgid "Disk Size (GB)"
+msgstr "ディスク・サイズ (GB)"
+
+msgid "New disk size to be created"
+msgstr "作成される新規ディスクのサイズ"
+
+msgid "Format"
+msgstr "フォーマット"
+
+msgid "Format of the new disk to be created"
+msgstr "作成される新規ディスクのフォーマット"
+
+msgid "Directory Path"
+msgstr "ディレクトリー・パス"
+
+msgid "Provide a directory path"
+msgstr "ディレクトリー・パスの指定"
+
+msgid "Storage pool in which the volume is located in"
+msgstr "当該ボリュームがあるストレージ・プール"
+
+msgid "Storage Volume"
+msgstr "ストレージ・ボリューム"
+
+msgid "Storage volume to be attached"
+msgstr "接続されるストレージ・ボリューム"
+
+msgid "Disk Path"
+msgstr "ディスク・パス"
+
+msgid "Provide a block device"
+msgstr "ブロック・デバイスの指定"
+
+msgid "File Path"
+msgstr "ファイル・パス"
+
+msgid "The ISO file path in the server for CDROM."
+msgstr "サーバー内での CDROM の ISO ファイル・パス。"
+
+msgid "Attach"
+msgstr "接続"
 
 msgid "Host"
 msgstr "ホスト"
@@ -115,36 +2243,14 @@ msgstr "ゲスト"
 msgid "Templates"
 msgstr "テンプレート"
 
-msgid "Storage"
-msgstr "ストレージ"
-
-msgid "Network"
-msgstr " ネットワーク"
-
-msgid "Failed to get application configuration"
-msgstr "アプリケーション構成を取得できませんでした"
-
 msgid "This is not a valid Linux path"
 msgstr "有効な Linux パスではありません"
 
-msgid "This is not a valid URL."
-msgstr "有効な URL ではありません。"
-
-msgid "No such data available."
-msgstr "そのようなデータはありません。"
-
-msgid ""
-"Can not contact the host system. Verify the host system is up and that you "
-"have network connectivity to it. HTTP request response %1. "
-msgstr ""
-"ホスト・システムに接続できません。ホスト・システムが稼働していて、ネットワー"
-"ク接続が行われていることを確認してください。HTTP 要求応答 %1"
-
 msgid "Unable to read file."
-msgstr ""
+msgstr "ファイルを読み取ることができません。"
 
 msgid "Error while uploading file."
-msgstr ""
+msgstr "ファイルのアップロード中にエラーが発生しました。"
 
 msgid "Delete Confirmation"
 msgstr "削除の確認"
@@ -152,319 +2258,205 @@ msgstr "削除の確認"
 msgid "OK"
 msgstr "OK"
 
-msgid "Cancel"
-msgstr "取消"
-
 msgid "Confirm"
 msgstr "確認"
-
-msgid "Create"
-msgstr "作成"
 
 msgid "Warning"
 msgstr "警告"
 
-msgid "Save"
-msgstr "保存"
-
-msgid "Creating..."
-msgstr ""
-
 msgid "Cloning..."
-msgstr ""
+msgstr "クローン作成中..."
 
-msgid "Loading..."
-msgstr "ロードしています..."
+msgid "Saving..."
+msgstr "保存中..."
 
-msgid "An error occurred while retrieving system information."
-msgstr ""
-
-msgid "Retry"
-msgstr "再試行"
-
-msgid "Detailed message:"
-msgstr "詳細メッセージ:"
+msgid "Migrating..."
+msgstr "マイグレーション中..."
 
 msgid "No ISO found"
-msgstr ""
+msgstr "ISO が見つかりません"
 
-msgid "This is not a valid ISO file."
-msgstr "有効な ISO ファイルではありません。"
+msgid "Add Template"
+msgstr "テンプレートの追加"
 
 msgid "This may take a long time. Do you want to continue?"
-msgstr "しばらく時間がかかることがあります。続行しますか?"
-
-msgid "This will permanently delete the template. Would you like to continue?"
-msgstr "テンプレートは完全に削除されます。続行しますか?"
-
-msgid "Unable to shut down system as there are some virtual machines running!"
-msgstr ""
-"いくつかの仮想マシンが稼働しているために、システムをシャットダウンできません!"
-
-msgid "Max:"
-msgstr "最大:"
-
-msgid "Utilization"
-msgstr "使用率"
-
-msgid "Available"
-msgstr "使用可能"
-
-msgid "Read Rate"
-msgstr "読み取り速度"
-
-msgid "Write Rate"
-msgstr "書き込み速度"
-
-msgid "Received"
-msgstr "受信済み"
-
-msgid "Sent"
-msgstr "送信済み"
+msgstr "これには時間がかかることがあります。続行しますか ?"
 
 msgid ""
-"Shutting down or restarting host will cause unsaved work lost. Continue to "
-"shut down/restarting?"
-msgstr ""
-"ホストをシャットダウンまたは再始動すると、保存されていない作業は失われます。"
-"シャットダウン/再始動を続行しますか?"
+"This will permanently delete the %1 template. Would you like to continue?"
+msgstr "これにより %1 テンプレートは完全に削除されます。続行しますか?"
 
-msgid ""
-"Repository will be removed permanently and can't be recovered. Do you want "
-"to continue?"
-msgstr ""
-"リポジトリーは完全に削除され、リカバリーできなくなります。続行しますか?"
+msgid "View Table"
+msgstr "テーブルの表示"
 
-msgid "Repositories"
-msgstr "リポジトリー"
+msgid "View Gallery"
+msgstr "ギャラリーの表示"
 
-msgid "ID"
-msgstr "ID"
-
-msgid "Name"
-msgstr "名前"
-
-msgid "Base URL"
-msgstr "ベース URL"
-
-msgid "Is Mirror"
-msgstr "ミラー"
-
-msgid "URL Args"
-msgstr "URL 引数"
-
-msgid "Enabled"
-msgstr "使用可能"
-
-msgid "GPG Check"
-msgstr "GPG チェック"
-
-msgid "GPG Key"
-msgstr "GPG 鍵"
-
-msgid "Add"
-msgstr "追加"
-
-msgid "Edit"
-msgstr "編集"
-
-msgid "Remove"
-msgstr "除去"
-
-msgid "Enable"
-msgstr "使用可能"
-
-msgid "Disable"
+msgid "Not Available"
 msgstr "使用不可"
 
-msgid "Software Updates"
-msgstr "ソフトウェア更新"
+msgid "Please check the invalid Storage Pools"
+msgstr "無効なストレージ・プールを確認してください"
 
-msgid "Package Name"
-msgstr "パッケージ名"
+msgid "Please check the invalid Storage Pools or Paths"
+msgstr "無効なストレージ・プールまたはパスを確認してください"
 
-msgid "Version"
-msgstr "バージョン"
+msgid "macvtap"
+msgstr "macvtap"
 
-msgid "Architecture"
-msgstr "アーキテクチャー"
+msgid "ovs"
+msgstr "ovs"
 
-msgid "Repository"
-msgstr "リポジトリー"
-
-msgid "Update All"
-msgstr "すべて更新"
-
-msgid "Updating..."
-msgstr "更新しています..."
-
-msgid "Failed to retrieve packages update information."
-msgstr ""
-
-msgid "Failed to update package(s)."
-msgstr "パッケージを更新できませんでした。"
+msgid "network"
+msgstr "ネットワーク"
 
 msgid ""
-"Debug report will be removed permanently and can't be recovered. Do you want "
-"to continue?"
+"This will delete the %1 virtual machine and its virtual disks. This "
+"operation cannot be undone. Would you like to continue?"
 msgstr ""
-"デバッグ・レポートは完全に削除され、リカバリーできなくなります。続行しますか?"
-
-msgid "Debug Reports"
-msgstr "デバッグ・レポート"
-
-msgid "Generated Time"
-msgstr "生成時刻"
-
-msgid "Generate"
-msgstr "生成"
-
-msgid "Generating..."
-msgstr "生成しています..."
-
-msgid "Rename"
-msgstr "名前変更"
-
-msgid "Download"
-msgstr "ダウンロード"
-
-msgid ""
-"Report name should contain only letters, digits, underscore ('_') and/or "
-"hyphen ('-')."
-msgstr "レポート名に使用できるのは、英字、数字、およびハイフン (-) のみです。"
-
-msgid "Pending..."
-msgstr "ロードしています..."
-
-msgid "Report name is the same as the original one."
-msgstr ""
-
-msgid ""
-"This will delete the virtual machine and its virtual disks. This operation "
-"cannot be undone. Would you like to continue?"
-msgstr ""
-"仮想マシンとその仮想ディスクが削除されます。この操作は元に戻すことができませ"
-"ん。続行しますか?"
+"これにより、%1 仮想マシンとその仮想ディスクが削除されます。この操作は元に戻す"
+"ことができません。続行しますか?"
 
 msgid "Power off Confirmation"
-msgstr "削除の確認"
+msgstr "電源オフの確認"
 
 msgid ""
 "This action may produce undesirable results, for example unflushed disk "
-"cache in the guest. Would you like to continue?"
+"cache in the %1 guest. Would you like to continue?"
 msgstr ""
+"このアクションでは、望ましくない結果 (例えば、ゲストにおいて %1 ディスク・"
+"キャッシュがフラッシュされないなど) になる可能性があります。続行しますか?"
 
 msgid "Reset Confirmation"
-msgstr "削除の確認"
+msgstr "リセットの確認"
 
 msgid ""
-"There is a risk of data loss caused by reset without the guest OS shutdown. "
-"Would you like to continue?"
+"There is a risk of data loss caused by reset without the %1 guest OS "
+"shutdown. Would you like to continue?"
 msgstr ""
+"%1 ゲスト OS をシャットダウンせずにリセットするとデータが失われる危険性があり"
+"ます。続行しますか?"
 
 msgid "Shut Down Confirmation"
-msgstr "削除の確認"
+msgstr "シャットダウンの確認"
 
-msgid "Note the guest OS may ignore this request. Would you like to continue?"
-msgstr "テンプレートは完全に削除されます。続行しますか?"
+msgid ""
+"Note the %1 guest OS may ignore this request. Would you like to continue?"
+msgstr ""
+"%1 ゲスト OS ではこの要求が無視される可能性があることに注意してください。続行"
+"しますか?"
 
 msgid "Virtual Machine delete Confirmation"
-msgstr ""
+msgstr "仮想マシンの削除確認"
 
 msgid ""
-"This virtual machine is not persistent. Power Off will delete it. Continue?"
+"The %1 virtual machine is not persistent. Power Off will delete it. Continue?"
+msgstr ""
+"%1 仮想マシンは永続的ではありません。電源オフにより削除されます。続行します"
+"か?"
+
+msgid "Add Guest"
 msgstr ""
 
+msgid "Input is not a number"
+msgstr "入力が数値ではありません"
+
+msgid "Memory value cannot be higher than Max Memory value"
+msgstr "メモリー値は最大メモリー値よりも大きくすることはできません"
+
 msgid ""
-"When the target guest has SCSI or iSCSI volumes, they will be cloned on "
-"default storage pool. The same will happen when the target pool does not "
-"have enough space to clone the volumes. Do you want to continue?"
+"For better performance it is recommended a threads per core value not "
+"greater than %1."
 msgstr ""
 
 msgid ""
 "This CDROM will be detached permanently and you can re-attach it. Continue "
 "to detach it?"
 msgstr ""
-"この CDROM は完全に切り離されますが、再接続できます。切り離しを続行しますか?"
-
-msgid "Attach"
-msgstr "接続"
+"この CDROM は永続的に切り離されますが、再接続できます。切り離しを続行します"
+"か?"
 
 msgid "Attaching..."
-msgstr "接続しています..."
-
-msgid "Replace"
-msgstr "交換"
-
-msgid "Replacing..."
-msgstr "交換しています..."
-
-msgid "Successfully attached!"
-msgstr "正常に接続しました!"
-
-msgid "Successfully replaced!"
-msgstr "正常に交換しました!"
-
-msgid "Successfully detached!"
-msgstr "正常に切り離しました!"
+msgstr "接続中..."
 
 msgid ""
 "This disk will be detached permanently and you can re-attach it. Continue to "
 "detach it?"
 msgstr ""
+"このディスクは完全に切り離されますが、再接続できます。切り離しを続行しますか?"
 
 msgid "interface:"
-msgstr ""
+msgstr "インターフェース:"
 
 msgid "address:"
-msgstr ""
+msgstr "アドレス:"
 
 msgid "link_type:"
-msgstr ""
+msgstr "link_type:"
 
 msgid "block:"
-msgstr ""
+msgstr "ブロック:"
 
 msgid "drive_type:"
-msgstr ""
+msgstr "drive_type:"
 
 msgid "model:"
-msgstr ""
+msgstr "モデル:"
 
 msgid "Affected devices:"
-msgstr ""
+msgstr "影響を受けるデバイス:"
 
-msgid "The VLAN id must be between 1 and 4094."
-msgstr "VLAN ID は、1 から 4094 まででなければなりません。"
+msgid "Less"
+msgstr "省略"
+
+msgid "Successfully attached device to VM"
+msgstr "デバイスは VM に正常に接続されました"
+
+msgid "Successfully detached device from VM"
+msgstr "デバイスは正常に VM から切り離されました"
+
+msgid "Following devices will be affected, confirm?"
+msgstr "次のデバイスが影響を受けます。確認しますか?"
+
+msgid "Bridge"
+msgstr "ブリッジ"
+
+msgid "Vepa"
+msgstr "Vepa"
+
+msgid "None"
+msgstr "なし"
 
 msgid "unavailable"
 msgstr "使用不可"
 
 msgid ""
 "This action will interrupt network connectivity for any virtual machine that "
-"depend on this network."
+"depend on the %1 network."
 msgstr ""
-"このアクションは、このネットワークに依存している仮想マシンのネットワーク接続"
-"を妨げます。"
+"このアクションを実行すると、%1 ネットワークに依存するすべての仮想マシンのネッ"
+"トワーク接続が中断されます。"
 
-msgid "Create a network"
-msgstr "ネットワークの作成"
+msgid "Add Network"
+msgstr ""
 
 msgid ""
-"This network is not persistent. Instead of stop, this action will "
+"The %1 network is not persistent. Instead of stop, this action will "
 "permanently delete it. Would you like to continue?"
 msgstr ""
-"このストレージ・プールは永続的なものではありません。このアクションで、非アク"
-"ティブになるのではなく完全に削除されます。続行しますか?"
+"%1 ネットワークは永続的ではありません。このアクションを実行すると、停止ではな"
+"く完全削除が行われます。続行しますか?"
 
 msgid ""
 "The bridged VLAN tag may not work well with NetworkManager enabled. You "
 "should consider disabling it."
 msgstr ""
+"ブリッジ VLAN タグは NetworkManager が使用可能になっている場合は正しく機能し"
+"ない可能性があります。使用不可にすることを検討してください。"
 
 msgid ""
-"This will permanently delete the storage pool. Would you like to continue?"
-msgstr "ストレージ・プールは完全に削除されます。続行しますか?"
+"This will permanently delete the %1 storage pool. Would you like to continue?"
+msgstr "これにより、%1 ストレージ・プールは完全に削除されます。続行しますか?"
 
 msgid "This storage pool is empty."
 msgstr "このストレージ・プールは空です。"
@@ -482,22 +2474,77 @@ msgid "No SCSI adapters found."
 msgstr "SCSI アダプターが見つかりません。"
 
 msgid "Loading iSCSI targets..."
-msgstr ""
+msgstr "iSCSI ターゲットをロード中..."
 
 msgid "No iSCSI found. Please input one."
-msgstr ""
+msgstr "iSCSI が見つかりません。入力してください。"
 
 msgid "Failed to load iSCSI targets."
+msgstr "iSCSI ターゲットのロードに失敗しました。"
+
+msgid "Would you like to continue?"
+msgstr "続行しますか?"
+
+msgid "This will permanently delete the following storage volumes: %1"
+msgstr "これにより、次のストレージ・ボリュームは完全に削除されます: %1"
+
+msgid "No available partitions found."
+msgstr "使用可能なパーティションが見つかりません。"
+
+msgid ""
+"The %1 storage pool is not persistent. Instead of deactivate, this action "
+"will permanently delete it. Would you like to continue?"
+msgstr ""
+"%1 ストレージ・プールは永続的ではありません。このアクションを実行すると、非ア"
+"クティブ化ではなく完全削除が行われます。続行しますか?"
+
+msgid "Unable to retrieve partitions information."
+msgstr "パーティション情報を取得できません。"
+
+msgid "In progress..."
+msgstr "進行中..."
+
+msgid "Failed!"
+msgstr "失敗しました"
+
+msgid "No LVM found in the system."
+msgstr "LVM がシステムに見つかりません。"
+
+msgid "This will permanently wipe the following storage volumes: %1"
+msgstr "これにより、次のストレージ・プールは完全にワイプされます: %1"
+
+msgid "Wipe Confirmation"
+msgstr "ワイプ確認"
+
+msgid "Select one or more partitions to be added to the logical pool %1:"
+msgstr "論理プール %1 に追加する 1 つ以上のパーティションを選択してください:"
+
+msgid "Add Storage"
 msgstr ""
 
-msgid "The storage pool name can not be blank."
-msgstr "ストレージ・プール名をブランクにすることはできません。"
+msgid "DIR"
+msgstr "DIR"
 
-msgid "The storage pool path can not be blank."
-msgstr "ストレージ・プール・パスをブランクにすることはできません。"
+msgid "NFS"
+msgstr "NFS"
 
-msgid "NFS server mount path can not be blank."
-msgstr "NFS サーバー・マウント・パスをブランクにすることはできません。"
+msgid "iSCSI"
+msgstr "iSCSI"
+
+msgid "LOGICAL"
+msgstr "論理"
+
+msgid "device"
+msgstr "デバイス"
+
+msgid "path"
+msgstr "パス"
+
+msgid "size (GiB)"
+msgstr "サイズ (GiB)"
+
+msgid "free size (GiB)"
+msgstr "フリー・サイズ (GiB)"
 
 msgid "Invalid NFS mount path."
 msgstr "NFS マウント・パスが無効です。"
@@ -505,1177 +2552,383 @@ msgstr "NFS マウント・パスが無効です。"
 msgid "No logical device selected."
 msgstr "論理デバイスが選択されていません。"
 
-msgid "The iSCSI target can not be blank."
-msgstr "iSCSI ターゲットをブランクにすることはできません。"
-
-msgid "Server name can not be blank."
-msgstr "サーバー名をブランクにすることはできません。"
-
 msgid "This is not a valid Server Name or IP. Please, modify it."
-msgstr ""
-
-msgid "Looking for available partitions ..."
-msgstr "愛用可能なパーティションを探しています..."
-
-msgid "No available partitions found."
-msgstr "使用可能なパーティションが見つかりません。"
-
-msgid ""
-"This storage pool is not persistent. Instead of deactivate, this action will "
-"permanently delete it. Would you like to continue?"
-msgstr ""
-"このストレージ・プールは永続的なものではありません。このアクションで、非アク"
-"ティブになるのではなく完全に削除されます。続行しますか?"
-
-msgid "Unable to retrieve partitions information."
-msgstr "リポジトリー情報を取得できません。詳細: 「%(err)s」"
-
-msgid "In progress..."
-msgstr ""
-
-msgid "Failed!"
-msgstr ""
+msgstr "これは有効なサーバー名または IP ではありません。変更してください。"
 
 msgid "CDROM path needs to be a valid local/remote path and cannot be blank."
 msgstr ""
+"CDROM パスは有効なローカル/リモート・パスでなければならず、ブランクにはできま"
+"せん。"
 
 msgid "Disk pool or volume cannot be blank."
-msgstr "ストレージ・プール名をブランクにすることはできません。"
+msgstr "ディスク・プールまたはボリュームはブランクにはできません。"
 
-msgid "Session timeout, please re-login."
+msgid ""
+"Disk size or Format or Directory path cannot be blank and Directory path "
+"needs to be a valid local/remote path."
 msgstr ""
+"ディスク・サイズ、フォーマット、ディレクトリー・パスはブランクにできません。"
+"ディレクトリー・パスは有効なローカル/リモート・パスでなければなりません。"
+
+msgid "Disk path needs to be a valid local/remote path and cannot be blank."
+msgstr ""
+"ディスク・パスは有効なローカル/リモート・パスでなければならず、ブランクにはで"
+"きません。"
+
+msgid "Storage pool or Disk size or Format cannot be blank."
+msgstr ""
+"ストレージ・プール、ディスク・サイズ、フォーマットはブランクにはできません。"
+
+msgid "cdrom"
+msgstr "cdrom"
+
+msgid "disk"
+msgstr "プール/ボリュームを指定してください"
+
+msgid "Pool"
+msgstr "プール"
+
+msgid "qcow"
+msgstr "qcow"
+
+msgid "qcow2"
+msgstr "qcow2"
+
+msgid "qed"
+msgstr "qed"
+
+msgid "raw"
+msgstr "raw"
+
+msgid "vmdk"
+msgstr "vmdk"
+
+msgid "vpc"
+msgstr "vpc"
+
+msgid "Create a network"
+msgstr "ネットワークの作成"
+
+msgid "Network Name"
+msgstr "ネットワーク名"
+
+msgid "Name should not contain '/' and '\"'."
+msgstr "「/」や「\"」は名前に使用しないでください。"
+
+msgid "Network Type"
+msgstr "ネットワーク・タイプ"
+
+msgid "Isolated: no external network connection"
+msgstr "隔離: 外部ネットワーク接続がありません"
+
+msgid "NAT: outbound physical network connection only"
+msgstr "NAT: アウトバウンド物理ネットワーク接続のみ"
+
+msgid "Macvtap: Virtual machines are connected to physical network directly"
+msgstr "Macvtap: 仮想マシンは物理ネットワークに直接接続されます"
+
+msgid ""
+"Passthrough: Virtual machines are connected using a macvtap connection in "
+"passthrough mode."
+msgstr ""
+"パススルー: 仮想マシンは macvtap 接続を使用してパススルー・モードで接続されま"
+"す。"
+
+msgid ""
+"VEPA: special mode where virtual machines are connected to a VEPA-enabled "
+"switch"
+msgstr "VEPA: 仮想マシンが VEPA 対応スイッチに接続される特殊なモード"
+
+msgid "Bridged: Virtual machines are connected through a network bridge"
+msgstr "ブリッジ: 仮想マシンはネットワーク・ブリッジを使用して接続されます"
+
+msgid "Destination"
+msgstr "宛先"
+
+msgid "Select an Interface"
+msgstr "インターフェースの選択"
+
+msgid "Enable VLAN"
+msgstr "VLAN を使用可能にしてください"
+
+msgid "VLAN ID"
+msgstr "VLAN ID"
+
+msgid "Edit Network"
+msgstr "ネットワークの編集"
+
+msgid "Address Space"
+msgstr "アドレス・スペース"
+
+msgid "Define a New Storage Pool"
+msgstr "新規ストレージ・プールの定義"
+
+msgid "Storage Pool Name"
+msgstr "ストレージ・プール名"
+
+msgid ""
+"The name used to identify the storage pools, and it should not be empty."
+msgstr ""
+"名前はストレージ・プールを識別するために使用されます。空にすることはできませ"
+"ん。"
+
+msgid "Storage Pool Type"
+msgstr "ストレージ・プール・タイプ"
+
+msgid "Storage Path"
+msgstr "ストレージ・パス"
+
+msgid ""
+"The path of the Storage Pool. Each Storage Pool must have a unique path."
+msgstr ""
+"ストレージ・プールのパス。各ストレージ・プールには固有のパスが必要です。"
+
+msgid ""
+"Kimchi will try to create the directory when it does not already exist in "
+"your system."
+msgstr ""
+"ディレクトリーがシステムにまだ存在していない場合は、Kimchi がディレクトリーを"
+"作成しようとします。"
+
+msgid "NFS Server IP"
+msgstr "NFS サーバー IP"
+
+msgid "NFS server IP or hostname. It can be input or chosen from history."
+msgstr "NFS サーバー IP またはホスト名。入力するか、履歴から選択できます。"
+
+msgid "NFS Path"
+msgstr "NFS パス"
+
+msgid "The NFS exported path on NFS server."
+msgstr "NFS がパスを NFS サーバーにエクスポートしました。"
+
+msgid "Create from existing LVM"
+msgstr "既存の LVM から作成"
+
+msgid "Create from raw disk"
+msgstr "ロー・ディスクから作成"
+
+msgid "Looking for existing lvms ..."
+msgstr "既存の lvm を検索しています..."
+
+msgid "Looking for available partitions ..."
+msgstr "愛用可能なパーティションを検索中..."
+
+msgid "iSCSI Server"
+msgstr "iSCSI サーバー"
+
+msgid "Server"
+msgstr "サーバー"
+
+msgid "Port"
+msgstr "ポート"
+
+msgid "iSCSI server IP or hostname. It should not be empty."
+msgstr "iSCSI サーバー IP またはホスト名。空にすることはできません。"
+
+msgid "Target"
+msgstr "ターゲット"
+
+msgid "The iSCSI target on iSCSI server"
+msgstr "iSCSI サーバー上の iSCSI ターゲット"
+
+msgid "Add iSCSI Authentication"
+msgstr "iSCSI 認証の追加"
 
 msgid "User Name"
 msgstr "ユーザー名"
 
-msgid "Password"
-msgstr "パスワード"
+msgid "SCSI Adapter"
+msgstr "SCSI アダプター"
 
-msgid "Peers"
+msgid "Please, wait..."
+msgstr "お待ちください..."
+
+msgid "Add a Volume to Storage Pool"
+msgstr "ボリュームをストレージ・プールに追加"
+
+msgid "Fetch from remote URL"
+msgstr "リモート URL からフェッチ"
+
+msgid "Enter the remote URL here."
+msgstr "ここにリモート URL を入力してください。"
+
+msgid "Upload a file"
+msgstr "ファイルのアップロード"
+
+msgid "Choose the file you want to upload."
+msgstr "アップロードするファイルを選択してください。"
+
+msgid "Resize Volume"
+msgstr "ボリューム・サイズの変更"
+
+msgid "Size"
+msgstr "サイズ"
+
+msgid "The total space which can be used to store data. The unit is megabytes."
+msgstr "データの保管に使用できる合計スペース。単位はメガバイトです。"
+
+msgid "Ok"
+msgstr "OK"
+
+msgid "Template Name"
+msgstr "テンプレート"
+
+msgid ""
+"The name used to identify the template. If omitted, a name will be "
+"automatically chosen."
+msgstr ""
+"名前は仮想マシンを識別するために使用されます。省略すると、使用されているテン"
+"プレートに基づいて選択されます。"
+
+msgid ""
+"When selecting more than one Image Template, a name will be automatically "
+"chosen for each Image Template selected."
 msgstr ""
 
-#, fuzzy
-msgid "Searching"
-msgstr "警告"
+msgid "Where is the source media for this template? "
+msgstr "このテンプレートのソース・メディアを指定してください。"
 
-#, fuzzy
-msgid "No peers found."
+msgid "Image Template"
+msgstr "イメージ・テンプレート"
+
+msgid "Netboot Template"
+msgstr "Netboot テンプレート"
+
+msgid "File Path:"
+msgstr "ファイル・パス:"
+
+msgid "Search ISOs"
+msgstr "ISO の検索"
+
+msgid "The following ISOs are available:"
+msgstr "次の ISO が使用可能です:"
+
+msgid "QEMU does not have enough permission to work with this file"
+msgstr "QEMU には、このファイルを操作するだけの十分な許可がありません"
+
+msgid "Search more ISOs"
+msgstr "ISO をさらに検索"
+
+msgid "Loading..."
+msgstr "ロード中..."
+
+msgid "Edit Template"
+msgstr "テンプレートの編集"
+
+msgid "CDROM"
+msgstr "CDROM"
+
+msgid "Image File"
+msgstr "イメージ・ファイル"
+
+msgid "Graphics"
+msgstr "グラフィックス"
+
+msgid "Disk(GB)"
+msgstr "ディスク (GB)"
+
+msgid "Disk Format"
+msgstr "ディスク・フォーマット"
+
+msgid "Add Interface"
+msgstr "インターフェースの追加"
+
+msgid "pool"
+msgstr "プール"
+
+msgid "bridge"
+msgstr "ブリッジ"
+
+msgid "vepa"
+msgstr "vepa"
+
+msgid "State"
+msgstr "状態"
+
+msgid "Guest Name ID"
+msgstr "ゲスト名 ID"
+
+msgid "OS Type"
+msgstr "OS タイプ"
+
+msgid "VNC"
+msgstr "VNC"
+
+msgid "No guests found."
 msgstr "ゲストが見つかりません。"
 
-msgid "Help"
-msgstr "ヘルプ"
+msgid "Stop"
+msgstr "停止"
 
-msgid "About"
-msgstr "製品情報"
+msgid "Location"
+msgstr "ロケーション"
 
-msgid "Log out"
-msgstr "ログアウト"
+msgid "%Used"
+msgstr "使用率 (%)"
 
-msgid "Version:"
-msgstr "バージョン: "
+msgid "Allocated"
+msgstr "割り当て済み"
 
-#~ msgid "Error while getting block devices. Details: %(err)s"
-#~ msgstr ""
-#~ "ブロック・デバイスを取得しているときに、エラーがありました。詳細: %(err)s"
+msgid "Capacity"
+msgstr "容量"
 
-#~ msgid "Error while getting block device information for %(device)s."
-#~ msgstr ""
-#~ "%(device)s のブロック・デバイス情報を取得しているときに、エラーがありまし"
-#~ "た。"
+msgid "Disks"
+msgstr "ディスク"
 
-#~ msgid "Unable to find distro file: %(filename)s"
-#~ msgstr "ディストリビューション・ファイル %(filename)s が見つかりません"
+msgid "Extending logical pool"
+msgstr "論理プールの拡張中"
 
-#~ msgid ""
-#~ "Unable to parse distro file: %(filename)s. Make sure, it is a JSON file."
-#~ msgstr ""
-#~ "ディストリビューション・ファイル %(filename)s を解析できません。JSON ファ"
-#~ "イルであることを確認してください。"
+msgid "%"
+msgstr "%"
 
-#~ msgid "Unable to login to iSCSI host target %(portal)s. Details: %(err)s"
-#~ msgstr ""
-#~ "iSCSI ホスト・ターゲット %(portal)s にログインできません。詳細: %(err)s"
+msgid "Deactivate"
+msgstr "非アクティブ化"
 
-#~ msgid "Unable to login to iSCSI host %(host)s target %(target)s"
-#~ msgstr "iSCSI ホスト %(host)s ターゲット %(target)s にログインできません"
+msgid "Activate"
+msgstr "アクティブ化"
 
-#~ msgid "The ISO file %(filename)s is not bootable"
-#~ msgstr "ISO ファイル %(filename)s は、ブート可能ではありません"
+msgid "Extend"
+msgstr "拡張"
 
-#~ msgid ""
-#~ "The ISO file %(filename)s does not have a valid El Torito boot record"
-#~ msgstr ""
-#~ "ISO ファイル %(filename)s には、有効な El Torito ブート・レコードがありま"
-#~ "せん"
+msgid "Undefine"
+msgstr "定義の解除"
 
-#~ msgid "Invalid El Torito validation entry in ISO %(filename)s"
-#~ msgstr "無効な El Torito 検証エントリーが ISO %(filename)s にあります"
+msgid "Add Volume"
+msgstr "ボリュームの追加"
 
-#~ msgid "Invalid El Torito boot indicator in ISO %(filename)s"
-#~ msgstr ""
-#~ "無効な El Torito ブート・インジケーターが ISO %(filename)s にあります"
+msgid "Resize"
+msgstr "サイズ変更"
 
-#~ msgid "Unexpected volume type for primary volume in ISO %(filename)s"
-#~ msgstr ""
-#~ "1 次ボリュームの予期しないボリューム・タイプが ISO %(filename)s にあります"
+msgid "Wipe"
+msgstr "ワイプ"
 
-#~ msgid "Bad format while reading volume descriptor in ISO %(filename)s"
-#~ msgstr ""
-#~ "ボリューム・ディスクリプターを ISO %(filename)s から読み取っていましたが、"
-#~ "フォーマットが不正でした"
+msgid "Filter:"
+msgstr "フィルター:"
 
-#~ msgid ""
-#~ "The hypervisor doesn't have permission to use this ISO %(filename)s. "
-#~ "Consider moving it under /var/lib/libvirt,  or set the search permission "
-#~ "to file access control lists for '%(user)s' user if possible, or add the "
-#~ "'%(user)s' to the ISO path group, or (not recommended) 'chmod -R o+x "
-#~ "'path_to_iso'.Details: %(err)s"
-#~ msgstr ""
-#~ "ハイパーバイザーにこの ISO %(filename)s を使用する権限がありません。/var/"
-#~ "lib/libvirt の下に移動するか、可能であれば検索許可を「%(user)s」ユーザーの"
-#~ "ファイル・アクセス制御リストに設定するか、「%(user)s」をISO パス・グループ"
-#~ "に追加するか、または「chmod -R o+x path_to_iso」を実行 (推奨されません) し"
-#~ "てください。詳細: %(err)s"
+msgid "Used By"
+msgstr "使用元"
 
-#~ msgid "Virtual machine %(name)s already exists"
-#~ msgstr "仮想マシン %(name)s は既に存在します"
+msgid "Used"
+msgstr "使用"
 
-#~ msgid "Virtual machine %(name)s does not exist"
-#~ msgstr "仮想マシン %(name)s は存在しません"
+msgid "Progress"
+msgstr "進捗状況"
 
-#~ msgid "Unable to retrieve screenshot for stopped virtual machine %(name)s"
-#~ msgstr ""
-#~ "停止している仮想マシン %(name)s のスクリーン・ショットを取得できません"
+msgid "Used by the following VMs:"
+msgstr "次の VM で使用:"
 
-#~ msgid "Remote ISO image is not supported by this server."
-#~ msgstr "リモート ISO イメージは、このサーバーではサポートされていません。"
+msgid "Allocation"
+msgstr "割り振り"
 
-#~ msgid "Unable to create virtual machine %(name)s. Details: %(err)s"
-#~ msgstr "仮想マシン %(name)s を作成できません。詳細: %(err)s"
+msgid "Template Name (ID)"
+msgstr "テンプレート名 (ID)"
 
-#~ msgid "Unable to update virtual machine %(name)s. Details: %(err)s"
-#~ msgstr "仮想マシン %(name)s を作成できません。詳細: %(err)s"
+msgid "No templates found."
+msgstr "テンプレートが見つかりません。"
 
-#~ msgid "Unable to retrieve virtual machine %(name)s. Details: %(err)s"
-#~ msgstr "仮想マシン %(name)s を取得できません。詳細: %(err)s"
+msgid "M"
+msgstr "M"
 
-#~ msgid "Graphics address to listen on must be IPv4 or IPv6"
-#~ msgstr ""
-#~ "listen を行うグラフィックス・アドレスは、IPv4 または IPv6 でなければなりま"
-#~ "せん"
-
-#~ msgid "Specify a template to create a virtual machine from"
-#~ msgstr "仮想マシンの作成元となるテンプレートを指定してください"
-
-#~ msgid "Unable to start virtual machine %(name)s. Details: %(err)s"
-#~ msgstr "仮想マシン %(name)s を始動できません。詳細: %(err)s"
-
-#~ msgid "Unable to power off virtual machine %(name)s. Details: %(err)s"
-#~ msgstr "仮想マシン %(name)s を停止できません。詳細: %(err)s"
-
-#~ msgid "Unable to delete virtual machine %(name)s. Details: %(err)s"
-#~ msgstr "仮想マシン %(name)s を削除できません。詳細: %(err)s"
-
-#~ msgid "Unable to reset virtual machine %(name)s. Details: %(err)s"
-#~ msgstr "仮想マシン %(name)s を名前変更できません。詳細: %(err)s"
-
-#~ msgid "User name must be a string"
-#~ msgstr "ネットワーク名はストリングでなければなりません"
-
-#~ msgid "Group name must be a string"
-#~ msgstr "ネットワーク名はストリングでなければなりません"
-
-#~ msgid "User(s) '%(users)s' do not exist"
-#~ msgstr "ユーザー「%(users)s」は存在しません。"
-
-#~ msgid "Group(s) '%(groups)s' do not exist"
-#~ msgstr "ユーザー「%(groups)s」は存在しません。"
-
-#~ msgid "Unable to shutdown virtual machine %(name)s. Details: %(err)s"
-#~ msgstr "仮想マシン %(name)s を停止できません。詳細: %(err)s"
-
-#~ msgid ""
-#~ "Unable to get access metadata of virtual machine %(name)s. Details: %(err)"
-#~ "s"
-#~ msgstr "仮想マシン %(name)s を始動できません。詳細: %(err)s"
-
-#~ msgid "Interface %(iface)s does not exist in virtual machine %(name)s"
-#~ msgstr "インターフェース %(iface)s は仮想マシン %(name)s には存在しません"
-
-#~ msgid ""
-#~ "Network %(network)s specified for virtual machine %(name)s does not exist"
-#~ msgstr ""
-#~ "仮想マシン %(name)s 用に指定されているネットワーク %(network)s は存在しま"
-#~ "せん"
-
-#~ msgid "Supported virtual machine interfaces type is only network"
-#~ msgstr ""
-#~ "サポートされている仮想マシン・インターフェース・タイプは、ネットワークだけ"
-#~ "です"
-
-#~ msgid "Network name for virtual machine interface must be a string"
-#~ msgstr ""
-#~ "仮想マシン・インターフェースのネットワーク名はストリングでなければなりませ"
-#~ "ん"
-
-#~ msgid "Invalid network model card specified for virtual machine interface"
-#~ msgstr ""
-#~ "無効なネットワーク・モデル・カードが仮想マシン・インターフェースに指定され"
-#~ "ています"
-
-#~ msgid "Specify type and network to add a new virtual machine interface"
-#~ msgstr ""
-#~ "新しい仮想マシン・インターフェースに追加するタイプおよびネットワークを指定"
-#~ "します"
-
-#~ msgid "Template %(name)s already exists"
-#~ msgstr "テンプレート %(name)s は既に存在します"
-
-#~ msgid ""
-#~ "Network '%(network)s' specified for template %(template)s does not exist"
-#~ msgstr ""
-#~ "テンプレート %(template)s 用に指定されているネットワーク「%(network)s」は"
-#~ "存在しません"
-
-#~ msgid ""
-#~ "Storage pool %(pool)s specified for template %(template)s does not exist"
-#~ msgstr ""
-#~ "テンプレート %(template)s 用に指定されているストレージ・プール %(pool)s は"
-#~ "存在しません"
-
-#~ msgid ""
-#~ "Storage pool %(pool)s specified for template %(template)s is not active"
-#~ msgstr ""
-#~ "テンプレート %(template)s 用に指定されているストレージ・プール %(pool)s は"
-#~ "アクティブではありません"
-
-#~ msgid "Invalid parameter '%(param)s' specified for CDROM."
-#~ msgstr "CDROM に指定されているパラメーター「%(param)s」は無効です。"
-
-#~ msgid ""
-#~ "Network %(network)s specified for template %(template)s is not active"
-#~ msgstr ""
-#~ "テンプレート %(template)s 用に指定されているネットワーク %(network)s はア"
-#~ "クティブではありません"
-
-#~ msgid "Template name must be a string"
-#~ msgstr "テンプレート名はストリングでなければなりません"
-
-#~ msgid "Template icon must be a path to the image"
-#~ msgstr "テンプレート・アイコンはイメージのパスでなければなりません"
-
-#~ msgid "Template distribution must be a string"
-#~ msgstr ""
-#~ "テンプレート・ディストリビューションはストリングでなければなりません"
-
-#~ msgid "Template distribution version must be a string"
-#~ msgstr ""
-#~ "テンプレート・ディストリビューション・バージョンはストリングでなければなり"
-#~ "ません"
-
-#~ msgid "The number of CPUs must be an integer greater than 0"
-#~ msgstr "CPU 数は整数でなければなりません"
-
-#~ msgid "Amount of memory (MB) must be an integer greater than 512"
-#~ msgstr "メモリーの量 (MB 単位) は、512 より大きい整数でなければなりません"
-
-#~ msgid "Template CDROM must be a local or remote ISO file"
-#~ msgstr ""
-#~ "テンプレート CDROM は、ローカルまたはリモート ISO ファイルでなければなりま"
-#~ "せん"
-
-#~ msgid "Invalid storage pool URI %(value)s specified for template"
-#~ msgstr ""
-#~ "無効なストレージ・プール URI %(value)s がテンプレートに指定されています"
-
-#~ msgid "Specify an ISO image as CDROM or a base image to create a template"
-#~ msgstr ""
-#~ "CDROM として、テンプレートを作成するための ISO イメージを指定してください"
-
-#~ msgid "All networks for the template must be specified in a list."
-#~ msgstr ""
-#~ "テンプレート用のネットワークをすべてリストに指定する必要があります。"
-
-#~ msgid "Unable to create template due error: %(err)s"
-#~ msgstr "次のエラーのため、テンプレートを作成できません: %(err)s"
-
-#~ msgid "Unable to delete template due error: %(err)s"
-#~ msgstr "次のエラーのため、テンプレートを削除できません: %(err)s"
-
-#~ msgid "Template base image must be a valid local image file"
-#~ msgstr ""
-#~ "テンプレート CDROM は、ローカルまたはリモート ISO ファイルでなければなりま"
-#~ "せん"
-
-#~ msgid "Storage pool %(name)s already exists"
-#~ msgstr "ストレージ・プール %(name)s は既に存在します"
-
-#~ msgid "Storage pool %(name)s does not exist"
-#~ msgstr "ストレージ・プール %(name)s は存在しません"
-
-#~ msgid "Specify %(item)s in order to create the storage pool %(name)s"
-#~ msgstr ""
-#~ "ストレージ・プール %(name)s を作成するためには、%(item)s を指定してくださ"
-#~ "い"
-
-#~ msgid "Unable to delete active storage pool %(name)s"
-#~ msgstr "アクティブ・ストレージ・プール %(name)s は削除できません"
-
-#~ msgid "Unable to list storage pools. Details: %(err)s"
-#~ msgstr "ストレージ・プールをリストできません。詳細: %(err)s"
-
-#~ msgid "Unable to create storage pool %(name)s. Details: %(err)s"
-#~ msgstr "ストレージ・プール %(name)s を作成できません。詳細: %(err)s"
-
-#~ msgid ""
-#~ "Unable to get number of storage volumes in storage pool %(name)s. "
-#~ "Details: %(err)s"
-#~ msgstr ""
-#~ "ストレージ・プール %(name)s のストレージ・ボリュームの数を取得できません。"
-#~ "詳細:%(err)s"
-
-#~ msgid "Unable to activate storage pool %(name)s. Details: %(err)s"
-#~ msgstr "ストレージ・プール %(name)s をアクティブにできません。詳細: %(err)s"
-
-#~ msgid "Unable to deactivate storage pool %(name)s. Details: %(err)s"
-#~ msgstr ""
-#~ "ストレージ・プール %(name)s を非アクティブにできません。詳細: %(err)s"
-
-#~ msgid "Unable to delete storage pool %(name)s. Details: %(err)s"
-#~ msgstr "ストレージ・プール %(name)s を削除できません。詳細: %(err)s"
-
-#~ msgid ""
-#~ "Unable to create NFS Pool as export path %(path)s may block during mount"
-#~ msgstr ""
-#~ "マウント中にエクスポート・パス %(path)s がブロックされていた可能性があるた"
-#~ "め、NFS プールを作成できません"
-
-#~ msgid "Unable to create NFS Pool as export path %(path)s mount failed"
-#~ msgstr ""
-#~ "エクスポート・パス %(path)s のマウントに失敗したため、NFS プールを作成でき"
-#~ "ません"
-
-#~ msgid "Unsupported storage pool type: %(type)s"
-#~ msgstr "サポートされていないストレージ・プール・タイプ: %(type)s"
-
-#~ msgid "Storage pool path must be a string"
-#~ msgstr "ストレージ・プール・パスはストリングでなければなりません"
-
-#~ msgid "Storage pool host must be a IP or hostname"
-#~ msgstr "ストレージ・プール・ホストは、IP またはホスト名でなければなりません"
-
-#~ msgid "Storage pool devices parameter must be a list"
-#~ msgstr ""
-#~ "ストレージ・プール・デバイス・パラメーターはリストでなければなりません"
-
-#~ msgid "Target IQN of an iSCSI pool must be a string"
-#~ msgstr "iSCSI プールのターゲット IQN はストリングでなければなりません"
-
-#~ msgid ""
-#~ "Port of a remote storage server must be an integer between 1 and 65535"
-#~ msgstr ""
-#~ "リモート・ストレージ・サーバーのポートは、1 から 65535 までの整数でなけれ"
-#~ "ばなりません"
-
-#~ msgid "Specify name and type to create a storage pool"
-#~ msgstr "ストレージ・プールを作成するには、名前とタイプを指定してください"
-
-#~ msgid ""
-#~ "%(disk)s is not a valid disk/partition. Could not add it to the pool %"
-#~ "(pool)s."
-#~ msgstr ""
-#~ "%(disk)s は、有効なディスク/パーティションではないため、プール %(pool)s に"
-#~ "追加できませんでした。"
-
-#~ msgid "The parameter disks only can be updated for logical storage pool."
-#~ msgstr ""
-#~ "論理ストレージ・プールを対象に更新できるのは、パラメーター・ディスクだけで"
-#~ "す。"
-
-#~ msgid "The SCSI host adapter name must be a string."
-#~ msgstr "SCSI ホスト・アダプター名はストリングでなければなりません。"
-
-#~ msgid "The storage pool kimchi_isos is reserved for internal use"
-#~ msgstr "ストレージ・プール kimchi_isos は、内部使用のために予約されています"
-
-#~ msgid ""
-#~ "Unable to activate NFS storage pool %(name)s. NFS server %(server)s is "
-#~ "unreachable."
-#~ msgstr ""
-#~ "NFS ストレージ・プール %(name)s をアクティブにできません。NFS サーバー %"
-#~ "(server)s に到達できません。"
-
-#~ msgid ""
-#~ "Unable to deactivate NFS storage pool %(name)s. NFS server %(server)s is "
-#~ "unreachable."
-#~ msgstr ""
-#~ "NFS ストレージ・プール %(name)s を非アクティブにできません。NFS サーバー %"
-#~ "(server)s に到達できません。"
-
-#~ msgid ""
-#~ "Unable to deactivate pool %(name)s as it is associated with some templates"
-#~ msgstr ""
-#~ "プール %(name)s はいくつかのテンプレートに関連付けられているため、非アク"
-#~ "ティブにできません"
-
-#~ msgid ""
-#~ "Unable to delete pool %(name)s as it is associated with some templates"
-#~ msgstr ""
-#~ "プール %(name)s はいくつかのテンプレートに関連付けられているため、削除でき"
-#~ "ません"
-
-#~ msgid ""
-#~ "A volume group named '%(name)s' already exists. Please, choose another "
-#~ "name to create the logical pool."
-#~ msgstr ""
-#~ "名前「%(name)s」のボリューム・グループは既に存在します。論理プールを作成す"
-#~ "るには、別の名前を選択してください。"
-
-#~ msgid ""
-#~ "Unable to update database with deep scan information due error: %(err)s"
-#~ msgstr ""
-#~ "次のエラーのため、データベースをディープ・スキャン情報で更新できません: %"
-#~ "(err)s"
-
-#~ msgid "Storage volume %(name)s already exists"
-#~ msgstr "ストレージ・ボリューム %(name)s は既に存在します"
-
-#~ msgid "Storage volume %(name)s does not exist in storage pool %(pool)s"
-#~ msgstr ""
-#~ "ストレージ・ボリューム %(name)s は、ストレージ・プール %(pool)s に存在しま"
-#~ "せん"
-
-#~ msgid "Specify %(item)s in order to create storage volume %(volume)s"
-#~ msgstr ""
-#~ "ストレージ・ボリューム %(volume)s を作成するためには、%(item)s を指定して"
-#~ "ください"
-
-#~ msgid ""
-#~ "Unable to list storage volumes because storage pool %(pool)s is not active"
-#~ msgstr ""
-#~ "ストレージ・プール %(pool)s がアクティブではないため、ストレージ・ボリュー"
-#~ "ムをリストできません"
-
-#~ msgid ""
-#~ "Unable to create storage volume %(name)s in storage pool %(pool)s. "
-#~ "Details: %(err)s"
-#~ msgstr ""
-#~ "ストレージ・ボリューム %(name)s をストレージ・プール %(pool)s に作成できま"
-#~ "せん。詳細: %(err)s"
-
-#~ msgid ""
-#~ "Unable to list storage volumes in storage pool %(pool)s. Details: %(err)s"
-#~ msgstr ""
-#~ "ストレージ・プール %(pool)s のストレージ・ボリュームをリストできません。詳"
-#~ "細: %(err)s"
-
-#~ msgid "Unable to wipe storage volumes %(name)s. Details: %(err)s"
-#~ msgstr "ストレージ・プール %(name)s をワイプできません。詳細: %(err)s"
-
-#~ msgid "Unable to delete storage volume %(name)s. Details: %(err)s"
-#~ msgstr "ストレージ・ボリューム %(name)s を削除できません。詳細: %(err)s"
-
-#~ msgid "Unable to resize storage volume %(name)s. Details: %(err)s"
-#~ msgstr ""
-#~ "ストレージ・ボリューム %(name)s をサイズ変更できません。詳細: %(err)s"
-
-#~ msgid "Storage type %(type)s does not support volume create and delete"
-#~ msgstr ""
-#~ "ストレージ・タイプ %(type)s では、ボリューム作成および削除はサポートされて"
-#~ "いません"
-
-#~ msgid "Storage volume name must be a string"
-#~ msgstr "ストレージ・ボリューム名はストリングでなければなりません"
-
-#~ msgid "Storage volume allocation must be an integer number"
-#~ msgstr "ストレージ・ボリューム割り振りは整数でなければなりません"
-
-#~ msgid "Storage volume requires a volume name"
-#~ msgstr "ストレージ・ボリュームにはボリューム名が必要です"
-
-#~ msgid ""
-#~ "Unable to update database with storage volume information due error: %"
-#~ "(err)s"
-#~ msgstr ""
-#~ "次のエラーのため、データベースをストレージ・ボリューム情報で更新できませ"
-#~ "ん: %(err)s"
-
-#~ msgid "Interface %(name)s does not exist"
-#~ msgstr "インターフェース %(name)s は存在しません"
-
-#~ msgid "Network %(name)s already exists"
-#~ msgstr "ネットワーク %(name)s は既に存在します"
-
-#~ msgid "Network %(name)s does not exist"
-#~ msgstr "ネットワーク %(name)s は存在しません"
-
-#~ msgid "Subnet %(subnet)s specified for network %(network)s  is not valid."
-#~ msgstr ""
-#~ "ネットワーク %(network)s 用に指定されているサブネット %(subnet)s は無効で"
-#~ "す。"
-
-#~ msgid "Specify a network interface to create bridged network %(name)s"
-#~ msgstr ""
-#~ "ブリッジ接続ネットワーク %(name)s を作成するには、ネットワーク・インター"
-#~ "フェースを指定してください"
-
-#~ msgid "Unable to delete active network %(name)s"
-#~ msgstr "アクティブ・ネットワーク %(name)s は削除できません"
-
-#~ msgid ""
-#~ "Interface %(iface)s specified for network %(network)s is already in use"
-#~ msgstr ""
-#~ "ネットワーク %(network)s 用に指定されているインターフェース %(iface)s は、"
-#~ "既に使用されています"
-
-#~ msgid "Interface should be bare NIC, bonding or bridge device."
-#~ msgstr ""
-#~ "インターフェースはベア NIC、結合、またはブリッジ・デバイスでなければなりま"
-#~ "せん。"
-
-#~ msgid "Unable to create network %(name)s. Details: %(err)s"
-#~ msgstr "ネットワーク %(name)s を作成できません。詳細: %(err)s"
-
-#~ msgid "Unable to find a free IP address for network '%(name)s'"
-#~ msgstr "ネットワーク「%(name)s」のフリー IP アドレスが見つかりません。"
-
-#~ msgid "Supported network types are isolated, NAT and bridge"
-#~ msgstr ""
-#~ "サポートされているネットワーク・タイプは隔離、NAT、およびブリッジです"
-
-#~ msgid ""
-#~ "Network subnet must be a string with IP address and prefix or netmask"
-#~ msgstr ""
-#~ "ネットワーク・サブネットは、IP アドレスとプレフィックスまたはネットマスク"
-#~ "が入ったストリングでなければなりません"
-
-#~ msgid "Network interface must be a string"
-#~ msgstr "ネットワーク・インターフェースはストリングでなければなりません"
-
-#~ msgid "Network VLAN ID must be an integer between 1 and 4094"
-#~ msgstr "ネットワーク VLAN ID は、1 から 4094 までの整数でなければなりません"
-
-#~ msgid "Specify name and type to create a Network"
-#~ msgstr "ネットワークを作成するには、名前とタイプを指定してください"
-
-#~ msgid "Bridge device %(name)s can not be the trunk device of a VLAN."
-#~ msgstr ""
-#~ "ブリッジ・デバイス %(name)s を、VLAN のトランク・デバイスにすることはでき"
-#~ "ません。"
-
-#~ msgid "Failed to activate interface %(iface)s: %(err)s."
-#~ msgstr "インターフェース %(iface)s の活動化に失敗しました: %(err)s。"
-
-#~ msgid ""
-#~ "Failed to activate interface %(iface)s. Please check the physical link "
-#~ "status."
-#~ msgstr ""
-#~ "インターフェース %(iface)s の活動化に失敗しました。物理リンク状況を確認し"
-#~ "てください。"
-
-#~ msgid "Debug report %(name)s does not exist"
-#~ msgstr "デバッグ・レポート %(name)s は存在しません。"
-
-#~ msgid "Debug report tool not found in system"
-#~ msgstr "デバッグ・レポート・ツールがシステムに見つかりません"
-
-#~ msgid "Unable to create debug report %(name)s. Details: %(err)s."
-#~ msgstr "デバッグ・レポート %(name)s を作成できません。詳細: %(err)s"
-
-#~ msgid "Unable to generate debug report %(name)s. Details: %(err)s"
-#~ msgstr "デバッグ・レポート %(name)s を生成できません。詳細: %(err)s"
-
-#~ msgid ""
-#~ "The debug report with specified name \"%(name)s\" already exists. Please "
-#~ "use another one."
-#~ msgstr ""
-#~ "名前「%(name)s」のボリューム・グループは既に存在します。論理プールを作成す"
-#~ "るには、別の名前を選択してください。"
-
-#~ msgid "Storage server %(server)s was not used by Kimchi"
-#~ msgstr ""
-#~ "ストレージ・サーバー %(server)s は、Kimchi によって使用されていませんでし"
-#~ "た"
-
-#~ msgid "Distro '%(name)s' does not exist"
-#~ msgstr "ディストリビューション「%(name)s」は存在しません"
-
-#~ msgid "Partition %(name)s does not exist in the host"
-#~ msgstr "パーティション %(name)s は、ホストに存在しません"
-
-#~ msgid ""
-#~ "Unable to shutdown host machine as there are running virtual machines"
-#~ msgstr ""
-#~ "稼働中の仮想マシンがあるため、ホスト・マシンをシャットダウンできません"
-
-#~ msgid "Unable to reboot host machine as there are running virtual machines"
-#~ msgstr "稼働中の仮想マシンがあるため、ホスト・マシンをリブートできません"
-
-#~ msgid "Node device '%(name)s' not found"
-#~ msgstr "ノード・デバイス「%(name)s」が見つかりません"
-
-#~ msgid "No packages marked for update"
-#~ msgstr "更新の対象としてマークされているパッケージはありません"
-
-#~ msgid "Package %(name)s is not marked to be updated."
-#~ msgstr "パッケージ %(name)s は、更新の対象としてマークされていません。"
-
-#~ msgid "Error while getting packages marked to be updated. Details: %(err)s"
-#~ msgstr ""
-#~ "更新の対象としてマークされたパッケージを取得しているときに、エラーがありま"
-#~ "した。詳細: %(err)s"
-
-#~ msgid "There is no compatible package manager for this system."
-#~ msgstr "このシステム用の互換パッケージ・マネージャーがありません。"
-
-#~ msgid "Invalid storage type. Types supported: 'cdrom', 'disk'"
-#~ msgstr ""
-#~ "ストレージ・タイプが無効です。サポートされているタイプは「cdrom」です。"
-
-#~ msgid "Error while creating new storage device: %(error)s"
-#~ msgstr ""
-#~ "新しいストレージ・デバイスを作成しているときに、エラーがありました: %"
-#~ "(error)s"
-
-#~ msgid "Error while updating storage device: %(error)s"
-#~ msgstr ""
-#~ "ストレージ・デバイスを更新しているときに、エラーがありました: %(error)s"
-
-#~ msgid "Error while removing storage device: %(error)s"
-#~ msgstr ""
-#~ "ストレージ・デバイスを削除しているときに、エラーがありました: %(error)s"
-
-#~ msgid ""
-#~ "Specify type and path or type and pool/volume to add a new virtual "
-#~ "machine disk"
-#~ msgstr "新しい仮想マシン・ディスクに追加するタイプおよびパスを指定します"
-
-#~ msgid "Specify path to update virtual machine disk"
-#~ msgstr "仮想マシン・ディスクを更新するには、パスを指定してください"
-
-#~ msgid ""
-#~ "Only one of path or pool/volume can be specified to add a new virtual "
-#~ "machine disk"
-#~ msgstr "新しい仮想マシン・ディスクに追加するタイプおよびパスを指定します"
-
-#~ msgid "YUM Repository ID must be one word only string."
-#~ msgstr ""
-#~ "YUM リポジトリー ID は、1 ワードのみのストリングでなければなりません"
-
-#~ msgid "Repository URL must be an http://, ftp:// or file:// URL."
-#~ msgstr ""
-#~ "リポジトリー URL は http://、ftp://、または file:// URL でなければなりませ"
-#~ "ん。"
-
-#~ msgid ""
-#~ "Repository configuration is a dictionary with specific values according "
-#~ "to repository type."
-#~ msgstr ""
-#~ "リポジトリー構成とは、リポジトリー・タイプに応じて特定の値が入ったディク"
-#~ "ショナリーです。"
-
-#~ msgid "Distribution to DEB repository must be a string"
-#~ msgstr ""
-#~ "DEB リポジトリーへのディストリビューションは、ストリングでなければなりませ"
-#~ "ん"
-
-#~ msgid "Components to DEB repository must be listed in a array"
-#~ msgstr ""
-#~ "DEB リポジトリーへのコンポーネントは、配列としてリストされていなければなり"
-#~ "ません"
-
-#~ msgid "Components to DEB repository must be a string"
-#~ msgstr ""
-#~ "DEB リポジトリーへのコンポーネントは、ストリングでなければなりません"
-
-#~ msgid "YUM Repository name must be string."
-#~ msgstr "YUM リポジトリー名はストリングでなければなりません。"
-
-#~ msgid "GPG check must be a boolean value."
-#~ msgstr "GPG チェックはブール値でなければなりません。"
-
-#~ msgid "GPG key must be a URL pointing to the ASCII-armored file."
-#~ msgstr ""
-#~ "GPG 鍵は、ASCII で保存されたファイルを指す URL でなければなりません。"
-
-#~ msgid "Could not update repository %(repo_id)s."
-#~ msgstr "リポジトリー %(repo_id)s を更新できませんでした。"
-
-#~ msgid "Repository %(repo_id)s does not exist."
-#~ msgstr "リポジトリー %(repo_id)s は存在しません。"
-
-#~ msgid "Repository management tool was not recognized for your system."
-#~ msgstr "システム用のリポジトリー管理ツールが認識されませんでした。"
-
-#~ msgid "Repository %(repo_id)s is already enabled."
-#~ msgstr "リポジトリー %(repo_id)s は既に有効になっています。"
-
-#~ msgid "Repository %(repo_id)s is already disabled."
-#~ msgstr "リポジトリー %(repo_id)s は既に無効になっています。"
-
-#~ msgid "Could not remove repository %(repo_id)s."
-#~ msgstr "リポジトリー %(repo_id)s を削除できませんでした。"
-
-#~ msgid "Could not write repository configuration file %(repo_file)s"
-#~ msgstr ""
-#~ "リポジトリー構成ファイル %(repo_file)s を書き込むことができませんでした"
-
-#~ msgid "Specify repository distribution in order to create a DEB repository."
-#~ msgstr ""
-#~ "DEB リポジトリーを作成するためには、リポジトリー・ディストリビューションを"
-#~ "指定してください。"
-
-#~ msgid "Could not enable repository %(repo_id)s."
-#~ msgstr "リポジトリー %(repo_id)s を有効にできませんでした。"
-
-#~ msgid "Could not disable repository %(repo_id)s."
-#~ msgstr "リポジトリー %(repo_id)s を無効にできませんでした。"
-
-#~ msgid "YUM Repository ID already exists"
-#~ msgstr "YUM リポジトリー ID は既に存在します"
-
-#~ msgid "YUM Repository name must be a string"
-#~ msgstr "YUM リポジトリー名はストリングでなければなりません"
-
-#~ msgid "Unable to list repositories. Details: '%(err)s'"
-#~ msgstr "リポジトリーをリストできません。詳細: 「%(err)s」"
-
-#~ msgid "Unable to retrieve repository information. Details: '%(err)s'"
-#~ msgstr "リポジトリー情報を取得できません。詳細: 「%(err)s」"
-
-#~ msgid "Unable to add repository. Details: '%(err)s'"
-#~ msgstr "リポジトリーを追加できません。詳細: 「%(err)s」"
-
-#~ msgid "Unable to remove repository. Details: '%(err)s'"
-#~ msgstr "リポジトリーを削除できません。詳細: 「%(err)s」"
-
-#~ msgid "Create a New Virtual Machine"
-#~ msgstr "新規仮想マシンの作成"
-
-#~ msgid "Virtual Machine Name"
-#~ msgstr "仮想マシン名"
-
-#~ msgid ""
-#~ "The name used to identify the virtual machine. If omitted, a name will be "
-#~ "chosen based on the template used."
-#~ msgstr ""
-#~ "名前は仮想マシンを識別するために使用されます。省略すると、使用されているテ"
-#~ "ンプレートに基づいて選択されます。"
-
-#~ msgid "Template"
-#~ msgstr "テンプレート"
-
-#~ msgid "Please create a template first."
-#~ msgstr "まずテンプレートを作成してください。"
-
-#~ msgid "Create a Template"
-#~ msgstr "テンプレートの作成"
-
-#~ msgid "Please choose a template."
-#~ msgstr "テンプレートを選択してください。"
-
-#~ msgid "OS"
-#~ msgstr "OS"
-
-#~ msgid "OS Version"
-#~ msgstr "OS バージョン"
-
-#~ msgid "CPUS"
-#~ msgstr "CPU"
-
-#~ msgid "Memory"
-#~ msgstr "メモリー"
-
-#~ msgid "Edit Guest"
-#~ msgstr "ゲストの編集"
-
-#~ msgid "General"
-#~ msgstr "一般"
-
-#~ msgid "Interface"
-#~ msgstr "インターフェース"
-
-#~ msgid "Permission"
-#~ msgstr "バージョン"
-
-#~ msgid "CPUs"
-#~ msgstr "CPU"
-
-#~ msgid "Memory (MB)"
-#~ msgstr "メモリー"
-
-#~ msgid "Icon"
-#~ msgstr "アイコン"
-
-#~ msgid "Device"
-#~ msgstr "デバイス名"
-
-#~ msgid "Path"
-#~ msgstr "NFS パス"
-
-#~ msgid "Type"
-#~ msgstr "タイプ"
-
-#~ msgid "All"
-#~ msgstr "すべて"
-
-#~ msgid "Vendor"
-#~ msgstr "ベンダー"
-
-#~ msgid "Detach"
-#~ msgstr "切り離し"
-
-#~ msgid "Start"
-#~ msgstr "開始"
-
-#~ msgid "Reset"
-#~ msgstr "リセット"
-
-#~ msgid "Actions"
-#~ msgstr "アクション"
-
-#~ msgid "Connect"
-#~ msgstr "接続"
-
-#~ msgid "Shut Down"
-#~ msgstr "シャットダウン"
-
-#~ msgid "Delete"
-#~ msgstr "削除"
-
-#~ msgid "CPU"
-#~ msgstr "CPU"
-
-#~ msgid "Disk I/O"
-#~ msgstr "ディスク入出力"
-
-#~ msgid "Network I/O"
-#~ msgstr "ネットワーク入出力"
-
-#~ msgid "Livetile"
-#~ msgstr "ライブタイル"
-
-#~ msgid "Add a Storage Device to VM"
-#~ msgstr "VM にストレージ・デバイスを追加"
-
-#~ msgid "Device Type"
-#~ msgstr "デバイス・タイプ"
-
-#~ msgid "The device type. Currently,  \"cdrom\" and \"disk\" are supported."
-#~ msgstr "デバイス・タイプ。現在サポートされているのは \"cdrom\" のみです。"
-
-#~ msgid "Storage Pool"
-#~ msgstr "ストレージ・プール"
-
-#~ msgid "Storage pool which volume located in"
-#~ msgstr "ストレージ・プール・パスはストリングでなければなりません"
-
-#~ msgid "Storage Volume"
-#~ msgstr "ストレージ・プール名"
-
-#~ msgid "Storage volume to be attached"
-#~ msgstr "ストレージ・ボリューム名はストリングでなければなりません"
-
-#~ msgid "File Path"
-#~ msgstr "ファイル・パス"
-
-#~ msgid "The ISO file path in the server for CDROM."
-#~ msgstr "サーバー内での CDROM の ISO ファイル・パス。"
-
-#~ msgid "Shut down"
-#~ msgstr "シャットダウン"
-
-#~ msgid "Restart"
-#~ msgstr "再始動"
-
-#~ msgid "Basic Information"
-#~ msgstr "基本情報"
-
-#~ msgid "OS Distro"
-#~ msgstr "OS ディストリビューション"
-
-#~ msgid "OS Code Name"
-#~ msgstr "OS コード名"
-
-#~ msgid "Processor"
-#~ msgstr "プロセッサー"
-
-#~ msgid "System Statistics"
-#~ msgstr "システム統計情報"
-
-#~ msgid "Update Progress"
-#~ msgstr "更新の進行状況"
-
-#~ msgid "Network Name"
-#~ msgstr "ネットワーク名"
-
-#~ msgid "State"
-#~ msgstr "状態"
-
-#~ msgid "Network Type"
-#~ msgstr "ネットワーク・タイプ"
-
-#~ msgid "Address Space"
-#~ msgstr "アドレス・スペース"
-
-#~ msgid "Isolated: no external network connection"
-#~ msgstr "隔離: 物理ネットワーク接続なし"
-
-#~ msgid "NAT: outbound physical network connection only"
-#~ msgstr "NAT: アウトバウンド物理ネットワーク接続のみ"
-
-#~ msgid "Bridged: Virtual machines are connected to physical network directly"
-#~ msgstr "ブリッジ: 仮想マシンが直接物理ネットワークに接続される"
-
-#~ msgid "Destination"
-#~ msgstr "宛先:"
-
-#~ msgid "Enable VLAN"
-#~ msgstr "VLAN を使用可能にする:"
-
-#~ msgid "VLAN ID"
-#~ msgstr "VLAN ID:"
-
-#~ msgid "Stop"
-#~ msgstr "停止"
-
-#~ msgid "Generate a New Debug Report"
-#~ msgstr "新規デバッグ・レポートの生成"
-
-#~ msgid "Report Name"
-#~ msgstr "レポート名"
-
-#~ msgid ""
-#~ "The name used to identify the report. If omitted, a name will be chosen "
-#~ "based on current time. Name can contain: letters, digits, underscore (\"_"
-#~ "\") and hyphen (\"-\")."
-#~ msgstr ""
-#~ "名前はレポートを識別するために使用されます。省略すると、現在時刻に基づいて"
-#~ "選択されます。名前には英字、数字、およびハイフン (-) を使用できます。"
-
-#~ msgid "Rename a Debug Report"
-#~ msgstr "新規デバッグ・レポートの生成"
-
-#~ msgid ""
-#~ "The name used to identify the report. Name can contain: letters, digits "
-#~ "and hyphen (\"-\")."
-#~ msgstr ""
-#~ "名前はレポートを識別するために使用されます。省略すると、現在時刻に基づいて"
-#~ "選択されます。名前には英字、数字、およびハイフン (-) を使用できます。"
-
-#~ msgid "Add a Repository"
-#~ msgstr "リポジトリーの追加"
-
-#~ msgid "Identifier"
-#~ msgstr "ID"
-
-#~ msgid "Single word, unique identifier for the repository."
-#~ msgstr "リポジトリーの固有 ID を示す単一のワード。"
-
-#~ msgid "Textual name for the repository."
-#~ msgstr "リポジトリーのテキスト名。"
-
-#~ msgid "URL"
-#~ msgstr "URL"
-
-#~ msgid "Required Field"
-#~ msgstr "必須フィールド"
-
-#~ msgid "URL to the repository. Supported protocols are http, ftp, and file."
-#~ msgstr ""
-#~ "リポジトリーの URL で、サポートされているプロトコルは http、ftp、および "
-#~ "file です。"
-
-#~ msgid "Repository is a mirror"
-#~ msgstr "リポジトリーはミラーです。"
-
-#~ msgid "Distribution"
-#~ msgstr "ディストリビューション"
-
-#~ msgid "Distribution of the DEB repository."
-#~ msgstr "DEB リポジトリーのディストリビューション。"
-
-#~ msgid "Components"
-#~ msgstr "コンポーネント"
-
-#~ msgid "List of components in DEB repository."
-#~ msgstr "DEB リポジトリー内のコンポーネントのリスト。"
-
-#~ msgid "Edit Repository"
-#~ msgstr "リポジトリーの編集"
-
-#~ msgid "Mirror List URL"
-#~ msgstr "ミラー・リスト URL"
-
-#~ msgid "Yes"
-#~ msgstr " はい"
-
-#~ msgid "No"
-#~ msgstr " いいえ"
-
-#~ msgid "Capacity"
-#~ msgstr "容量"
-
-#~ msgid "Allocated"
-#~ msgstr "割り当て済み"
-
-#~ msgid "Location"
-#~ msgstr "ロケーション"
-
-#~ msgid "Device path"
-#~ msgstr "デバイス・パス"
-
-#~ msgid "active"
-#~ msgstr "アクティブ"
-
-#~ msgid "inactive"
-#~ msgstr "非アクティブ"
-
-#~ msgid "Deactivate"
-#~ msgstr "非アクティブにする"
-
-#~ msgid "Activate"
-#~ msgstr "アクティブにする"
-
-#~ msgid "Undefine"
-#~ msgstr "定義を解除する"
-
-#~ msgid "Format"
-#~ msgstr "フォーマット:"
-
-#~ msgid "Allocation"
-#~ msgstr "割り振り:"
-
-#~ msgid "Define a New Storage Pool"
-#~ msgstr "新規ストレージ・プールの定義"
-
-#~ msgid "Storage Pool Name"
-#~ msgstr "ストレージ・プール名"
-
-#~ msgid ""
-#~ "The name used to identify the storage pools, and it should not be empty."
-#~ msgstr ""
-#~ "名前はストレージ・プールを識別するために使用されます。空にすることはできま"
-#~ "せん。"
-
-#~ msgid "Storage Pool Type"
-#~ msgstr "ストレージ・プール・タイプ"
-
-#~ msgid "Storage Path"
-#~ msgstr "ストレージ・パス"
-
-#~ msgid ""
-#~ "The path of the Storage Pool. Each Storage Pool must have a unique path."
-#~ msgstr ""
-#~ "ストレージ・プールのパス。それぞれのストレージ・プールに固有のパスが必要で"
-#~ "す。"
-
-#~ msgid ""
-#~ "Kimchi will try to create the directory when it does not already exist in "
-#~ "your system."
-#~ msgstr ""
-#~ "ディレクトリーがシステムに存在しない場合、Kimchi がその作成を試みます。"
-
-#~ msgid "NFS Server IP"
-#~ msgstr "NFS サーバー IP"
-
-#~ msgid "NFS server IP or hostname. It can be input or chosen from history."
-#~ msgstr ""
-#~ "NFS サーバー IP またはホスト名。入力することも、ヒストリーから選択すること"
-#~ "もできます。"
-
-#~ msgid "NFS Path"
-#~ msgstr "NFS パス"
-
-#~ msgid "The NFS exported path on NFS server."
-#~ msgstr "NFS がパスを NFS サーバーにエクスポートしました。"
-
-#~ msgid "iSCSI Server"
-#~ msgstr "iSCSI サーバー"
-
-#~ msgid "Server"
-#~ msgstr "サーバー"
-
-#~ msgid "Port"
-#~ msgstr "ポート"
-
-#~ msgid "iSCSI server IP or hostname. It should not be empty."
-#~ msgstr "iSCSI サーバー IP またはホスト名。空にすることはできません。"
-
-#~ msgid "Target"
-#~ msgstr "ターゲット"
-
-#~ msgid "The iSCSI target on iSCSI server"
-#~ msgstr "iSCSI サーバー上の iSCSI ターゲット"
-
-#~ msgid "Add iSCSI Authentication"
-#~ msgstr "iSCSI 認証の追加"
-
-#~ msgid "iSCSI Authentication"
-#~ msgstr "iSCSI 認証"
-
-#~ msgid "SCSI Adapter"
-#~ msgstr "SCSI アダプター"
-
-#~ msgid "Please, wait..."
-#~ msgstr "お待ちください..."
-
-#~ msgid "Add Template"
-#~ msgstr "テンプレートの追加"
-
-#~ msgid "Where is the source media for this template? "
-#~ msgstr "このテンプレートのソース・メディアはどこにありますか?"
-
-#~ msgid "Local ISO Image"
-#~ msgstr "ローカル ISO イメージ"
-
-#~ msgid "Remote ISO Image"
-#~ msgstr "リモート ISO イメージ"
-
-#~ msgid "Search ISOs"
-#~ msgstr "ISO の検索"
-
-#~ msgid "The following ISOs are available:"
-#~ msgstr "次の ISO が使用可能です:"
-
-#~ msgid "OS: "
-#~ msgstr "OS: "
-
-#~ msgid "Version: "
-#~ msgstr "バージョン: "
-
-#~ msgid "Size: "
-#~ msgstr "サイズ: "
-
-#~ msgid "Search more ISOs"
-#~ msgstr "ISO をさらに検索"
-
-#~ msgid "Create Templates from Selected ISO"
-#~ msgstr "選択した ISO からテンプレートを作成"
-
-#~ msgid "I want to use a specific ISO file"
-#~ msgstr "特定の ISO ファイルを使用する"
-
-#~ msgid "Loading default remote ISOs ..."
-#~ msgstr "デフォルトのリモート ISO をロードしています..."
-
-#~ msgid "Arch: "
-#~ msgstr "アーキテクチャー: "
-
-#~ msgid "I want to use a custom URL"
-#~ msgstr "カスタム URL を使用する"
-
-#~ msgid "Edit Template"
-#~ msgstr "テンプレートの編集"
-
-#~ msgid "CDROM"
-#~ msgstr "CDROM"
-
-#~ msgid "Graphics"
-#~ msgstr "グラフィックス"
-
-#~ msgid "CPU Number"
-#~ msgstr "CPU 数"
-
-#~ msgid "No templates found."
-#~ msgstr "テンプレートが見つかりません。"
+#~ msgid "Peers"
+#~ msgstr "ピア"
